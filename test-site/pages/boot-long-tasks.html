@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="boot-long-task; target=#menu-toggle; phase=input-delay; long tasks of 300-600 ms in the first 4 s (inline classic script 300 ms, module evaluation 500 ms, timers at 800/1600/2500/3300 ms with 400/600/300/450 ms); menuToggleHandler is cheap, boot taps wait">
+<title>boot-long-tasks</title>
+<script>
+  (function inlineBootScript() {
+    const end = performance.now() + 300;
+    while (performance.now() < end) { /* parser-blocking boot work */ }
+  })();
+</script>
+</head>
+<body>
+<h1>Boot long tasks - the main thread is busy for the first 4 s</h1>
+<button id="menu-toggle" type="button">Menu</button>
+<p id="out">closed</p>
+<script type="module">
+  import { busy } from './busy.js';
+  const BOOT_TASKS = [[800, 400], [1600, 600], [2500, 300], [3300, 450]];
+  busy(500);
+  for (const [atMs, costMs] of BOOT_TASKS) {
+    setTimeout(function bootTimerTask() {
+      busy(costMs);
+    }, Math.max(0, atMs - performance.now()));
+  }
+  const out = document.getElementById('out');
+  document.getElementById('menu-toggle').addEventListener('click', function menuToggleHandler() {
+    out.textContent = out.textContent === 'closed' ? 'open' : 'closed';
+  });
+</script>
+</body></html>

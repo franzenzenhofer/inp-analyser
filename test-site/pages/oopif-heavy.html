@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="oopif-cpu; target=#main-action; phase=context; cross-origin iframe #ad-frame from cdn.thirdparty.test (heavy-frame.html) runs adHeavyWork 40 ms every 50 ms plus a rAF animation in its own renderer; mainActionHandler in the top frame is cheap">
+<title>oopif-heavy</title>
+<style>#ad-frame { width: 300px; height: 250px; border: 0; }</style></head>
+<body>
+<h1>OOPIF heavy - a cross-origin ad frame burns CPU</h1>
+<button id="main-action" type="button">Main action</button>
+<p id="out">0</p>
+<div id="ad-slot"></div>
+<script type="module">
+  import { thirdPartyUrl } from './third-party.js';
+  const frame = document.createElement('iframe');
+  frame.id = 'ad-frame';
+  frame.title = 'Advertisement';
+  frame.src = thirdPartyUrl('/heavy-frame.html');
+  document.getElementById('ad-slot').append(frame);
+  const out = document.getElementById('out');
+  document.getElementById('main-action').addEventListener('click', function mainActionHandler() {
+    out.textContent = String(Number(out.textContent) + 1);
+  });
+</script>
+</body></html>

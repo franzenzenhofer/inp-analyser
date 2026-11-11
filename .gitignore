@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+inp-report*/
+.chrome/
+*.log
+.DS_Store
+.env
+
+# local Chrome for Testing, run outputs
+.env.*
+!.env.example
+/tmp/

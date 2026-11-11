@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="sync-xhr; target=#check-stock; phase=processing; checkStockHandler sends a synchronous XMLHttpRequest GET /api/slow-sync that the server answers after 300 ms (main thread paused)">
+<title>sync-xhr</title>
+</head>
+<body>
+<h1>Synchronous XHR - the handler waits 300 ms for the network</h1>
+<button id="check-stock" type="button">Check stock</button>
+<p id="out">unknown</p>
+<script type="module">
+  const out = document.getElementById('out');
+  document.getElementById('check-stock').addEventListener('click', function checkStockHandler() {
+    const request = new XMLHttpRequest();
+    request.open('GET', '/api/slow-sync', false);
+    request.send();
+    out.textContent = request.responseText;
+  });
+</script>
+</body></html>

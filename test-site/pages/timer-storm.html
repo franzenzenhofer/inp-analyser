@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="timer-storm; target=#refresh; phase=input-delay; pollingTimer burns 40 ms every 50 ms (setInterval) for the page lifetime, refreshHandler is cheap, inputs wait up to 40 ms">
+<title>timer-storm</title>
+</head>
+<body>
+<h1>Timer storm - 40 ms of work every 50 ms</h1>
+<button id="refresh" type="button">Refresh</button>
+<p id="out">0</p>
+<p id="ticks">0</p>
+<script type="module">
+  import { busy } from './busy.js';
+  const ticks = document.getElementById('ticks');
+  const out = document.getElementById('out');
+  let count = 0;
+  setInterval(function pollingTimer() {
+    busy(40);
+    count++;
+    ticks.dataset.count = String(count);
+  }, 50);
+  document.getElementById('refresh').addEventListener('click', function refreshHandler() {
+    out.textContent = String(count);
+  });
+</script>
+</body></html>

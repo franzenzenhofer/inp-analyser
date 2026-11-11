@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="soft-navigation; target=#tab-link; phase=processing; switchTabHandler burns 200 ms then pushState (soft navigation). Must never leave the browser: #doc-link (cross-document), #blank-link (target=_blank), #download-link (Content-Disposition download), #subscribe-submit (form POST /api/subscribe), #delete-account (fetch POST /api/delete)">
+<title>navigations</title>
+</head>
+<body>
+<h1>Navigations - one soft navigation, five that must never happen</h1>
+<nav>
+  <a id="tab-link" href="/navigations?tab=2">Tab 2 (pushState)</a>
+  <a id="doc-link" href="/control">Control page (cross-document)</a>
+  <a id="blank-link" href="/control" target="_blank" rel="noopener">Control page in a new tab</a>
+  <a id="download-link" href="/download/report.csv" download>Download report</a>
+</nav>
+<form id="subscribe-form" method="post" action="/api/subscribe">
+  <input id="subscribe-email" name="email" type="email" value="test@example.invalid">
+  <button id="subscribe-submit" type="submit">Subscribe</button>
+</form>
+<button id="delete-account" type="button">Delete account</button>
+<p id="out">tab 1</p>
+<script type="module">
+  import { busy } from './busy.js';
+  const out = document.getElementById('out');
+  document.getElementById('tab-link').addEventListener('click', function switchTabHandler(event) {
+    event.preventDefault();
+    busy(200);
+    history.pushState({ tab: 2 }, '', '/navigations?tab=2');
+    out.textContent = 'tab 2';
+  });
+  document.getElementById('delete-account').addEventListener('click', function deleteAccountHandler() {
+    void fetch('/api/delete', { method: 'POST', body: JSON.stringify({ confirm: true }) });
+    out.textContent = 'account deletion requested';
+  });
+</script>
+</body></html>

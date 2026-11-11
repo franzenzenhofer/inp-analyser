@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="paint-cost; target=#highlight; phase=presentation; highlightHandler flips one class that changes the background of 600 tiles with large box-shadows and filters, cheap script, expensive repaint">
+<title>paint-heavy</title>
+<style>
+  #stage { display: flex; flex-wrap: wrap; gap: 12px; padding: 24px; }
+  .tile { width: 80px; height: 80px; border-radius: 16px; background: #fafafa;
+          box-shadow: 0 0 40px 12px rgba(0, 0, 0, 0.35), inset 0 0 30px rgba(0, 0, 255, 0.4); filter: blur(1px) saturate(1.5); }
+  #stage.highlight .tile { background: #ffd54f; box-shadow: 0 0 48px 16px rgba(255, 0, 0, 0.4), inset 0 0 36px rgba(0, 128, 0, 0.5); }
+</style></head>
+<body>
+<h1>Paint heavy - one class repaints 600 shadowed, filtered tiles</h1>
+<button id="highlight" type="button">Highlight</button>
+<p id="out">off</p>
+<div id="stage"></div>
+<script type="module">
+  const stage = document.getElementById('stage');
+  const out = document.getElementById('out');
+  for (let i = 0; i < 600; i++) {
+    const tile = document.createElement('div');
+    tile.className = 'tile';
+    stage.append(tile);
+  }
+  document.getElementById('highlight').addEventListener('click', function highlightHandler() {
+    stage.classList.toggle('highlight');
+    out.textContent = stage.classList.contains('highlight') ? 'on' : 'off';
+  });
+</script>
+</body></html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="consent-click-cost; target=#consent-host >>> #consent-accept; phase=processing; consent banner inside an open shadow root of #consent-host; acceptConsentHandler burns 250 ms and removes the banner">
+<title>consent-shadow-dom</title>
+</head>
+<body>
+<h1>Consent in shadow DOM</h1>
+<button id="read-article" type="button">Read article</button>
+<p id="out">pending</p>
+<div id="consent-host"></div>
+<script type="module">
+  import { busy } from './busy.js';
+  const host = document.getElementById('consent-host');
+  const root = host.attachShadow({ mode: 'open' });
+  root.innerHTML = '<style>div { position: fixed; bottom: 0; left: 0; right: 0; background: #eee; padding: 16px; }</style>'
+    + '<div role="dialog" aria-label="Cookie consent"><p>We use cookies.</p><button id="consent-accept" type="button">Accept all</button></div>';
+  const out = document.getElementById('out');
+  root.getElementById('consent-accept').addEventListener('click', function acceptConsentHandler() {
+    busy(250);
+    host.remove();
+    out.textContent = 'accepted';
+  });
+  document.getElementById('read-article').addEventListener('click', function readArticleHandler() {
+    out.textContent = 'reading';
+  });
+</script>
+</body></html>

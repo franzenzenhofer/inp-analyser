@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="dom-size; target=#expand; phase=context; static page DOM of 1600+ elements with a nesting depth of 40, the handler expandHandler is cheap">
+<title>big-dom-static</title>
+</head>
+<body>
+<h1>Big static DOM - 1600 list items and a 40 level deep chain</h1>
+<button id="expand" type="button">Expand</button>
+<p id="out">collapsed</p>
+<div id="deep"></div>
+<ul id="catalogue"></ul>
+<script>
+  (function buildStaticDom() {
+    let parent = document.getElementById('deep');
+    for (let depth = 0; depth < 40; depth++) {
+      const child = document.createElement('div');
+      child.className = `level-${depth}`;
+      parent.append(child);
+      parent = child;
+    }
+    parent.textContent = 'depth 40';
+    const list = document.getElementById('catalogue');
+    for (let i = 0; i < 1600; i++) {
+      const item = document.createElement('li');
+      item.textContent = `Catalogue entry ${i}`;
+      list.append(item);
+    }
+  })();
+</script>
+<script type="module">
+  const out = document.getElementById('out');
+  document.getElementById('expand').addEventListener('click', function expandHandler() {
+    out.textContent = out.textContent === 'collapsed' ? 'expanded' : 'collapsed';
+  });
+</script>
+</body></html>

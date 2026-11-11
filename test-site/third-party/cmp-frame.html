@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>cmp frame</title>
+<style>body { margin: 0; font: 16px sans-serif; background: #fff; padding: 12px; }</style></head>
+<body>
+<p>We and our 812 partners use cookies.</p>
+<button id="consent-accept" type="button">Accept all</button>
+<button id="consent-reject" type="button">Reject all</button>
+<script>
+  (function installCmpFrame() {
+    const ACCEPT_COST_MS = 250;
+    function cmpSpin(ms) {
+      const end = performance.now() + ms;
+      while (performance.now() < end) { /* build TC string, write vendor consents */ }
+    }
+    function send(choice) {
+      parent.postMessage({ cmpChoice: choice, tcString: choice === 'accept' ? 'CPtestAcceptAll' : 'CPtestRejectAll' }, '*');
+    }
+    document.getElementById('consent-accept').addEventListener('click', function cmpAcceptHandler() {
+      cmpSpin(ACCEPT_COST_MS);
+      document.body.hidden = true;
+      send('accept');
+    });
+    document.getElementById('consent-reject').addEventListener('click', function cmpRejectHandler() {
+      send('reject');
+    });
+  })();
+</script>
+</body></html>

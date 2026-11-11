@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="inp-expect" content="missing-viewport; target=#open-menu; phase=input-delay; no meta viewport (980 px layout viewport, double-tap zoom enabled, mobile 300 ms tap delay case), openMenuHandler is cheap">
+<title>viewport-missing</title></head>
+<body>
+<h1>Viewport missing - no meta viewport</h1>
+<button id="open-menu" type="button">Open menu</button>
+<p id="out">closed</p>
+<script type="module">
+  const out = document.getElementById('out');
+  document.getElementById('open-menu').addEventListener('click', function openMenuHandler() {
+    out.textContent = out.textContent === 'closed' ? 'open' : 'closed';
+  });
+</script>
+</body></html>

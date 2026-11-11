@@ -1,0 +1,331 @@
+{
+  "tool": {
+    "name": "inp-ultimate-analyser",
+    "version": "0.1.0"
+  },
+  "url": "http://site.inp.test:56655/boot-long-tasks",
+  "generatedAt": "2026-10-09T09:43:51.582Z",
+  "seed": 42,
+  "chromeVersion": "Chrome/155.0.8059.39",
+  "condition": {
+    "device": "mobile",
+    "cpuRate": 4,
+    "thirdParty": {
+      "kind": "allow"
+    },
+    "consent": "none",
+    "cache": "cold"
+  },
+  "issues": [
+    {
+      "ruleId": "input-delay/long-task",
+      "title": "Input waited for a first-party long task",
+      "phase": "input-delay",
+      "specUrl": "https://web.dev/articles/optimize-input-delay",
+      "severity": "needs-improvement",
+      "certainty": "confirmed",
+      "scenarioIds": [
+        "boot@1207:t-9feaf9fa79"
+      ],
+      "targetSelector": "button#menu-toggle",
+      "medianMs": 349.321,
+      "medianCi": {
+        "low": 346.043,
+        "high": 360.019
+      },
+      "reproducibility": {
+        "fired": 6,
+        "runs": 6,
+        "interval": {
+          "low": 0.6096657120978348,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "input delay",
+          "value": "349 ms",
+          "ms": 348.971
+        },
+        {
+          "label": "long task 401 ms (inp.test)",
+          "value": "http://site.inp.test:56655/busy.js",
+          "ms": 400.686,
+          "url": "http://site.inp.test:56655/busy.js"
+        }
+      ]
+    }
+  ],
+  "comparisons": [],
+  "scenarios": [
+    {
+      "scenario": {
+        "id": "boot@620:t-9feaf9fa79",
+        "targetId": "t-9feaf9fa79",
+        "phase": "boot",
+        "offsetMs": 620,
+        "tapPoint": {
+          "x": 32.6796875,
+          "y": 164.375
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-9feaf9fa79",
+        "selector": "button#menu-toggle",
+        "label": "Menu",
+        "kind": "button",
+        "rect": {
+          "x": 8,
+          "y": 153.875,
+          "width": 49.359375,
+          "height": 21
+        },
+        "aboveFold": true,
+        "handlerSignature": "button[type=button]|http://site.inp.test:56655/boot-long-tasks:26:94",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "boot@620:t-9feaf9fa79",
+        "runs": 3,
+        "measured": 3,
+        "values": [
+          18.633,
+          10.479,
+          13.572
+        ],
+        "outcomes": {
+          "measured": 3
+        },
+        "median": 13.572,
+        "min": 10.479,
+        "max": 18.633
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "boot@1207:t-9feaf9fa79",
+        "targetId": "t-9feaf9fa79",
+        "phase": "boot",
+        "offsetMs": 1207,
+        "tapPoint": {
+          "x": 32.6796875,
+          "y": 164.375
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-9feaf9fa79",
+        "selector": "button#menu-toggle",
+        "label": "Menu",
+        "kind": "button",
+        "rect": {
+          "x": 8,
+          "y": 153.875,
+          "width": 49.359375,
+          "height": 21
+        },
+        "aboveFold": true,
+        "handlerSignature": "button[type=button]|http://site.inp.test:56655/boot-long-tasks:26:94",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "boot@1207:t-9feaf9fa79",
+        "runs": 16,
+        "measured": 16,
+        "values": [
+          352.781,
+          344.474,
+          341.478,
+          350.917,
+          342.453,
+          348.842,
+          354.878,
+          362.45,
+          367.658,
+          363.168,
+          373.133,
+          357.463,
+          353.502,
+          354.769,
+          349.046,
+          365.443
+        ],
+        "outcomes": {
+          "measured": 16
+        },
+        "median": 354.1355,
+        "min": 341.478,
+        "max": 373.133,
+        "medianCi": {
+          "estimate": 354.1355,
+          "low": 348.842,
+          "high": 363.168,
+          "lowRank": 4,
+          "highRank": 13,
+          "achievedConfidence": 0.9787292480468764
+        }
+      },
+      "deepDived": true
+    },
+    {
+      "scenario": {
+        "id": "idle:t-9feaf9fa79",
+        "targetId": "t-9feaf9fa79",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-9feaf9fa79",
+        "selector": "button#menu-toggle",
+        "label": "Menu",
+        "kind": "button",
+        "rect": {
+          "x": 8,
+          "y": 153.875,
+          "width": 49.359375,
+          "height": 21
+        },
+        "aboveFold": true,
+        "handlerSignature": "button[type=button]|http://site.inp.test:56655/boot-long-tasks:26:94",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-9feaf9fa79",
+        "runs": 3,
+        "measured": 3,
+        "values": [
+          9.2,
+          13.289,
+          8.865
+        ],
+        "outcomes": {
+          "measured": 3
+        },
+        "median": 9.2,
+        "min": 8.865,
+        "max": 13.289
+      },
+      "deepDived": false
+    }
+  ],
+  "hazard": {
+    "fcpMs": 520,
+    "longTasks": [
+      {
+        "startTime": 182.811,
+        "durationMs": 301.16,
+        "topScriptUrl": "http://site.inp.test:56655/boot-long-tasks",
+        "entity": "inp.test",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 653.913,
+        "durationMs": 502.081,
+        "topScriptUrl": "http://site.inp.test:56655/busy.js",
+        "entity": "inp.test",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 1157.159,
+        "durationMs": 400.383,
+        "topScriptUrl": "http://site.inp.test:56655/busy.js",
+        "entity": "inp.test",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 1599.496,
+        "durationMs": 600.35,
+        "topScriptUrl": "http://site.inp.test:56655/busy.js",
+        "entity": "inp.test",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 2499.453,
+        "durationMs": 300.112,
+        "topScriptUrl": "http://site.inp.test:56655/busy.js",
+        "entity": "inp.test",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 3299.177,
+        "durationMs": 449.997,
+        "topScriptUrl": "http://site.inp.test:56655/busy.js",
+        "entity": "inp.test",
+        "isFirstParty": true
+      }
+    ],
+    "peakHazardMs": 1157.159,
+    "peakBusyMs": 958.046
+  },
+  "targets": {
+    "measured": [
+      {
+        "id": "t-9feaf9fa79",
+        "selector": "button#menu-toggle",
+        "label": "Menu",
+        "kind": "button",
+        "rect": {
+          "x": 8,
+          "y": 153.875,
+          "width": 49.359375,
+          "height": 21
+        },
+        "aboveFold": true,
+        "handlerSignature": "button[type=button]|http://site.inp.test:56655/boot-long-tasks:26:94",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      }
+    ],
+    "excluded": [],
+    "globalListeners": []
+  },
+  "run": {
+    "runs": 22,
+    "excludedRuns": 0,
+    "loads": 26,
+    "sentinelReferenceMs": [
+      159.165,
+      129.053,
+      128.548,
+      130.146,
+      128.592,
+      129.208
+    ]
+  },
+  "limitations": [
+    "Lab values are \"lab @ CPU 4x, mobile emulation, headless Chrome Chrome/155.0.8059.39\" on one machine - not INP. INP is the CrUX field p75 above.",
+    "CrUX INP is the 75th percentile over 28 days of real Chrome users' page loads, each load's INP being its worst interaction minus one per 50 (https://developers.google.com/speed/docs/insights/v5/about, https://web.dev/articles/inp#what-is-inp).",
+    "Only interactions the tool discovered and could trigger safely were measured; logged-in states, real form input, ads and cross-origin iframes were not.",
+    "First-party mutating requests were blocked and cross-document navigations answered with 204, so work that depends on those responses is not measured.",
+    "GPU/raster work is not CPU-throttled by Chrome's CPU throttling; presentation delay on real mid-tier phones can be larger."
+  ]
+}

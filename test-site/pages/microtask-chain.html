@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="microtask-chain; target=#recalculate; phase=processing; resolveChainHandler builds a chain of 200 promise reactions (chainStep, 1 ms each); all microtasks run before the next paint, 200 ms total">
+<title>microtask-chain</title>
+</head>
+<body>
+<h1>Microtask chain - 200 promise steps of 1 ms</h1>
+<button id="recalculate" type="button">Recalculate</button>
+<p id="out">idle</p>
+<script type="module">
+  import { busy } from './busy.js';
+  const STEPS = 200;
+  const out = document.getElementById('out');
+  document.getElementById('recalculate').addEventListener('click', function resolveChainHandler() {
+    let chain = Promise.resolve(0);
+    for (let i = 0; i < STEPS; i++) {
+      chain = chain.then(function chainStep(n) {
+        busy(1);
+        return n + 1;
+      });
+    }
+    chain.then(function chainDone(n) {
+      out.textContent = `${n} steps`;
+    });
+  });
+</script>
+</body></html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="sentinel; target=#sentinel; phase=processing; fixed 120 ms handler sentinelHandler, the machine-noise yardstick">
+<title>sentinel</title></head>
+<body>
+<h1>Sentinel - fixed 120 ms handler, the machine-noise yardstick</h1>
+<button id="sentinel" type="button">Sentinel</button>
+<p id="out">0</p>
+<script type="module">
+  import { busy } from './busy.js';
+  const out = document.getElementById('out');
+  document.getElementById('sentinel').addEventListener('click', function sentinelHandler() {
+    busy(120);
+    out.textContent = String(Number(out.textContent) + 1);
+  });
+</script>
+</body></html>

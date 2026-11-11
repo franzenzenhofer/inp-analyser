@@ -1,0 +1,9 @@
+{
+  "entities": [
+    {
+      "name": "Test Tracker Inc.",
+      "category": "analytics",
+      "domains": ["cdn.thirdparty.test"]
+    }
+  ]
+}

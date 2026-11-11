@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="none; target=#pages; phase=context; index of every test page, one INP issue per page">
+<title>INP Ultimate Analyser test site</title>
+<style>body { font: 16px/1.5 sans-serif; margin: 24px; }</style></head>
+<body>
+<h1>INP Ultimate Analyser test site</h1>
+<p>Each page reproduces exactly one INP issue; its expected finding is in <code>meta[name=inp-expect]</code>.</p>
+<ol id="pages">
+  <li><a href="/control">control</a> - no issue, every detector stays silent</li>
+  <li><a href="/sentinel">sentinel</a> - fixed 120 ms handler, machine-noise yardstick</li>
+  <li><a href="/slow-handler">slow-handler</a> - named 250 ms click handler</li>
+  <li><a href="/forced-reflow">forced-reflow</a> - write style, read offsetHeight in a loop</li>
+  <li><a href="/layout-thrash">layout-thrash</a> - interleaved read/write over 300 elements</li>
+  <li><a href="/style-recalc">style-recalc</a> - body class restyles 5000 items</li>
+  <li><a href="/large-layout">large-layout</a> - width change re-lays out 3000 flex items</li>
+  <li><a href="/dom-insert-2000">dom-insert-2000</a> - click inserts 2000 list items</li>
+  <li><a href="/big-dom-static">big-dom-static</a> - 1600+ elements, depth 40, cheap handler</li>
+  <li><a href="/raf-after-handler">raf-after-handler</a> - cheap handler, 200 ms rAF callback</li>
+  <li><a href="/paint-heavy">paint-heavy</a> - repaint of 600 shadowed, filtered tiles</li>
+  <li><a href="/noncomposited-spinner">noncomposited-spinner</a> - 150 ms work plus a left/width spinner</li>
+  <li><a href="/boot-long-tasks">boot-long-tasks</a> - 300-600 ms long tasks in the first 4 s</li>
+  <li><a href="/late-hydration">late-hydration</a> - listener attached after 3 s (dead click)</li>
+  <li><a href="/layout-shift-target">layout-shift-target</a> - target moves 200 px down after 1.5 s</li>
+  <li><a href="/3p-global-listener">3p-global-listener</a> - 3P document click listener, 150 ms</li>
+  <li><a href="/3p-post-consent-kickoff">3p-post-consent-kickoff</a> - consent accept starts 3 s of 400 ms 3P tasks</li>
+  <li><a href="/3p-wrapper">3p-wrapper</a> - 3P wraps addEventListener, 1P handler 200 ms</li>
+  <li><a href="/3p-required-by-1p">3p-required-by-1p</a> - 1P handler calls a 3P function (confounded A/B)</li>
+  <li><a href="/consent-shadow-dom">consent-shadow-dom</a> - consent banner in an open shadow root, 250 ms</li>
+  <li><a href="/consent-iframe">consent-iframe</a> - consent banner in a 3P iframe plus TCF stub</li>
+  <li><a href="/modal-and-menu">modal-and-menu</a> - overlays that stay open until Escape</li>
+  <li><a href="/navigations">navigations</a> - pushState plus five navigations that must never happen</li>
+  <li><a href="/alert-dialog">alert-dialog</a> - handler calls alert()</li>
+  <li><a href="/oopif-heavy">oopif-heavy</a> - cross-origin iframe burning CPU</li>
+  <li><a href="/bot-challenge">bot-challenge</a> - 403 bot challenge</li>
+  <li><a href="/ab-known-delta">ab-known-delta</a> - 3P adds exactly 200 ms</li>
+  <li><a href="/viewport-missing">viewport-missing</a> - no meta viewport (300 ms tap delay case)</li>
+  <li><a href="/timer-storm">timer-storm</a> - 40 ms timer every 50 ms</li>
+  <li><a href="/microtask-chain">microtask-chain</a> - 200 promise steps of 1 ms</li>
+  <li><a href="/html-parse-in-handler">html-parse-in-handler</a> - 2 MB innerHTML in a handler</li>
+  <li><a href="/sync-xhr">sync-xhr</a> - synchronous XHR waiting 300 ms</li>
+  <li><a href="/discovery-repeated">discovery-repeated</a> - target discovery: shared handlers, hidden and dangerous controls</li>
+</ol>
+</body></html>

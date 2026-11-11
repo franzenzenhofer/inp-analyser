@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="discovery; target=#apply; phase=context; 12 product cards whose .fav-N buttons share one handler (toggleFavouriteHandler) collapse into one target; hidden, disabled, transparent, invisible and covered controls are never candidates; div.card-open is found only through cursor:pointer; a role=tab, an onclick attribute element and a dangerous German buy button are classified">
+<title>discovery-repeated</title>
+<style>
+  .card { display: inline-block; width: 140px; margin: 4px; border: 1px solid #ccc; padding: 4px; }
+  .card-open { cursor: pointer; padding: 4px; background: #eef; }
+  .covered-wrap { position: relative; display: inline-block; }
+  .cover { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.9); }
+</style></head>
+<body>
+<h1>Discovery - repeated cards and controls that must be skipped</h1>
+<button id="apply" type="button">Apply</button>
+<div role="tab" id="tab-reviews" tabindex="0">Reviews</div>
+<span id="inline-handler" onclick="document.getElementById('out').textContent = 'inline'">Inline handler</span>
+<button id="buy-now" type="button">Jetzt kaufen</button>
+<button id="hidden-display" type="button" style="display: none">Hidden by display</button>
+<button id="hidden-visibility" type="button" style="visibility: hidden">Hidden by visibility</button>
+<button id="hidden-opacity" type="button" style="opacity: 0">Transparent</button>
+<button id="disabled" type="button" disabled>Disabled</button>
+<button id="aria-disabled" type="button" aria-disabled="true">Aria disabled</button>
+<input id="hidden-input" type="hidden" value="x">
+<span class="covered-wrap"><button id="covered" type="button">Covered</button><span class="cover"></span></span>
+<p id="out">idle</p>
+<section id="cards"></section>
+<script type="module">
+  const CARDS = 12;
+  const out = document.getElementById('out');
+  const cards = document.getElementById('cards');
+  function toggleFavouriteHandler(event) {
+    event.currentTarget.classList.toggle('active');
+    out.textContent = 'favourite toggled';
+  }
+  function openCardHandler() {
+    out.textContent = 'card opened';
+  }
+  for (let i = 1; i <= CARDS; i++) {
+    const card = document.createElement('article');
+    card.className = `card card-${i}`;
+    card.innerHTML = `<div class="card-open">Product ${i}</div><button class="fav fav-${i}" type="button">Favourite</button>`;
+    card.querySelector('button').addEventListener('click', toggleFavouriteHandler);
+    card.querySelector('.card-open').addEventListener('click', openCardHandler);
+    cards.append(card);
+  }
+  document.getElementById('apply').addEventListener('click', function applyHandler() {
+    out.textContent = 'applied';
+  });
+  document.getElementById('tab-reviews').addEventListener('click', function reviewsTabHandler() {
+    out.textContent = 'reviews';
+  });
+</script>
+</body></html>

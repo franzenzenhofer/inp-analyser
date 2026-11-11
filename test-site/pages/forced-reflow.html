@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="forced-reflow; target=#resize-panel; phase=processing; forcedReflowHandler writes panel width then reads offsetHeight in a loop for 80 ms over 2000 wrapping cells (each read forces a full layout, forced layouts >=30 ms)">
+<title>forced-reflow</title>
+<style>#panel { width: 320px; } .cell { display: inline-block; margin: 2px; }</style></head>
+<body>
+<h1>Forced reflow - write style, read layout, repeat</h1>
+<button id="resize-panel" type="button">Resize panel</button>
+<p id="out">0</p>
+<div id="panel"></div>
+<script type="module">
+  const panel = document.getElementById('panel');
+  const out = document.getElementById('out');
+  const LOOP_MS = 80;
+  for (let i = 0; i < 2000; i++) {
+    const cell = document.createElement('span');
+    cell.className = 'cell';
+    cell.textContent = `cell ${i} with some wrapping words`;
+    panel.append(cell);
+  }
+  document.getElementById('resize-panel').addEventListener('click', function forcedReflowHandler() {
+    const end = performance.now() + LOOP_MS;
+    let reads = 0;
+    let height = 0;
+    while (performance.now() < end) {
+      panel.style.width = `${300 + (reads % 2) * 40}px`;
+      height = panel.offsetHeight;
+      reads++;
+    }
+    out.textContent = `${reads} forced layouts, height ${height}`;
+  });
+</script>
+</body></html>

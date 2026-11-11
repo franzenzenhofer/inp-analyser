@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>heavy ad frame</title>
+<style>body { margin: 0; background: #222; color: #fff; font: 16px sans-serif; } #ad-box { position: relative; width: 40px; height: 40px; background: #f80; }</style></head>
+<body>
+<div id="ad-box"></div>
+<p id="ad-ticks">0</p>
+<script>
+  (function runHeavyAd() {
+    const WORK_MS = 40;
+    const PERIOD_MS = 50;
+    const box = document.getElementById('ad-box');
+    let ticks = 0;
+    setInterval(function adHeavyWork() {
+      const end = performance.now() + WORK_MS;
+      while (performance.now() < end) { /* creative computation */ }
+      ticks++;
+      document.getElementById('ad-ticks').textContent = String(ticks);
+    }, PERIOD_MS);
+    requestAnimationFrame(function adAnimate(now) {
+      box.style.left = `${(now / 5) % 200}px`;
+      requestAnimationFrame(adAnimate);
+    });
+  })();
+</script>
+</body></html>

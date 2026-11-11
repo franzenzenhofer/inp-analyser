@@ -1,0 +1,77 @@
+{
+  "name": "inp-analyser",
+  "version": "0.1.0",
+  "description": "Find out WHY a page has poor Interaction to Next Paint: element, phase, script URL:line:function, third-party owner, milliseconds and certainty over many runs. CLI + agent skill.",
+  "keywords": [
+    "inp",
+    "interaction-to-next-paint",
+    "core-web-vitals",
+    "web-performance",
+    "chrome-devtools",
+    "lighthouse",
+    "crux",
+    "agent-skill",
+    "claude-code",
+    "cli"
+  ],
+  "homepage": "https://franzenzenhofer.github.io/inp-analyser/",
+  "bugs": {
+    "url": "https://github.com/franzenzenhofer/inp-analyser/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franzenzenhofer/inp-analyser.git"
+  },
+  "license": "MIT",
+  "author": "Franz Enzenhofer",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=26"
+  },
+  "bin": {
+    "inp": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --type-aware --deny-warnings",
+    "test": "vitest run --project unit --project e2e",
+    "test:unit": "vitest run --project unit",
+    "test:e2e": "vitest run --project e2e",
+    "build": "tsc -p tsconfig.build.json",
+    "chrome:install": "tsx scripts/install-chrome.ts",
+    "test-site": "tsx test-site/serve.ts",
+    "inp": "tsx src/cli.ts",
+    "test:field": "vitest run --project field"
+  },
+  "dependencies": {
+    "@paulirish/trace_engine": "0.0.66",
+    "@puppeteer/browsers": "3.2.4",
+    "commander": "15.0.0",
+    "picocolors": "1.1.1",
+    "puppeteer-core": "25.13.0",
+    "third-party-web": "0.30.0",
+    "web-vitals": "6.2.3",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.4",
+    "oxlint": "1.87.0",
+    "oxlint-tsgolint": "7.0.2003",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vitest": "5.0.3"
+  },
+  "overrides": {
+    "third-party-web": "0.30.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

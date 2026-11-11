@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="state-reset; target=#burger; phase=context; a newsletter modal opens 1 s after load and the burger menu stays open after a click; both are full-screen overlays that block clicks on #read-more until Escape (closeOverlaysOnEscape) closes them">
+<title>modal-and-menu</title>
+<style>
+  .overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); display: none; z-index: 10; }
+  .overlay.open { display: block; }
+  .overlay > div { background: #fff; margin: 15vh auto; width: 80%; padding: 16px; }
+  #burger { position: relative; z-index: 20; }
+</style></head>
+<body>
+<button id="burger" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<h1>Modal and menu - overlays that stay open</h1>
+<button id="read-more" type="button">Read more</button>
+<p id="out">idle</p>
+<nav id="menu" class="overlay"><div><a href="#a">Section A</a> <a href="#b">Section B</a></div></nav>
+<div id="newsletter-modal" class="overlay" role="dialog" aria-modal="true"><div>Subscribe to our newsletter <button id="modal-close" type="button">Close</button></div></div>
+<script type="module">
+  const MODAL_AFTER_MS = 1000;
+  const menu = document.getElementById('menu');
+  const modal = document.getElementById('newsletter-modal');
+  const burger = document.getElementById('burger');
+  const out = document.getElementById('out');
+  window.addEventListener('load', function scheduleModal() {
+    setTimeout(function openNewsletterModal() {
+      modal.classList.add('open');
+    }, MODAL_AFTER_MS);
+  });
+  burger.addEventListener('click', function toggleMenuHandler() {
+    burger.setAttribute('aria-expanded', String(menu.classList.toggle('open')));
+  });
+  document.getElementById('modal-close').addEventListener('click', function closeModalHandler() {
+    modal.classList.remove('open');
+  });
+  document.getElementById('read-more').addEventListener('click', function readMoreHandler() {
+    out.textContent = 'expanded';
+  });
+  document.addEventListener('keydown', function closeOverlaysOnEscape(event) {
+    if (event.key !== 'Escape') return;
+    menu.classList.remove('open');
+    modal.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  });
+</script>
+</body></html>

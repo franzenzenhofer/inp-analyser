@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="large-layout; target=#toggle-sidebar; phase=presentation; toggleSidebarHandler changes the width of a flex container with 3000 flex children (title, 880 characters of wrapping text, meta each), layout >=40 ms and >100 dirty objects">
+<title>large-layout</title>
+<style>
+  #grid { display: flex; flex-wrap: wrap; width: 100%; }
+  #grid.narrow { width: 61%; }
+  .card { flex: 1 1 140px; padding: 2px; display: flex; flex-direction: column; }
+  .card p { margin: 2px 0; }
+</style></head>
+<body>
+<h1>Large layout - one width change re-lays out 3000 flex items</h1>
+<button id="toggle-sidebar" type="button">Toggle sidebar</button>
+<p id="out">wide</p>
+<div id="grid"></div>
+<script type="module">
+  const CARDS = 3000;
+  const TEXT = 'Flexible card text that wraps across several lines when the container width changes. '.repeat(10);
+  const grid = document.getElementById('grid');
+  const out = document.getElementById('out');
+  const fragment = document.createDocumentFragment();
+  for (let i = 0; i < CARDS; i++) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const title = document.createElement('strong');
+    title.textContent = `Card ${i}`;
+    const body = document.createElement('p');
+    body.textContent = TEXT;
+    const meta = document.createElement('small');
+    meta.textContent = `updated ${i % 60} minutes ago`;
+    card.append(title, body, meta);
+    fragment.append(card);
+  }
+  grid.append(fragment);
+  document.getElementById('toggle-sidebar').addEventListener('click', function toggleSidebarHandler() {
+    grid.classList.toggle('narrow');
+    out.textContent = grid.classList.contains('narrow') ? 'narrow' : 'wide';
+  });
+</script>
+</body></html>

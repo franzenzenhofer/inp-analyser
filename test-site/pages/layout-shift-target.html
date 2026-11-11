@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="target-shifted; target=#newsletter-signup; phase=context; a 200 px banner is inserted above the target 1.5 s after load (html[data-shifted]); coordinate taps scheduled before that hit the wrong spot, signupHandler is cheap">
+<title>layout-shift-target</title>
+<style>#late-banner { height: 200px; background: #fde; margin: 0; }</style></head>
+<body>
+<h1>Layout shift - the target moves 200 px down after 1.5 s</h1>
+<div id="slot"></div>
+<button id="newsletter-signup" type="button">Sign up for updates</button>
+<p id="out">idle</p>
+<script type="module">
+  const SHIFT_AFTER_MS = 1500;
+  const out = document.getElementById('out');
+  window.addEventListener('load', function scheduleShift() {
+    setTimeout(function insertLateBanner() {
+      const banner = document.createElement('p');
+      banner.id = 'late-banner';
+      banner.textContent = 'Late promo banner';
+      document.getElementById('slot').append(banner);
+      document.documentElement.dataset.shifted = 'true';
+    }, SHIFT_AFTER_MS);
+  });
+  document.getElementById('newsletter-signup').addEventListener('click', function signupHandler() {
+    out.textContent = 'form shown';
+  });
+</script>
+</body></html>

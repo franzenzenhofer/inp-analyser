@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="none; target=#toggle; phase=context; control page, every interaction is cheap, every detector must stay silent">
+<title>control</title></head>
+<body>
+<h1>Control page - every interaction is cheap</h1>
+<button id="toggle" type="button">Toggle</button>
+<p id="out">off</p>
+<script type="module">
+  const out = document.getElementById('out');
+  document.getElementById('toggle').addEventListener('click', function toggleText() {
+    out.textContent = out.textContent === 'off' ? 'on' : 'off';
+  });
+</script>
+</body></html>

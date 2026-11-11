@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="3p-causal-delta; target=#apply-sort; phase=processing; cdn.thirdparty.test/known-delta.js adds exactly 200 ms per click (knownDeltaListener on document); first-party applySortHandler costs 20 ms, so allowed vs blocked differ by 200 ms">
+<title>ab-known-delta</title>
+</head>
+<body>
+<h1>A/B known delta - the 3P adds exactly 200 ms</h1>
+<button id="apply-sort" type="button">Sort by price</button>
+<p id="out">relevance</p>
+<script type="module">
+  import { busy } from './busy.js';
+  import { loadThirdPartyScript } from './third-party.js';
+  const out = document.getElementById('out');
+  document.getElementById('apply-sort').addEventListener('click', function applySortHandler() {
+    busy(20);
+    out.textContent = out.textContent === 'relevance' ? 'price' : 'relevance';
+  });
+  await loadThirdPartyScript('/known-delta.js');
+  document.documentElement.dataset.ready = 'true';
+</script>
+</body></html>

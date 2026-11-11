@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="slow-handler; target=#show-details; phase=processing; named function expensiveDetailsHandler burns 250 ms">
+<title>slow-handler</title></head>
+<body>
+<h1>Slow handler - click handler burns 250 ms</h1>
+<button id="show-details" type="button">Show details</button>
+<p id="out">closed</p>
+<script type="module">
+  import { busy } from './busy.js';
+  const out = document.getElementById('out');
+  document.getElementById('show-details').addEventListener('click', function expensiveDetailsHandler() {
+    busy(250);
+    out.textContent = 'open';
+  });
+</script>
+</body></html>

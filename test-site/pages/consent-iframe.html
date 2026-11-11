@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="consent-click-cost; target=#consent-frame >>> #consent-accept; phase=processing; consent banner in a cross-origin iframe from cdn.thirdparty.test (cmp-frame.html, cmpAcceptHandler 250 ms) removed 1.5 s after the choice, plus an IAB TCF v2 __tcfapi stub with __tcfapiLocator frame in the top document">
+<title>consent-iframe</title>
+<script>
+  (function installTcfStub() {
+    const FADE_OUT_MS = 1500;
+    const queue = [];
+    let tcData = null;
+    const locator = document.createElement('iframe');
+    locator.name = '__tcfapiLocator';
+    locator.style.display = 'none';
+    document.documentElement.append(locator);
+    window.__tcfapi = function tcfApiStub(command, version, callback) {
+      if (command === 'ping') return callback({ gdprApplies: true, cmpLoaded: tcData !== null, cmpStatus: tcData === null ? 'stub' : 'loaded' }, true);
+      if (tcData !== null) return callback(tcData, true);
+      queue.push(callback);
+    };
+    window.addEventListener('message', function tcfConsentMessage(event) {
+      if (event.data === null || typeof event.data !== 'object' || !('cmpChoice' in event.data)) return;
+      tcData = { tcString: event.data.tcString, eventStatus: 'useractioncomplete', gdprApplies: true };
+      setTimeout(function removeConsentFrame() {
+        document.getElementById('consent-frame').remove();
+      }, FADE_OUT_MS);
+      document.documentElement.dataset.consent = event.data.cmpChoice;
+      for (const callback of queue.splice(0)) callback(tcData, true);
+    });
+  })();
+</script>
+<style>#consent-frame { position: fixed; bottom: 0; left: 0; width: 100%; height: 140px; border: 0; z-index: 10; }</style></head>
+<body>
+<h1>Consent in a cross-origin iframe with a TCF stub</h1>
+<button id="read-article" type="button">Read article</button>
+<p id="out">pending</p>
+<script type="module">
+  import { thirdPartyUrl } from './third-party.js';
+  const frame = document.createElement('iframe');
+  frame.id = 'consent-frame';
+  frame.title = 'Cookie consent';
+  frame.src = thirdPartyUrl('/cmp-frame.html');
+  document.body.append(frame);
+  const out = document.getElementById('out');
+  window.__tcfapi('addEventListener', 2, function onTcData(data) {
+    out.textContent = data.tcString;
+  });
+  document.getElementById('read-article').addEventListener('click', function readArticleHandler() {
+    out.textContent = 'reading';
+  });
+</script>
+</body></html>

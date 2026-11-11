@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="rum-wrapper-misattribution; target=#save-settings; phase=processing; cdn.thirdparty.test/rum-wrapper.js wraps EventTarget.prototype.addEventListener before first-party code registers saveSettingsHandler (200 ms, first party); the listener runs inside rumWrappedListener, the cost must not be blamed on the 3P">
+<title>3p-wrapper</title>
+</head>
+<body>
+<h1>3P wrapper - a RUM agent wraps addEventListener</h1>
+<button id="save-settings" type="button">Save settings</button>
+<p id="out">unsaved</p>
+<script type="module">
+  import { busy } from './busy.js';
+  import { loadThirdPartyScript } from './third-party.js';
+  await loadThirdPartyScript('/rum-wrapper.js');
+  const out = document.getElementById('out');
+  document.getElementById('save-settings').addEventListener('click', function saveSettingsHandler() {
+    busy(200);
+    out.textContent = 'saved';
+  });
+  document.documentElement.dataset.ready = 'true';
+</script>
+</body></html>

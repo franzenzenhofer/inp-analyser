@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="large-dom-insertion; target=#load-more; phase=presentation; loadMoreHandler inserts 2000 list items (4000 elements) in one interaction">
+<title>dom-insert-2000</title>
+</head>
+<body>
+<h1>DOM insertion - one click inserts 2000 list items</h1>
+<button id="load-more" type="button">Load more</button>
+<p id="out">0</p>
+<ul id="results"></ul>
+<script type="module">
+  const ITEMS = 2000;
+  const list = document.getElementById('results');
+  const out = document.getElementById('out');
+  document.getElementById('load-more').addEventListener('click', function loadMoreHandler() {
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < ITEMS; i++) {
+      const item = document.createElement('li');
+      const label = document.createElement('strong');
+      label.textContent = `Result ${list.children.length + i}`;
+      item.append(label, ' - a short description of this search result');
+      fragment.append(item);
+    }
+    list.append(fragment);
+    out.textContent = String(list.children.length);
+  });
+</script>
+</body></html>

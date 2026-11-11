@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="3p-global-listener; target=#apply-filter; phase=processing; cdn.thirdparty.test/tag-manager.js registers document click (tagManagerClickListener, 150 ms) and capture pointerdown listeners; first-party applyFilterHandler is cheap">
+<title>3p-global-listener</title>
+</head>
+<body>
+<h1>3P global listener - a tag manager listens to every click</h1>
+<button id="apply-filter" type="button">Apply filter</button>
+<p id="out">all</p>
+<script type="module">
+  import { loadThirdPartyScript } from './third-party.js';
+  const out = document.getElementById('out');
+  document.getElementById('apply-filter').addEventListener('click', function applyFilterHandler() {
+    out.textContent = out.textContent === 'all' ? 'filtered' : 'all';
+  });
+  await loadThirdPartyScript('/tag-manager.js');
+  document.documentElement.dataset.ready = 'true';
+</script>
+</body></html>

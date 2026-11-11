@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="raf-after-handler; target=#animate; phase=presentation; scheduleAnimationHandler is cheap but schedules expensiveFrameCallback via requestAnimationFrame that burns 200 ms before the next paint">
+<title>raf-after-handler</title>
+</head>
+<body>
+<h1>rAF after handler - the cost hides in the next animation frame</h1>
+<button id="animate" type="button">Animate</button>
+<p id="out">idle</p>
+<script type="module">
+  import { busy } from './busy.js';
+  const out = document.getElementById('out');
+  document.getElementById('animate').addEventListener('click', function scheduleAnimationHandler() {
+    out.textContent = 'scheduled';
+    requestAnimationFrame(function expensiveFrameCallback() {
+      busy(200);
+      out.textContent = 'animated';
+    });
+  });
+</script>
+</body></html>

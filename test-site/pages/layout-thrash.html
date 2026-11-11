@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="layout-thrashing; target=#grow-bars; phase=processing; layoutThrashHandler interleaves offsetWidth reads and style.width writes over 300 bars (one forced layout per element) in passes for 60 ms">
+<title>layout-thrash</title>
+<style>.bar { height: 2px; background: #36c; margin: 1px 0; width: 50px; }</style></head>
+<body>
+<h1>Layout thrashing - read, write, read, write over 300 elements</h1>
+<button id="grow-bars" type="button">Grow bars</button>
+<p id="out">0</p>
+<div id="bars"></div>
+<script type="module">
+  const container = document.getElementById('bars');
+  const out = document.getElementById('out');
+  const PASS_BUDGET_MS = 60;
+  for (let i = 0; i < 300; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    container.append(bar);
+  }
+  const bars = [...container.children];
+  document.getElementById('grow-bars').addEventListener('click', function layoutThrashHandler() {
+    const end = performance.now() + PASS_BUDGET_MS;
+    let passes = 0;
+    do {
+      for (const bar of bars) {
+        const width = bar.offsetWidth;
+        bar.style.width = `${(width % 200) + 10}px`;
+      }
+      passes++;
+    } while (performance.now() < end);
+    out.textContent = `${passes} passes x ${bars.length} interleaved read/write`;
+  });
+</script>
+</body></html>

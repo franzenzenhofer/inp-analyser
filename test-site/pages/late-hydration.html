@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="dead-click; target=#add-item; phase=input-delay; button is visible and enabled from first paint but its listener addItemHandler is attached only 3 s after load (html[data-hydrated]); boot clicks do nothing, idle clicks mutate #out">
+<title>late-hydration</title>
+</head>
+<body>
+<h1>Late hydration - the button works only after 3 s</h1>
+<button id="add-item" type="button">Add item</button>
+<p id="out">0</p>
+<script type="module">
+  const HYDRATE_AFTER_MS = 3000;
+  const out = document.getElementById('out');
+  window.addEventListener('load', function scheduleHydration() {
+    setTimeout(function hydrate() {
+      document.getElementById('add-item').addEventListener('click', function addItemHandler() {
+        out.textContent = String(Number(out.textContent) + 1);
+      });
+      document.documentElement.dataset.hydrated = 'true';
+    }, HYDRATE_AFTER_MS);
+  });
+</script>
+</body></html>

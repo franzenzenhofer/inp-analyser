@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="sync-dialog; target=#save-draft; phase=processing; saveDraftHandler calls alert() (modal dialog pauses the main thread until dismissed, LoAF pauseDuration)">
+<title>alert-dialog</title>
+</head>
+<body>
+<h1>Alert dialog - the handler blocks on alert()</h1>
+<button id="save-draft" type="button">Save draft</button>
+<p id="out">unsaved</p>
+<script type="module">
+  const out = document.getElementById('out');
+  document.getElementById('save-draft').addEventListener('click', function saveDraftHandler() {
+    alert('Draft saved');
+    out.textContent = 'saved';
+  });
+</script>
+</body></html>

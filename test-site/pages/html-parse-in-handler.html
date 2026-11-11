@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="html-parse-in-handler; target=#render-report; phase=processing; renderReportHandler assigns a prebuilt 2 MB HTML string to innerHTML of a hidden container (parse cost inside the handler, no layout)">
+<title>html-parse-in-handler</title>
+</head>
+<body>
+<h1>HTML parse in handler - 2 MB innerHTML</h1>
+<button id="render-report" type="button">Render report</button>
+<p id="out">empty</p>
+<div id="report" hidden></div>
+<script type="module">
+  const TARGET_BYTES = 2 * 1024 * 1024;
+  const rows = [];
+  let size = 0;
+  for (let i = 0; size < TARGET_BYTES; i++) {
+    const row = `<div class="row"><span class="id">${i}</span><em>report row</em><a href="#r${i}">open</a></div>`;
+    rows.push(row);
+    size += row.length;
+  }
+  const html = rows.join('');
+  const report = document.getElementById('report');
+  const out = document.getElementById('out');
+  document.getElementById('render-report').addEventListener('click', function renderReportHandler() {
+    report.innerHTML = html;
+    out.textContent = `${html.length} chars, ${report.childElementCount} rows`;
+  });
+</script>
+</body></html>

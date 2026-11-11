@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="large-style-recalc; target=#theme-toggle; phase=presentation; switchThemeHandler only toggles a class on body; 5000 items (10000 elements) match 400 descendant rules, recalc >=40 ms and >300 elements, no layout change">
+<title>style-recalc</title>
+<style>.item { display: inline-block; width: 20px; height: 12px; }</style></head>
+<body>
+<h1>Style recalc - one class on body restyles 5000 items</h1>
+<button id="theme-toggle" type="button">Switch theme</button>
+<p id="out">light</p>
+<div id="items"></div>
+<script type="module">
+  const RULES = 400;
+  const ITEMS = 5000;
+  const out = document.getElementById('out');
+  const rules = [];
+  for (let r = 0; r < RULES; r++) {
+    rules.push(`body.theme-dark div.item:nth-child(${RULES}n+${r}) > span:not(.never-${r}) { color: rgb(${r % 256}, 80, 120); }`);
+  }
+  rules.push('body.theme-dark .item { background: #222; color: #eee; }');
+  const style = document.createElement('style');
+  style.textContent = rules.join('\n');
+  document.head.append(style);
+  const items = document.getElementById('items');
+  const fragment = document.createDocumentFragment();
+  for (let i = 0; i < ITEMS; i++) {
+    const item = document.createElement('div');
+    item.className = 'item';
+    item.append(document.createElement('span'));
+    fragment.append(item);
+  }
+  items.append(fragment);
+  document.getElementById('theme-toggle').addEventListener('click', function switchThemeHandler() {
+    document.body.classList.toggle('theme-dark');
+    out.textContent = document.body.classList.contains('theme-dark') ? 'dark' : 'light';
+  });
+</script>
+</body></html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="3p-consent-kickoff; target=#search-button; phase=input-delay; accepting the first-party banner (#consent-accept, acceptConsentHandler is cheap) loads cdn.thirdparty.test/kickoff.js, which runs back-to-back 400 ms tasks (adTechKickoffTask) for 3 s; clicks on #search-button in that window wait">
+<title>3p-post-consent-kickoff</title>
+<style>#consent-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #eee; padding: 16px; }</style></head>
+<body>
+<h1>3P kickoff after consent</h1>
+<button id="search-button" type="button">Search</button>
+<p id="out">0</p>
+<div id="consent-banner" role="dialog" aria-label="Cookie consent">
+  <p>This site uses cookies for analytics and advertising.</p>
+  <button id="consent-accept" type="button">Accept all</button>
+</div>
+<script type="module">
+  import { loadThirdPartyScript } from './third-party.js';
+  const out = document.getElementById('out');
+  document.getElementById('consent-accept').addEventListener('click', function acceptConsentHandler() {
+    document.getElementById('consent-banner').remove();
+    void loadThirdPartyScript('/kickoff.js');
+  });
+  document.getElementById('search-button').addEventListener('click', function searchHandler() {
+    out.textContent = String(Number(out.textContent) + 1);
+  });
+</script>
+</body></html>

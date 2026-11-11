@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="inp-expect" content="3p-confounded; target=#share-article; phase=processing; first-party shareHandler calls window.thirdPartyTracker.track() (trackerTrack, 120 ms) from cdn.thirdparty.test/tracker.js; with the 3P blocked the handler throws TypeError and #out never changes, so a blocked arm is confounded">
+<title>3p-required-by-1p</title>
+</head>
+<body>
+<h1>3P required by first party - the handler calls the tracker directly</h1>
+<button id="share-article" type="button">Share</button>
+<p id="out">0</p>
+<script type="module">
+  import { loadThirdPartyScript } from './third-party.js';
+  const out = document.getElementById('out');
+  document.getElementById('share-article').addEventListener('click', function shareHandler() {
+    window.thirdPartyTracker.track('share');
+    out.textContent = String(Number(out.textContent) + 1);
+  });
+  await loadThirdPartyScript('/tracker.js');
+  document.documentElement.dataset.ready = 'true';
+</script>
+</body></html>
