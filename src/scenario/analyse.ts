@@ -1,8 +1,8 @@
 import { availableParallelism, loadavg } from 'node:os';
-import type { Browser } from 'puppeteer-core';
 import type { EntityMap } from '../analysis/entities.js';
 import { bootOffsets } from '../analysis/hazard.js';
 import { blockPatterns } from '../browser/block-third-parties.js';
+import { createBrowserHost, type BrowserHost } from '../browser/browser-host.js';
 import { launchChrome } from '../browser/launch.js';
 import type { DiscoveryResult } from '../discovery/types.js';
 import { assertMachineFit, keepAwake, machineSnapshot, powerState } from '../machine/health.js';
@@ -58,25 +58,26 @@ function snapshotFactory(): (benchmark: number) => RunRecord['machine'] {
 }
 
 interface Setup {
-  readonly browser: Browser;
+  readonly host: BrowserHost;
   readonly sentinel: SentinelServer;
   readonly reference: number[];
   readonly politeness: Politeness;
 }
 
-async function prepare(config: AnalyseConfig, browser: Browser, sentinel: SentinelServer): Promise<Setup> {
+async function prepare(config: AnalyseConfig, host: BrowserHost, sentinel: SentinelServer): Promise<Setup> {
+  const browser = await host.get();
   const machine = await machineSnapshot(browser);
   assertMachineFit(machine, config.maxLoad);
   console.log(`[analyse] ${config.url} | ${config.condition.device} cpu ${config.condition.cpuRate}x | seed ${config.seed} | cores ${availableParallelism()} | benchmarkIndex ${Math.round(machine.benchmarkIndex)}`);
   const reference = await sentinelReference(browser, sentinel, config.condition, machine);
-  return { browser, sentinel, reference, politeness: createPoliteness({ minIntervalMs: config.minLoadIntervalMs, clock: SYSTEM_CLOCK }) };
+  return { host, sentinel, reference, politeness: createPoliteness({ minIntervalMs: config.minLoadIntervalMs, clock: SYSTEM_CLOCK }) };
 }
 
 function stageContext(config: AnalyseConfig, setup: Setup, input: { store: RunStore; preflight: PreflightTrace; discovery: DiscoveryResult }): StageContext {
-  const { browser, politeness, sentinel, reference } = setup;
+  const { host, politeness, sentinel, reference } = setup;
   return {
     deps: {
-      browser, store: input.store, politeness, sentinel: { server: sentinel, reference },
+      host, store: input.store, politeness, sentinel: { server: sentinel, reference },
       plan: { url: config.url, entityMap: config.entityMap, guardPolicy: config.guardPolicy },
       blockedUrlPatterns: (s) => blockPatterns(s.condition.thirdParty, { pageUrl: config.url, observedUrls: input.preflight.requestUrls, entityMap: config.entityMap }),
       nextRunId: counter(), machine: snapshotFactory(),
@@ -88,17 +89,18 @@ function stageContext(config: AnalyseConfig, setup: Setup, input: { store: RunSt
 
 async function measure(config: AnalyseConfig, setup: Setup, store: RunStore): Promise<AnalysisRun> {
   await setup.politeness.beforeLoad(config.url);
-  const preflight = await recordPreflight(setup.browser, config.url, { condition: config.condition, entityMap: config.entityMap });
-  const discovery = await discoverStable({ browser: setup.browser, url: config.url, condition: config.condition, maxTargets: config.maxTargets, politeness: setup.politeness });
+  const preflight = await recordPreflight(await setup.host.get(), config.url, { condition: config.condition, entityMap: config.entityMap });
+  const discovery = await discoverStable({ browser: await setup.host.get(), url: config.url, condition: config.condition, maxTargets: config.maxTargets, politeness: setup.politeness });
   const ctx = stageContext(config, setup, { store, preflight, discovery });
   const targets = [...ctx.targets.values()];
   await setup.politeness.beforeLoad(config.url);
-  const geometry = await bootGeometry(setup.browser, { url: config.url, condition: config.condition, targets, offsetsMs: bootOffsets(preflight.timeline) });
+  const geometry = await bootGeometry(await setup.host.get(), { url: config.url, condition: config.condition, targets, offsetsMs: bootOffsets(preflight.timeline) });
   const scenarios = screeningScenarios({ targets, phases: config.phases, condition: config.condition, bootGeometry: geometry });
   await runScreening(ctx, scenarios);
   const deep = config.quick ? [] : await runDeepDive(ctx, scenarios);
   const variants = config.quick ? [] : await runCausal(ctx, deep);
-  const base = { preflight, discovery, scenarios: [...scenarios, ...variants], deepDived: deep.map((s) => s.id), records: ctx.records, sentinelReference: setup.reference, chromeVersion: await setup.browser.version(), loads: setup.politeness.totalLoads() };
+  const base = { preflight, discovery, scenarios: [...scenarios, ...variants], deepDived: deep.map((s) => s.id), records: ctx.records, sentinelReference: setup.reference, chromeVersion: await (await setup.host.get()).version(), loads: setup.politeness.totalLoads() };
+  if (setup.host.relaunches() > 0) console.error(`[analyse] Chrome was relaunched ${setup.host.relaunches()} time(s) after a lost browser; affected runs were retried`);
   return ctx.incomplete === undefined ? base : { ...base, incomplete: ctx.incomplete };
 }
 
@@ -106,16 +108,16 @@ async function measure(config: AnalyseConfig, setup: Setup, store: RunStore): Pr
 export async function analyse(config: AnalyseConfig, store: RunStore): Promise<AnalysisRun> {
   keepAwake();
   await store.init();
-  const browser = await launchChrome({
+  const host = await createBrowserHost(() => launchChrome({
     ...(config.hostResolverRules === undefined ? {} : { hostResolverRules: config.hostResolverRules }),
     ...(config.proxyServer === undefined ? {} : { proxyServer: config.proxyServer }),
-  });
+  }));
   const sentinel = await startSentinel();
   try {
-    return await measure(config, await prepare(config, browser, sentinel), store);
+    return await measure(config, await prepare(config, host, sentinel), store);
   } finally {
     await sentinel.close();
-    await browser.close();
+    await host.close();
   }
 }
 
