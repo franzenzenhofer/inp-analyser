@@ -214,7 +214,7 @@ Read it as: Wikipedia's Main Page has a **good** INP on both devices (phone 130 
 
 ## Examples: real runs
 
-Three unedited runs from 11 Nov 2026 live in [`examples/`](examples/): terminal output, `report.html`, `report.json`, `runs.jsonl`. Mobile emulation, CPU 4x, Chrome for Testing 155, seed 42.
+Unedited runs from 11 Nov 2026 live in [`examples/`](examples/): terminal output, `report.html`, `report.json`, `runs.jsonl`. Mobile emulation, CPU 4x, Chrome for Testing 155, seed 42. The same cards, built from these files, are on the [website](https://inp-analyser.franzai.com/#example).
 
 ### 1. A third-party listener, caught and proven ([`examples/test-site-third-party`](examples/test-site-third-party/))
 
@@ -266,10 +266,48 @@ How to read it:
 - **The confirmed lab finding**: the hatnote link is 199 ms slower when tapped during page boot (277 ms) than on the idle page (78 ms), in 9 of 9 paired runs. Boot is where Wikipedia's mobile responsiveness risk sits.
 - **The tool says what it does not know**: the search button's slow tap is mostly not main-thread work, so no script is blamed; findings seen in one screening run stay `screening only`; the 50 min budget ended before the last deep-dive block, and the report says `INCOMPLETE`.
 
+### 3. CNN: good in the field, nothing slow in the lab ([`examples/cnn-southern-taurids`](examples/cnn-southern-taurids/))
+
+A science article on edition.cnn.com, run on an always-on Apple Silicon MacBook Air (8 cores) that was busy with other jobs, so the start gate was set to `--max-load 6` (default: half the cores, 4); every measured block still passes the BenchmarkIndex health gate.
+
+```text
+$ inp analyse https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower --budget 50 --max-targets 6 --seed 42 --max-load 6
+Field INP PHONE: 115 ms (good)
+  CrUX p75, PHONE, page (URL) level, 2026-10-13 to 2026-11-09
+  real users: good 88.1% | needs improvement 6.9% | poor 5.0%
+  PSI shows the same: 115 ms
+Reconciliation: ... = 115 ms. No lab scenario reached it: not reproduced in the lab (real devices, logged-in states, iframes, untested interactions).
+Issues (3, ranked):
+1. [info | screening only | context] Large DOM (more than ~800 / ~1,400 elements, Lighthouse dom-size)
+   evidence: DOM elements: 2178
+2. [info | screening only | context] Uncaught exceptions on the page during the run
+   evidence: exception: Script error.
+3. [info | screening only | presentation delay] Non-composited animation runs during the interaction (needs layout/paint every frame)
+   evidence: DIV id='onetrust-banner-sdk' ... visibility: failure code 8200; properties: visibility
+Run: 18 runs (0 excluded), 22 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile
+```
+
+How to read it: the page is **good** for real users (115 ms phone, 60 ms desktop, PSI identical at URL and origin level). None of the 6 measured scenarios was slower than 200 ms in screening (`deep-dive on 0 of 6 scenarios`), so there was no deep-dive and no causal test, and the tool says so instead of inventing a cause; the three findings are context, not attributed delays.
+
+### 4. TechCrunch: field data only, lab pending ([`examples/techcrunch-basic-kindle`](examples/techcrunch-basic-kindle/))
+
+```text
+$ inp field https://techcrunch.com/2026/11/07/amazons-new-basic-kindle-proves-you-dont-need-all-the-bells-and-whistles/
+phone  : INP p75 229 ms (url level, 2026-10-13..2026-11-09) good 69.8% / needs improvement 22.7% / poor 7.5% | PSI: equal
+desktop: INP p75 60 ms (url level, 2026-10-13..2026-11-09) good 94.0% / needs improvement 3.4% / poor 2.7% | PSI: equal
+```
+
+The field number is real and **needs improvement** on phones (229 ms; the whole origin is at 177 ms), identical in PSI. The lab
+analysis is pending: on 11 Nov 2026 one run's preflight page load timed out after 60 s, and the latest run met a Cloudflare
+challenge page. The tool stops at a challenge (`[safety] bot wall ... Stopping: a challenge page is not the page, and retrying
+would hammer the site.`) instead of measuring it, so this example holds field data only, and no lab numbers.
+
 | Page | Field INP p75 phone (URL) | Good / NI / poor | Desktop | Lab |
 |---|---|---|---|---|
 | [Main_Page](examples/wikipedia-main-page/) | **130 ms** | 86.5% / 9.7% / 3.9% | 61 ms | no scenario reached the field p75, no issue |
 | [United_States](examples/wikipedia-united-states/) | **103 ms** | 91.3% / 6.7% / 2.1% | 110 ms | 8 issues, 1 confirmed (boot window, +199 ms) |
+| [CNN southern-taurids-meteor-shower](examples/cnn-southern-taurids/) | **115 ms** | 88.1% / 6.9% / 5.0% | 60 ms | 3 context issues (screening only), no scenario over 200 ms, none reached the field p75 |
+| [TechCrunch amazons-new-basic-kindle...](examples/techcrunch-basic-kindle/) | **229 ms** | 69.8% / 22.7% / 7.5% | 60 ms | pending (timeout, then Cloudflare challenge: the tool stops) |
 
 ## Outputs
 

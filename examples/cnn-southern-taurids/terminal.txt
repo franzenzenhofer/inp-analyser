@@ -1,0 +1,66 @@
+[inp] analyse https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower -> examples/cnn-southern-taurids (seed 42)
+[analyse] https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower | mobile cpu 4x | seed 42 | cores 8 | benchmarkIndex 1995
+[safety] guard armed on http://127.0.0.1:63217/
+[safety] guard armed on http://127.0.0.1:63217/
+[safety] guard armed on http://127.0.0.1:63217/
+[safety] guard armed on http://127.0.0.1:63217/
+[safety] guard armed on http://127.0.0.1:63217/
+[safety] guard armed on http://127.0.0.1:63217/
+[sentinel] reference 154, 130, 134, 130, 134, 133 ms
+[discovery] https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower: 63 candidates, 26 after dedupe, 12 targets, 1 dangerous excluded, 3 global listeners
+[discovery] https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower: 63 candidates, 26 after dedupe, 12 targets, 1 dangerous excluded, 3 global listeners
+[discover] 63 candidates, 12/12 targets per pass, 6 stable
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] navigation-cancelled GET https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower (answered 204)
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] closed tab opened by the page: https://www.wbdprivacy.com/policycenter/affiliates/
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] navigation-cancelled GET https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower (answered 204)
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] guard armed on http://127.0.0.1:63217/
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] closed tab opened by the page: https://www.wbdprivacy.com/policycenter/affiliates/
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] navigation-cancelled GET https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower (answered 204)
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] navigation-cancelled GET https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower (answered 204)
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] guard armed on http://127.0.0.1:63217/
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] navigation-cancelled GET https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower (answered 204)
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] closed tab opened by the page: https://www.wbdprivacy.com/policycenter/affiliates/
+[safety] guard armed on https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+[safety] navigation-cancelled GET https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower (answered 204)
+[safety] guard armed on http://127.0.0.1:63217/
+[stages] deep-dive on 0 of 6 scenarios
+[stages] causal: 0 scenario(s) with third-party time, 0 blocked variant(s)
+inp-analyser 0.1.0 - https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower
+Field INP PHONE: 115 ms (good)
+  CrUX p75, PHONE, page (URL) level, 2026-10-13 to 2026-11-09
+  real users: good 88.1% | needs improvement 6.9% | poor 5.0%
+  PSI shows the same: 115 ms
+Reconciliation: Field INP p75 (CrUX PHONE, url level, 2026-10-13..2026-11-09) = 115 ms. No lab scenario reached it: not reproduced in the lab (real devices, logged-in states, iframes, untested interactions).
+Issues (3, ranked):
+1. [info | screening only | context] Large DOM (more than ~800 / ~1,400 elements, Lighthouse dom-size)
+   lab @ CPU 4x, mobile: no duration attached; fired in 5 of 5 runs (95% CI 57-100%)
+   evidence: DOM elements: 2178
+   why this counts: https://developer.chrome.com/docs/lighthouse/performance/dom-size
+2. [info | screening only | context] Uncaught exceptions on the page during the run
+   lab @ CPU 4x, mobile: no duration attached; fired in 5 of 5 runs (95% CI 57-100%)
+   evidence: exception: Script error.
+   why this counts: https://developer.mozilla.org/en-US/docs/Web/API/Window/error_event
+3. [info | screening only | presentation delay] Non-composited animation runs during the interaction (needs layout/paint every frame)
+   lab @ CPU 4x, mobile: no duration attached; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: DIV id='onetrust-banner-sdk' class='otFlat ot-iab-2 bottom vertical-align-content ot-buttons-fw' visibility: failure code 8200; properties: visibility
+   why this counts: https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations
+Run: 18 runs (0 excluded), 22 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile
+HTML report: examples/cnn-southern-taurids/report.html
+[inp] report: examples/cnn-southern-taurids/report.json

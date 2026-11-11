@@ -1,0 +1,2040 @@
+{
+  "tool": {
+    "name": "inp-analyser",
+    "version": "0.1.0"
+  },
+  "url": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+  "generatedAt": "2026-11-11T11:19:53.020Z",
+  "seed": 42,
+  "chromeVersion": "Chrome/155.0.8059.39",
+  "condition": {
+    "device": "mobile",
+    "cpuRate": 4,
+    "thirdParty": {
+      "kind": "allow"
+    },
+    "consent": "none",
+    "cache": "cold"
+  },
+  "field": {
+    "url": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+    "origin": "https://edition.cnn.com",
+    "fetchedAt": "2026-11-11T11:08:38.082Z",
+    "phone": {
+      "inp": {
+        "kind": "data",
+        "level": "url",
+        "formFactor": "PHONE",
+        "p75": 115,
+        "densities": {
+          "good": 0.8814,
+          "needsImprovement": 0.069,
+          "poor": 0.0496
+        },
+        "collectionPeriod": {
+          "firstDate": "2026-10-13",
+          "lastDate": "2026-11-09"
+        }
+      },
+      "psiParity": {
+        "page": {
+          "kind": "equal",
+          "level": "url",
+          "p75": 115
+        },
+        "origin": {
+          "kind": "equal",
+          "level": "origin",
+          "p75": 180
+        }
+      },
+      "url": {
+        "target": {
+          "kind": "url",
+          "url": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower"
+        },
+        "formFactor": "PHONE",
+        "kind": "data",
+        "collectionPeriod": {
+          "firstDate": "2026-10-13",
+          "lastDate": "2026-11-09"
+        },
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75": 115,
+            "densities": {
+              "good": 0.8814,
+              "needsImprovement": 0.069,
+              "poor": 0.0496
+            },
+            "bounds": {
+              "goodMax": 200,
+              "poorMin": 500
+            }
+          },
+          "largest_contentful_paint": {
+            "p75": 2278,
+            "densities": {
+              "good": 0.7833,
+              "needsImprovement": 0.1243,
+              "poor": 0.0924
+            },
+            "bounds": {
+              "goodMax": 2500,
+              "poorMin": 4000
+            }
+          },
+          "cumulative_layout_shift": {
+            "p75": 0.04,
+            "densities": {
+              "good": 0.8124,
+              "needsImprovement": 0.1369,
+              "poor": 0.0506
+            },
+            "bounds": {
+              "goodMax": 0.1,
+              "poorMin": 0.25
+            }
+          }
+        },
+        "normalizedUrl": null
+      },
+      "origin": {
+        "target": {
+          "kind": "origin",
+          "origin": "https://edition.cnn.com"
+        },
+        "formFactor": "PHONE",
+        "kind": "data",
+        "collectionPeriod": {
+          "firstDate": "2026-10-13",
+          "lastDate": "2026-11-09"
+        },
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75": 180,
+            "densities": {
+              "good": 0.7742,
+              "needsImprovement": 0.152,
+              "poor": 0.0738
+            },
+            "bounds": {
+              "goodMax": 200,
+              "poorMin": 500
+            }
+          },
+          "largest_contentful_paint": {
+            "p75": 1990,
+            "densities": {
+              "good": 0.8166,
+              "needsImprovement": 0.0955,
+              "poor": 0.0879
+            },
+            "bounds": {
+              "goodMax": 2500,
+              "poorMin": 4000
+            }
+          },
+          "cumulative_layout_shift": {
+            "p75": 0.05,
+            "densities": {
+              "good": 0.8097,
+              "needsImprovement": 0.1317,
+              "poor": 0.0586
+            },
+            "bounds": {
+              "goodMax": 0.1,
+              "poorMin": 0.25
+            }
+          }
+        },
+        "normalizedUrl": null
+      },
+      "psi": {
+        "strategy": "mobile",
+        "requestedUrl": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+        "analysedAt": "2026-11-11T11:05:02.524Z",
+        "page": {
+          "kind": "data",
+          "id": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+          "inp": {
+            "percentile": 115,
+            "distributions": [
+              {
+                "min": 0,
+                "max": 200,
+                "proportion": 0.8814
+              },
+              {
+                "min": 200,
+                "max": 500,
+                "proportion": 0.069
+              },
+              {
+                "min": 500,
+                "max": null,
+                "proportion": 0.0496
+              }
+            ],
+            "category": "FAST"
+          },
+          "overallCategory": "AVERAGE",
+          "originFallback": false
+        },
+        "origin": {
+          "kind": "data",
+          "id": "https://edition.cnn.com",
+          "inp": {
+            "percentile": 180,
+            "distributions": [
+              {
+                "min": 0,
+                "max": 200,
+                "proportion": 0.7742
+              },
+              {
+                "min": 200,
+                "max": 500,
+                "proportion": 0.152
+              },
+              {
+                "min": 500,
+                "max": null,
+                "proportion": 0.0738
+              }
+            ],
+            "category": "FAST"
+          },
+          "overallCategory": "FAST",
+          "originFallback": false
+        }
+      }
+    },
+    "desktop": {
+      "inp": {
+        "kind": "data",
+        "level": "url",
+        "formFactor": "DESKTOP",
+        "p75": 60,
+        "densities": {
+          "good": 0.9638,
+          "needsImprovement": 0.0208,
+          "poor": 0.0154
+        },
+        "collectionPeriod": {
+          "firstDate": "2026-10-13",
+          "lastDate": "2026-11-09"
+        }
+      },
+      "psiParity": {
+        "page": {
+          "kind": "equal",
+          "level": "url",
+          "p75": 60
+        },
+        "origin": {
+          "kind": "equal",
+          "level": "origin",
+          "p75": 89
+        }
+      },
+      "url": {
+        "target": {
+          "kind": "url",
+          "url": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower"
+        },
+        "formFactor": "DESKTOP",
+        "kind": "data",
+        "collectionPeriod": {
+          "firstDate": "2026-10-13",
+          "lastDate": "2026-11-09"
+        },
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75": 60,
+            "densities": {
+              "good": 0.9638,
+              "needsImprovement": 0.0208,
+              "poor": 0.0154
+            },
+            "bounds": {
+              "goodMax": 200,
+              "poorMin": 500
+            }
+          },
+          "largest_contentful_paint": {
+            "p75": 1145,
+            "densities": {
+              "good": 0.9245,
+              "needsImprovement": 0.0529,
+              "poor": 0.0226
+            },
+            "bounds": {
+              "goodMax": 2500,
+              "poorMin": 4000
+            }
+          },
+          "cumulative_layout_shift": {
+            "p75": 0.04,
+            "densities": {
+              "good": 0.8929,
+              "needsImprovement": 0.0929,
+              "poor": 0.0142
+            },
+            "bounds": {
+              "goodMax": 0.1,
+              "poorMin": 0.25
+            }
+          }
+        },
+        "normalizedUrl": null
+      },
+      "origin": {
+        "target": {
+          "kind": "origin",
+          "origin": "https://edition.cnn.com"
+        },
+        "formFactor": "DESKTOP",
+        "kind": "data",
+        "collectionPeriod": {
+          "firstDate": "2026-10-13",
+          "lastDate": "2026-11-09"
+        },
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75": 89,
+            "densities": {
+              "good": 0.8918,
+              "needsImprovement": 0.0721,
+              "poor": 0.0362
+            },
+            "bounds": {
+              "goodMax": 200,
+              "poorMin": 500
+            }
+          },
+          "largest_contentful_paint": {
+            "p75": 1492,
+            "densities": {
+              "good": 0.8586,
+              "needsImprovement": 0.0694,
+              "poor": 0.072
+            },
+            "bounds": {
+              "goodMax": 2500,
+              "poorMin": 4000
+            }
+          },
+          "cumulative_layout_shift": {
+            "p75": 0.05,
+            "densities": {
+              "good": 0.869,
+              "needsImprovement": 0.1024,
+              "poor": 0.0285
+            },
+            "bounds": {
+              "goodMax": 0.1,
+              "poorMin": 0.25
+            }
+          }
+        },
+        "normalizedUrl": null
+      },
+      "psi": {
+        "strategy": "desktop",
+        "requestedUrl": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+        "analysedAt": "2026-11-11T11:06:58.731Z",
+        "page": {
+          "kind": "data",
+          "id": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+          "inp": {
+            "percentile": 60,
+            "distributions": [
+              {
+                "min": 0,
+                "max": 200,
+                "proportion": 0.9638
+              },
+              {
+                "min": 200,
+                "max": 500,
+                "proportion": 0.0208
+              },
+              {
+                "min": 500,
+                "max": null,
+                "proportion": 0.0154
+              }
+            ],
+            "category": "FAST"
+          },
+          "overallCategory": "FAST",
+          "originFallback": false
+        },
+        "origin": {
+          "kind": "data",
+          "id": "https://edition.cnn.com",
+          "inp": {
+            "percentile": 89,
+            "distributions": [
+              {
+                "min": 0,
+                "max": 200,
+                "proportion": 0.8918
+              },
+              {
+                "min": 200,
+                "max": 500,
+                "proportion": 0.0721
+              },
+              {
+                "min": 500,
+                "max": null,
+                "proportion": 0.0362
+              }
+            ],
+            "category": "FAST"
+          },
+          "overallCategory": "FAST",
+          "originFallback": false
+        }
+      }
+    },
+    "history": {
+      "phone": {
+        "url": {
+          "target": {
+            "kind": "url",
+            "url": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower"
+          },
+          "formFactor": "PHONE",
+          "kind": "data",
+          "collectionPeriods": [
+            {
+              "firstDate": "2026-04-26",
+              "lastDate": "2026-05-23"
+            },
+            {
+              "firstDate": "2026-05-03",
+              "lastDate": "2026-05-30"
+            },
+            {
+              "firstDate": "2026-05-10",
+              "lastDate": "2026-06-06"
+            },
+            {
+              "firstDate": "2026-05-17",
+              "lastDate": "2026-06-13"
+            },
+            {
+              "firstDate": "2026-05-24",
+              "lastDate": "2026-06-20"
+            },
+            {
+              "firstDate": "2026-05-31",
+              "lastDate": "2026-06-27"
+            },
+            {
+              "firstDate": "2026-06-07",
+              "lastDate": "2026-07-04"
+            },
+            {
+              "firstDate": "2026-06-14",
+              "lastDate": "2026-07-11"
+            },
+            {
+              "firstDate": "2026-06-21",
+              "lastDate": "2026-07-18"
+            },
+            {
+              "firstDate": "2026-06-28",
+              "lastDate": "2026-07-25"
+            },
+            {
+              "firstDate": "2026-07-05",
+              "lastDate": "2026-08-01"
+            },
+            {
+              "firstDate": "2026-07-12",
+              "lastDate": "2026-08-08"
+            },
+            {
+              "firstDate": "2026-07-19",
+              "lastDate": "2026-08-15"
+            },
+            {
+              "firstDate": "2026-07-26",
+              "lastDate": "2026-08-22"
+            },
+            {
+              "firstDate": "2026-08-02",
+              "lastDate": "2026-08-29"
+            },
+            {
+              "firstDate": "2026-08-09",
+              "lastDate": "2026-09-05"
+            },
+            {
+              "firstDate": "2026-08-16",
+              "lastDate": "2026-09-12"
+            },
+            {
+              "firstDate": "2026-08-23",
+              "lastDate": "2026-09-19"
+            },
+            {
+              "firstDate": "2026-08-30",
+              "lastDate": "2026-09-26"
+            },
+            {
+              "firstDate": "2026-09-06",
+              "lastDate": "2026-10-03"
+            },
+            {
+              "firstDate": "2026-09-13",
+              "lastDate": "2026-10-10"
+            },
+            {
+              "firstDate": "2026-09-20",
+              "lastDate": "2026-10-17"
+            },
+            {
+              "firstDate": "2026-09-27",
+              "lastDate": "2026-10-24"
+            },
+            {
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-31"
+            },
+            {
+              "firstDate": "2026-10-11",
+              "lastDate": "2026-11-07"
+            }
+          ],
+          "metrics": {
+            "interaction_to_next_paint": {
+              "p75s": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                115
+              ],
+              "densities": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                  "good": 0.8804,
+                  "needsImprovement": 0.0695,
+                  "poor": 0.05
+                }
+              ]
+            }
+          },
+          "normalizedUrl": null
+        },
+        "origin": {
+          "target": {
+            "kind": "origin",
+            "origin": "https://edition.cnn.com"
+          },
+          "formFactor": "PHONE",
+          "kind": "data",
+          "collectionPeriods": [
+            {
+              "firstDate": "2026-04-26",
+              "lastDate": "2026-05-23"
+            },
+            {
+              "firstDate": "2026-05-03",
+              "lastDate": "2026-05-30"
+            },
+            {
+              "firstDate": "2026-05-10",
+              "lastDate": "2026-06-06"
+            },
+            {
+              "firstDate": "2026-05-17",
+              "lastDate": "2026-06-13"
+            },
+            {
+              "firstDate": "2026-05-24",
+              "lastDate": "2026-06-20"
+            },
+            {
+              "firstDate": "2026-05-31",
+              "lastDate": "2026-06-27"
+            },
+            {
+              "firstDate": "2026-06-07",
+              "lastDate": "2026-07-04"
+            },
+            {
+              "firstDate": "2026-06-14",
+              "lastDate": "2026-07-11"
+            },
+            {
+              "firstDate": "2026-06-21",
+              "lastDate": "2026-07-18"
+            },
+            {
+              "firstDate": "2026-06-28",
+              "lastDate": "2026-07-25"
+            },
+            {
+              "firstDate": "2026-07-05",
+              "lastDate": "2026-08-01"
+            },
+            {
+              "firstDate": "2026-07-12",
+              "lastDate": "2026-08-08"
+            },
+            {
+              "firstDate": "2026-07-19",
+              "lastDate": "2026-08-15"
+            },
+            {
+              "firstDate": "2026-07-26",
+              "lastDate": "2026-08-22"
+            },
+            {
+              "firstDate": "2026-08-02",
+              "lastDate": "2026-08-29"
+            },
+            {
+              "firstDate": "2026-08-09",
+              "lastDate": "2026-09-05"
+            },
+            {
+              "firstDate": "2026-08-16",
+              "lastDate": "2026-09-12"
+            },
+            {
+              "firstDate": "2026-08-23",
+              "lastDate": "2026-09-19"
+            },
+            {
+              "firstDate": "2026-08-30",
+              "lastDate": "2026-09-26"
+            },
+            {
+              "firstDate": "2026-09-06",
+              "lastDate": "2026-10-03"
+            },
+            {
+              "firstDate": "2026-09-13",
+              "lastDate": "2026-10-10"
+            },
+            {
+              "firstDate": "2026-09-20",
+              "lastDate": "2026-10-17"
+            },
+            {
+              "firstDate": "2026-09-27",
+              "lastDate": "2026-10-24"
+            },
+            {
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-31"
+            },
+            {
+              "firstDate": "2026-10-11",
+              "lastDate": "2026-11-07"
+            }
+          ],
+          "metrics": {
+            "interaction_to_next_paint": {
+              "p75s": [
+                179,
+                178,
+                179,
+                175,
+                177,
+                178,
+                177,
+                176,
+                174,
+                169,
+                165,
+                163,
+                161,
+                160,
+                165,
+                168,
+                169,
+                170,
+                162,
+                159,
+                157,
+                157,
+                158,
+                159,
+                179
+              ],
+              "densities": [
+                {
+                  "good": 0.7793,
+                  "needsImprovement": 0.1486,
+                  "poor": 0.0721
+                },
+                {
+                  "good": 0.7795,
+                  "needsImprovement": 0.149,
+                  "poor": 0.0715
+                },
+                {
+                  "good": 0.7805,
+                  "needsImprovement": 0.1489,
+                  "poor": 0.0706
+                },
+                {
+                  "good": 0.7907,
+                  "needsImprovement": 0.1469,
+                  "poor": 0.0624
+                },
+                {
+                  "good": 0.7849,
+                  "needsImprovement": 0.1471,
+                  "poor": 0.068
+                },
+                {
+                  "good": 0.7845,
+                  "needsImprovement": 0.1477,
+                  "poor": 0.0678
+                },
+                {
+                  "good": 0.785,
+                  "needsImprovement": 0.1447,
+                  "poor": 0.0703
+                },
+                {
+                  "good": 0.7853,
+                  "needsImprovement": 0.1449,
+                  "poor": 0.0698
+                },
+                {
+                  "good": 0.7895,
+                  "needsImprovement": 0.1434,
+                  "poor": 0.067
+                },
+                {
+                  "good": 0.7977,
+                  "needsImprovement": 0.1398,
+                  "poor": 0.0625
+                },
+                {
+                  "good": 0.8051,
+                  "needsImprovement": 0.1366,
+                  "poor": 0.0583
+                },
+                {
+                  "good": 0.8063,
+                  "needsImprovement": 0.1351,
+                  "poor": 0.0586
+                },
+                {
+                  "good": 0.812,
+                  "needsImprovement": 0.133,
+                  "poor": 0.055
+                },
+                {
+                  "good": 0.8135,
+                  "needsImprovement": 0.1318,
+                  "poor": 0.0547
+                },
+                {
+                  "good": 0.8047,
+                  "needsImprovement": 0.1383,
+                  "poor": 0.057
+                },
+                {
+                  "good": 0.7987,
+                  "needsImprovement": 0.1422,
+                  "poor": 0.0591
+                },
+                {
+                  "good": 0.7965,
+                  "needsImprovement": 0.1408,
+                  "poor": 0.0627
+                },
+                {
+                  "good": 0.7974,
+                  "needsImprovement": 0.1416,
+                  "poor": 0.0611
+                },
+                {
+                  "good": 0.809,
+                  "needsImprovement": 0.1364,
+                  "poor": 0.0546
+                },
+                {
+                  "good": 0.8163,
+                  "needsImprovement": 0.1321,
+                  "poor": 0.0516
+                },
+                {
+                  "good": 0.8166,
+                  "needsImprovement": 0.1308,
+                  "poor": 0.0527
+                },
+                {
+                  "good": 0.8191,
+                  "needsImprovement": 0.1295,
+                  "poor": 0.0514
+                },
+                {
+                  "good": 0.8178,
+                  "needsImprovement": 0.1301,
+                  "poor": 0.0521
+                },
+                {
+                  "good": 0.816,
+                  "needsImprovement": 0.1304,
+                  "poor": 0.0536
+                },
+                {
+                  "good": 0.7791,
+                  "needsImprovement": 0.149,
+                  "poor": 0.0719
+                }
+              ]
+            }
+          },
+          "normalizedUrl": null
+        }
+      },
+      "desktop": {
+        "url": {
+          "target": {
+            "kind": "url",
+            "url": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower"
+          },
+          "formFactor": "DESKTOP",
+          "kind": "data",
+          "collectionPeriods": [
+            {
+              "firstDate": "2026-04-26",
+              "lastDate": "2026-05-23"
+            },
+            {
+              "firstDate": "2026-05-03",
+              "lastDate": "2026-05-30"
+            },
+            {
+              "firstDate": "2026-05-10",
+              "lastDate": "2026-06-06"
+            },
+            {
+              "firstDate": "2026-05-17",
+              "lastDate": "2026-06-13"
+            },
+            {
+              "firstDate": "2026-05-24",
+              "lastDate": "2026-06-20"
+            },
+            {
+              "firstDate": "2026-05-31",
+              "lastDate": "2026-06-27"
+            },
+            {
+              "firstDate": "2026-06-07",
+              "lastDate": "2026-07-04"
+            },
+            {
+              "firstDate": "2026-06-14",
+              "lastDate": "2026-07-11"
+            },
+            {
+              "firstDate": "2026-06-21",
+              "lastDate": "2026-07-18"
+            },
+            {
+              "firstDate": "2026-06-28",
+              "lastDate": "2026-07-25"
+            },
+            {
+              "firstDate": "2026-07-05",
+              "lastDate": "2026-08-01"
+            },
+            {
+              "firstDate": "2026-07-12",
+              "lastDate": "2026-08-08"
+            },
+            {
+              "firstDate": "2026-07-19",
+              "lastDate": "2026-08-15"
+            },
+            {
+              "firstDate": "2026-07-26",
+              "lastDate": "2026-08-22"
+            },
+            {
+              "firstDate": "2026-08-02",
+              "lastDate": "2026-08-29"
+            },
+            {
+              "firstDate": "2026-08-09",
+              "lastDate": "2026-09-05"
+            },
+            {
+              "firstDate": "2026-08-16",
+              "lastDate": "2026-09-12"
+            },
+            {
+              "firstDate": "2026-08-23",
+              "lastDate": "2026-09-19"
+            },
+            {
+              "firstDate": "2026-08-30",
+              "lastDate": "2026-09-26"
+            },
+            {
+              "firstDate": "2026-09-06",
+              "lastDate": "2026-10-03"
+            },
+            {
+              "firstDate": "2026-09-13",
+              "lastDate": "2026-10-10"
+            },
+            {
+              "firstDate": "2026-09-20",
+              "lastDate": "2026-10-17"
+            },
+            {
+              "firstDate": "2026-09-27",
+              "lastDate": "2026-10-24"
+            },
+            {
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-31"
+            },
+            {
+              "firstDate": "2026-10-11",
+              "lastDate": "2026-11-07"
+            }
+          ],
+          "metrics": {
+            "interaction_to_next_paint": {
+              "p75s": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                62
+              ],
+              "densities": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                  "good": 0.9635,
+                  "needsImprovement": 0.0201,
+                  "poor": 0.0164
+                }
+              ]
+            }
+          },
+          "normalizedUrl": null
+        },
+        "origin": {
+          "target": {
+            "kind": "origin",
+            "origin": "https://edition.cnn.com"
+          },
+          "formFactor": "DESKTOP",
+          "kind": "data",
+          "collectionPeriods": [
+            {
+              "firstDate": "2026-04-26",
+              "lastDate": "2026-05-23"
+            },
+            {
+              "firstDate": "2026-05-03",
+              "lastDate": "2026-05-30"
+            },
+            {
+              "firstDate": "2026-05-10",
+              "lastDate": "2026-06-06"
+            },
+            {
+              "firstDate": "2026-05-17",
+              "lastDate": "2026-06-13"
+            },
+            {
+              "firstDate": "2026-05-24",
+              "lastDate": "2026-06-20"
+            },
+            {
+              "firstDate": "2026-05-31",
+              "lastDate": "2026-06-27"
+            },
+            {
+              "firstDate": "2026-06-07",
+              "lastDate": "2026-07-04"
+            },
+            {
+              "firstDate": "2026-06-14",
+              "lastDate": "2026-07-11"
+            },
+            {
+              "firstDate": "2026-06-21",
+              "lastDate": "2026-07-18"
+            },
+            {
+              "firstDate": "2026-06-28",
+              "lastDate": "2026-07-25"
+            },
+            {
+              "firstDate": "2026-07-05",
+              "lastDate": "2026-08-01"
+            },
+            {
+              "firstDate": "2026-07-12",
+              "lastDate": "2026-08-08"
+            },
+            {
+              "firstDate": "2026-07-19",
+              "lastDate": "2026-08-15"
+            },
+            {
+              "firstDate": "2026-07-26",
+              "lastDate": "2026-08-22"
+            },
+            {
+              "firstDate": "2026-08-02",
+              "lastDate": "2026-08-29"
+            },
+            {
+              "firstDate": "2026-08-09",
+              "lastDate": "2026-09-05"
+            },
+            {
+              "firstDate": "2026-08-16",
+              "lastDate": "2026-09-12"
+            },
+            {
+              "firstDate": "2026-08-23",
+              "lastDate": "2026-09-19"
+            },
+            {
+              "firstDate": "2026-08-30",
+              "lastDate": "2026-09-26"
+            },
+            {
+              "firstDate": "2026-09-06",
+              "lastDate": "2026-10-03"
+            },
+            {
+              "firstDate": "2026-09-13",
+              "lastDate": "2026-10-10"
+            },
+            {
+              "firstDate": "2026-09-20",
+              "lastDate": "2026-10-17"
+            },
+            {
+              "firstDate": "2026-09-27",
+              "lastDate": "2026-10-24"
+            },
+            {
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-31"
+            },
+            {
+              "firstDate": "2026-10-11",
+              "lastDate": "2026-11-07"
+            }
+          ],
+          "metrics": {
+            "interaction_to_next_paint": {
+              "p75s": [
+                94,
+                94,
+                94,
+                92,
+                92,
+                92,
+                91,
+                89,
+                86,
+                83,
+                81,
+                81,
+                81,
+                81,
+                82,
+                82,
+                83,
+                82,
+                79,
+                78,
+                77,
+                78,
+                78,
+                78,
+                89
+              ],
+              "densities": [
+                {
+                  "good": 0.889,
+                  "needsImprovement": 0.0704,
+                  "poor": 0.0406
+                },
+                {
+                  "good": 0.8875,
+                  "needsImprovement": 0.0705,
+                  "poor": 0.042
+                },
+                {
+                  "good": 0.883,
+                  "needsImprovement": 0.0727,
+                  "poor": 0.0443
+                },
+                {
+                  "good": 0.8875,
+                  "needsImprovement": 0.0714,
+                  "poor": 0.0411
+                },
+                {
+                  "good": 0.8898,
+                  "needsImprovement": 0.0702,
+                  "poor": 0.04
+                },
+                {
+                  "good": 0.8874,
+                  "needsImprovement": 0.071,
+                  "poor": 0.0415
+                },
+                {
+                  "good": 0.8858,
+                  "needsImprovement": 0.0729,
+                  "poor": 0.0412
+                },
+                {
+                  "good": 0.8979,
+                  "needsImprovement": 0.064,
+                  "poor": 0.0382
+                },
+                {
+                  "good": 0.8946,
+                  "needsImprovement": 0.0659,
+                  "poor": 0.0395
+                },
+                {
+                  "good": 0.9077,
+                  "needsImprovement": 0.0562,
+                  "poor": 0.036
+                },
+                {
+                  "good": 0.908,
+                  "needsImprovement": 0.0569,
+                  "poor": 0.0351
+                },
+                {
+                  "good": 0.9088,
+                  "needsImprovement": 0.0559,
+                  "poor": 0.0353
+                },
+                {
+                  "good": 0.9077,
+                  "needsImprovement": 0.0572,
+                  "poor": 0.0351
+                },
+                {
+                  "good": 0.9105,
+                  "needsImprovement": 0.0541,
+                  "poor": 0.0353
+                },
+                {
+                  "good": 0.9073,
+                  "needsImprovement": 0.058,
+                  "poor": 0.0347
+                },
+                {
+                  "good": 0.9053,
+                  "needsImprovement": 0.0595,
+                  "poor": 0.0351
+                },
+                {
+                  "good": 0.9086,
+                  "needsImprovement": 0.0565,
+                  "poor": 0.0349
+                },
+                {
+                  "good": 0.9126,
+                  "needsImprovement": 0.0555,
+                  "poor": 0.0319
+                },
+                {
+                  "good": 0.9128,
+                  "needsImprovement": 0.0551,
+                  "poor": 0.032
+                },
+                {
+                  "good": 0.9173,
+                  "needsImprovement": 0.0532,
+                  "poor": 0.0296
+                },
+                {
+                  "good": 0.9205,
+                  "needsImprovement": 0.0511,
+                  "poor": 0.0284
+                },
+                {
+                  "good": 0.9153,
+                  "needsImprovement": 0.0543,
+                  "poor": 0.0303
+                },
+                {
+                  "good": 0.918,
+                  "needsImprovement": 0.0536,
+                  "poor": 0.0284
+                },
+                {
+                  "good": 0.9219,
+                  "needsImprovement": 0.0506,
+                  "poor": 0.0275
+                },
+                {
+                  "good": 0.8929,
+                  "needsImprovement": 0.0695,
+                  "poor": 0.0377
+                }
+              ]
+            }
+          },
+          "normalizedUrl": null
+        }
+      }
+    },
+    "collectionPeriods": [
+      {
+        "firstDate": "2026-10-13",
+        "lastDate": "2026-11-09"
+      }
+    ],
+    "sourceNotes": [
+      "CrUX API: p75 and good/NI/poor shares of real Chrome users over the 28-day collection period 2026-10-13..2026-11-09. https://developer.chrome.com/docs/crux/api",
+      "CrUX History API: 25 weekly 28-day periods, oldest first; ineligible periods are null. https://developer.chrome.com/docs/crux/history-api",
+      "PageSpeed Insights loadingExperience/originLoadingExperience (analysed 2026-11-11T11:05:02.524Z / 2026-11-11T11:06:58.731Z): separate source next to CrUX, reports no collection period. https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/runpagespeed",
+      "CrUX history PHONE url https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower: 24 of 25 periods ineligible (kept as null).",
+      "CrUX history DESKTOP url https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower: 24 of 25 periods ineligible (kept as null).",
+      "CrUX PHONE vs PSI mobile, url level: identical (p75 115 ms, same good/NI/poor shares).",
+      "CrUX PHONE vs PSI mobile, origin level: identical (p75 180 ms, same good/NI/poor shares).",
+      "CrUX DESKTOP vs PSI desktop, url level: identical (p75 60 ms, same good/NI/poor shares).",
+      "CrUX DESKTOP vs PSI desktop, origin level: identical (p75 89 ms, same good/NI/poor shares)."
+    ]
+  },
+  "reconciliation": {
+    "verdict": "not-reproduced",
+    "field": {
+      "kind": "data",
+      "level": "url",
+      "formFactor": "PHONE",
+      "p75": 115,
+      "densities": {
+        "good": 0.8814,
+        "needsImprovement": 0.069,
+        "poor": 0.0496
+      },
+      "collectionPeriod": {
+        "firstDate": "2026-10-13",
+        "lastDate": "2026-11-09"
+      }
+    },
+    "scenarios": [
+      {
+        "scenarioId": "idle:t-3b76fdebec",
+        "medianMs": 51.84,
+        "bucket": "good",
+        "reachesFieldP75": false
+      },
+      {
+        "scenarioId": "idle:t-bcb515b10f",
+        "medianMs": 27.871,
+        "bucket": "good",
+        "reachesFieldP75": false
+      },
+      {
+        "scenarioId": "idle:t-fdb718b609",
+        "medianMs": 26.966,
+        "bucket": "good",
+        "reachesFieldP75": false
+      },
+      {
+        "scenarioId": "idle:t-23a472b65a",
+        "medianMs": 25.555,
+        "bucket": "good",
+        "reachesFieldP75": false
+      },
+      {
+        "scenarioId": "idle:t-ec9c69185e",
+        "medianMs": 24.147,
+        "bucket": "good",
+        "reachesFieldP75": false
+      }
+    ],
+    "text": "Field INP p75 (CrUX PHONE, url level, 2026-10-13..2026-11-09) = 115 ms. No lab scenario reached it: not reproduced in the lab (real devices, logged-in states, iframes, untested interactions)."
+  },
+  "issues": [
+    {
+      "ruleId": "context/dom-size",
+      "title": "Large DOM (more than ~800 / ~1,400 elements, Lighthouse dom-size)",
+      "phase": "context",
+      "specUrl": "https://developer.chrome.com/docs/lighthouse/performance/dom-size",
+      "severity": "info",
+      "certainty": "screening-only",
+      "scenarioIds": [
+        "idle:t-fdb718b609",
+        "idle:t-bcb515b10f",
+        "idle:t-23a472b65a",
+        "idle:t-ec9c69185e",
+        "idle:t-3b76fdebec"
+      ],
+      "reproducibility": {
+        "fired": 5,
+        "runs": 5,
+        "interval": {
+          "low": 0.5655175352168254,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "DOM elements",
+          "value": "2178"
+        },
+        {
+          "label": "max depth",
+          "value": "24"
+        },
+        {
+          "label": "max children of one element",
+          "value": "114"
+        }
+      ]
+    },
+    {
+      "ruleId": "context/page-exceptions",
+      "title": "Uncaught exceptions on the page during the run",
+      "phase": "context",
+      "specUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Window/error_event",
+      "severity": "info",
+      "certainty": "screening-only",
+      "scenarioIds": [
+        "idle:t-fdb718b609",
+        "idle:t-bcb515b10f",
+        "idle:t-23a472b65a",
+        "idle:t-ec9c69185e",
+        "idle:t-3b76fdebec"
+      ],
+      "reproducibility": {
+        "fired": 5,
+        "runs": 5,
+        "interval": {
+          "low": 0.5655175352168254,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "exception",
+          "value": "Script error."
+        }
+      ]
+    },
+    {
+      "ruleId": "presentation/non-composited-animation",
+      "title": "Non-composited animation runs during the interaction (needs layout/paint every frame)",
+      "phase": "presentation",
+      "specUrl": "https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations",
+      "severity": "info",
+      "certainty": "screening-only",
+      "scenarioIds": [
+        "idle:t-bcb515b10f"
+      ],
+      "reproducibility": {
+        "fired": 1,
+        "runs": 1,
+        "interval": {
+          "low": 0.20654931437723745,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "DIV id='onetrust-banner-sdk' class='otFlat ot-iab-2 bottom vertical-align-content ot-buttons-fw' visibility",
+          "value": "failure code 8200; properties: visibility"
+        },
+        {
+          "label": "DIV class='onetrust-pc-dark-filter ot-fade-in' visibility",
+          "value": "failure code 8200; properties: visibility"
+        },
+        {
+          "label": "DIV class='onetrust-pc-dark-filter ot-fade-in' opacity",
+          "value": "failure code 64; properties: n/a"
+        }
+      ]
+    }
+  ],
+  "comparisons": [],
+  "scenarios": [
+    {
+      "scenario": {
+        "id": "idle:t-fdb718b609",
+        "targetId": "t-fdb718b609",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-fdb718b609",
+        "selector": "div#onetrust-banner-sdk",
+        "label": "Our use of cookies and other technologies",
+        "kind": "listener",
+        "rect": {
+          "x": 0,
+          "y": 82.3125,
+          "width": 412,
+          "height": 740.6875
+        },
+        "aboveFold": true,
+        "handlerSignature": "div.bottom.ot-buttons-fw.ot-iab-.otFlat.vertical-align-content|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:361201",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-fdb718b609",
+        "runs": 3,
+        "measured": 3,
+        "values": [
+          33.149,
+          26.966,
+          26.183
+        ],
+        "outcomes": {
+          "measured": 3
+        },
+        "median": 26.966,
+        "min": 26.183,
+        "max": 33.149
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-bcb515b10f",
+        "targetId": "t-bcb515b10f",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-bcb515b10f",
+        "selector": "button#onetrust-accept-btn-handler",
+        "label": "Accept All",
+        "kind": "button",
+        "rect": {
+          "x": 20.59375,
+          "y": 653.140625,
+          "width": 370.796875,
+          "height": 41.609375
+        },
+        "aboveFold": true,
+        "handlerSignature": "button|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:360420",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-bcb515b10f",
+        "runs": 3,
+        "measured": 3,
+        "values": [
+          44.923,
+          27.871,
+          23.002
+        ],
+        "outcomes": {
+          "measured": 3
+        },
+        "median": 27.871,
+        "min": 23.002,
+        "max": 44.923
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-23a472b65a",
+        "targetId": "t-23a472b65a",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-23a472b65a",
+        "selector": "button#onetrust-reject-all-handler",
+        "label": "Essential Cookies Only",
+        "kind": "button",
+        "rect": {
+          "x": 20.59375,
+          "y": 712.75,
+          "width": 370.796875,
+          "height": 41.609375
+        },
+        "aboveFold": true,
+        "handlerSignature": "button|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:360552",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-23a472b65a",
+        "runs": 3,
+        "measured": 3,
+        "values": [
+          55.654,
+          22.796,
+          25.555
+        ],
+        "outcomes": {
+          "measured": 3
+        },
+        "median": 25.555,
+        "min": 22.796,
+        "max": 55.654
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-ec9c69185e",
+        "targetId": "t-ec9c69185e",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-ec9c69185e",
+        "selector": "button#onetrust-pc-btn-handler",
+        "label": "Show Purposes, Opens the preference center dialog",
+        "kind": "button",
+        "rect": {
+          "x": 20.59375,
+          "y": 772.359375,
+          "width": 370.796875,
+          "height": 41.609375
+        },
+        "aboveFold": true,
+        "handlerSignature": "button|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:360283",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-ec9c69185e",
+        "runs": 3,
+        "measured": 3,
+        "values": [
+          24.147,
+          23.035,
+          42.958
+        ],
+        "outcomes": {
+          "measured": 3
+        },
+        "median": 24.147,
+        "min": 23.035,
+        "max": 42.958
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-3b76fdebec",
+        "targetId": "t-3b76fdebec",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-3b76fdebec",
+        "selector": "p#onetrust-policy-text > a:nth-of-type(1)",
+        "label": "affiliates",
+        "kind": "link",
+        "rect": {
+          "x": 86.75,
+          "y": 150.21875,
+          "width": 52.75,
+          "height": 15
+        },
+        "aboveFold": true,
+        "handlerSignature": "a[target=_blank]|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "target=_blank opens a new browsing context"
+      },
+      "summary": {
+        "scenarioId": "idle:t-3b76fdebec",
+        "runs": 3,
+        "measured": 3,
+        "values": [
+          51.84,
+          52.269,
+          45.784
+        ],
+        "outcomes": {
+          "measured": 3
+        },
+        "median": 51.84,
+        "min": 45.784,
+        "max": 52.269
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-34b0e38ae0",
+        "targetId": "t-34b0e38ae0",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-34b0e38ae0",
+        "selector": "div#mobile-footer-account-nav > nav",
+        "label": "User Account Nav",
+        "kind": "listener",
+        "rect": {
+          "x": 20,
+          "y": 5750.28125,
+          "width": 372,
+          "height": 32
+        },
+        "aboveFold": false,
+        "handlerSignature": "nav.user-account-nav.user-account-nav--subscriptions.user-account-nav--unauth|",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-34b0e38ae0",
+        "runs": 3,
+        "measured": 0,
+        "values": [],
+        "outcomes": {
+          "missed": 3
+        }
+      },
+      "deepDived": false
+    }
+  ],
+  "hazard": {
+    "fcpMs": 5076,
+    "longTasks": [
+      {
+        "startTime": 1145.515,
+        "durationMs": 65.445,
+        "topScriptUrl": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 4539.682,
+        "durationMs": 75.668,
+        "topScriptUrl": "https://lightning.cnn.com/launch/7be62238e4c3/97fa00444124/launch-2878c87af5e3.min.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 4700.761,
+        "durationMs": 104.524,
+        "topScriptUrl": "https://cdn.optimizely.com/public/125375509/s/articleprod.js",
+        "entity": "Optimizely",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 4806.789,
+        "durationMs": 97.311,
+        "topScriptUrl": "",
+        "entity": "(no JS samples)",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 4929.184,
+        "durationMs": 62.976,
+        "topScriptUrl": "https://lightning.cnn.com/launch/7be62238e4c3/97fa00444124/launch-2878c87af5e3.min.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 6585.927,
+        "durationMs": 76.119,
+        "topScriptUrl": "https://registry.api.cnn.io/bundles/fave/latest-4.x/js",
+        "entity": "cnn.io",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 10289.214,
+        "durationMs": 699.551,
+        "topScriptUrl": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 11001.145,
+        "durationMs": 93.173,
+        "topScriptUrl": "https://edition.cnn.com/media/sites/js/bundles/cnn-edition-adfuel-41088f557462fde981445fa7055f73bbcdce93fe0dfe99c13ecc14d127167bd6.min.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 11094.331,
+        "durationMs": 69.556,
+        "topScriptUrl": "https://edition.cnn.com/media/sites/js/bundles/cnn-edition-adfuel-body-f5f29a92b42af7c045a57b85f77667e4f871a89098f7fff2468fd5b7c9fcd250.min.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 11224.189,
+        "durationMs": 50.331,
+        "topScriptUrl": "https://registry.api.cnn.io/bundles/fave/latest-4.x/js",
+        "entity": "cnn.io",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 14511.788,
+        "durationMs": 68.419,
+        "topScriptUrl": "https://imasdk.googleapis.com/js/sdkloader/ima3.js",
+        "entity": "Other Google APIs/SDKs",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 15429.99,
+        "durationMs": 148.642,
+        "topScriptUrl": "https://js.stripe.com/dahlia/stripe.js",
+        "entity": "Stripe",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 15596.173,
+        "durationMs": 422.3,
+        "topScriptUrl": "pptr:;CdpFrame.%3Canonymous%3E%20(file%3A%2F%2F%2Finp-analyser%2Fnode_modules%2Fpuppeteer-core%2Flib%2Fpuppeteer%2Futil%2Fdecorators.js%3A101%3A27)",
+        "entity": "",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 16043.582,
+        "durationMs": 204.693,
+        "topScriptUrl": "https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 16732.04,
+        "durationMs": 154.871,
+        "topScriptUrl": "https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 16975.243,
+        "durationMs": 55.435,
+        "topScriptUrl": "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+        "entity": "Google/Doubleclick Ads",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 18392.825,
+        "durationMs": 166.781,
+        "topScriptUrl": "https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202611050203/pubads_impl.js?cb=122882196",
+        "entity": "Google/Doubleclick Ads",
+        "isFirstParty": false
+      }
+    ],
+    "peakHazardMs": 10289.214,
+    "peakBusyMs": 912.6110000000008
+  },
+  "targets": {
+    "measured": [
+      {
+        "id": "t-fdb718b609",
+        "selector": "div#onetrust-banner-sdk",
+        "label": "Our use of cookies and other technologies",
+        "kind": "listener",
+        "rect": {
+          "x": 0,
+          "y": 82.3125,
+          "width": 412,
+          "height": 740.6875
+        },
+        "aboveFold": true,
+        "handlerSignature": "div.bottom.ot-buttons-fw.ot-iab-.otFlat.vertical-align-content|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:361201",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      {
+        "id": "t-bcb515b10f",
+        "selector": "button#onetrust-accept-btn-handler",
+        "label": "Accept All",
+        "kind": "button",
+        "rect": {
+          "x": 20.59375,
+          "y": 653.140625,
+          "width": 370.796875,
+          "height": 41.609375
+        },
+        "aboveFold": true,
+        "handlerSignature": "button|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:360420",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      {
+        "id": "t-23a472b65a",
+        "selector": "button#onetrust-reject-all-handler",
+        "label": "Essential Cookies Only",
+        "kind": "button",
+        "rect": {
+          "x": 20.59375,
+          "y": 712.75,
+          "width": 370.796875,
+          "height": 41.609375
+        },
+        "aboveFold": true,
+        "handlerSignature": "button|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:360552",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      {
+        "id": "t-ec9c69185e",
+        "selector": "button#onetrust-pc-btn-handler",
+        "label": "Show Purposes, Opens the preference center dialog",
+        "kind": "button",
+        "rect": {
+          "x": 20.59375,
+          "y": 772.359375,
+          "width": 370.796875,
+          "height": 41.609375
+        },
+        "aboveFold": true,
+        "handlerSignature": "button|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:360283",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      {
+        "id": "t-3b76fdebec",
+        "selector": "p#onetrust-policy-text > a:nth-of-type(1)",
+        "label": "affiliates",
+        "kind": "link",
+        "rect": {
+          "x": 86.75,
+          "y": 150.21875,
+          "width": 52.75,
+          "height": 15
+        },
+        "aboveFold": true,
+        "handlerSignature": "a[target=_blank]|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "target=_blank opens a new browsing context"
+      },
+      {
+        "id": "t-34b0e38ae0",
+        "selector": "div#mobile-footer-account-nav > nav",
+        "label": "User Account Nav",
+        "kind": "listener",
+        "rect": {
+          "x": 20,
+          "y": 5750.28125,
+          "width": 372,
+          "height": 32
+        },
+        "aboveFold": false,
+        "handlerSignature": "nav.user-account-nav.user-account-nav--subscriptions.user-account-nav--unauth|",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      }
+    ],
+    "excluded": [
+      {
+        "id": "t-e5fbcf2dd7",
+        "selector": "html > body > div:nth-of-type(1) > section:nth-of-type(3) > section:nth-of-type(1) > section:nth-of-type(2) > article > section > main > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(4) > div > div > a",
+        "label": "share with Email",
+        "kind": "link",
+        "rect": {
+          "x": 20,
+          "y": 5517.28125,
+          "width": 34,
+          "height": 32
+        },
+        "aboveFold": false,
+        "handlerSignature": "a.social-share_labelled-list__share.vossi-social-share_labelled-list__share[target=_blank]|https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower:10597:1923",
+        "safety": "dangerous",
+        "safetyReason": "mailto: link opens an external app"
+      }
+    ],
+    "globalListeners": [
+      {
+        "type": "keydown",
+        "url": "https://registry.api.cnn.io/bundles/fave/4.72.2/app",
+        "line": 1,
+        "column": 13821,
+        "on": "document"
+      },
+      {
+        "type": "keydown",
+        "url": "https://edition.cnn.com/media/sites/js/bundles/cnn-edition-adfuel-body-f5f29a92b42af7c045a57b85f77667e4f871a89098f7fff2468fd5b7c9fcd250.min.js",
+        "line": 1,
+        "column": 233394,
+        "on": "document"
+      },
+      {
+        "type": "click",
+        "url": "https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js",
+        "line": 7,
+        "column": 371885,
+        "on": "document"
+      }
+    ]
+  },
+  "run": {
+    "runs": 18,
+    "excludedRuns": 0,
+    "loads": 22,
+    "sentinelReferenceMs": [
+      153.865,
+      130.471,
+      133.851,
+      130.317,
+      134.157,
+      133.443
+    ]
+  },
+  "limitations": [
+    "Lab values are \"lab @ CPU 4x, mobile emulation, headless Chrome Chrome/155.0.8059.39\" on one machine - not INP. INP is the CrUX field p75 above.",
+    "CrUX INP is the 75th percentile over 28 days of real Chrome users' page loads, each load's INP being its worst interaction minus one per 50 (https://developers.google.com/speed/docs/insights/v5/about, https://web.dev/articles/inp#what-is-inp).",
+    "Only interactions the tool discovered and could trigger safely were measured; logged-in states, real form input, ads and cross-origin iframes were not.",
+    "First-party mutating requests were blocked and cross-document navigations answered with 204, so work that depends on those responses is not measured.",
+    "GPU/raster work is not CPU-throttled by Chrome's CPU throttling; presentation delay on real mid-tier phones can be larger."
+  ]
+}

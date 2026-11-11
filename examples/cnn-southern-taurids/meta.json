@@ -1,0 +1,377 @@
+{
+  "url": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+  "seed": 42,
+  "startedAt": "2026-11-11T11:05:55.755Z",
+  "finishedAt": "2026-11-11T11:19:53.012Z",
+  "chromeVersion": "Chrome/155.0.8059.39",
+  "condition": {
+    "device": "mobile",
+    "cpuRate": 4,
+    "thirdParty": {
+      "kind": "allow"
+    },
+    "consent": "none",
+    "cache": "cold"
+  },
+  "hazard": {
+    "fcpMs": 5076,
+    "longTasks": [
+      {
+        "startTime": 1145.515,
+        "durationMs": 65.445,
+        "topScriptUrl": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 4539.682,
+        "durationMs": 75.668,
+        "topScriptUrl": "https://lightning.cnn.com/launch/7be62238e4c3/97fa00444124/launch-2878c87af5e3.min.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 4700.761,
+        "durationMs": 104.524,
+        "topScriptUrl": "https://cdn.optimizely.com/public/125375509/s/articleprod.js",
+        "entity": "Optimizely",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 4806.789,
+        "durationMs": 97.311,
+        "topScriptUrl": "",
+        "entity": "(no JS samples)",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 4929.184,
+        "durationMs": 62.976,
+        "topScriptUrl": "https://lightning.cnn.com/launch/7be62238e4c3/97fa00444124/launch-2878c87af5e3.min.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 6585.927,
+        "durationMs": 76.119,
+        "topScriptUrl": "https://registry.api.cnn.io/bundles/fave/latest-4.x/js",
+        "entity": "cnn.io",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 10289.214,
+        "durationMs": 699.551,
+        "topScriptUrl": "https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 11001.145,
+        "durationMs": 93.173,
+        "topScriptUrl": "https://edition.cnn.com/media/sites/js/bundles/cnn-edition-adfuel-41088f557462fde981445fa7055f73bbcdce93fe0dfe99c13ecc14d127167bd6.min.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 11094.331,
+        "durationMs": 69.556,
+        "topScriptUrl": "https://edition.cnn.com/media/sites/js/bundles/cnn-edition-adfuel-body-f5f29a92b42af7c045a57b85f77667e4f871a89098f7fff2468fd5b7c9fcd250.min.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 11224.189,
+        "durationMs": 50.331,
+        "topScriptUrl": "https://registry.api.cnn.io/bundles/fave/latest-4.x/js",
+        "entity": "cnn.io",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 14511.788,
+        "durationMs": 68.419,
+        "topScriptUrl": "https://imasdk.googleapis.com/js/sdkloader/ima3.js",
+        "entity": "Other Google APIs/SDKs",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 15429.99,
+        "durationMs": 148.642,
+        "topScriptUrl": "https://js.stripe.com/dahlia/stripe.js",
+        "entity": "Stripe",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 15596.173,
+        "durationMs": 422.3,
+        "topScriptUrl": "pptr:;CdpFrame.%3Canonymous%3E%20(file%3A%2F%2F%2Finp-analyser%2Fnode_modules%2Fpuppeteer-core%2Flib%2Fpuppeteer%2Futil%2Fdecorators.js%3A101%3A27)",
+        "entity": "",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 16043.582,
+        "durationMs": 204.693,
+        "topScriptUrl": "https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 16732.04,
+        "durationMs": 154.871,
+        "topScriptUrl": "https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js",
+        "entity": "cnn.com",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 16975.243,
+        "durationMs": 55.435,
+        "topScriptUrl": "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+        "entity": "Google/Doubleclick Ads",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 18392.825,
+        "durationMs": 166.781,
+        "topScriptUrl": "https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202611050203/pubads_impl.js?cb=122882196",
+        "entity": "Google/Doubleclick Ads",
+        "isFirstParty": false
+      }
+    ],
+    "peakHazardMs": 10289.214,
+    "peakBusyMs": 912.6110000000008
+  },
+  "targets": [
+    {
+      "id": "t-fdb718b609",
+      "selector": "div#onetrust-banner-sdk",
+      "label": "Our use of cookies and other technologies",
+      "kind": "listener",
+      "rect": {
+        "x": 0,
+        "y": 82.3125,
+        "width": 412,
+        "height": 740.6875
+      },
+      "aboveFold": true,
+      "handlerSignature": "div.bottom.ot-buttons-fw.ot-iab-.otFlat.vertical-align-content|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:361201",
+      "safety": "safe",
+      "safetyReason": "no denylist term, no form submit, no navigation to another document"
+    },
+    {
+      "id": "t-bcb515b10f",
+      "selector": "button#onetrust-accept-btn-handler",
+      "label": "Accept All",
+      "kind": "button",
+      "rect": {
+        "x": 20.59375,
+        "y": 653.140625,
+        "width": 370.796875,
+        "height": 41.609375
+      },
+      "aboveFold": true,
+      "handlerSignature": "button|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:360420",
+      "safety": "safe",
+      "safetyReason": "no denylist term, no form submit, no navigation to another document"
+    },
+    {
+      "id": "t-23a472b65a",
+      "selector": "button#onetrust-reject-all-handler",
+      "label": "Essential Cookies Only",
+      "kind": "button",
+      "rect": {
+        "x": 20.59375,
+        "y": 712.75,
+        "width": 370.796875,
+        "height": 41.609375
+      },
+      "aboveFold": true,
+      "handlerSignature": "button|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:360552",
+      "safety": "safe",
+      "safetyReason": "no denylist term, no form submit, no navigation to another document"
+    },
+    {
+      "id": "t-ec9c69185e",
+      "selector": "button#onetrust-pc-btn-handler",
+      "label": "Show Purposes, Opens the preference center dialog",
+      "kind": "button",
+      "rect": {
+        "x": 20.59375,
+        "y": 772.359375,
+        "width": 370.796875,
+        "height": 41.609375
+      },
+      "aboveFold": true,
+      "handlerSignature": "button|https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js:7:360283",
+      "safety": "safe",
+      "safetyReason": "no denylist term, no form submit, no navigation to another document"
+    },
+    {
+      "id": "t-3b76fdebec",
+      "selector": "p#onetrust-policy-text > a:nth-of-type(1)",
+      "label": "affiliates",
+      "kind": "link",
+      "rect": {
+        "x": 86.75,
+        "y": 150.21875,
+        "width": 52.75,
+        "height": 15
+      },
+      "aboveFold": true,
+      "handlerSignature": "a[target=_blank]|",
+      "safety": "cross-document-navigation",
+      "safetyReason": "target=_blank opens a new browsing context"
+    },
+    {
+      "id": "t-34b0e38ae0",
+      "selector": "div#mobile-footer-account-nav > nav",
+      "label": "User Account Nav",
+      "kind": "listener",
+      "rect": {
+        "x": 20,
+        "y": 5750.28125,
+        "width": 372,
+        "height": 32
+      },
+      "aboveFold": false,
+      "handlerSignature": "nav.user-account-nav.user-account-nav--subscriptions.user-account-nav--unauth|",
+      "safety": "safe",
+      "safetyReason": "no denylist term, no form submit, no navigation to another document"
+    }
+  ],
+  "excludedTargets": [
+    {
+      "id": "t-e5fbcf2dd7",
+      "selector": "html > body > div:nth-of-type(1) > section:nth-of-type(3) > section:nth-of-type(1) > section:nth-of-type(2) > article > section > main > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(4) > div > div > a",
+      "label": "share with Email",
+      "kind": "link",
+      "rect": {
+        "x": 20,
+        "y": 5517.28125,
+        "width": 34,
+        "height": 32
+      },
+      "aboveFold": false,
+      "handlerSignature": "a.social-share_labelled-list__share.vossi-social-share_labelled-list__share[target=_blank]|https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower:10597:1923",
+      "safety": "dangerous",
+      "safetyReason": "mailto: link opens an external app"
+    }
+  ],
+  "globalListeners": [
+    {
+      "type": "keydown",
+      "url": "https://registry.api.cnn.io/bundles/fave/4.72.2/app",
+      "line": 1,
+      "column": 13821,
+      "on": "document"
+    },
+    {
+      "type": "keydown",
+      "url": "https://edition.cnn.com/media/sites/js/bundles/cnn-edition-adfuel-body-f5f29a92b42af7c045a57b85f77667e4f871a89098f7fff2468fd5b7c9fcd250.min.js",
+      "line": 1,
+      "column": 233394,
+      "on": "document"
+    },
+    {
+      "type": "click",
+      "url": "https://edition.cnn.com/wbdotp/scripttemplates/202610.1.0/otBannerSdk.js",
+      "line": 7,
+      "column": 371885,
+      "on": "document"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "idle:t-fdb718b609",
+      "targetId": "t-fdb718b609",
+      "phase": "idle",
+      "condition": {
+        "device": "mobile",
+        "cpuRate": 4,
+        "thirdParty": {
+          "kind": "allow"
+        },
+        "consent": "none",
+        "cache": "cold"
+      }
+    },
+    {
+      "id": "idle:t-bcb515b10f",
+      "targetId": "t-bcb515b10f",
+      "phase": "idle",
+      "condition": {
+        "device": "mobile",
+        "cpuRate": 4,
+        "thirdParty": {
+          "kind": "allow"
+        },
+        "consent": "none",
+        "cache": "cold"
+      }
+    },
+    {
+      "id": "idle:t-23a472b65a",
+      "targetId": "t-23a472b65a",
+      "phase": "idle",
+      "condition": {
+        "device": "mobile",
+        "cpuRate": 4,
+        "thirdParty": {
+          "kind": "allow"
+        },
+        "consent": "none",
+        "cache": "cold"
+      }
+    },
+    {
+      "id": "idle:t-ec9c69185e",
+      "targetId": "t-ec9c69185e",
+      "phase": "idle",
+      "condition": {
+        "device": "mobile",
+        "cpuRate": 4,
+        "thirdParty": {
+          "kind": "allow"
+        },
+        "consent": "none",
+        "cache": "cold"
+      }
+    },
+    {
+      "id": "idle:t-3b76fdebec",
+      "targetId": "t-3b76fdebec",
+      "phase": "idle",
+      "condition": {
+        "device": "mobile",
+        "cpuRate": 4,
+        "thirdParty": {
+          "kind": "allow"
+        },
+        "consent": "none",
+        "cache": "cold"
+      }
+    },
+    {
+      "id": "idle:t-34b0e38ae0",
+      "targetId": "t-34b0e38ae0",
+      "phase": "idle",
+      "condition": {
+        "device": "mobile",
+        "cpuRate": 4,
+        "thirdParty": {
+          "kind": "allow"
+        },
+        "consent": "none",
+        "cache": "cold"
+      }
+    }
+  ],
+  "deepDived": [],
+  "sentinelReferenceMs": [
+    153.865,
+    130.471,
+    133.851,
+    130.317,
+    134.157,
+    133.443
+  ],
+  "loads": 22
+}

@@ -1,0 +1,12 @@
+phone  : INP p75 229 ms (url level, 2026-10-13..2026-11-09) good 69.8% / needs improvement 22.7% / poor 7.5% | PSI: equal
+desktop: INP p75 60 ms (url level, 2026-10-13..2026-11-09) good 94.0% / needs improvement 3.4% / poor 2.7% | PSI: equal
+  - CrUX API: p75 and good/NI/poor shares of real Chrome users over the 28-day collection period 2026-10-13..2026-11-09. https://developer.chrome.com/docs/crux/api
+  - CrUX History API: 25 weekly 28-day periods, oldest first; ineligible periods are null. https://developer.chrome.com/docs/crux/history-api
+  - PageSpeed Insights loadingExperience/originLoadingExperience (analysed 2026-11-11T11:20:53.717Z / 2026-11-11T11:20:53.665Z): separate source next to CrUX, reports no collection period. https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/runpagespeed
+  - CrUX history PHONE url https://techcrunch.com/2026/11/07/amazons-new-basic-kindle-proves-you-dont-need-all-the-bells-and-whistles/: 24 of 25 periods ineligible (kept as null).
+  - CrUX history DESKTOP url https://techcrunch.com/2026/11/07/amazons-new-basic-kindle-proves-you-dont-need-all-the-bells-and-whistles/: 24 of 25 periods ineligible (kept as null).
+  - CrUX PHONE vs PSI mobile, url level: identical (p75 229 ms, same good/NI/poor shares).
+  - CrUX PHONE vs PSI mobile, origin level: identical (p75 177 ms, same good/NI/poor shares).
+  - CrUX DESKTOP vs PSI desktop, url level: identical (p75 60 ms, same good/NI/poor shares).
+  - CrUX DESKTOP vs PSI desktop, origin level: identical (p75 68 ms, same good/NI/poor shares).
+[inp] field: examples/techcrunch-basic-kindle/field.json

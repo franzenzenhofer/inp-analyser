@@ -227,6 +227,32 @@ h3 { font-size: 26px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 80
 .sub-row .val { font-size: clamp(28px, 7vw, 36px); font-weight: 850; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
 .sub-row .val small { font-size: 18px; font-weight: 650; letter-spacing: 0; }
 
+/* example cards (generated from examples/<slug>/report.json) */
+.jump { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
+.jump a { display: inline-flex; align-items: center; min-height: var(--tap); padding: 8px 18px; border: 1px solid var(--ink); font: 600 16px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
+.jump a:hover { background: var(--green); color: var(--ink); }
+.exs { display: grid; grid-template-columns: minmax(0, 1fr); gap: 44px; margin: 0 0 32px; }
+.ex, .ex-field > * { min-width: 0; }
+.ex { border: 1px solid var(--ink); background: var(--paper); box-shadow: 8px 8px 0 var(--ph2); }
+.ex-top { padding: 22px 24px; background: var(--green-wash); border-bottom: 1px solid var(--ink); }
+.ex-top h3 { margin: 8px 0 6px; font: 700 clamp(18px, 4.6vw, 24px)/1.3 var(--mono); letter-spacing: -0.01em; overflow-wrap: anywhere; }
+.ex-top h3 a { text-decoration-color: var(--green); }
+.section .ex-meta { margin: 0; font-size: 16px; color: var(--ink-muted); }
+.ex-body { padding: 24px; }
+.ex-field { display: grid; gap: 28px; }
+.ex-numrow { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 18px; margin: 6px 0 14px; }
+.ex-num { font-size: clamp(56px, 14vw, 84px); line-height: 0.9; font-weight: 850; letter-spacing: -0.045em; font-variant-numeric: tabular-nums; }
+.ex-num small { font-size: 0.3em; letter-spacing: 0; margin-left: 4px; font-weight: 700; }
+.verdict.v-ni { border-color: var(--ni); color: #7a5200; }
+.verdict.v-poor { border-color: var(--poor); color: #9b1f1f; }
+.section .ex-dev .meta { margin: 0; }
+.section .ex-parity { background: var(--green-wash); border-left: 4px solid var(--green-text); padding: 12px 16px; margin: 24px 0; }
+.ex-lab { color: var(--ink-body); }
+h4 { font-size: 20px; line-height: 1.25; font-weight: 800; letter-spacing: -0.01em; margin: 28px 0 12px; }
+.ex .findings { margin: 0 0 12px; }
+.ex .term { margin-top: 20px; }
+.section .ex-links { margin: 18px 0 0; }
+
 /* chart */
 .chart { margin: 8px 0 40px; }
 .chart-title { font-size: 22px; font-weight: 800; letter-spacing: -0.015em; margin: 0 0 10px; }
@@ -329,6 +355,8 @@ footer a { min-height: var(--tap); display: inline-flex; align-items: center; }
   .topbar .cta { margin-left: 0; }
   .hero .wrap { grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); align-items: center; padding-top: 72px; padding-bottom: 88px; }
   .tl { justify-self: end; }
+  .ex-field { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
+  .ex-top, .ex-body { padding-left: 32px; padding-right: 32px; }
   .hero h1 { font-size: clamp(64px, 7.4vw, 100px); }
   .hero h1 span { white-space: nowrap; }
   .facts-grid { grid-template-columns: repeat(3, 1fr); }
@@ -507,10 +535,113 @@ footer a { min-height: var(--tap); display: inline-flex; align-items: center; }
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">03 / Examples: real runs</p>
-      <h2 id="example">Real field data.<span>Checked against PSI.</span></h2>
-      <p>Field data for <a href="https://en.wikipedia.org/wiki/Main_Page">en.wikipedia.org/wiki/Main_Page</a>, fetched with <code>inp field</code> on 11 Nov 2026.</p>
+      <h2 id="example">Real pages.<span>Real findings.</span></h2>
+      <p>Unedited runs of <code>inp analyse</code> on real pages: field data first, then what the lab found, with element, phase, script, owner, milliseconds and certainty. Every number below comes from the run files in <a href="https://github.com/franzenzenhofer/inp-analyser/tree/main/examples">examples/</a>.</p>
     </div>
+<!-- EXAMPLES:START -->
+<ul class="jump" aria-label="Examples"><li><a href="#ex-wikipedia-united-states">Wikipedia</a></li><li><a href="#ex-cnn-southern-taurids">CNN</a></li><li><a href="#ex-techcrunch-basic-kindle">TechCrunch</a></li></ul>
+<div class="exs"><article class="ex" id="ex-wikipedia-united-states" aria-labelledby="ex-wikipedia-united-states-t"><header class="ex-top"><p class="eyebrow">Example 01 / Wikipedia</p><h3 id="ex-wikipedia-united-states-t"><a href="https://en.wikipedia.org/wiki/United_States">/wiki/United_States</a></h3><p class="ex-meta">en.wikipedia.org - inp analyse, mobile, CPU 4x, seed 42, Chrome 155.0.8059.39, run 2026-11-11</p></header><div class="ex-body"><div class="ex-field"><div class="ex-dev"><p class="label">Phone, URL level</p><div class="ex-numrow"><span class="ex-num">103<small>ms</small></span><span class="verdict v-good"><span class="sw good" aria-hidden="true"></span>good (200 ms or less)</span></div><ul class="legend"><li><span class="sw good" aria-hidden="true"></span>good 91.3%</li><li><span class="sw ni" aria-hidden="true"></span>needs improvement 6.7%</li><li><span class="sw poor" aria-hidden="true"></span>poor 2.1%</li></ul><div class="dist" role="img" aria-label="Phone distribution: good 91.3%, needs improvement 6.7%, poor 2.1%"><span class="good" style="flex:91.3"></span><span class="ni" style="flex:6.7"></span><span class="poor" style="flex:2.1"></span></div><p class="meta">CrUX p75, 2026-10-12 to 2026-11-08</p></div><div class="ex-dev"><p class="label">Desktop, URL level</p><div class="ex-numrow"><span class="ex-num">110<small>ms</small></span><span class="verdict v-good"><span class="sw good" aria-hidden="true"></span>good (200 ms or less)</span></div><ul class="legend"><li><span class="sw good" aria-hidden="true"></span>good 85.5%</li><li><span class="sw ni" aria-hidden="true"></span>needs improvement 8.3%</li><li><span class="sw poor" aria-hidden="true"></span>poor 6.2%</li></ul><div class="dist" role="img" aria-label="Desktop distribution: good 85.5%, needs improvement 8.3%, poor 6.2%"><span class="good" style="flex:85.5"></span><span class="ni" style="flex:8.3"></span><span class="poor" style="flex:6.2"></span></div><p class="meta">CrUX p75, 2026-10-12 to 2026-11-08</p></div></div><p class="ex-parity"><b>PSI parity:</b> phone URL identical (103 ms); phone origin identical (87 ms); desktop URL identical (110 ms); desktop origin identical (49 ms).</p><p class="ex-lab"><b>Lab:</b> 147 measured runs, 0 excluded, 151 page loads. 8 issues, 1 confirmed. 13 lab scenario(s) reach the field p75. Budget ended early: <code>INCOMPLETE</code> (time budget reached before deep-dive block 102).</p><h4>Top findings</h4><div class="findings"><article class="finding needs-improvement"><div class="finding-head"><span class="rule-id">input-delay/boot-window</span><span class="tag">input-delay</span><span class="tag">confirmed</span></div><p class="finding-lead">Same element is slower when tapped while the page boots</p><dl class="facts"><dt>Element</dt><dd><code>div#mwBA &gt; a:nth-of-type(2)</code></dd><dt>Evidence</dt><dd>boot median: 277 ms</dd><dt>Evidence</dt><dd>idle median: 78 ms</dd><dt>Time</dt><dd>+199 ms (Hodges-Lehmann shift) (95% CI 116-265 ms)</dd><dt>Certainty</dt><dd>confirmed</dd><dt>Runs</dt><dd>fired in 9 of 9 runs (95% CI 70-100%)</dd></dl></article><article class="finding needs-improvement"><div class="finding-head"><span class="rule-id">context/off-main-thread-time</span><span class="tag">context</span><span class="tag">screening-only</span></div><p class="finding-lead">Most of a slow interaction is not main-thread work (compositor / GPU / frame wait)</p><dl class="facts"><dt>Element</dt><dd><code>button#searchIcon</code></dd><dt>Evidence</dt><dd>not explained by main-thread work: 258 ms of 308 ms</dd><dt>Time</dt><dd>median 258 ms</dd><dt>Certainty</dt><dd>screening only</dd><dt>Runs</dt><dd>fired in 1 of 1 runs (95% CI 21-100%)</dd></dl></article><article class="finding needs-improvement"><div class="finding-head"><span class="rule-id">presentation/rendering-dominant</span><span class="tag">presentation</span><span class="tag">screening-only</span></div><p class="finding-lead">Rendering work dominates a slow interaction (presentation delay is the largest phase)</p><dl class="facts"><dt>Element</dt><dd><code>button#searchIcon</code></dd><dt>Evidence</dt><dd>style: 2 ms</dd><dt>Evidence</dt><dd>layout: 1 ms</dd><dt>Time</dt><dd>median 201 ms</dd><dt>Certainty</dt><dd>screening only</dd><dt>Runs</dt><dd>fired in 1 of 1 runs (95% CI 21-100%)</dd></dl></article></div><p class="note">Showing 3 of 8 issues, confirmed first.</p><div class="term"><div class="term-bar"><i><span></span></i><span>terminal.txt</span></div><pre tabindex="0"><code>Issues (8, ranked):
+1. [needs improvement | confirmed | input delay] Same element is slower when tapped while the page boots
+   div#mwBA &gt; a:nth-of-type(2) - lab @ CPU 4x, mobile: effect 199 ms (Hodges-Lehmann shift) (95% CI 116-265 ms); fired in 9 of 9 runs (95% CI 70-100%)
+   evidence: boot median: 277 ms
+   why this counts: https://web.dev/articles/optimize-input-delay
+2. [needs improvement | screening only | context] Most of a slow interaction is not main-thread work (compositor / GPU / frame wait)
+   button#searchIcon - lab @ CPU 4x, mobile: median 258 ms; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: not explained by main-thread work: 258 ms of 308 ms
+   why this counts: https://web.dev/articles/inp#whats_in_an_interaction
+3. [needs improvement | screening only | presentation delay] Rendering work dominates a slow interaction (presentation delay is the largest phase)
+   button#searchIcon - lab @ CPU 4x, mobile: median 201 ms; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: style: 2 ms
+   why this counts: https://web.dev/articles/inp#good-score
+4. [needs improvement | screening only | context] Large DOM (more than ~800 / ~1,400 elements, Lighthouse dom-size)
+...
+Run: 147 runs (0 excluded), 151 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile; INCOMPLETE: time budget reached before deep-dive block 102</code></pre></div><p class="ex-links"><a class="btn btn--sm" href="https://github.com/franzenzenhofer/inp-analyser/tree/main/examples/wikipedia-united-states">Full output: examples/wikipedia-united-states/</a></p></div></article><article class="ex" id="ex-cnn-southern-taurids" aria-labelledby="ex-cnn-southern-taurids-t"><header class="ex-top"><p class="eyebrow">Example 02 / CNN</p><h3 id="ex-cnn-southern-taurids-t"><a href="https://edition.cnn.com/2026/11/04/science/southern-taurids-meteor-shower">/2026/11/04/science/southern-taurids-meteor-shower</a></h3><p class="ex-meta">edition.cnn.com - inp analyse, mobile, CPU 4x, seed 42, Chrome 155.0.8059.39, run 2026-11-11</p></header><div class="ex-body"><div class="ex-field"><div class="ex-dev"><p class="label">Phone, URL level</p><div class="ex-numrow"><span class="ex-num">115<small>ms</small></span><span class="verdict v-good"><span class="sw good" aria-hidden="true"></span>good (200 ms or less)</span></div><ul class="legend"><li><span class="sw good" aria-hidden="true"></span>good 88.1%</li><li><span class="sw ni" aria-hidden="true"></span>needs improvement 6.9%</li><li><span class="sw poor" aria-hidden="true"></span>poor 5.0%</li></ul><div class="dist" role="img" aria-label="Phone distribution: good 88.1%, needs improvement 6.9%, poor 5.0%"><span class="good" style="flex:88.1"></span><span class="ni" style="flex:6.9"></span><span class="poor" style="flex:5.0"></span></div><p class="meta">CrUX p75, 2026-10-13 to 2026-11-09</p></div><div class="ex-dev"><p class="label">Desktop, URL level</p><div class="ex-numrow"><span class="ex-num">60<small>ms</small></span><span class="verdict v-good"><span class="sw good" aria-hidden="true"></span>good (200 ms or less)</span></div><ul class="legend"><li><span class="sw good" aria-hidden="true"></span>good 96.4%</li><li><span class="sw ni" aria-hidden="true"></span>needs improvement 2.1%</li><li><span class="sw poor" aria-hidden="true"></span>poor 1.5%</li></ul><div class="dist" role="img" aria-label="Desktop distribution: good 96.4%, needs improvement 2.1%, poor 1.5%"><span class="good" style="flex:96.4"></span><span class="ni" style="flex:2.1"></span><span class="poor" style="flex:1.5"></span></div><p class="meta">CrUX p75, 2026-10-13 to 2026-11-09</p></div></div><p class="ex-parity"><b>PSI parity:</b> phone URL identical (115 ms); phone origin identical (180 ms); desktop URL identical (60 ms); desktop origin identical (89 ms).</p><p class="ex-lab"><b>Lab:</b> 18 measured runs, 0 excluded, 22 page loads. 3 issues, 0 confirmed. 0 lab scenario(s) reach the field p75. The report says: "No lab scenario reached it: not reproduced in the lab (real devices, logged-in states, iframes, untested interactions)."</p><h4>Top findings</h4><div class="findings"><article class="finding info"><div class="finding-head"><span class="rule-id">context/dom-size</span><span class="tag">context</span><span class="tag">screening-only</span></div><p class="finding-lead">Large DOM (more than ~800 / ~1,400 elements, Lighthouse dom-size)</p><dl class="facts"><dt>Evidence</dt><dd>DOM elements: 2178</dd><dt>Evidence</dt><dd>max depth: 24</dd><dt>Certainty</dt><dd>screening only</dd><dt>Runs</dt><dd>fired in 5 of 5 runs (95% CI 57-100%)</dd></dl></article><article class="finding info"><div class="finding-head"><span class="rule-id">context/page-exceptions</span><span class="tag">context</span><span class="tag">screening-only</span></div><p class="finding-lead">Uncaught exceptions on the page during the run</p><dl class="facts"><dt>Evidence</dt><dd>exception: Script error.</dd><dt>Certainty</dt><dd>screening only</dd><dt>Runs</dt><dd>fired in 5 of 5 runs (95% CI 57-100%)</dd></dl></article><article class="finding info"><div class="finding-head"><span class="rule-id">presentation/non-composited-animation</span><span class="tag">presentation</span><span class="tag">screening-only</span></div><p class="finding-lead">Non-composited animation runs during the interaction (needs layout/paint every frame)</p><dl class="facts"><dt>Evidence</dt><dd>DIV id=&#x27;onetrust-banner-sdk&#x27; class=&#x27;otFlat ot-iab-2 bottom vertical-align-content ot-buttons-fw&#x27; visibility: failure code 8200; properties: visibility</dd><dt>Evidence</dt><dd>DIV class=&#x27;onetrust-pc-dark-filter ot-fade-in&#x27; visibility: failure code 8200; properties: visibility</dd><dt>Certainty</dt><dd>screening only</dd><dt>Runs</dt><dd>fired in 1 of 1 runs (95% CI 21-100%)</dd></dl></article></div><div class="term"><div class="term-bar"><i><span></span></i><span>terminal.txt</span></div><pre tabindex="0"><code>Issues (3, ranked):
+1. [info | screening only | context] Large DOM (more than ~800 / ~1,400 elements, Lighthouse dom-size)
+   lab @ CPU 4x, mobile: no duration attached; fired in 5 of 5 runs (95% CI 57-100%)
+   evidence: DOM elements: 2178
+   why this counts: https://developer.chrome.com/docs/lighthouse/performance/dom-size
+2. [info | screening only | context] Uncaught exceptions on the page during the run
+   lab @ CPU 4x, mobile: no duration attached; fired in 5 of 5 runs (95% CI 57-100%)
+   evidence: exception: Script error.
+   why this counts: https://developer.mozilla.org/en-US/docs/Web/API/Window/error_event
+3. [info | screening only | presentation delay] Non-composited animation runs during the interaction (needs layout/paint every frame)
+   lab @ CPU 4x, mobile: no duration attached; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: DIV id=&#x27;onetrust-banner-sdk&#x27; class=&#x27;otFlat ot-iab-2 bottom vertical-align-content ot-buttons-f...
+   why this counts: https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations
+Run: 18 runs (0 excluded), 22 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile</code></pre></div><p class="ex-links"><a class="btn btn--sm" href="https://github.com/franzenzenhofer/inp-analyser/tree/main/examples/cnn-southern-taurids">Full output: examples/cnn-southern-taurids/</a></p></div></article><article class="ex" id="ex-techcrunch-basic-kindle" aria-labelledby="ex-techcrunch-basic-kindle-t"><header class="ex-top"><p class="eyebrow">Example 03 / TechCrunch</p><h3 id="ex-techcrunch-basic-kindle-t"><a href="https://techcrunch.com/2026/11/07/amazons-new-basic-kindle-proves-you-dont-need-all-the-bells-and-whistles/">/2026/11/07/amazons-new-basic-kindle-proves-you-dont-need-all-the-bells-and-whistles/</a></h3><p class="ex-meta">techcrunch.com - inp field, fetched 2026-11-11</p></header><div class="ex-body"><div class="ex-field"><div class="ex-dev"><p class="label">Phone, URL level</p><div class="ex-numrow"><span class="ex-num">229<small>ms</small></span><span class="verdict v-ni"><span class="sw ni" aria-hidden="true"></span>needs improvement</span></div><ul class="legend"><li><span class="sw good" aria-hidden="true"></span>good 69.8%</li><li><span class="sw ni" aria-hidden="true"></span>needs improvement 22.7%</li><li><span class="sw poor" aria-hidden="true"></span>poor 7.5%</li></ul><div class="dist" role="img" aria-label="Phone distribution: good 69.8%, needs improvement 22.7%, poor 7.5%"><span class="good" style="flex:69.8"></span><span class="ni" style="flex:22.7"></span><span class="poor" style="flex:7.5"></span></div><p class="meta">CrUX p75, 2026-10-13 to 2026-11-09</p></div><div class="ex-dev"><p class="label">Desktop, URL level</p><div class="ex-numrow"><span class="ex-num">60<small>ms</small></span><span class="verdict v-good"><span class="sw good" aria-hidden="true"></span>good (200 ms or less)</span></div><ul class="legend"><li><span class="sw good" aria-hidden="true"></span>good 94.0%</li><li><span class="sw ni" aria-hidden="true"></span>needs improvement 3.4%</li><li><span class="sw poor" aria-hidden="true"></span>poor 2.7%</li></ul><div class="dist" role="img" aria-label="Desktop distribution: good 94.0%, needs improvement 3.4%, poor 2.7%"><span class="good" style="flex:94.0"></span><span class="ni" style="flex:3.4"></span><span class="poor" style="flex:2.7"></span></div><p class="meta">CrUX p75, 2026-10-13 to 2026-11-09</p></div></div><p class="ex-parity"><b>PSI parity:</b> phone URL identical (229 ms); phone origin identical (177 ms); desktop URL identical (60 ms); desktop origin identical (68 ms).</p><p class="ex-lab"><b>Lab: pending.</b> The lab runs on 11 Nov 2026 did not finish: one page load timed out after 60 s, and the latest run met a Cloudflare challenge page. The tool stops at a challenge (<code>[safety] bot wall</code>) instead of measuring it or retrying, because a challenge page is not the page. So this card shows the real field data only, and no lab numbers.</p><div class="term"><div class="term-bar"><i><span></span></i><span>inp field</span></div><pre tabindex="0"><code>phone  : INP p75 229 ms (url level, 2026-10-13..2026-11-09) good 69.8% / needs improvement 22.7% / poor 7.5% | PSI: equal
+desktop: INP p75 60 ms (url level, 2026-10-13..2026-11-09) good 94.0% / needs improvement 3.4% / poor 2.7% | PSI: equal
+  - CrUX API: p75 and good/NI/poor shares of real Chrome users over the 28-day collection period 2026-10-13..2026-11-09. https://developer.chrome.com/docs/crux/api
+  - CrUX History API: 25 weekly 28-day periods, oldest first; ineligible periods are null. https://developer.chrome.com/docs/crux/history-api
+  - PageSpeed Insights loadingExperience/originLoadingExperience (analysed 2026-11-11T11:20:53.717Z / 2026-11-11T11:20:53.665Z): separate source next to CrUX, reports no collection period. https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/runpagespeed
+  - CrUX history PHONE url https://techcrunch.com/2026/11/07/amazons-new-basic-kindle-proves-you-dont-need-all-the-bells-and-whistles/: 24 of 25 periods ineligible (kept as null).
+  - CrUX history DESKTOP url https://techcrunch.com/2026/11/07/amazons-new-basic-kindle-proves-you-dont-need-all-the-bells-and-whistles/: 24 of 25 periods ineligible (kept as null).
+  - CrUX PHONE vs PSI mobile, url level: identical (p75 229 ms, same good/NI/poor shares).
+  - CrUX PHONE vs PSI mobile, origin level: identical (p75 177 ms, same good/NI/poor shares).
+  - CrUX DESKTOP vs PSI desktop, url level: identical (p75 60 ms, same good/NI/poor shares).
+  - CrUX DESKTOP vs PSI desktop, origin level: identical (p75 68 ms, same good/NI/poor shares).
+[inp] field: examples/techcrunch-basic-kindle/field.json</code></pre></div><p class="ex-links"><a class="btn btn--sm" href="https://github.com/franzenzenhofer/inp-analyser/tree/main/examples/techcrunch-basic-kindle">Field data: examples/techcrunch-basic-kindle/</a></p></div></article></div>
+<!-- EXAMPLES:END -->
+    <p class="prose">The tool also says what it does not know: on Wikipedia the search button's slow tap is mostly compositor / GPU time, so no script is blamed, and one-run findings stay <code>screening only</code>.</p>
 
+    <h3 id="findings-title">Ground truth: the bundled test site</h3>
+    <!--
+      FINDING CARD MARKUP (copy one <article> per issue; keep the order of the dt/dd pairs):
+      <article class="finding SEVERITY">            SEVERITY = poor | needs-improvement | info
+        <div class="finding-head">
+          <span class="rule-id">RULE_ID</span>         e.g. processing/forced-reflow
+          <span class="tag">PHASE</span>              input-delay | processing | presentation | context
+          <span class="tag">CERTAINTY</span>          confirmed | intermittent | screening-only
+        </div>
+        <dl class="facts">
+          <dt>Element</dt><dd><code>CSS selector</code></dd>
+          <dt>Script</dt><dd><code>function (URL:line:column)</code></dd>
+          <dt>Owner</dt><dd>entity name (1st or 3rd party)</dd>
+          <dt>Time</dt><dd>median N ms, 95% CI [lo, hi]</dd>
+          <dt>Certainty</dt><dd>certainty word, Wilson CI</dd>
+          <dt>Runs</dt><dd>fired in n of m runs</dd>
+        </dl>
+      </article>
+      An optional <p class="finding-lead">...</p> may follow the head for one plain sentence.
+    -->
+    <!-- FINDINGS:START -->
+    <div class="findings" aria-labelledby="findings-title">
+      <p>The repository ships a test site where a third-party script adds exactly 200 ms to every click. The tool has to find it, name it and prove it (run of 11 Nov 2026, mobile, CPU 4x, seed 42, <a href="https://github.com/franzenzenhofer/inp-analyser/tree/main/examples/test-site-third-party">full output</a>).</p>
+      <article class="finding needs-improvement">
+        <div class="finding-head">
+          <span class="rule-id">processing/slow-event-handlers</span>
+          <span class="tag">processing</span>
+          <span class="tag">confirmed</span>
+        </div>
+        <p class="finding-lead">Bundled test site, page <code>ab-known-delta</code>: a third-party script adds 200 ms to every click. The tool names it.</p>
+        <dl class="facts">
+          <dt>Element</dt><dd><code>button#apply-sort</code></dd>
+          <dt>Script</dt><dd><code>knownDeltaListener (http://cdn.thirdparty.test:63958/known-delta.js:4:65)</code> via <code>#document.onclick</code>, 198 ms</dd>
+          <dt>Owner</dt><dd>Test Tracker Inc. (3rd party)</dd>
+          <dt>Time</dt><dd>lab @ CPU 4x, mobile: median 222 ms, 95% CI [221, 223]</dd>
+          <dt>Certainty</dt><dd>confirmed</dd>
+          <dt>Runs</dt><dd>fired in 8 of 8 runs (95% CI 68-100%)</dd>
+        </dl>
+      </article>
+      <article class="finding needs-improvement">
+        <div class="finding-head">
+          <span class="rule-id">third-party/causal-delta</span>
+          <span class="tag">context</span>
+          <span class="tag">confirmed</span>
+        </div>
+        <p class="finding-lead">Same page, proven by blocking: the tap gets faster without Test Tracker Inc. - cause, not just correlation.</p>
+        <dl class="facts">
+          <dt>Element</dt><dd><code>button#apply-sort</code></dd>
+          <dt>Owner</dt><dd>Test Tracker Inc. (3rd party), blocked vs allowed</dd>
+          <dt>Time</dt><dd>134 ms faster when blocked (Hodges-Lehmann shift, 95% CI 97-179 ms); with third parties 231 ms</dd>
+          <dt>Certainty</dt><dd>confirmed, paired blocks, Holm-corrected</dd>
+          <dt>Runs</dt><dd>28 of 28 paired runs</dd>
+        </dl>
+      </article>
+    </div>
+    <!-- FINDINGS:END -->
+
+    <h3 id="field-detail">Field data in detail: <a href="https://en.wikipedia.org/wiki/Main_Page">/wiki/Main_Page</a></h3>
+    <p class="prose">Field data for en.wikipedia.org/wiki/Main_Page, fetched with <code>inp field</code> on 11 Nov 2026, including 25 weeks of CrUX history.</p>
     <article class="field" aria-labelledby="card-title">
       <div class="field-top">
         <h3 id="card-title">Phone INP p75 - field</h3>
@@ -550,7 +681,6 @@ footer a { min-height: var(--tap); display: inline-flex; align-items: center; }
         </div>
       </div>
     </article>
-
     <figure class="chart">
       <p class="chart-title" id="chart-title">Phone INP p75, 25 weekly CrUX periods</p>
       <ul class="legend" aria-label="Chart legend">
@@ -608,8 +738,7 @@ footer a { min-height: var(--tap); display: inline-flex; align-items: center; }
       </div>
       <figcaption>Source: CrUX History API, phone, URL level, metric interaction_to_next_paint p75, fetched 11 Nov 2026 with <code>inp field</code>. Each point covers 28 days; consecutive points overlap by 21 days.</figcaption>
     </figure>
-
-    <h3 id="terminal-title">The same run in the terminal</h3>
+    <h4 id="terminal-title">The same field data in the terminal</h4>
     <div class="term" role="region" aria-labelledby="terminal-title">
       <div class="term-bar"><i><span></span></i><span>inp field</span></div>
       <pre tabindex="0"><code><span class="p">$</span> inp field https://en.wikipedia.org/wiki/Main_Page
@@ -622,78 +751,6 @@ desktop: INP p75 61 ms (url level, 2026-10-12..2026-11-08) good 96.8% / needs im
 [inp] field: inp-report-en.wikipedia.org-202611110531/field.json</code></pre>
     </div>
     <p class="note">Excerpt of the output fetched on 11 Nov 2026; the full output, with the source notes per API, is in the <a href="https://github.com/franzenzenhofer/inp-analyser#inp-field---a-real-example">README</a>.</p>
-
-    <h3 id="findings-title">Findings</h3>
-    <!--
-      FINDING CARD MARKUP (copy one <article> per issue; keep the order of the dt/dd pairs):
-      <article class="finding SEVERITY">            SEVERITY = poor | needs-improvement | info
-        <div class="finding-head">
-          <span class="rule-id">RULE_ID</span>         e.g. processing/forced-reflow
-          <span class="tag">PHASE</span>              input-delay | processing | presentation | context
-          <span class="tag">CERTAINTY</span>          confirmed | intermittent | screening-only
-        </div>
-        <dl class="facts">
-          <dt>Element</dt><dd><code>CSS selector</code></dd>
-          <dt>Script</dt><dd><code>function (URL:line:column)</code></dd>
-          <dt>Owner</dt><dd>entity name (1st or 3rd party)</dd>
-          <dt>Time</dt><dd>median N ms, 95% CI [lo, hi]</dd>
-          <dt>Certainty</dt><dd>certainty word, Wilson CI</dd>
-          <dt>Runs</dt><dd>fired in n of m runs</dd>
-        </dl>
-      </article>
-      An optional <p class="finding-lead">...</p> may follow the head for one plain sentence.
-    -->
-    <!-- FINDINGS:START -->
-    <div class="findings" aria-labelledby="findings-title">
-      <p>Real issues from two full runs on 11 Nov 2026 (mobile, CPU 4x, seed 42). Full output: <a href="https://github.com/franzenzenhofer/inp-analyser/tree/main/examples">examples/</a>.</p>
-      <article class="finding needs-improvement">
-        <div class="finding-head">
-          <span class="rule-id">input-delay/boot-window</span>
-          <span class="tag">input-delay</span>
-          <span class="tag">confirmed</span>
-        </div>
-        <p class="finding-lead"><a href="https://en.wikipedia.org/wiki/United_States">en.wikipedia.org/wiki/United_States</a> (field INP 103 ms, good): the hatnote link is much slower when tapped while the page boots.</p>
-        <dl class="facts">
-          <dt>Element</dt><dd><code>div#mwBA &gt; a:nth-of-type(2)</code></dd>
-          <dt>Time</dt><dd>+199 ms (Hodges-Lehmann shift, 95% CI 116-265 ms): boot median 277 ms vs idle 78 ms</dd>
-          <dt>Certainty</dt><dd>confirmed, Mann-Whitney with Holm correction</dd>
-          <dt>Runs</dt><dd>fired in 9 of 9 runs (95% CI 70-100%)</dd>
-        </dl>
-      </article>
-      <article class="finding needs-improvement">
-        <div class="finding-head">
-          <span class="rule-id">processing/slow-event-handlers</span>
-          <span class="tag">processing</span>
-          <span class="tag">confirmed</span>
-        </div>
-        <p class="finding-lead">Bundled test site, page <code>ab-known-delta</code>: a third-party script adds 200 ms to every click. The tool names it.</p>
-        <dl class="facts">
-          <dt>Element</dt><dd><code>button#apply-sort</code></dd>
-          <dt>Script</dt><dd><code>knownDeltaListener (http://cdn.thirdparty.test:63958/known-delta.js:4:65)</code> via <code>#document.onclick</code>, 198 ms</dd>
-          <dt>Owner</dt><dd>Test Tracker Inc. (3rd party)</dd>
-          <dt>Time</dt><dd>lab @ CPU 4x, mobile: median 222 ms, 95% CI [221, 223]</dd>
-          <dt>Certainty</dt><dd>confirmed</dd>
-          <dt>Runs</dt><dd>fired in 8 of 8 runs (95% CI 68-100%)</dd>
-        </dl>
-      </article>
-      <article class="finding needs-improvement">
-        <div class="finding-head">
-          <span class="rule-id">third-party/causal-delta</span>
-          <span class="tag">context</span>
-          <span class="tag">confirmed</span>
-        </div>
-        <p class="finding-lead">Same page, proven by blocking: the tap gets faster without Test Tracker Inc. - cause, not just correlation.</p>
-        <dl class="facts">
-          <dt>Element</dt><dd><code>button#apply-sort</code></dd>
-          <dt>Owner</dt><dd>Test Tracker Inc. (3rd party), blocked vs allowed</dd>
-          <dt>Time</dt><dd>134 ms faster when blocked (Hodges-Lehmann shift, 95% CI 97-179 ms); with third parties 231 ms</dd>
-          <dt>Certainty</dt><dd>confirmed, paired blocks, Holm-corrected</dd>
-          <dt>Runs</dt><dd>28 of 28 paired runs</dd>
-        </dl>
-      </article>
-      <p>The tool also says what it does not know: on Wikipedia the search button's slow tap is mostly compositor / GPU time, so no script is blamed, and one-run findings stay <code>screening only</code>.</p>
-    </div>
-    <!-- FINDINGS:END -->
   </div>
 </section>
 
