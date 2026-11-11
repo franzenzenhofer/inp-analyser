@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>og:image 1200x630 - inp-analyser</title>
+<link rel="stylesheet" href="og.css">
+<style>
+.canvas { width: 1200px; height: 630px; display: grid; grid-template-columns: 560px 1fr; gap: 48px; padding: 52px 60px 46px; }
+.left { display: flex; flex-direction: column; }
+.logo { width: 232px; }
+.eyebrow { margin-top: 44px; font-size: 22px; }
+h1 { margin-top: 14px; font-size: 84px; }
+.foot { margin-top: auto; }
+.tag { font-size: 30px; }
+.url { margin-top: 6px; }
+.tl { align-self: center; padding: 26px 28px 18px;
+  --tl-eyebrow: 19px; --tl-note: 19px; --tl-label: 25px; --tl-axis: 21px; --tl-bar: 30px; --tl-rowgap: 14px; --tl-gap: 14px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="left">
+    <img class="logo" src="../../docs/assets/fullstack-optimization-logo.svg" alt="FullStack Optimization">
+    <p class="eyebrow">INP · Core Web Vitals</p>
+    <h1><span>Poor INP?</span><span class="olive">Find out why.</span></h1>
+    <div class="foot">
+      <p class="tag">inp-analyser - open source</p>
+      <p class="url">inp-analyser.franzai.com</p>
+    </div>
+  </div>
+  <div class="tl">
+    <p class="tl-title">Anatomy of one interaction</p>
+    <p class="tl-note">example interaction, illustrative lengths</p>
+    <div class="plot">
+      <div class="marks"><span>Tap</span><span class="paint">Next paint</span></div>
+      <ol class="rows">
+        <li class="ph1"><p><span class="n">01</span> <b>Input delay</b></p><div class="track"><i></i></div></li>
+        <li class="ph2"><p><span class="n">02</span> <b>Processing</b></p><div class="track"><i></i></div></li>
+        <li class="ph3"><p><span class="n">03</span> <b>Presentation</b></p><div class="track"><i></i></div></li>
+      </ol>
+      <div class="axis"><span>0</span><span>100</span><span>200</span><span>300 ms</span></div>
+      <p class="good"><span>good up to 200 ms</span></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+/* Share images (og:image) for inp-analyser.franzai.com.
+   Same tokens, fonts and hero timeline as docs/index.html. Rendered to PNG with
+   a headless browser by scripts/og-image/render.sh; never drawn by an image model.
+   Timeline lengths are illustrative (the same example interaction as the hero). */
+@font-face { font-family: "Archivo Variable"; font-weight: 100 900; src: url(../../docs/assets/fonts/archivo-latin-wght-normal.woff2) format("woff2-variations"); }
+@font-face { font-family: "JetBrains Mono Variable"; font-weight: 100 800; src: url(../../docs/assets/fonts/jetbrains-mono-latin-wght-normal.woff2) format("woff2-variations"); }
+:root {
+  --ink: #1b1b1b; --muted: #5e5d56; --green-text: #4f7a12; --green: #86b32d; --wash: #f3f8e9;
+  --ph1: #3d5f0c; --ph2: #86b32d; --ph3: #c9df6b;
+  --sans: "Archivo Variable", Archivo, system-ui, sans-serif;
+  --mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: var(--sans); color: var(--ink); background: var(--wash); -webkit-font-smoothing: antialiased; }
+.canvas { position: relative; overflow: hidden; background: var(--wash); border-bottom: 14px solid var(--green); }
+.logo { display: block; height: auto; }
+.eyebrow { margin: 0; font: 600 24px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-text); }
+h1 { margin: 0; font-weight: 850; letter-spacing: -0.045em; line-height: 0.95; }
+h1 span { display: block; }
+h1 .olive { color: var(--green-text); }
+.tag { margin: 0; font: 700 30px var(--sans); }
+.url { margin: 0; font: 600 26px var(--mono); color: var(--green-text); }
+
+/* timeline card, same geometry as the site hero:
+   input delay 0-50, processing 50-160, presentation 160-230 ms on a 0-300 ms axis, good = 200 ms */
+.tl { background: #fff; border: 2px solid var(--ink); box-shadow: 14px 14px 0 var(--ph2); }
+.tl-title { margin: 0; font: 600 var(--tl-eyebrow) var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-text); }
+.tl-note { margin: 6px 0 0; font-size: var(--tl-note); color: var(--muted); }
+.plot { position: relative; margin-top: var(--tl-gap); }
+.marks { position: relative; height: calc(var(--tl-label) * 1.4); font: 700 var(--tl-label) var(--mono); }
+.marks span { position: absolute; bottom: 0; z-index: 2; padding: 0 6px; background: #fff; white-space: nowrap; }
+.marks span:first-child { padding-left: 0; }
+.marks .paint { left: 76.667%; transform: translateX(-50%); }
+.rows { position: relative; display: grid; gap: var(--tl-rowgap); padding: 10px 0 12px; margin: 0; list-style: none; }
+.rows::before, .rows::after { content: ""; position: absolute; top: -4px; bottom: 0; z-index: 1; }
+.rows::before { left: 66.667%; border-left: 3px dashed var(--ink); }
+.rows::after { left: 76.667%; border-left: 3px solid var(--ink); margin-left: -1px; }
+.rows p { position: relative; z-index: 2; display: inline-block; margin: 0 0 6px; padding-right: 10px; background: #fff; font-size: var(--tl-label); line-height: 1.2; }
+.rows .n { font: 700 var(--tl-label) var(--mono); color: var(--green-text); }
+.rows b { font-weight: 800; }
+.track { position: relative; height: var(--tl-bar); background: #f0f2ea; border-left: 3px solid var(--ink); }
+.track i { position: absolute; top: 0; bottom: 0; }
+.ph1 i { left: 0; width: 16.667%; background: var(--ph1); }
+.ph2 i { left: 16.667%; width: 36.667%; background: var(--ph2); }
+.ph3 i { left: 53.333%; width: 23.333%; background: var(--ph3); box-shadow: inset 0 0 0 2px #7d9d2c; }
+.axis { position: relative; height: calc(var(--tl-label) * 1.5); border-top: 2px solid var(--ink); font: 600 var(--tl-axis) var(--mono); color: var(--muted); }
+.axis span { position: absolute; top: 6px; transform: translateX(-50%); white-space: nowrap; }
+.axis span:nth-child(1) { left: 0; transform: none; }
+.axis span:nth-child(2) { left: 33.333%; }
+.axis span:nth-child(3) { left: 66.667%; }
+.axis span:nth-child(4) { right: 0; transform: none; }
+.good { position: relative; height: calc(var(--tl-label) * 1.4); margin: 4px 0 0; }
+.good span { position: absolute; right: 33.333%; padding-right: 12px; margin-right: -1px; border-right: 3px dashed var(--ink); font-weight: 800; font-size: var(--tl-label); white-space: nowrap; }

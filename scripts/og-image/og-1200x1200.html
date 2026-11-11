@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Square share image 1200x1200 - inp-analyser</title>
+<link rel="stylesheet" href="og.css">
+<style>
+.canvas { width: 1200px; height: 1200px; display: flex; flex-direction: column; padding: 72px 84px 64px; }
+.logo { width: 280px; }
+.eyebrow { margin-top: 40px; font-size: 28px; }
+h1 { margin-top: 16px; font-size: 120px; }
+.tl { margin-top: 40px; margin-bottom: 44px; padding: 28px 34px 16px; margin-right: 14px;
+  --tl-eyebrow: 22px; --tl-note: 22px; --tl-label: 29px; --tl-axis: 24px; --tl-bar: 32px; --tl-rowgap: 14px; --tl-gap: 16px; }
+.foot { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; }
+.tag { font-size: 36px; }
+.url { font-size: 30px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <img class="logo" src="../../docs/assets/fullstack-optimization-logo.svg" alt="FullStack Optimization">
+  <p class="eyebrow">INP · Core Web Vitals · Open source</p>
+  <h1><span>Poor INP?</span><span class="olive">Find out why.</span></h1>
+  <div class="tl">
+    <p class="tl-title">Anatomy of one interaction</p>
+    <p class="tl-note">example interaction, illustrative lengths</p>
+    <div class="plot">
+      <div class="marks"><span>Tap</span><span class="paint">Next paint</span></div>
+      <ol class="rows">
+        <li class="ph1"><p><span class="n">01</span> <b>Input delay</b> main thread busy</p><div class="track"><i></i></div></li>
+        <li class="ph2"><p><span class="n">02</span> <b>Processing</b> event handlers run</p><div class="track"><i></i></div></li>
+        <li class="ph3"><p><span class="n">03</span> <b>Presentation</b> style, layout, paint</p><div class="track"><i></i></div></li>
+      </ol>
+      <div class="axis"><span>0</span><span>100</span><span>200</span><span>300 ms</span></div>
+      <p class="good"><span>good up to 200 ms</span></p>
+    </div>
+  </div>
+  <div class="foot">
+    <p class="tag">inp-analyser - open source</p>
+    <p class="url">inp-analyser.franzai.com</p>
+  </div>
+</div>
+</body>
+</html>
