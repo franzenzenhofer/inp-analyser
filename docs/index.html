@@ -109,17 +109,49 @@ p code { white-space: nowrap; }
 .stats b { display: block; font-size: clamp(28px, 7vw, 36px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em; }
 .stats .label { display: block; margin-top: 6px; font-size: 16px; }
 
-.art { position: relative; width: 100%; max-width: 560px; justify-self: center; aspect-ratio: 560 / 410; }
-.art img { position: absolute; left: 0; top: 0; width: 49%; height: auto; filter: drop-shadow(0 18px 24px rgba(61, 77, 0, 0.18)); }
-.art ol li { position: absolute; left: 55%; right: 0; transform: translateY(-50%); padding-left: 18px; border-left: 3px solid var(--green); }
-.art ol li:nth-child(1) { top: 18.2%; }
-.art ol li:nth-child(2) { top: 49.8%; }
-.art ol li:nth-child(3) { top: 81.4%; }
-.art ol li::before { content: ""; position: absolute; left: -46px; top: 50%; width: 40px; border-top: 1px dashed var(--ink-muted); }
-.art .n { display: block; font: 500 16px var(--mono); letter-spacing: 0.12em; color: var(--green-text); }
-.art b { display: block; font-size: clamp(18px, 4.6vw, 24px); line-height: 1.15; letter-spacing: -0.015em; }
-.art span.d { display: block; font-size: 16px; line-height: 1.35; color: var(--ink-body); }
-.art figcaption { position: absolute; left: 0; bottom: -40px; width: 49%; text-align: center; font: 500 16px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
+/* hero: one interaction as a timeline (illustrative lengths, 0-300 ms scale).
+   Phase spans in % of 300 ms: input delay 0-50, processing 50-160,
+   presentation 160-230, next paint 230, good threshold 200. */
+:root { --ph1: #3d5f0c; --ph2: #86b32d; --ph3: #c9df6b; --ph-off: #e1e5d8; }
+.tl { margin: 0; width: 100%; max-width: 580px; justify-self: center; background: var(--paper); border: 1px solid var(--ink); padding: 24px 24px 20px; box-shadow: 10px 10px 0 var(--ph2); }
+.tl-head { margin-bottom: 18px; }
+.tl-note { margin-top: 8px; font-size: 16px; line-height: 1.45; color: var(--ink-muted); }
+.tl-plot { position: relative; }
+.tl-marks { position: relative; height: 30px; font: 600 16px var(--mono); }
+.tl-marks span { position: absolute; bottom: 4px; white-space: nowrap; }
+.tl-tap { left: 0; }
+.tl-paint { left: 76.667%; transform: translateX(-50%); }
+.tl-rows { position: relative; display: grid; gap: 16px; padding: 12px 0 14px; }
+.tl-rows::before, .tl-rows::after { content: ""; position: absolute; top: -4px; bottom: 0; z-index: 1; }
+.tl-rows::before { left: 66.667%; border-left: 2px dashed var(--ink); }
+.tl-rows::after { left: 76.667%; border-left: 2px solid var(--ink); margin-left: -1px; }
+.tl-rows li { position: relative; }
+.tl-rows p { position: relative; z-index: 2; display: inline-block; margin: 0 0 6px; padding: 0 8px 0 0; background: var(--paper); font-size: 16px; line-height: 1.3; }
+.tl-rows .n { font: 600 16px var(--mono); color: var(--green-text); letter-spacing: 0.06em; }
+.tl-rows b { font-size: 18px; }
+.tl-rows .d { color: var(--ink-muted); white-space: nowrap; }
+.tl-track { position: relative; height: 24px; background: #f3f5ee; border-left: 2px solid var(--ink); }
+.tl-track i { position: absolute; top: 0; bottom: 0; }
+.ph1 .tl-track i { left: 0; width: 16.667%; background: var(--ph1); }
+.ph2 .tl-track i { left: 16.667%; width: 36.667%; background: var(--ph2); }
+.ph3 .tl-track i { left: 53.333%; width: 23.333%; background: var(--ph3); box-shadow: inset 0 0 0 1px #7d9d2c; }
+.tl-axis { position: relative; height: 30px; border-top: 1px solid var(--ink); font: 16px var(--mono); color: var(--ink-muted); }
+.tl-axis span { position: absolute; top: 6px; transform: translateX(-50%); white-space: nowrap; }
+.tl-axis span:nth-child(1) { left: 0; transform: none; }
+.tl-axis span:nth-child(2) { left: 33.333%; }
+.tl-axis span:nth-child(3) { left: 66.667%; }
+.tl-axis span:nth-child(4) { right: 0; transform: none; }
+.tl-good { position: relative; height: 30px; margin: 4px 0 0; }
+.tl-good span { position: absolute; right: 33.333%; top: 0; padding-right: 10px; margin-right: -1px; border-right: 2px dashed var(--ink); font-size: 16px; font-weight: 700; white-space: nowrap; }
+
+/* phase cards: the same three segments as a mini bar, the card's phase highlighted */
+.mini { display: flex; gap: 3px; height: 14px; margin: 4px 0 6px; }
+.mini i { display: block; background: var(--ph-off); }
+.mini i:nth-child(1) { flex: 50; } .mini i:nth-child(2) { flex: 110; } .mini i:nth-child(3) { flex: 70; }
+.mini.on1 i:nth-child(1) { background: var(--ph1); }
+.mini.on2 i:nth-child(2) { background: var(--ph2); }
+.mini.on3 i:nth-child(3) { background: var(--ph3); box-shadow: inset 0 0 0 1px #7d9d2c; }
+
 
 /* key facts strip */
 .strip { border-bottom: 1px solid var(--ink); }
@@ -153,12 +185,12 @@ h3 { font-size: 26px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 80
 
 /* cards */
 .cards { display: grid; gap: 18px; margin: 32px 0 28px; }
-.card { position: relative; border: 1px solid var(--ink); background: var(--paper); padding: 24px; display: grid; grid-template-columns: 1fr 96px; gap: 8px 18px; align-content: start; }
+.card { position: relative; border: 1px solid var(--ink); background: var(--paper); padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+.card .mini { order: 1; } .card .t { order: 2; } .card p { order: 3; } .card .foot { order: 4; margin-top: auto !important; }
 .card.is-first { background: var(--green-wash); border-color: var(--green-wash); box-shadow: inset 0 6px 0 var(--green-text); }
 .card .num { grid-column: 1 / -1; font: 600 18px var(--mono); letter-spacing: 0.14em; color: var(--green-text); }
 .card h3, .card .t { margin: 0; font-size: 26px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
 .card p { margin: 6px 0 0; color: var(--ink-body); }
-.card img { grid-column: 2; grid-row: 2 / span 2; width: 96px; height: 96px; align-self: start; }
 .card .foot { grid-column: 1 / -1; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--hairline); font: 16px var(--mono); color: var(--ink-muted); }
 .card.is-first .foot { border-top-color: #c9d6ad; }
 
@@ -276,7 +308,7 @@ footer a { min-height: var(--tap); display: inline-flex; align-items: center; }
 .hero .copy-col > *:nth-child(4) { animation-delay: .18s; }
 .hero .copy-col > *:nth-child(5) { animation-delay: .24s; }
 .hero .copy-col > *:nth-child(6) { animation-delay: .30s; }
-.art { animation: rise .8s .2s cubic-bezier(.2,.7,.2,1) backwards; }
+.tl { animation: rise .8s .2s cubic-bezier(.2,.7,.2,1) backwards; }
 
 @media (min-width: 700px) {
   :root { --gutter: 32px; }
@@ -284,8 +316,6 @@ footer a { min-height: var(--tap); display: inline-flex; align-items: center; }
   .strip .label { padding-right: 32px; border-right: 1px solid var(--ink); }
   .strip ul { grid-template-columns: repeat(2, auto); justify-content: start; }
   .cards { grid-template-columns: repeat(3, 1fr); }
-  .card { grid-template-columns: 1fr 88px; }
-  .card img { width: 88px; height: 88px; }
   .facts-grid { grid-template-columns: repeat(2, 1fr); column-gap: 40px; }
   .facts { grid-template-columns: max-content 1fr; gap: 8px 22px; }
   .facts dt { margin-top: 0; }
@@ -298,7 +328,7 @@ footer a { min-height: var(--tap); display: inline-flex; align-items: center; }
   .topbar nav { order: 0; flex-basis: auto; margin-left: auto; }
   .topbar .cta { margin-left: 0; }
   .hero .wrap { grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); align-items: center; padding-top: 72px; padding-bottom: 88px; }
-  .art { justify-self: end; }
+  .tl { justify-self: end; }
   .hero h1 { font-size: clamp(64px, 7.4vw, 100px); }
   .hero h1 span { white-space: nowrap; }
   .facts-grid { grid-template-columns: repeat(3, 1fr); }
@@ -308,8 +338,6 @@ footer a { min-height: var(--tap); display: inline-flex; align-items: center; }
 }
 @media (max-width: 420px) {
   .stats li { padding: 0 14px; }
-  .art ol li::before { left: -34px; width: 28px; }
-  .art ol li { padding-left: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -363,13 +391,26 @@ footer a { min-height: var(--tap); display: inline-flex; align-items: center; }
         <li><b>MIT</b><span class="label">Licence</span></li>
       </ul>
     </div>
-    <figure class="art" aria-label="The three phases of every interaction, drawn as three slabs: input delay, processing, presentation delay">
-      <img src="assets/inp-phases-stack.svg" alt="" width="488" height="728">
-      <ol>
-        <li><span class="n">01</span><b>Input delay</b><span class="d">main thread busy</span></li>
-        <li><span class="n">02</span><b>Processing</b><span class="d">event handlers run</span></li>
-        <li><span class="n">03</span><b>Presentation</b><span class="d">style, layout, paint</span></li>
-      </ol>
+    <figure class="tl" aria-labelledby="tl-title tl-desc">
+      <div class="tl-head">
+        <p class="eyebrow" id="tl-title">Anatomy of one interaction</p>
+        <p class="tl-note" id="tl-desc">Example interaction, illustrative lengths, not a measurement: from the tap to the next paint in three phases, on a 0 to 300 ms scale with Google's 200 ms "good" threshold.</p>
+      </div>
+      <div class="tl-plot">
+        <div class="tl-marks" aria-hidden="true">
+          <span class="tl-tap">Tap</span>
+          <span class="tl-paint">Next paint</span>
+        </div>
+        <ol class="tl-rows">
+          <li class="ph1"><p><span class="n">01</span> <b>Input delay</b> <span class="d">main thread busy</span></p><div class="tl-track"><i></i></div></li>
+          <li class="ph2"><p><span class="n">02</span> <b>Processing</b> <span class="d">event handlers run</span></p><div class="tl-track"><i></i></div></li>
+          <li class="ph3"><p><span class="n">03</span> <b>Presentation</b> <span class="d">style, layout, paint</span></p><div class="tl-track"><i></i></div></li>
+        </ol>
+        <div class="tl-axis" aria-hidden="true">
+          <span>0</span><span>100</span><span>200</span><span>300 ms</span>
+        </div>
+        <p class="tl-good" aria-hidden="true"><span>good up to 200 ms</span></p>
+      </div>
     </figure>
   </div>
 </section>
@@ -421,21 +462,21 @@ footer a { min-height: var(--tap); display: inline-flex; align-items: center; }
         <span class="num">01</span>
         <span class="t">Input delay</span>
         <p>The main thread is busy (often a long task) when the user taps.</p>
-        <img src="assets/phase-1.svg" alt="" width="96" height="96">
+        <span class="mini on1" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="foot">phase: input-delay</span>
       </li>
       <li class="card">
         <span class="num">02</span>
         <span class="t">Processing duration</span>
         <p>The event handlers themselves run.</p>
-        <img src="assets/phase-2.svg" alt="" width="96" height="96">
+        <span class="mini on2" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="foot">phase: processing</span>
       </li>
       <li class="card">
         <span class="num">03</span>
         <span class="t">Presentation delay</span>
         <p>Style, layout, paint and any script that squeezes in before the next frame.</p>
-        <img src="assets/phase-3.svg" alt="" width="96" height="96">
+        <span class="mini on3" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="foot">phase: presentation</span>
       </li>
     </ol>
