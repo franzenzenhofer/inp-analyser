@@ -1,0 +1,10 @@
+inp-analyser 0.1.0 - https://en.wikipedia.org/wiki/Main_Page
+Field INP PHONE: 130 ms (good)
+  CrUX p75, PHONE, page (URL) level, 2026-10-12 to 2026-11-08
+  real users: good 86.5% | needs improvement 9.7% | poor 3.9%
+  PSI shows the same: 130 ms
+Reconciliation: Field INP p75 (CrUX PHONE, url level, 2026-10-12..2026-11-08) = 130 ms. No lab scenario reached it: not reproduced in the lab (real devices, logged-in states, iframes, untested interactions).
+Issues: none found in the measured interactions
+Run: 27 runs (18 excluded), 31 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile
+HTML report: examples/wikipedia-main-page/report.html
+[inp] report: examples/wikipedia-main-page/report.json

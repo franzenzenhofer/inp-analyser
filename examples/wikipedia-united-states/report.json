@@ -1,0 +1,2495 @@
+{
+  "tool": {
+    "name": "inp-analyser",
+    "version": "0.1.0"
+  },
+  "url": "https://en.wikipedia.org/wiki/United_States",
+  "generatedAt": "2026-11-11T07:29:13.730Z",
+  "seed": 42,
+  "chromeVersion": "Chrome/155.0.8059.39",
+  "condition": {
+    "device": "mobile",
+    "cpuRate": 4,
+    "thirdParty": {
+      "kind": "allow"
+    },
+    "consent": "none",
+    "cache": "cold"
+  },
+  "field": {
+    "url": "https://en.wikipedia.org/wiki/United_States",
+    "origin": "https://en.wikipedia.org",
+    "fetchedAt": "2026-11-11T07:10:28.109Z",
+    "phone": {
+      "inp": {
+        "kind": "data",
+        "level": "url",
+        "formFactor": "PHONE",
+        "p75": 103,
+        "densities": {
+          "good": 0.9126,
+          "needsImprovement": 0.0665,
+          "poor": 0.0209
+        },
+        "collectionPeriod": {
+          "firstDate": "2026-10-12",
+          "lastDate": "2026-11-08"
+        }
+      },
+      "psiParity": {
+        "page": {
+          "kind": "equal",
+          "level": "url",
+          "p75": 103
+        },
+        "origin": {
+          "kind": "equal",
+          "level": "origin",
+          "p75": 87
+        }
+      },
+      "url": {
+        "target": {
+          "kind": "url",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        },
+        "formFactor": "PHONE",
+        "kind": "data",
+        "collectionPeriod": {
+          "firstDate": "2026-10-12",
+          "lastDate": "2026-11-08"
+        },
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75": 103,
+            "densities": {
+              "good": 0.9126,
+              "needsImprovement": 0.0665,
+              "poor": 0.0209
+            },
+            "bounds": {
+              "goodMax": 200,
+              "poorMin": 500
+            }
+          },
+          "largest_contentful_paint": {
+            "p75": 997,
+            "densities": {
+              "good": 0.9339,
+              "needsImprovement": 0.0404,
+              "poor": 0.0257
+            },
+            "bounds": {
+              "goodMax": 2500,
+              "poorMin": 4000
+            }
+          },
+          "cumulative_layout_shift": {
+            "p75": 0,
+            "densities": {
+              "good": 0.9076,
+              "needsImprovement": 0.0343,
+              "poor": 0.0581
+            },
+            "bounds": {
+              "goodMax": 0.1,
+              "poorMin": 0.25
+            }
+          }
+        },
+        "normalizedUrl": null
+      },
+      "origin": {
+        "target": {
+          "kind": "origin",
+          "origin": "https://en.wikipedia.org"
+        },
+        "formFactor": "PHONE",
+        "kind": "data",
+        "collectionPeriod": {
+          "firstDate": "2026-10-12",
+          "lastDate": "2026-11-08"
+        },
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75": 87,
+            "densities": {
+              "good": 0.9671,
+              "needsImprovement": 0.0275,
+              "poor": 0.0054
+            },
+            "bounds": {
+              "goodMax": 200,
+              "poorMin": 500
+            }
+          },
+          "largest_contentful_paint": {
+            "p75": 921,
+            "densities": {
+              "good": 0.9595,
+              "needsImprovement": 0.0266,
+              "poor": 0.0138
+            },
+            "bounds": {
+              "goodMax": 2500,
+              "poorMin": 4000
+            }
+          },
+          "cumulative_layout_shift": {
+            "p75": 0,
+            "densities": {
+              "good": 0.9422,
+              "needsImprovement": 0.0118,
+              "poor": 0.046
+            },
+            "bounds": {
+              "goodMax": 0.1,
+              "poorMin": 0.25
+            }
+          }
+        },
+        "normalizedUrl": null
+      },
+      "psi": {
+        "strategy": "mobile",
+        "requestedUrl": "https://en.wikipedia.org/wiki/United_States",
+        "analysedAt": "2026-11-11T07:10:02.225Z",
+        "page": {
+          "kind": "data",
+          "id": "https://en.wikipedia.org/wiki/United_States",
+          "inp": {
+            "percentile": 103,
+            "distributions": [
+              {
+                "min": 0,
+                "max": 200,
+                "proportion": 0.9126
+              },
+              {
+                "min": 200,
+                "max": 500,
+                "proportion": 0.0665
+              },
+              {
+                "min": 500,
+                "max": null,
+                "proportion": 0.0209
+              }
+            ],
+            "category": "FAST"
+          },
+          "overallCategory": "FAST",
+          "originFallback": false
+        },
+        "origin": {
+          "kind": "data",
+          "id": "https://en.wikipedia.org",
+          "inp": {
+            "percentile": 87,
+            "distributions": [
+              {
+                "min": 0,
+                "max": 200,
+                "proportion": 0.9671
+              },
+              {
+                "min": 200,
+                "max": 500,
+                "proportion": 0.0275
+              },
+              {
+                "min": 500,
+                "max": null,
+                "proportion": 0.0054
+              }
+            ],
+            "category": "FAST"
+          },
+          "overallCategory": "FAST",
+          "originFallback": false
+        }
+      }
+    },
+    "desktop": {
+      "inp": {
+        "kind": "data",
+        "level": "url",
+        "formFactor": "DESKTOP",
+        "p75": 110,
+        "densities": {
+          "good": 0.8551,
+          "needsImprovement": 0.0827,
+          "poor": 0.0622
+        },
+        "collectionPeriod": {
+          "firstDate": "2026-10-12",
+          "lastDate": "2026-11-08"
+        }
+      },
+      "psiParity": {
+        "page": {
+          "kind": "equal",
+          "level": "url",
+          "p75": 110
+        },
+        "origin": {
+          "kind": "equal",
+          "level": "origin",
+          "p75": 49
+        }
+      },
+      "url": {
+        "target": {
+          "kind": "url",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        },
+        "formFactor": "DESKTOP",
+        "kind": "data",
+        "collectionPeriod": {
+          "firstDate": "2026-10-12",
+          "lastDate": "2026-11-08"
+        },
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75": 110,
+            "densities": {
+              "good": 0.8551,
+              "needsImprovement": 0.0827,
+              "poor": 0.0622
+            },
+            "bounds": {
+              "goodMax": 200,
+              "poorMin": 500
+            }
+          },
+          "largest_contentful_paint": {
+            "p75": 884,
+            "densities": {
+              "good": 0.9622,
+              "needsImprovement": 0.0246,
+              "poor": 0.0132
+            },
+            "bounds": {
+              "goodMax": 2500,
+              "poorMin": 4000
+            }
+          },
+          "cumulative_layout_shift": {
+            "p75": 0.03,
+            "densities": {
+              "good": 0.8037,
+              "needsImprovement": 0.0266,
+              "poor": 0.1697
+            },
+            "bounds": {
+              "goodMax": 0.1,
+              "poorMin": 0.25
+            }
+          }
+        },
+        "normalizedUrl": null
+      },
+      "origin": {
+        "target": {
+          "kind": "origin",
+          "origin": "https://en.wikipedia.org"
+        },
+        "formFactor": "DESKTOP",
+        "kind": "data",
+        "collectionPeriod": {
+          "firstDate": "2026-10-12",
+          "lastDate": "2026-11-08"
+        },
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75": 49,
+            "densities": {
+              "good": 0.9795,
+              "needsImprovement": 0.015,
+              "poor": 0.0055
+            },
+            "bounds": {
+              "goodMax": 200,
+              "poorMin": 500
+            }
+          },
+          "largest_contentful_paint": {
+            "p75": 839,
+            "densities": {
+              "good": 0.9723,
+              "needsImprovement": 0.0178,
+              "poor": 0.0099
+            },
+            "bounds": {
+              "goodMax": 2500,
+              "poorMin": 4000
+            }
+          },
+          "cumulative_layout_shift": {
+            "p75": 0,
+            "densities": {
+              "good": 0.8544,
+              "needsImprovement": 0.0176,
+              "poor": 0.128
+            },
+            "bounds": {
+              "goodMax": 0.1,
+              "poorMin": 0.25
+            }
+          }
+        },
+        "normalizedUrl": null
+      },
+      "psi": {
+        "strategy": "desktop",
+        "requestedUrl": "https://en.wikipedia.org/wiki/United_States",
+        "analysedAt": "2026-11-11T07:10:02.154Z",
+        "page": {
+          "kind": "data",
+          "id": "https://en.wikipedia.org/wiki/United_States",
+          "inp": {
+            "percentile": 110,
+            "distributions": [
+              {
+                "min": 0,
+                "max": 200,
+                "proportion": 0.8551
+              },
+              {
+                "min": 200,
+                "max": 500,
+                "proportion": 0.0827
+              },
+              {
+                "min": 500,
+                "max": null,
+                "proportion": 0.0622
+              }
+            ],
+            "category": "FAST"
+          },
+          "overallCategory": "FAST",
+          "originFallback": false
+        },
+        "origin": {
+          "kind": "data",
+          "id": "https://en.wikipedia.org",
+          "inp": {
+            "percentile": 49,
+            "distributions": [
+              {
+                "min": 0,
+                "max": 200,
+                "proportion": 0.9795
+              },
+              {
+                "min": 200,
+                "max": 500,
+                "proportion": 0.015
+              },
+              {
+                "min": 500,
+                "max": null,
+                "proportion": 0.0055
+              }
+            ],
+            "category": "FAST"
+          },
+          "overallCategory": "FAST",
+          "originFallback": false
+        }
+      }
+    },
+    "history": {
+      "phone": {
+        "url": {
+          "target": {
+            "kind": "url",
+            "url": "https://en.wikipedia.org/wiki/United_States"
+          },
+          "formFactor": "PHONE",
+          "kind": "data",
+          "collectionPeriods": [
+            {
+              "firstDate": "2026-04-26",
+              "lastDate": "2026-05-23"
+            },
+            {
+              "firstDate": "2026-05-03",
+              "lastDate": "2026-05-30"
+            },
+            {
+              "firstDate": "2026-05-10",
+              "lastDate": "2026-06-06"
+            },
+            {
+              "firstDate": "2026-05-17",
+              "lastDate": "2026-06-13"
+            },
+            {
+              "firstDate": "2026-05-24",
+              "lastDate": "2026-06-20"
+            },
+            {
+              "firstDate": "2026-05-31",
+              "lastDate": "2026-06-27"
+            },
+            {
+              "firstDate": "2026-06-07",
+              "lastDate": "2026-07-04"
+            },
+            {
+              "firstDate": "2026-06-14",
+              "lastDate": "2026-07-11"
+            },
+            {
+              "firstDate": "2026-06-21",
+              "lastDate": "2026-07-18"
+            },
+            {
+              "firstDate": "2026-06-28",
+              "lastDate": "2026-07-25"
+            },
+            {
+              "firstDate": "2026-07-05",
+              "lastDate": "2026-08-01"
+            },
+            {
+              "firstDate": "2026-07-12",
+              "lastDate": "2026-08-08"
+            },
+            {
+              "firstDate": "2026-07-19",
+              "lastDate": "2026-08-15"
+            },
+            {
+              "firstDate": "2026-07-26",
+              "lastDate": "2026-08-22"
+            },
+            {
+              "firstDate": "2026-08-02",
+              "lastDate": "2026-08-29"
+            },
+            {
+              "firstDate": "2026-08-09",
+              "lastDate": "2026-09-05"
+            },
+            {
+              "firstDate": "2026-08-16",
+              "lastDate": "2026-09-12"
+            },
+            {
+              "firstDate": "2026-08-23",
+              "lastDate": "2026-09-19"
+            },
+            {
+              "firstDate": "2026-08-30",
+              "lastDate": "2026-09-26"
+            },
+            {
+              "firstDate": "2026-09-06",
+              "lastDate": "2026-10-03"
+            },
+            {
+              "firstDate": "2026-09-13",
+              "lastDate": "2026-10-10"
+            },
+            {
+              "firstDate": "2026-09-20",
+              "lastDate": "2026-10-17"
+            },
+            {
+              "firstDate": "2026-09-27",
+              "lastDate": "2026-10-24"
+            },
+            {
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-31"
+            },
+            {
+              "firstDate": "2026-10-11",
+              "lastDate": "2026-11-07"
+            }
+          ],
+          "metrics": {
+            "interaction_to_next_paint": {
+              "p75s": [
+                102,
+                102,
+                104,
+                104,
+                105,
+                106,
+                104,
+                103,
+                103,
+                103,
+                104,
+                105,
+                105,
+                106,
+                106,
+                106,
+                106,
+                106,
+                106,
+                106,
+                107,
+                108,
+                107,
+                107,
+                103
+              ],
+              "densities": [
+                {
+                  "good": 0.9098,
+                  "needsImprovement": 0.0712,
+                  "poor": 0.019
+                },
+                {
+                  "good": 0.9144,
+                  "needsImprovement": 0.0663,
+                  "poor": 0.0193
+                },
+                {
+                  "good": 0.9098,
+                  "needsImprovement": 0.0697,
+                  "poor": 0.0205
+                },
+                {
+                  "good": 0.9092,
+                  "needsImprovement": 0.0706,
+                  "poor": 0.0202
+                },
+                {
+                  "good": 0.9086,
+                  "needsImprovement": 0.0705,
+                  "poor": 0.0209
+                },
+                {
+                  "good": 0.9086,
+                  "needsImprovement": 0.0704,
+                  "poor": 0.021
+                },
+                {
+                  "good": 0.9131,
+                  "needsImprovement": 0.0669,
+                  "poor": 0.02
+                },
+                {
+                  "good": 0.9161,
+                  "needsImprovement": 0.0655,
+                  "poor": 0.0184
+                },
+                {
+                  "good": 0.9167,
+                  "needsImprovement": 0.0664,
+                  "poor": 0.0169
+                },
+                {
+                  "good": 0.9191,
+                  "needsImprovement": 0.0641,
+                  "poor": 0.0167
+                },
+                {
+                  "good": 0.917,
+                  "needsImprovement": 0.0648,
+                  "poor": 0.0182
+                },
+                {
+                  "good": 0.9146,
+                  "needsImprovement": 0.0665,
+                  "poor": 0.0188
+                },
+                {
+                  "good": 0.9144,
+                  "needsImprovement": 0.066,
+                  "poor": 0.0196
+                },
+                {
+                  "good": 0.9109,
+                  "needsImprovement": 0.0673,
+                  "poor": 0.0218
+                },
+                {
+                  "good": 0.9071,
+                  "needsImprovement": 0.0698,
+                  "poor": 0.0231
+                },
+                {
+                  "good": 0.9114,
+                  "needsImprovement": 0.0683,
+                  "poor": 0.0202
+                },
+                {
+                  "good": 0.9098,
+                  "needsImprovement": 0.0677,
+                  "poor": 0.0226
+                },
+                {
+                  "good": 0.9111,
+                  "needsImprovement": 0.0668,
+                  "poor": 0.0221
+                },
+                {
+                  "good": 0.9098,
+                  "needsImprovement": 0.0675,
+                  "poor": 0.0226
+                },
+                {
+                  "good": 0.9066,
+                  "needsImprovement": 0.0704,
+                  "poor": 0.0229
+                },
+                {
+                  "good": 0.9025,
+                  "needsImprovement": 0.0732,
+                  "poor": 0.0243
+                },
+                {
+                  "good": 0.9,
+                  "needsImprovement": 0.0741,
+                  "poor": 0.0259
+                },
+                {
+                  "good": 0.9035,
+                  "needsImprovement": 0.0714,
+                  "poor": 0.025
+                },
+                {
+                  "good": 0.9034,
+                  "needsImprovement": 0.0711,
+                  "poor": 0.0255
+                },
+                {
+                  "good": 0.9107,
+                  "needsImprovement": 0.0676,
+                  "poor": 0.0217
+                }
+              ]
+            }
+          },
+          "normalizedUrl": null
+        },
+        "origin": {
+          "target": {
+            "kind": "origin",
+            "origin": "https://en.wikipedia.org"
+          },
+          "formFactor": "PHONE",
+          "kind": "data",
+          "collectionPeriods": [
+            {
+              "firstDate": "2026-04-26",
+              "lastDate": "2026-05-23"
+            },
+            {
+              "firstDate": "2026-05-03",
+              "lastDate": "2026-05-30"
+            },
+            {
+              "firstDate": "2026-05-10",
+              "lastDate": "2026-06-06"
+            },
+            {
+              "firstDate": "2026-05-17",
+              "lastDate": "2026-06-13"
+            },
+            {
+              "firstDate": "2026-05-24",
+              "lastDate": "2026-06-20"
+            },
+            {
+              "firstDate": "2026-05-31",
+              "lastDate": "2026-06-27"
+            },
+            {
+              "firstDate": "2026-06-07",
+              "lastDate": "2026-07-04"
+            },
+            {
+              "firstDate": "2026-06-14",
+              "lastDate": "2026-07-11"
+            },
+            {
+              "firstDate": "2026-06-21",
+              "lastDate": "2026-07-18"
+            },
+            {
+              "firstDate": "2026-06-28",
+              "lastDate": "2026-07-25"
+            },
+            {
+              "firstDate": "2026-07-05",
+              "lastDate": "2026-08-01"
+            },
+            {
+              "firstDate": "2026-07-12",
+              "lastDate": "2026-08-08"
+            },
+            {
+              "firstDate": "2026-07-19",
+              "lastDate": "2026-08-15"
+            },
+            {
+              "firstDate": "2026-07-26",
+              "lastDate": "2026-08-22"
+            },
+            {
+              "firstDate": "2026-08-02",
+              "lastDate": "2026-08-29"
+            },
+            {
+              "firstDate": "2026-08-09",
+              "lastDate": "2026-09-05"
+            },
+            {
+              "firstDate": "2026-08-16",
+              "lastDate": "2026-09-12"
+            },
+            {
+              "firstDate": "2026-08-23",
+              "lastDate": "2026-09-19"
+            },
+            {
+              "firstDate": "2026-08-30",
+              "lastDate": "2026-09-26"
+            },
+            {
+              "firstDate": "2026-09-06",
+              "lastDate": "2026-10-03"
+            },
+            {
+              "firstDate": "2026-09-13",
+              "lastDate": "2026-10-10"
+            },
+            {
+              "firstDate": "2026-09-20",
+              "lastDate": "2026-10-17"
+            },
+            {
+              "firstDate": "2026-09-27",
+              "lastDate": "2026-10-24"
+            },
+            {
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-31"
+            },
+            {
+              "firstDate": "2026-10-11",
+              "lastDate": "2026-11-07"
+            }
+          ],
+          "metrics": {
+            "interaction_to_next_paint": {
+              "p75s": [
+                92,
+                92,
+                92,
+                92,
+                93,
+                93,
+                93,
+                93,
+                92,
+                91,
+                91,
+                90,
+                89,
+                89,
+                89,
+                89,
+                89,
+                89,
+                89,
+                89,
+                89,
+                88,
+                88,
+                87,
+                87
+              ],
+              "densities": [
+                {
+                  "good": 0.9633,
+                  "needsImprovement": 0.0319,
+                  "poor": 0.0048
+                },
+                {
+                  "good": 0.9635,
+                  "needsImprovement": 0.0313,
+                  "poor": 0.0052
+                },
+                {
+                  "good": 0.9624,
+                  "needsImprovement": 0.0324,
+                  "poor": 0.0052
+                },
+                {
+                  "good": 0.9612,
+                  "needsImprovement": 0.0335,
+                  "poor": 0.0053
+                },
+                {
+                  "good": 0.9618,
+                  "needsImprovement": 0.0328,
+                  "poor": 0.0054
+                },
+                {
+                  "good": 0.9599,
+                  "needsImprovement": 0.0345,
+                  "poor": 0.0056
+                },
+                {
+                  "good": 0.9604,
+                  "needsImprovement": 0.0339,
+                  "poor": 0.0057
+                },
+                {
+                  "good": 0.9599,
+                  "needsImprovement": 0.0341,
+                  "poor": 0.0059
+                },
+                {
+                  "good": 0.9605,
+                  "needsImprovement": 0.0334,
+                  "poor": 0.0061
+                },
+                {
+                  "good": 0.9613,
+                  "needsImprovement": 0.0325,
+                  "poor": 0.0062
+                },
+                {
+                  "good": 0.9615,
+                  "needsImprovement": 0.0324,
+                  "poor": 0.0061
+                },
+                {
+                  "good": 0.9633,
+                  "needsImprovement": 0.0309,
+                  "poor": 0.0059
+                },
+                {
+                  "good": 0.9636,
+                  "needsImprovement": 0.0306,
+                  "poor": 0.0058
+                },
+                {
+                  "good": 0.9628,
+                  "needsImprovement": 0.0314,
+                  "poor": 0.0058
+                },
+                {
+                  "good": 0.9645,
+                  "needsImprovement": 0.0298,
+                  "poor": 0.0057
+                },
+                {
+                  "good": 0.9652,
+                  "needsImprovement": 0.0291,
+                  "poor": 0.0058
+                },
+                {
+                  "good": 0.965,
+                  "needsImprovement": 0.0292,
+                  "poor": 0.0058
+                },
+                {
+                  "good": 0.9641,
+                  "needsImprovement": 0.0301,
+                  "poor": 0.0058
+                },
+                {
+                  "good": 0.9638,
+                  "needsImprovement": 0.0303,
+                  "poor": 0.0059
+                },
+                {
+                  "good": 0.9628,
+                  "needsImprovement": 0.0313,
+                  "poor": 0.0059
+                },
+                {
+                  "good": 0.9635,
+                  "needsImprovement": 0.0306,
+                  "poor": 0.0059
+                },
+                {
+                  "good": 0.9647,
+                  "needsImprovement": 0.0297,
+                  "poor": 0.0056
+                },
+                {
+                  "good": 0.9663,
+                  "needsImprovement": 0.0282,
+                  "poor": 0.0055
+                },
+                {
+                  "good": 0.968,
+                  "needsImprovement": 0.0264,
+                  "poor": 0.0055
+                },
+                {
+                  "good": 0.9669,
+                  "needsImprovement": 0.0277,
+                  "poor": 0.0054
+                }
+              ]
+            }
+          },
+          "normalizedUrl": null
+        }
+      },
+      "desktop": {
+        "url": {
+          "target": {
+            "kind": "url",
+            "url": "https://en.wikipedia.org/wiki/United_States"
+          },
+          "formFactor": "DESKTOP",
+          "kind": "data",
+          "collectionPeriods": [
+            {
+              "firstDate": "2026-04-26",
+              "lastDate": "2026-05-23"
+            },
+            {
+              "firstDate": "2026-05-03",
+              "lastDate": "2026-05-30"
+            },
+            {
+              "firstDate": "2026-05-10",
+              "lastDate": "2026-06-06"
+            },
+            {
+              "firstDate": "2026-05-17",
+              "lastDate": "2026-06-13"
+            },
+            {
+              "firstDate": "2026-05-24",
+              "lastDate": "2026-06-20"
+            },
+            {
+              "firstDate": "2026-05-31",
+              "lastDate": "2026-06-27"
+            },
+            {
+              "firstDate": "2026-06-07",
+              "lastDate": "2026-07-04"
+            },
+            {
+              "firstDate": "2026-06-14",
+              "lastDate": "2026-07-11"
+            },
+            {
+              "firstDate": "2026-06-21",
+              "lastDate": "2026-07-18"
+            },
+            {
+              "firstDate": "2026-06-28",
+              "lastDate": "2026-07-25"
+            },
+            {
+              "firstDate": "2026-07-05",
+              "lastDate": "2026-08-01"
+            },
+            {
+              "firstDate": "2026-07-12",
+              "lastDate": "2026-08-08"
+            },
+            {
+              "firstDate": "2026-07-19",
+              "lastDate": "2026-08-15"
+            },
+            {
+              "firstDate": "2026-07-26",
+              "lastDate": "2026-08-22"
+            },
+            {
+              "firstDate": "2026-08-02",
+              "lastDate": "2026-08-29"
+            },
+            {
+              "firstDate": "2026-08-09",
+              "lastDate": "2026-09-05"
+            },
+            {
+              "firstDate": "2026-08-16",
+              "lastDate": "2026-09-12"
+            },
+            {
+              "firstDate": "2026-08-23",
+              "lastDate": "2026-09-19"
+            },
+            {
+              "firstDate": "2026-08-30",
+              "lastDate": "2026-09-26"
+            },
+            {
+              "firstDate": "2026-09-06",
+              "lastDate": "2026-10-03"
+            },
+            {
+              "firstDate": "2026-09-13",
+              "lastDate": "2026-10-10"
+            },
+            {
+              "firstDate": "2026-09-20",
+              "lastDate": "2026-10-17"
+            },
+            {
+              "firstDate": "2026-09-27",
+              "lastDate": "2026-10-24"
+            },
+            {
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-31"
+            },
+            {
+              "firstDate": "2026-10-11",
+              "lastDate": "2026-11-07"
+            }
+          ],
+          "metrics": {
+            "interaction_to_next_paint": {
+              "p75s": [
+                129,
+                129,
+                127,
+                120,
+                114,
+                109,
+                99,
+                95,
+                93,
+                90,
+                88,
+                84,
+                87,
+                92,
+                98,
+                103,
+                104,
+                107,
+                110,
+                113,
+                116,
+                115,
+                112,
+                111,
+                110
+              ],
+              "densities": [
+                {
+                  "good": 0.8188,
+                  "needsImprovement": 0.0857,
+                  "poor": 0.0955
+                },
+                {
+                  "good": 0.8207,
+                  "needsImprovement": 0.0859,
+                  "poor": 0.0934
+                },
+                {
+                  "good": 0.826,
+                  "needsImprovement": 0.0859,
+                  "poor": 0.0881
+                },
+                {
+                  "good": 0.8341,
+                  "needsImprovement": 0.0836,
+                  "poor": 0.0824
+                },
+                {
+                  "good": 0.8409,
+                  "needsImprovement": 0.0826,
+                  "poor": 0.0765
+                },
+                {
+                  "good": 0.8488,
+                  "needsImprovement": 0.0828,
+                  "poor": 0.0684
+                },
+                {
+                  "good": 0.8608,
+                  "needsImprovement": 0.0768,
+                  "poor": 0.0624
+                },
+                {
+                  "good": 0.8643,
+                  "needsImprovement": 0.0775,
+                  "poor": 0.0581
+                },
+                {
+                  "good": 0.8698,
+                  "needsImprovement": 0.0766,
+                  "poor": 0.0536
+                },
+                {
+                  "good": 0.876,
+                  "needsImprovement": 0.0718,
+                  "poor": 0.0522
+                },
+                {
+                  "good": 0.8814,
+                  "needsImprovement": 0.0677,
+                  "poor": 0.0509
+                },
+                {
+                  "good": 0.8849,
+                  "needsImprovement": 0.0664,
+                  "poor": 0.0487
+                },
+                {
+                  "good": 0.8747,
+                  "needsImprovement": 0.0678,
+                  "poor": 0.0574
+                },
+                {
+                  "good": 0.8736,
+                  "needsImprovement": 0.0694,
+                  "poor": 0.0569
+                },
+                {
+                  "good": 0.8668,
+                  "needsImprovement": 0.0717,
+                  "poor": 0.0615
+                },
+                {
+                  "good": 0.8582,
+                  "needsImprovement": 0.0746,
+                  "poor": 0.0672
+                },
+                {
+                  "good": 0.8559,
+                  "needsImprovement": 0.076,
+                  "poor": 0.0681
+                },
+                {
+                  "good": 0.8534,
+                  "needsImprovement": 0.0764,
+                  "poor": 0.0702
+                },
+                {
+                  "good": 0.8488,
+                  "needsImprovement": 0.0779,
+                  "poor": 0.0733
+                },
+                {
+                  "good": 0.8452,
+                  "needsImprovement": 0.0791,
+                  "poor": 0.0758
+                },
+                {
+                  "good": 0.8393,
+                  "needsImprovement": 0.0825,
+                  "poor": 0.0783
+                },
+                {
+                  "good": 0.8412,
+                  "needsImprovement": 0.0836,
+                  "poor": 0.0752
+                },
+                {
+                  "good": 0.8482,
+                  "needsImprovement": 0.0832,
+                  "poor": 0.0687
+                },
+                {
+                  "good": 0.854,
+                  "needsImprovement": 0.0823,
+                  "poor": 0.0637
+                },
+                {
+                  "good": 0.8537,
+                  "needsImprovement": 0.0828,
+                  "poor": 0.0635
+                }
+              ]
+            }
+          },
+          "normalizedUrl": null
+        },
+        "origin": {
+          "target": {
+            "kind": "origin",
+            "origin": "https://en.wikipedia.org"
+          },
+          "formFactor": "DESKTOP",
+          "kind": "data",
+          "collectionPeriods": [
+            {
+              "firstDate": "2026-04-26",
+              "lastDate": "2026-05-23"
+            },
+            {
+              "firstDate": "2026-05-03",
+              "lastDate": "2026-05-30"
+            },
+            {
+              "firstDate": "2026-05-10",
+              "lastDate": "2026-06-06"
+            },
+            {
+              "firstDate": "2026-05-17",
+              "lastDate": "2026-06-13"
+            },
+            {
+              "firstDate": "2026-05-24",
+              "lastDate": "2026-06-20"
+            },
+            {
+              "firstDate": "2026-05-31",
+              "lastDate": "2026-06-27"
+            },
+            {
+              "firstDate": "2026-06-07",
+              "lastDate": "2026-07-04"
+            },
+            {
+              "firstDate": "2026-06-14",
+              "lastDate": "2026-07-11"
+            },
+            {
+              "firstDate": "2026-06-21",
+              "lastDate": "2026-07-18"
+            },
+            {
+              "firstDate": "2026-06-28",
+              "lastDate": "2026-07-25"
+            },
+            {
+              "firstDate": "2026-07-05",
+              "lastDate": "2026-08-01"
+            },
+            {
+              "firstDate": "2026-07-12",
+              "lastDate": "2026-08-08"
+            },
+            {
+              "firstDate": "2026-07-19",
+              "lastDate": "2026-08-15"
+            },
+            {
+              "firstDate": "2026-07-26",
+              "lastDate": "2026-08-22"
+            },
+            {
+              "firstDate": "2026-08-02",
+              "lastDate": "2026-08-29"
+            },
+            {
+              "firstDate": "2026-08-09",
+              "lastDate": "2026-09-05"
+            },
+            {
+              "firstDate": "2026-08-16",
+              "lastDate": "2026-09-12"
+            },
+            {
+              "firstDate": "2026-08-23",
+              "lastDate": "2026-09-19"
+            },
+            {
+              "firstDate": "2026-08-30",
+              "lastDate": "2026-09-26"
+            },
+            {
+              "firstDate": "2026-09-06",
+              "lastDate": "2026-10-03"
+            },
+            {
+              "firstDate": "2026-09-13",
+              "lastDate": "2026-10-10"
+            },
+            {
+              "firstDate": "2026-09-20",
+              "lastDate": "2026-10-17"
+            },
+            {
+              "firstDate": "2026-09-27",
+              "lastDate": "2026-10-24"
+            },
+            {
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-31"
+            },
+            {
+              "firstDate": "2026-10-11",
+              "lastDate": "2026-11-07"
+            }
+          ],
+          "metrics": {
+            "interaction_to_next_paint": {
+              "p75s": [
+                49,
+                49,
+                48,
+                48,
+                47,
+                47,
+                47,
+                47,
+                47,
+                47,
+                47,
+                46,
+                46,
+                46,
+                47,
+                47,
+                47,
+                48,
+                48,
+                48,
+                48,
+                48,
+                48,
+                48,
+                49
+              ],
+              "densities": [
+                {
+                  "good": 0.9762,
+                  "needsImprovement": 0.0168,
+                  "poor": 0.0071
+                },
+                {
+                  "good": 0.9781,
+                  "needsImprovement": 0.0156,
+                  "poor": 0.0063
+                },
+                {
+                  "good": 0.9791,
+                  "needsImprovement": 0.015,
+                  "poor": 0.0059
+                },
+                {
+                  "good": 0.9793,
+                  "needsImprovement": 0.0152,
+                  "poor": 0.0056
+                },
+                {
+                  "good": 0.9797,
+                  "needsImprovement": 0.0146,
+                  "poor": 0.0057
+                },
+                {
+                  "good": 0.9803,
+                  "needsImprovement": 0.0143,
+                  "poor": 0.0053
+                },
+                {
+                  "good": 0.9809,
+                  "needsImprovement": 0.0142,
+                  "poor": 0.0049
+                },
+                {
+                  "good": 0.9813,
+                  "needsImprovement": 0.0136,
+                  "poor": 0.0051
+                },
+                {
+                  "good": 0.9809,
+                  "needsImprovement": 0.0139,
+                  "poor": 0.0052
+                },
+                {
+                  "good": 0.9807,
+                  "needsImprovement": 0.0141,
+                  "poor": 0.0052
+                },
+                {
+                  "good": 0.981,
+                  "needsImprovement": 0.0137,
+                  "poor": 0.0053
+                },
+                {
+                  "good": 0.9814,
+                  "needsImprovement": 0.0138,
+                  "poor": 0.0048
+                },
+                {
+                  "good": 0.9809,
+                  "needsImprovement": 0.0138,
+                  "poor": 0.0053
+                },
+                {
+                  "good": 0.981,
+                  "needsImprovement": 0.0137,
+                  "poor": 0.0053
+                },
+                {
+                  "good": 0.9808,
+                  "needsImprovement": 0.0139,
+                  "poor": 0.0052
+                },
+                {
+                  "good": 0.9813,
+                  "needsImprovement": 0.0136,
+                  "poor": 0.0051
+                },
+                {
+                  "good": 0.9811,
+                  "needsImprovement": 0.0143,
+                  "poor": 0.0045
+                },
+                {
+                  "good": 0.9811,
+                  "needsImprovement": 0.0145,
+                  "poor": 0.0044
+                },
+                {
+                  "good": 0.9795,
+                  "needsImprovement": 0.0148,
+                  "poor": 0.0057
+                },
+                {
+                  "good": 0.9791,
+                  "needsImprovement": 0.0152,
+                  "poor": 0.0057
+                },
+                {
+                  "good": 0.9793,
+                  "needsImprovement": 0.015,
+                  "poor": 0.0057
+                },
+                {
+                  "good": 0.9792,
+                  "needsImprovement": 0.0151,
+                  "poor": 0.0057
+                },
+                {
+                  "good": 0.9794,
+                  "needsImprovement": 0.015,
+                  "poor": 0.0056
+                },
+                {
+                  "good": 0.9798,
+                  "needsImprovement": 0.0146,
+                  "poor": 0.0056
+                },
+                {
+                  "good": 0.9796,
+                  "needsImprovement": 0.015,
+                  "poor": 0.0055
+                }
+              ]
+            }
+          },
+          "normalizedUrl": null
+        }
+      }
+    },
+    "collectionPeriods": [
+      {
+        "firstDate": "2026-10-12",
+        "lastDate": "2026-11-08"
+      }
+    ],
+    "sourceNotes": [
+      "CrUX API: p75 and good/NI/poor shares of real Chrome users over the 28-day collection period 2026-10-12..2026-11-08. https://developer.chrome.com/docs/crux/api",
+      "CrUX History API: 25 weekly 28-day periods, oldest first; ineligible periods are null. https://developer.chrome.com/docs/crux/history-api",
+      "PageSpeed Insights loadingExperience/originLoadingExperience (analysed 2026-11-11T07:10:02.225Z / 2026-11-11T07:10:02.154Z): separate source next to CrUX, reports no collection period. https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/runpagespeed",
+      "CrUX PHONE vs PSI mobile, url level: identical (p75 103 ms, same good/NI/poor shares).",
+      "CrUX PHONE vs PSI mobile, origin level: identical (p75 87 ms, same good/NI/poor shares).",
+      "CrUX DESKTOP vs PSI desktop, url level: identical (p75 110 ms, same good/NI/poor shares).",
+      "CrUX DESKTOP vs PSI desktop, origin level: identical (p75 49 ms, same good/NI/poor shares)."
+    ]
+  },
+  "reconciliation": {
+    "verdict": "reproduced",
+    "field": {
+      "kind": "data",
+      "level": "url",
+      "formFactor": "PHONE",
+      "p75": 103,
+      "densities": {
+        "good": 0.9126,
+        "needsImprovement": 0.0665,
+        "poor": 0.0209
+      },
+      "collectionPeriod": {
+        "firstDate": "2026-10-12",
+        "lastDate": "2026-11-08"
+      }
+    },
+    "scenarios": [
+      {
+        "scenarioId": "boot@5798:t-6945793f13",
+        "medianMs": 308.517,
+        "bucket": "needs-improvement",
+        "reachesFieldP75": true
+      },
+      {
+        "scenarioId": "boot@5798:t-5175d6cdb8",
+        "medianMs": 276.933,
+        "bucket": "needs-improvement",
+        "reachesFieldP75": true
+      },
+      {
+        "scenarioId": "boot@1596:t-da82d59e07",
+        "medianMs": 256.429,
+        "bucket": "needs-improvement",
+        "reachesFieldP75": true
+      },
+      {
+        "scenarioId": "idle:t-4e1116ca0c",
+        "medianMs": 192.891,
+        "bucket": "good",
+        "reachesFieldP75": true
+      },
+      {
+        "scenarioId": "idle:t-da82d59e07",
+        "medianMs": 182.476,
+        "bucket": "good",
+        "reachesFieldP75": true
+      },
+      {
+        "scenarioId": "idle:t-6945793f13",
+        "medianMs": 153.004,
+        "bucket": "good",
+        "reachesFieldP75": true
+      },
+      {
+        "scenarioId": "boot@5798:t-da82d59e07",
+        "medianMs": 116.274,
+        "bucket": "good",
+        "reachesFieldP75": true
+      },
+      {
+        "scenarioId": "idle:t-f17704b6b9",
+        "medianMs": 97.073,
+        "bucket": "good",
+        "reachesFieldP75": false
+      },
+      {
+        "scenarioId": "boot@5798:t-f17704b6b9",
+        "medianMs": 82.073,
+        "bucket": "good",
+        "reachesFieldP75": false
+      },
+      {
+        "scenarioId": "idle:t-5175d6cdb8",
+        "medianMs": 74.347,
+        "bucket": "good",
+        "reachesFieldP75": false
+      }
+    ],
+    "text": "Field INP p75 (CrUX PHONE, url level, 2026-10-12..2026-11-08) = 103 ms. 7 lab scenario(s) reach it: boot@5798:t-6945793f13 (lab @ CPU 4x, mobile median 309 ms), boot@5798:t-5175d6cdb8 (lab @ CPU 4x, mobile median 277 ms), boot@1596:t-da82d59e07 (lab @ CPU 4x, mobile median 256 ms), idle:t-4e1116ca0c (lab @ CPU 4x, mobile median 193 ms), idle:t-da82d59e07 (lab @ CPU 4x, mobile median 182 ms)."
+  },
+  "issues": [],
+  "comparisons": [],
+  "scenarios": [
+    {
+      "scenario": {
+        "id": "idle:t-4e1116ca0c",
+        "targetId": "t-4e1116ca0c",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-4e1116ca0c",
+        "selector": "div#cbnnr",
+        "label": "Download the Wikipedia app",
+        "kind": "role",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 293.53125
+        },
+        "aboveFold": true,
+        "handlerSignature": "div.cbnnr.cbnnr-outer[role=button]|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:493:660",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-4e1116ca0c",
+        "runs": 1,
+        "measured": 1,
+        "values": [
+          192.891
+        ],
+        "outcomes": {
+          "measured": 1
+        },
+        "median": 192.891,
+        "min": 192.891,
+        "max": 192.891
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "boot@1596:t-da82d59e07",
+        "targetId": "t-da82d59e07",
+        "phase": "boot",
+        "offsetMs": 1596,
+        "tapPoint": {
+          "x": 342,
+          "y": 27
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-da82d59e07",
+        "selector": "button#searchIcon",
+        "label": "Search",
+        "kind": "button",
+        "rect": {
+          "x": 320,
+          "y": 299.53125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "button.cdx-button.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet.skin-minerva-search-trigger|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:889:545",
+        "safety": "cross-document-navigation",
+        "safetyReason": "submit button of a GET form"
+      },
+      "summary": {
+        "scenarioId": "boot@1596:t-da82d59e07",
+        "runs": 1,
+        "measured": 1,
+        "values": [
+          256.429
+        ],
+        "outcomes": {
+          "measured": 1
+        },
+        "median": 256.429,
+        "min": 256.429,
+        "max": 256.429
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "boot@5798:t-da82d59e07",
+        "targetId": "t-da82d59e07",
+        "phase": "boot",
+        "offsetMs": 5798,
+        "tapPoint": {
+          "x": 342,
+          "y": 27
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-da82d59e07",
+        "selector": "button#searchIcon",
+        "label": "Search",
+        "kind": "button",
+        "rect": {
+          "x": 320,
+          "y": 299.53125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "button.cdx-button.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet.skin-minerva-search-trigger|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:889:545",
+        "safety": "cross-document-navigation",
+        "safetyReason": "submit button of a GET form"
+      },
+      "summary": {
+        "scenarioId": "boot@5798:t-da82d59e07",
+        "runs": 1,
+        "measured": 1,
+        "values": [
+          116.274
+        ],
+        "outcomes": {
+          "measured": 1
+        },
+        "median": 116.274,
+        "min": 116.274,
+        "max": 116.274
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-da82d59e07",
+        "targetId": "t-da82d59e07",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-da82d59e07",
+        "selector": "button#searchIcon",
+        "label": "Search",
+        "kind": "button",
+        "rect": {
+          "x": 320,
+          "y": 299.53125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "button.cdx-button.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet.skin-minerva-search-trigger|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:889:545",
+        "safety": "cross-document-navigation",
+        "safetyReason": "submit button of a GET form"
+      },
+      "summary": {
+        "scenarioId": "idle:t-da82d59e07",
+        "runs": 1,
+        "measured": 1,
+        "values": [
+          182.476
+        ],
+        "outcomes": {
+          "measured": 1
+        },
+        "median": 182.476,
+        "min": 182.476,
+        "max": 182.476
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-bfb9094a52",
+        "targetId": "t-bfb9094a52",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-bfb9094a52",
+        "selector": "div#cbnnr > div > div:nth-of-type(3)",
+        "label": "Hide",
+        "kind": "role",
+        "rect": {
+          "x": 373,
+          "y": 15,
+          "width": 24,
+          "height": 24
+        },
+        "aboveFold": true,
+        "handlerSignature": "div.cbnnr-toggle-close[role=button]|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:493:660",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-bfb9094a52",
+        "runs": 1,
+        "measured": 0,
+        "values": [],
+        "outcomes": {
+          "target-missing": 1
+        }
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "boot@1596:t-6945793f13",
+        "targetId": "t-6945793f13",
+        "phase": "boot",
+        "offsetMs": 1596,
+        "tapPoint": {
+          "x": 123,
+          "y": 27
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-6945793f13",
+        "selector": "div#mw-mf-page-center > header > div > div:nth-of-type(1) > a",
+        "label": "",
+        "kind": "link",
+        "rect": {
+          "x": 53,
+          "y": 310.53125,
+          "width": 140,
+          "height": 22
+        },
+        "aboveFold": true,
+        "handlerSignature": "a|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/Main_Page)"
+      },
+      "summary": {
+        "scenarioId": "boot@1596:t-6945793f13",
+        "runs": 1,
+        "measured": 0,
+        "values": [],
+        "outcomes": {
+          "missed": 1
+        }
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "boot@5798:t-6945793f13",
+        "targetId": "t-6945793f13",
+        "phase": "boot",
+        "offsetMs": 5798,
+        "tapPoint": {
+          "x": 123,
+          "y": 27
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-6945793f13",
+        "selector": "div#mw-mf-page-center > header > div > div:nth-of-type(1) > a",
+        "label": "",
+        "kind": "link",
+        "rect": {
+          "x": 53,
+          "y": 310.53125,
+          "width": 140,
+          "height": 22
+        },
+        "aboveFold": true,
+        "handlerSignature": "a|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/Main_Page)"
+      },
+      "summary": {
+        "scenarioId": "boot@5798:t-6945793f13",
+        "runs": 1,
+        "measured": 1,
+        "values": [
+          308.517
+        ],
+        "outcomes": {
+          "measured": 1
+        },
+        "median": 308.517,
+        "min": 308.517,
+        "max": 308.517
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-6945793f13",
+        "targetId": "t-6945793f13",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-6945793f13",
+        "selector": "div#mw-mf-page-center > header > div > div:nth-of-type(1) > a",
+        "label": "",
+        "kind": "link",
+        "rect": {
+          "x": 53,
+          "y": 310.53125,
+          "width": 140,
+          "height": 22
+        },
+        "aboveFold": true,
+        "handlerSignature": "a|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/Main_Page)"
+      },
+      "summary": {
+        "scenarioId": "idle:t-6945793f13",
+        "runs": 1,
+        "measured": 1,
+        "values": [
+          153.004
+        ],
+        "outcomes": {
+          "measured": 1
+        },
+        "median": 153.004,
+        "min": 153.004,
+        "max": 153.004
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "boot@1596:t-5175d6cdb8",
+        "targetId": "t-5175d6cdb8",
+        "phase": "boot",
+        "offsetMs": 1596,
+        "tapPoint": {
+          "x": 252.2890625,
+          "y": 240.21875
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-5175d6cdb8",
+        "selector": "div#mwBA > a:nth-of-type(2)",
+        "label": "America (disambiguation)",
+        "kind": "link",
+        "rect": {
+          "x": 174.546875,
+          "y": 526.75,
+          "width": 155.484375,
+          "height": 16
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.mw-disambig|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/America_(disambiguation))"
+      },
+      "summary": {
+        "scenarioId": "boot@1596:t-5175d6cdb8",
+        "runs": 1,
+        "measured": 0,
+        "values": [],
+        "outcomes": {
+          "missed": 1
+        }
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "boot@5798:t-5175d6cdb8",
+        "targetId": "t-5175d6cdb8",
+        "phase": "boot",
+        "offsetMs": 5798,
+        "tapPoint": {
+          "x": 252.2890625,
+          "y": 240.21875
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-5175d6cdb8",
+        "selector": "div#mwBA > a:nth-of-type(2)",
+        "label": "America (disambiguation)",
+        "kind": "link",
+        "rect": {
+          "x": 174.546875,
+          "y": 526.75,
+          "width": 155.484375,
+          "height": 16
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.mw-disambig|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/America_(disambiguation))"
+      },
+      "summary": {
+        "scenarioId": "boot@5798:t-5175d6cdb8",
+        "runs": 1,
+        "measured": 1,
+        "values": [
+          276.933
+        ],
+        "outcomes": {
+          "measured": 1
+        },
+        "median": 276.933,
+        "min": 276.933,
+        "max": 276.933
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-5175d6cdb8",
+        "targetId": "t-5175d6cdb8",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-5175d6cdb8",
+        "selector": "div#mwBA > a:nth-of-type(2)",
+        "label": "America (disambiguation)",
+        "kind": "link",
+        "rect": {
+          "x": 174.546875,
+          "y": 526.75,
+          "width": 155.484375,
+          "height": 16
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.mw-disambig|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/America_(disambiguation))"
+      },
+      "summary": {
+        "scenarioId": "idle:t-5175d6cdb8",
+        "runs": 1,
+        "measured": 1,
+        "values": [
+          74.347
+        ],
+        "outcomes": {
+          "measured": 1
+        },
+        "median": 74.347,
+        "min": 74.347,
+        "max": 74.347
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "boot@1596:t-f17704b6b9",
+        "targetId": "t-f17704b6b9",
+        "phase": "boot",
+        "offsetMs": 1596,
+        "tapPoint": {
+          "x": 80.546875,
+          "y": 473.921875
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-f17704b6b9",
+        "selector": "a#mwlg",
+        "label": "contiguous states",
+        "kind": "link",
+        "rect": {
+          "x": 16,
+          "y": 759.453125,
+          "width": 129.09375,
+          "height": 18
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.mw-redirect|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/Contiguous_states)"
+      },
+      "summary": {
+        "scenarioId": "boot@1596:t-f17704b6b9",
+        "runs": 1,
+        "measured": 0,
+        "values": [],
+        "outcomes": {
+          "missed": 1
+        }
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "boot@5798:t-f17704b6b9",
+        "targetId": "t-f17704b6b9",
+        "phase": "boot",
+        "offsetMs": 5798,
+        "tapPoint": {
+          "x": 80.546875,
+          "y": 473.921875
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-f17704b6b9",
+        "selector": "a#mwlg",
+        "label": "contiguous states",
+        "kind": "link",
+        "rect": {
+          "x": 16,
+          "y": 759.453125,
+          "width": 129.09375,
+          "height": 18
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.mw-redirect|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/Contiguous_states)"
+      },
+      "summary": {
+        "scenarioId": "boot@5798:t-f17704b6b9",
+        "runs": 1,
+        "measured": 1,
+        "values": [
+          82.073
+        ],
+        "outcomes": {
+          "measured": 1
+        },
+        "median": 82.073,
+        "min": 82.073,
+        "max": 82.073
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-f17704b6b9",
+        "targetId": "t-f17704b6b9",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-f17704b6b9",
+        "selector": "a#mwlg",
+        "label": "contiguous states",
+        "kind": "link",
+        "rect": {
+          "x": 16,
+          "y": 759.453125,
+          "width": 129.09375,
+          "height": 18
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.mw-redirect|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/Contiguous_states)"
+      },
+      "summary": {
+        "scenarioId": "idle:t-f17704b6b9",
+        "runs": 1,
+        "measured": 1,
+        "values": [
+          97.073
+        ],
+        "outcomes": {
+          "measured": 1
+        },
+        "median": 97.073,
+        "min": 97.073,
+        "max": 97.073
+      },
+      "deepDived": false
+    }
+  ],
+  "hazard": {
+    "fcpMs": 1496,
+    "longTasks": [
+      {
+        "startTime": 1298.01,
+        "durationMs": 173.997,
+        "topScriptUrl": "",
+        "entity": "(no JS samples)",
+        "isFirstParty": false
+      },
+      {
+        "startTime": 5748.468,
+        "durationMs": 92.728,
+        "topScriptUrl": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatt",
+        "entity": "wikipedia.org",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 6363.972,
+        "durationMs": 255.787,
+        "topScriptUrl": "pptr:;CdpFrame.%3Canonymous%3E%20(file%3A%2F%2F%2Finp-analyser%2Fnode_modules%2Fpuppeteer-core%2Flib%2Fpuppeteer%2Futil%2Fdecorators.js%3A101%3A27)",
+        "entity": "",
+        "isFirstParty": false
+      }
+    ],
+    "peakHazardMs": 5748.468,
+    "peakBusyMs": 348.5150000000003
+  },
+  "targets": {
+    "measured": [
+      {
+        "id": "t-4e1116ca0c",
+        "selector": "div#cbnnr",
+        "label": "Download the Wikipedia app",
+        "kind": "role",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 293.53125
+        },
+        "aboveFold": true,
+        "handlerSignature": "div.cbnnr.cbnnr-outer[role=button]|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:493:660",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      {
+        "id": "t-da82d59e07",
+        "selector": "button#searchIcon",
+        "label": "Search",
+        "kind": "button",
+        "rect": {
+          "x": 320,
+          "y": 299.53125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "button.cdx-button.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet.skin-minerva-search-trigger|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:889:545",
+        "safety": "cross-document-navigation",
+        "safetyReason": "submit button of a GET form"
+      },
+      {
+        "id": "t-bfb9094a52",
+        "selector": "div#cbnnr > div > div:nth-of-type(3)",
+        "label": "Hide",
+        "kind": "role",
+        "rect": {
+          "x": 373,
+          "y": 15,
+          "width": 24,
+          "height": 24
+        },
+        "aboveFold": true,
+        "handlerSignature": "div.cbnnr-toggle-close[role=button]|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:493:660",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      {
+        "id": "t-6945793f13",
+        "selector": "div#mw-mf-page-center > header > div > div:nth-of-type(1) > a",
+        "label": "",
+        "kind": "link",
+        "rect": {
+          "x": 53,
+          "y": 310.53125,
+          "width": 140,
+          "height": 22
+        },
+        "aboveFold": true,
+        "handlerSignature": "a|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/Main_Page)"
+      },
+      {
+        "id": "t-5175d6cdb8",
+        "selector": "div#mwBA > a:nth-of-type(2)",
+        "label": "America (disambiguation)",
+        "kind": "link",
+        "rect": {
+          "x": 174.546875,
+          "y": 526.75,
+          "width": 155.484375,
+          "height": 16
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.mw-disambig|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/America_(disambiguation))"
+      },
+      {
+        "id": "t-f17704b6b9",
+        "selector": "a#mwlg",
+        "label": "contiguous states",
+        "kind": "link",
+        "rect": {
+          "x": 16,
+          "y": 759.453125,
+          "width": 129.09375,
+          "height": 18
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.mw-redirect|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/Contiguous_states)"
+      }
+    ],
+    "excluded": [
+      {
+        "id": "t-6e05768760",
+        "selector": "a#mwxA",
+        "label": "to declare secession",
+        "kind": "link",
+        "rect": {
+          "x": 179.765625,
+          "y": 4172.0625,
+          "width": 148.640625,
+          "height": 18
+        },
+        "aboveFold": false,
+        "handlerSignature": "a|",
+        "safety": "dangerous",
+        "safetyReason": "denylist term \"ordina\" in title"
+      }
+    ],
+    "globalListeners": [
+      {
+        "type": "click",
+        "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z",
+        "line": 422,
+        "column": 790,
+        "on": "document"
+      },
+      {
+        "type": "click",
+        "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z",
+        "line": 268,
+        "column": 1042,
+        "on": "document"
+      },
+      {
+        "type": "click",
+        "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z",
+        "line": 493,
+        "column": 660,
+        "on": "document"
+      },
+      {
+        "type": "input",
+        "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z",
+        "line": 493,
+        "column": 660,
+        "on": "document"
+      },
+      {
+        "type": "keydown",
+        "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z",
+        "line": 493,
+        "column": 660,
+        "on": "document"
+      },
+      {
+        "type": "click",
+        "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z",
+        "line": 891,
+        "column": 836,
+        "on": "window"
+      },
+      {
+        "type": "click",
+        "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z",
+        "line": 891,
+        "column": 836,
+        "on": "window"
+      },
+      {
+        "type": "click",
+        "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z",
+        "line": 250,
+        "column": 519,
+        "on": "window"
+      },
+      {
+        "type": "keyup",
+        "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z",
+        "line": 250,
+        "column": 519,
+        "on": "window"
+      }
+    ]
+  },
+  "run": {
+    "runs": 42,
+    "excludedRuns": 28,
+    "loads": 46,
+    "sentinelReferenceMs": [
+      156.563,
+      132.873,
+      127.401,
+      131.762,
+      126.732,
+      140.305
+    ]
+  },
+  "limitations": [
+    "Lab values are \"lab @ CPU 4x, mobile emulation, headless Chrome Chrome/155.0.8059.39\" on one machine - not INP. INP is the CrUX field p75 above.",
+    "CrUX INP is the 75th percentile over 28 days of real Chrome users' page loads, each load's INP being its worst interaction minus one per 50 (https://developers.google.com/speed/docs/insights/v5/about, https://web.dev/articles/inp#what-is-inp).",
+    "Only interactions the tool discovered and could trigger safely were measured; logged-in states, real form input, ads and cross-origin iframes were not.",
+    "First-party mutating requests were blocked and cross-document navigations answered with 204, so work that depends on those responses is not measured.",
+    "GPU/raster work is not CPU-throttled by Chrome's CPU throttling; presentation delay on real mid-tier phones can be larger."
+  ]
+}

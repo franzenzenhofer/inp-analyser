@@ -399,54 +399,47 @@ footer p { margin: 0 0 8px; }
   -->
   <!-- FINDINGS:START -->
   <div class="findings" aria-labelledby="findings-title">
-    <article class="finding info">
+    <p>Lab scenarios from the real run on <a href="https://en.wikipedia.org/wiki/United_States">en.wikipedia.org/wiki/United_States</a> (11 Nov 2026, <code>--quick</code>, mobile, CPU 4x, seed 42). Field INP p75 phone: <strong>103 ms, good</strong> - these three lab taps are the ones that reach it, all during page boot. Full output: <a href="https://github.com/franzenzenhofer/inp-analyser/tree/main/examples">examples/</a>.</p>
+    <article class="finding needs-improvement">
       <div class="finding-head">
-        <span class="rule-id">rule-id</span>
-        <span class="tag">phase</span>
-        <span class="tag">certainty</span>
+        <span class="rule-id">boot@5798</span>
+        <span class="tag">tap during boot, 5.8 s</span>
+        <span class="tag">screening</span>
       </div>
-      <p class="finding-lead">Example findings from the Wikipedia run are added here.</p>
+      <p class="finding-lead">Header menu link: 309 ms in the lab while the page is still booting; the same link on the idle page: 153 ms.</p>
       <dl class="facts">
-        <dt>Element</dt><dd><code>element selector</code></dd>
-        <dt>Script</dt><dd><code>function (URL:line:column)</code></dd>
-        <dt>Owner</dt><dd>entity</dd>
-        <dt>Time</dt><dd>median ms, 95% CI</dd>
-        <dt>Certainty</dt><dd>certainty</dd>
-        <dt>Runs</dt><dd>fired in n of m runs</dd>
+        <dt>Element</dt><dd><code>div#mw-mf-page-center &gt; header &gt; div &gt; div:nth-of-type(1) &gt; a</code></dd>
+        <dt>Time</dt><dd>lab @ CPU 4x, mobile: median 309 ms</dd>
+        <dt>Certainty</dt><dd>screening only (1 valid run; busy machine, gate excluded the rest)</dd>
       </dl>
     </article>
-    <article class="finding info">
+    <article class="finding needs-improvement">
       <div class="finding-head">
-        <span class="rule-id">rule-id</span>
-        <span class="tag">phase</span>
-        <span class="tag">certainty</span>
+        <span class="rule-id">boot@5798</span>
+        <span class="tag">tap during boot, 5.8 s</span>
+        <span class="tag">screening</span>
       </div>
-      <p class="finding-lead">Example findings from the Wikipedia run are added here.</p>
+      <p class="finding-lead">Hatnote link "America (disambiguation)": 277 ms in the lab during boot.</p>
       <dl class="facts">
-        <dt>Element</dt><dd><code>element selector</code></dd>
-        <dt>Script</dt><dd><code>function (URL:line:column)</code></dd>
-        <dt>Owner</dt><dd>entity</dd>
-        <dt>Time</dt><dd>median ms, 95% CI</dd>
-        <dt>Certainty</dt><dd>certainty</dd>
-        <dt>Runs</dt><dd>fired in n of m runs</dd>
+        <dt>Element</dt><dd><code>div#mwBA &gt; a:nth-of-type(2)</code></dd>
+        <dt>Time</dt><dd>lab @ CPU 4x, mobile: median 277 ms</dd>
+        <dt>Certainty</dt><dd>screening only (1 valid run)</dd>
       </dl>
     </article>
-    <article class="finding info">
+    <article class="finding needs-improvement">
       <div class="finding-head">
-        <span class="rule-id">rule-id</span>
-        <span class="tag">phase</span>
-        <span class="tag">certainty</span>
+        <span class="rule-id">boot@1596</span>
+        <span class="tag">tap during boot, 1.6 s</span>
+        <span class="tag">screening</span>
       </div>
-      <p class="finding-lead">Example findings from the Wikipedia run are added here.</p>
+      <p class="finding-lead">Search button: 256 ms in the lab when tapped 1.6 s into the load; 182 ms on the idle page.</p>
       <dl class="facts">
-        <dt>Element</dt><dd><code>element selector</code></dd>
-        <dt>Script</dt><dd><code>function (URL:line:column)</code></dd>
-        <dt>Owner</dt><dd>entity</dd>
-        <dt>Time</dt><dd>median ms, 95% CI</dd>
-        <dt>Certainty</dt><dd>certainty</dd>
-        <dt>Runs</dt><dd>fired in n of m runs</dd>
+        <dt>Element</dt><dd><code>button#searchIcon</code></dd>
+        <dt>Time</dt><dd>lab @ CPU 4x, mobile: median 256 ms</dd>
+        <dt>Certainty</dt><dd>screening only (1 valid run)</dd>
       </dl>
     </article>
+    <p>No issue (rule + phase + <code>URL:line:function</code>) is claimed: those come from deep-dive attribution runs, which <code>--quick</code> skips. The tool states what it does not know.</p>
   </div>
   <!-- FINDINGS:END -->
 </section>

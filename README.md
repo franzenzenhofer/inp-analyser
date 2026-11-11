@@ -214,7 +214,32 @@ Read it as: Wikipedia's Main Page has a **good** INP on both devices (phone 130 
 
 ## Example: a real run on Wikipedia
 
-<!-- EXAMPLE-RUN -->
+Two unedited runs from 11 Nov 2026 live in [`examples/`](examples/) (terminal output, `report.html`, `report.json`, `runs.jsonl`).
+
+```text
+$ inp analyse https://en.wikipedia.org/wiki/United_States --quick --budget 25 --max-targets 6 --seed 42
+inp-analyser 0.1.0 - https://en.wikipedia.org/wiki/United_States
+Field INP PHONE: 103 ms (good)
+  CrUX p75, PHONE, page (URL) level, 2026-10-12 to 2026-11-08
+  real users: good 91.3% | needs improvement 6.7% | poor 2.1%
+  PSI shows the same: 103 ms
+Reconciliation: Field INP p75 (CrUX PHONE, url level, 2026-10-12..2026-11-08) = 103 ms.
+  7 lab scenario(s) reach it: boot@5798:t-6945793f13 (lab @ CPU 4x, mobile median 309 ms),
+  boot@5798:t-5175d6cdb8 (lab @ CPU 4x, mobile median 277 ms), boot@1596:t-da82d59e07 (lab @ CPU 4x, mobile median 256 ms), ...
+Issues: none found in the measured interactions
+Run: 42 runs (28 excluded), 46 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile
+```
+
+How to read it:
+
+- **The headline is the field number**: 103 ms, good for 91.3% of real phone users, and identical to what PageSpeed Insights shows.
+- **The lab shows where the risk is**: taps during page boot are the slow ones. The header menu link tapped 5.8 s into the load (`boot@5798`) took a 309 ms lab median; the same link tapped on the idle page took 153 ms.
+- **The tool is honest about its evidence**: this machine was busy, so the BenchmarkIndex gate excluded 28 of 42 runs, and `--quick` skips the deep-dive. That is why no issue (element + phase + `URL:line:function`) is claimed. Run without `--quick` on a quiet machine to get attributed issues.
+
+| Page | Field INP p75 phone (URL) | Good / NI / poor | Desktop | Lab |
+|---|---|---|---|---|
+| [Main_Page](examples/wikipedia-main-page/) | **130 ms** | 86.5% / 9.7% / 3.9% | 61 ms | no scenario reached the field p75 |
+| [United_States](examples/wikipedia-united-states/) | **103 ms** | 91.3% / 6.7% / 2.1% | 110 ms | 7 boot / idle scenarios reach it, max 309 ms |
 
 ## Outputs
 

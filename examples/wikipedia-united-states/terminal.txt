@@ -1,0 +1,10 @@
+inp-analyser 0.1.0 - https://en.wikipedia.org/wiki/United_States
+Field INP PHONE: 103 ms (good)
+  CrUX p75, PHONE, page (URL) level, 2026-10-12 to 2026-11-08
+  real users: good 91.3% | needs improvement 6.7% | poor 2.1%
+  PSI shows the same: 103 ms
+Reconciliation: Field INP p75 (CrUX PHONE, url level, 2026-10-12..2026-11-08) = 103 ms. 7 lab scenario(s) reach it: boot@5798:t-6945793f13 (lab @ CPU 4x, mobile median 309 ms), boot@5798:t-5175d6cdb8 (lab @ CPU 4x, mobile median 277 ms), boot@1596:t-da82d59e07 (lab @ CPU 4x, mobile median 256 ms), idle:t-4e1116ca0c (lab @ CPU 4x, mobile median 193 ms), idle:t-da82d59e07 (lab @ CPU 4x, mobile median 182 ms).
+Issues: none found in the measured interactions
+Run: 42 runs (28 excluded), 46 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile
+HTML report: examples/wikipedia-united-states/report.html
+[inp] report: examples/wikipedia-united-states/report.json

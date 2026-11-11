@@ -1,0 +1,1482 @@
+{
+  "url": "https://en.wikipedia.org/wiki/United_States",
+  "origin": "https://en.wikipedia.org",
+  "fetchedAt": "2026-11-11T07:10:28.109Z",
+  "phone": {
+    "inp": {
+      "kind": "data",
+      "level": "url",
+      "formFactor": "PHONE",
+      "p75": 103,
+      "densities": {
+        "good": 0.9126,
+        "needsImprovement": 0.0665,
+        "poor": 0.0209
+      },
+      "collectionPeriod": {
+        "firstDate": "2026-10-12",
+        "lastDate": "2026-11-08"
+      }
+    },
+    "psiParity": {
+      "page": {
+        "kind": "equal",
+        "level": "url",
+        "p75": 103
+      },
+      "origin": {
+        "kind": "equal",
+        "level": "origin",
+        "p75": 87
+      }
+    },
+    "url": {
+      "target": {
+        "kind": "url",
+        "url": "https://en.wikipedia.org/wiki/United_States"
+      },
+      "formFactor": "PHONE",
+      "kind": "data",
+      "collectionPeriod": {
+        "firstDate": "2026-10-12",
+        "lastDate": "2026-11-08"
+      },
+      "metrics": {
+        "interaction_to_next_paint": {
+          "p75": 103,
+          "densities": {
+            "good": 0.9126,
+            "needsImprovement": 0.0665,
+            "poor": 0.0209
+          },
+          "bounds": {
+            "goodMax": 200,
+            "poorMin": 500
+          }
+        },
+        "largest_contentful_paint": {
+          "p75": 997,
+          "densities": {
+            "good": 0.9339,
+            "needsImprovement": 0.0404,
+            "poor": 0.0257
+          },
+          "bounds": {
+            "goodMax": 2500,
+            "poorMin": 4000
+          }
+        },
+        "cumulative_layout_shift": {
+          "p75": 0,
+          "densities": {
+            "good": 0.9076,
+            "needsImprovement": 0.0343,
+            "poor": 0.0581
+          },
+          "bounds": {
+            "goodMax": 0.1,
+            "poorMin": 0.25
+          }
+        }
+      },
+      "normalizedUrl": null
+    },
+    "origin": {
+      "target": {
+        "kind": "origin",
+        "origin": "https://en.wikipedia.org"
+      },
+      "formFactor": "PHONE",
+      "kind": "data",
+      "collectionPeriod": {
+        "firstDate": "2026-10-12",
+        "lastDate": "2026-11-08"
+      },
+      "metrics": {
+        "interaction_to_next_paint": {
+          "p75": 87,
+          "densities": {
+            "good": 0.9671,
+            "needsImprovement": 0.0275,
+            "poor": 0.0054
+          },
+          "bounds": {
+            "goodMax": 200,
+            "poorMin": 500
+          }
+        },
+        "largest_contentful_paint": {
+          "p75": 921,
+          "densities": {
+            "good": 0.9595,
+            "needsImprovement": 0.0266,
+            "poor": 0.0138
+          },
+          "bounds": {
+            "goodMax": 2500,
+            "poorMin": 4000
+          }
+        },
+        "cumulative_layout_shift": {
+          "p75": 0,
+          "densities": {
+            "good": 0.9422,
+            "needsImprovement": 0.0118,
+            "poor": 0.046
+          },
+          "bounds": {
+            "goodMax": 0.1,
+            "poorMin": 0.25
+          }
+        }
+      },
+      "normalizedUrl": null
+    },
+    "psi": {
+      "strategy": "mobile",
+      "requestedUrl": "https://en.wikipedia.org/wiki/United_States",
+      "analysedAt": "2026-11-11T07:10:02.225Z",
+      "page": {
+        "kind": "data",
+        "id": "https://en.wikipedia.org/wiki/United_States",
+        "inp": {
+          "percentile": 103,
+          "distributions": [
+            {
+              "min": 0,
+              "max": 200,
+              "proportion": 0.9126
+            },
+            {
+              "min": 200,
+              "max": 500,
+              "proportion": 0.0665
+            },
+            {
+              "min": 500,
+              "max": null,
+              "proportion": 0.0209
+            }
+          ],
+          "category": "FAST"
+        },
+        "overallCategory": "FAST",
+        "originFallback": false
+      },
+      "origin": {
+        "kind": "data",
+        "id": "https://en.wikipedia.org",
+        "inp": {
+          "percentile": 87,
+          "distributions": [
+            {
+              "min": 0,
+              "max": 200,
+              "proportion": 0.9671
+            },
+            {
+              "min": 200,
+              "max": 500,
+              "proportion": 0.0275
+            },
+            {
+              "min": 500,
+              "max": null,
+              "proportion": 0.0054
+            }
+          ],
+          "category": "FAST"
+        },
+        "overallCategory": "FAST",
+        "originFallback": false
+      }
+    }
+  },
+  "desktop": {
+    "inp": {
+      "kind": "data",
+      "level": "url",
+      "formFactor": "DESKTOP",
+      "p75": 110,
+      "densities": {
+        "good": 0.8551,
+        "needsImprovement": 0.0827,
+        "poor": 0.0622
+      },
+      "collectionPeriod": {
+        "firstDate": "2026-10-12",
+        "lastDate": "2026-11-08"
+      }
+    },
+    "psiParity": {
+      "page": {
+        "kind": "equal",
+        "level": "url",
+        "p75": 110
+      },
+      "origin": {
+        "kind": "equal",
+        "level": "origin",
+        "p75": 49
+      }
+    },
+    "url": {
+      "target": {
+        "kind": "url",
+        "url": "https://en.wikipedia.org/wiki/United_States"
+      },
+      "formFactor": "DESKTOP",
+      "kind": "data",
+      "collectionPeriod": {
+        "firstDate": "2026-10-12",
+        "lastDate": "2026-11-08"
+      },
+      "metrics": {
+        "interaction_to_next_paint": {
+          "p75": 110,
+          "densities": {
+            "good": 0.8551,
+            "needsImprovement": 0.0827,
+            "poor": 0.0622
+          },
+          "bounds": {
+            "goodMax": 200,
+            "poorMin": 500
+          }
+        },
+        "largest_contentful_paint": {
+          "p75": 884,
+          "densities": {
+            "good": 0.9622,
+            "needsImprovement": 0.0246,
+            "poor": 0.0132
+          },
+          "bounds": {
+            "goodMax": 2500,
+            "poorMin": 4000
+          }
+        },
+        "cumulative_layout_shift": {
+          "p75": 0.03,
+          "densities": {
+            "good": 0.8037,
+            "needsImprovement": 0.0266,
+            "poor": 0.1697
+          },
+          "bounds": {
+            "goodMax": 0.1,
+            "poorMin": 0.25
+          }
+        }
+      },
+      "normalizedUrl": null
+    },
+    "origin": {
+      "target": {
+        "kind": "origin",
+        "origin": "https://en.wikipedia.org"
+      },
+      "formFactor": "DESKTOP",
+      "kind": "data",
+      "collectionPeriod": {
+        "firstDate": "2026-10-12",
+        "lastDate": "2026-11-08"
+      },
+      "metrics": {
+        "interaction_to_next_paint": {
+          "p75": 49,
+          "densities": {
+            "good": 0.9795,
+            "needsImprovement": 0.015,
+            "poor": 0.0055
+          },
+          "bounds": {
+            "goodMax": 200,
+            "poorMin": 500
+          }
+        },
+        "largest_contentful_paint": {
+          "p75": 839,
+          "densities": {
+            "good": 0.9723,
+            "needsImprovement": 0.0178,
+            "poor": 0.0099
+          },
+          "bounds": {
+            "goodMax": 2500,
+            "poorMin": 4000
+          }
+        },
+        "cumulative_layout_shift": {
+          "p75": 0,
+          "densities": {
+            "good": 0.8544,
+            "needsImprovement": 0.0176,
+            "poor": 0.128
+          },
+          "bounds": {
+            "goodMax": 0.1,
+            "poorMin": 0.25
+          }
+        }
+      },
+      "normalizedUrl": null
+    },
+    "psi": {
+      "strategy": "desktop",
+      "requestedUrl": "https://en.wikipedia.org/wiki/United_States",
+      "analysedAt": "2026-11-11T07:10:02.154Z",
+      "page": {
+        "kind": "data",
+        "id": "https://en.wikipedia.org/wiki/United_States",
+        "inp": {
+          "percentile": 110,
+          "distributions": [
+            {
+              "min": 0,
+              "max": 200,
+              "proportion": 0.8551
+            },
+            {
+              "min": 200,
+              "max": 500,
+              "proportion": 0.0827
+            },
+            {
+              "min": 500,
+              "max": null,
+              "proportion": 0.0622
+            }
+          ],
+          "category": "FAST"
+        },
+        "overallCategory": "FAST",
+        "originFallback": false
+      },
+      "origin": {
+        "kind": "data",
+        "id": "https://en.wikipedia.org",
+        "inp": {
+          "percentile": 49,
+          "distributions": [
+            {
+              "min": 0,
+              "max": 200,
+              "proportion": 0.9795
+            },
+            {
+              "min": 200,
+              "max": 500,
+              "proportion": 0.015
+            },
+            {
+              "min": 500,
+              "max": null,
+              "proportion": 0.0055
+            }
+          ],
+          "category": "FAST"
+        },
+        "overallCategory": "FAST",
+        "originFallback": false
+      }
+    }
+  },
+  "history": {
+    "phone": {
+      "url": {
+        "target": {
+          "kind": "url",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        },
+        "formFactor": "PHONE",
+        "kind": "data",
+        "collectionPeriods": [
+          {
+            "firstDate": "2026-04-26",
+            "lastDate": "2026-05-23"
+          },
+          {
+            "firstDate": "2026-05-03",
+            "lastDate": "2026-05-30"
+          },
+          {
+            "firstDate": "2026-05-10",
+            "lastDate": "2026-06-06"
+          },
+          {
+            "firstDate": "2026-05-17",
+            "lastDate": "2026-06-13"
+          },
+          {
+            "firstDate": "2026-05-24",
+            "lastDate": "2026-06-20"
+          },
+          {
+            "firstDate": "2026-05-31",
+            "lastDate": "2026-06-27"
+          },
+          {
+            "firstDate": "2026-06-07",
+            "lastDate": "2026-07-04"
+          },
+          {
+            "firstDate": "2026-06-14",
+            "lastDate": "2026-07-11"
+          },
+          {
+            "firstDate": "2026-06-21",
+            "lastDate": "2026-07-18"
+          },
+          {
+            "firstDate": "2026-06-28",
+            "lastDate": "2026-07-25"
+          },
+          {
+            "firstDate": "2026-07-05",
+            "lastDate": "2026-08-01"
+          },
+          {
+            "firstDate": "2026-07-12",
+            "lastDate": "2026-08-08"
+          },
+          {
+            "firstDate": "2026-07-19",
+            "lastDate": "2026-08-15"
+          },
+          {
+            "firstDate": "2026-07-26",
+            "lastDate": "2026-08-22"
+          },
+          {
+            "firstDate": "2026-08-02",
+            "lastDate": "2026-08-29"
+          },
+          {
+            "firstDate": "2026-08-09",
+            "lastDate": "2026-09-05"
+          },
+          {
+            "firstDate": "2026-08-16",
+            "lastDate": "2026-09-12"
+          },
+          {
+            "firstDate": "2026-08-23",
+            "lastDate": "2026-09-19"
+          },
+          {
+            "firstDate": "2026-08-30",
+            "lastDate": "2026-09-26"
+          },
+          {
+            "firstDate": "2026-09-06",
+            "lastDate": "2026-10-03"
+          },
+          {
+            "firstDate": "2026-09-13",
+            "lastDate": "2026-10-10"
+          },
+          {
+            "firstDate": "2026-09-20",
+            "lastDate": "2026-10-17"
+          },
+          {
+            "firstDate": "2026-09-27",
+            "lastDate": "2026-10-24"
+          },
+          {
+            "firstDate": "2026-10-04",
+            "lastDate": "2026-10-31"
+          },
+          {
+            "firstDate": "2026-10-11",
+            "lastDate": "2026-11-07"
+          }
+        ],
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75s": [
+              102,
+              102,
+              104,
+              104,
+              105,
+              106,
+              104,
+              103,
+              103,
+              103,
+              104,
+              105,
+              105,
+              106,
+              106,
+              106,
+              106,
+              106,
+              106,
+              106,
+              107,
+              108,
+              107,
+              107,
+              103
+            ],
+            "densities": [
+              {
+                "good": 0.9098,
+                "needsImprovement": 0.0712,
+                "poor": 0.019
+              },
+              {
+                "good": 0.9144,
+                "needsImprovement": 0.0663,
+                "poor": 0.0193
+              },
+              {
+                "good": 0.9098,
+                "needsImprovement": 0.0697,
+                "poor": 0.0205
+              },
+              {
+                "good": 0.9092,
+                "needsImprovement": 0.0706,
+                "poor": 0.0202
+              },
+              {
+                "good": 0.9086,
+                "needsImprovement": 0.0705,
+                "poor": 0.0209
+              },
+              {
+                "good": 0.9086,
+                "needsImprovement": 0.0704,
+                "poor": 0.021
+              },
+              {
+                "good": 0.9131,
+                "needsImprovement": 0.0669,
+                "poor": 0.02
+              },
+              {
+                "good": 0.9161,
+                "needsImprovement": 0.0655,
+                "poor": 0.0184
+              },
+              {
+                "good": 0.9167,
+                "needsImprovement": 0.0664,
+                "poor": 0.0169
+              },
+              {
+                "good": 0.9191,
+                "needsImprovement": 0.0641,
+                "poor": 0.0167
+              },
+              {
+                "good": 0.917,
+                "needsImprovement": 0.0648,
+                "poor": 0.0182
+              },
+              {
+                "good": 0.9146,
+                "needsImprovement": 0.0665,
+                "poor": 0.0188
+              },
+              {
+                "good": 0.9144,
+                "needsImprovement": 0.066,
+                "poor": 0.0196
+              },
+              {
+                "good": 0.9109,
+                "needsImprovement": 0.0673,
+                "poor": 0.0218
+              },
+              {
+                "good": 0.9071,
+                "needsImprovement": 0.0698,
+                "poor": 0.0231
+              },
+              {
+                "good": 0.9114,
+                "needsImprovement": 0.0683,
+                "poor": 0.0202
+              },
+              {
+                "good": 0.9098,
+                "needsImprovement": 0.0677,
+                "poor": 0.0226
+              },
+              {
+                "good": 0.9111,
+                "needsImprovement": 0.0668,
+                "poor": 0.0221
+              },
+              {
+                "good": 0.9098,
+                "needsImprovement": 0.0675,
+                "poor": 0.0226
+              },
+              {
+                "good": 0.9066,
+                "needsImprovement": 0.0704,
+                "poor": 0.0229
+              },
+              {
+                "good": 0.9025,
+                "needsImprovement": 0.0732,
+                "poor": 0.0243
+              },
+              {
+                "good": 0.9,
+                "needsImprovement": 0.0741,
+                "poor": 0.0259
+              },
+              {
+                "good": 0.9035,
+                "needsImprovement": 0.0714,
+                "poor": 0.025
+              },
+              {
+                "good": 0.9034,
+                "needsImprovement": 0.0711,
+                "poor": 0.0255
+              },
+              {
+                "good": 0.9107,
+                "needsImprovement": 0.0676,
+                "poor": 0.0217
+              }
+            ]
+          }
+        },
+        "normalizedUrl": null
+      },
+      "origin": {
+        "target": {
+          "kind": "origin",
+          "origin": "https://en.wikipedia.org"
+        },
+        "formFactor": "PHONE",
+        "kind": "data",
+        "collectionPeriods": [
+          {
+            "firstDate": "2026-04-26",
+            "lastDate": "2026-05-23"
+          },
+          {
+            "firstDate": "2026-05-03",
+            "lastDate": "2026-05-30"
+          },
+          {
+            "firstDate": "2026-05-10",
+            "lastDate": "2026-06-06"
+          },
+          {
+            "firstDate": "2026-05-17",
+            "lastDate": "2026-06-13"
+          },
+          {
+            "firstDate": "2026-05-24",
+            "lastDate": "2026-06-20"
+          },
+          {
+            "firstDate": "2026-05-31",
+            "lastDate": "2026-06-27"
+          },
+          {
+            "firstDate": "2026-06-07",
+            "lastDate": "2026-07-04"
+          },
+          {
+            "firstDate": "2026-06-14",
+            "lastDate": "2026-07-11"
+          },
+          {
+            "firstDate": "2026-06-21",
+            "lastDate": "2026-07-18"
+          },
+          {
+            "firstDate": "2026-06-28",
+            "lastDate": "2026-07-25"
+          },
+          {
+            "firstDate": "2026-07-05",
+            "lastDate": "2026-08-01"
+          },
+          {
+            "firstDate": "2026-07-12",
+            "lastDate": "2026-08-08"
+          },
+          {
+            "firstDate": "2026-07-19",
+            "lastDate": "2026-08-15"
+          },
+          {
+            "firstDate": "2026-07-26",
+            "lastDate": "2026-08-22"
+          },
+          {
+            "firstDate": "2026-08-02",
+            "lastDate": "2026-08-29"
+          },
+          {
+            "firstDate": "2026-08-09",
+            "lastDate": "2026-09-05"
+          },
+          {
+            "firstDate": "2026-08-16",
+            "lastDate": "2026-09-12"
+          },
+          {
+            "firstDate": "2026-08-23",
+            "lastDate": "2026-09-19"
+          },
+          {
+            "firstDate": "2026-08-30",
+            "lastDate": "2026-09-26"
+          },
+          {
+            "firstDate": "2026-09-06",
+            "lastDate": "2026-10-03"
+          },
+          {
+            "firstDate": "2026-09-13",
+            "lastDate": "2026-10-10"
+          },
+          {
+            "firstDate": "2026-09-20",
+            "lastDate": "2026-10-17"
+          },
+          {
+            "firstDate": "2026-09-27",
+            "lastDate": "2026-10-24"
+          },
+          {
+            "firstDate": "2026-10-04",
+            "lastDate": "2026-10-31"
+          },
+          {
+            "firstDate": "2026-10-11",
+            "lastDate": "2026-11-07"
+          }
+        ],
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75s": [
+              92,
+              92,
+              92,
+              92,
+              93,
+              93,
+              93,
+              93,
+              92,
+              91,
+              91,
+              90,
+              89,
+              89,
+              89,
+              89,
+              89,
+              89,
+              89,
+              89,
+              89,
+              88,
+              88,
+              87,
+              87
+            ],
+            "densities": [
+              {
+                "good": 0.9633,
+                "needsImprovement": 0.0319,
+                "poor": 0.0048
+              },
+              {
+                "good": 0.9635,
+                "needsImprovement": 0.0313,
+                "poor": 0.0052
+              },
+              {
+                "good": 0.9624,
+                "needsImprovement": 0.0324,
+                "poor": 0.0052
+              },
+              {
+                "good": 0.9612,
+                "needsImprovement": 0.0335,
+                "poor": 0.0053
+              },
+              {
+                "good": 0.9618,
+                "needsImprovement": 0.0328,
+                "poor": 0.0054
+              },
+              {
+                "good": 0.9599,
+                "needsImprovement": 0.0345,
+                "poor": 0.0056
+              },
+              {
+                "good": 0.9604,
+                "needsImprovement": 0.0339,
+                "poor": 0.0057
+              },
+              {
+                "good": 0.9599,
+                "needsImprovement": 0.0341,
+                "poor": 0.0059
+              },
+              {
+                "good": 0.9605,
+                "needsImprovement": 0.0334,
+                "poor": 0.0061
+              },
+              {
+                "good": 0.9613,
+                "needsImprovement": 0.0325,
+                "poor": 0.0062
+              },
+              {
+                "good": 0.9615,
+                "needsImprovement": 0.0324,
+                "poor": 0.0061
+              },
+              {
+                "good": 0.9633,
+                "needsImprovement": 0.0309,
+                "poor": 0.0059
+              },
+              {
+                "good": 0.9636,
+                "needsImprovement": 0.0306,
+                "poor": 0.0058
+              },
+              {
+                "good": 0.9628,
+                "needsImprovement": 0.0314,
+                "poor": 0.0058
+              },
+              {
+                "good": 0.9645,
+                "needsImprovement": 0.0298,
+                "poor": 0.0057
+              },
+              {
+                "good": 0.9652,
+                "needsImprovement": 0.0291,
+                "poor": 0.0058
+              },
+              {
+                "good": 0.965,
+                "needsImprovement": 0.0292,
+                "poor": 0.0058
+              },
+              {
+                "good": 0.9641,
+                "needsImprovement": 0.0301,
+                "poor": 0.0058
+              },
+              {
+                "good": 0.9638,
+                "needsImprovement": 0.0303,
+                "poor": 0.0059
+              },
+              {
+                "good": 0.9628,
+                "needsImprovement": 0.0313,
+                "poor": 0.0059
+              },
+              {
+                "good": 0.9635,
+                "needsImprovement": 0.0306,
+                "poor": 0.0059
+              },
+              {
+                "good": 0.9647,
+                "needsImprovement": 0.0297,
+                "poor": 0.0056
+              },
+              {
+                "good": 0.9663,
+                "needsImprovement": 0.0282,
+                "poor": 0.0055
+              },
+              {
+                "good": 0.968,
+                "needsImprovement": 0.0264,
+                "poor": 0.0055
+              },
+              {
+                "good": 0.9669,
+                "needsImprovement": 0.0277,
+                "poor": 0.0054
+              }
+            ]
+          }
+        },
+        "normalizedUrl": null
+      }
+    },
+    "desktop": {
+      "url": {
+        "target": {
+          "kind": "url",
+          "url": "https://en.wikipedia.org/wiki/United_States"
+        },
+        "formFactor": "DESKTOP",
+        "kind": "data",
+        "collectionPeriods": [
+          {
+            "firstDate": "2026-04-26",
+            "lastDate": "2026-05-23"
+          },
+          {
+            "firstDate": "2026-05-03",
+            "lastDate": "2026-05-30"
+          },
+          {
+            "firstDate": "2026-05-10",
+            "lastDate": "2026-06-06"
+          },
+          {
+            "firstDate": "2026-05-17",
+            "lastDate": "2026-06-13"
+          },
+          {
+            "firstDate": "2026-05-24",
+            "lastDate": "2026-06-20"
+          },
+          {
+            "firstDate": "2026-05-31",
+            "lastDate": "2026-06-27"
+          },
+          {
+            "firstDate": "2026-06-07",
+            "lastDate": "2026-07-04"
+          },
+          {
+            "firstDate": "2026-06-14",
+            "lastDate": "2026-07-11"
+          },
+          {
+            "firstDate": "2026-06-21",
+            "lastDate": "2026-07-18"
+          },
+          {
+            "firstDate": "2026-06-28",
+            "lastDate": "2026-07-25"
+          },
+          {
+            "firstDate": "2026-07-05",
+            "lastDate": "2026-08-01"
+          },
+          {
+            "firstDate": "2026-07-12",
+            "lastDate": "2026-08-08"
+          },
+          {
+            "firstDate": "2026-07-19",
+            "lastDate": "2026-08-15"
+          },
+          {
+            "firstDate": "2026-07-26",
+            "lastDate": "2026-08-22"
+          },
+          {
+            "firstDate": "2026-08-02",
+            "lastDate": "2026-08-29"
+          },
+          {
+            "firstDate": "2026-08-09",
+            "lastDate": "2026-09-05"
+          },
+          {
+            "firstDate": "2026-08-16",
+            "lastDate": "2026-09-12"
+          },
+          {
+            "firstDate": "2026-08-23",
+            "lastDate": "2026-09-19"
+          },
+          {
+            "firstDate": "2026-08-30",
+            "lastDate": "2026-09-26"
+          },
+          {
+            "firstDate": "2026-09-06",
+            "lastDate": "2026-10-03"
+          },
+          {
+            "firstDate": "2026-09-13",
+            "lastDate": "2026-10-10"
+          },
+          {
+            "firstDate": "2026-09-20",
+            "lastDate": "2026-10-17"
+          },
+          {
+            "firstDate": "2026-09-27",
+            "lastDate": "2026-10-24"
+          },
+          {
+            "firstDate": "2026-10-04",
+            "lastDate": "2026-10-31"
+          },
+          {
+            "firstDate": "2026-10-11",
+            "lastDate": "2026-11-07"
+          }
+        ],
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75s": [
+              129,
+              129,
+              127,
+              120,
+              114,
+              109,
+              99,
+              95,
+              93,
+              90,
+              88,
+              84,
+              87,
+              92,
+              98,
+              103,
+              104,
+              107,
+              110,
+              113,
+              116,
+              115,
+              112,
+              111,
+              110
+            ],
+            "densities": [
+              {
+                "good": 0.8188,
+                "needsImprovement": 0.0857,
+                "poor": 0.0955
+              },
+              {
+                "good": 0.8207,
+                "needsImprovement": 0.0859,
+                "poor": 0.0934
+              },
+              {
+                "good": 0.826,
+                "needsImprovement": 0.0859,
+                "poor": 0.0881
+              },
+              {
+                "good": 0.8341,
+                "needsImprovement": 0.0836,
+                "poor": 0.0824
+              },
+              {
+                "good": 0.8409,
+                "needsImprovement": 0.0826,
+                "poor": 0.0765
+              },
+              {
+                "good": 0.8488,
+                "needsImprovement": 0.0828,
+                "poor": 0.0684
+              },
+              {
+                "good": 0.8608,
+                "needsImprovement": 0.0768,
+                "poor": 0.0624
+              },
+              {
+                "good": 0.8643,
+                "needsImprovement": 0.0775,
+                "poor": 0.0581
+              },
+              {
+                "good": 0.8698,
+                "needsImprovement": 0.0766,
+                "poor": 0.0536
+              },
+              {
+                "good": 0.876,
+                "needsImprovement": 0.0718,
+                "poor": 0.0522
+              },
+              {
+                "good": 0.8814,
+                "needsImprovement": 0.0677,
+                "poor": 0.0509
+              },
+              {
+                "good": 0.8849,
+                "needsImprovement": 0.0664,
+                "poor": 0.0487
+              },
+              {
+                "good": 0.8747,
+                "needsImprovement": 0.0678,
+                "poor": 0.0574
+              },
+              {
+                "good": 0.8736,
+                "needsImprovement": 0.0694,
+                "poor": 0.0569
+              },
+              {
+                "good": 0.8668,
+                "needsImprovement": 0.0717,
+                "poor": 0.0615
+              },
+              {
+                "good": 0.8582,
+                "needsImprovement": 0.0746,
+                "poor": 0.0672
+              },
+              {
+                "good": 0.8559,
+                "needsImprovement": 0.076,
+                "poor": 0.0681
+              },
+              {
+                "good": 0.8534,
+                "needsImprovement": 0.0764,
+                "poor": 0.0702
+              },
+              {
+                "good": 0.8488,
+                "needsImprovement": 0.0779,
+                "poor": 0.0733
+              },
+              {
+                "good": 0.8452,
+                "needsImprovement": 0.0791,
+                "poor": 0.0758
+              },
+              {
+                "good": 0.8393,
+                "needsImprovement": 0.0825,
+                "poor": 0.0783
+              },
+              {
+                "good": 0.8412,
+                "needsImprovement": 0.0836,
+                "poor": 0.0752
+              },
+              {
+                "good": 0.8482,
+                "needsImprovement": 0.0832,
+                "poor": 0.0687
+              },
+              {
+                "good": 0.854,
+                "needsImprovement": 0.0823,
+                "poor": 0.0637
+              },
+              {
+                "good": 0.8537,
+                "needsImprovement": 0.0828,
+                "poor": 0.0635
+              }
+            ]
+          }
+        },
+        "normalizedUrl": null
+      },
+      "origin": {
+        "target": {
+          "kind": "origin",
+          "origin": "https://en.wikipedia.org"
+        },
+        "formFactor": "DESKTOP",
+        "kind": "data",
+        "collectionPeriods": [
+          {
+            "firstDate": "2026-04-26",
+            "lastDate": "2026-05-23"
+          },
+          {
+            "firstDate": "2026-05-03",
+            "lastDate": "2026-05-30"
+          },
+          {
+            "firstDate": "2026-05-10",
+            "lastDate": "2026-06-06"
+          },
+          {
+            "firstDate": "2026-05-17",
+            "lastDate": "2026-06-13"
+          },
+          {
+            "firstDate": "2026-05-24",
+            "lastDate": "2026-06-20"
+          },
+          {
+            "firstDate": "2026-05-31",
+            "lastDate": "2026-06-27"
+          },
+          {
+            "firstDate": "2026-06-07",
+            "lastDate": "2026-07-04"
+          },
+          {
+            "firstDate": "2026-06-14",
+            "lastDate": "2026-07-11"
+          },
+          {
+            "firstDate": "2026-06-21",
+            "lastDate": "2026-07-18"
+          },
+          {
+            "firstDate": "2026-06-28",
+            "lastDate": "2026-07-25"
+          },
+          {
+            "firstDate": "2026-07-05",
+            "lastDate": "2026-08-01"
+          },
+          {
+            "firstDate": "2026-07-12",
+            "lastDate": "2026-08-08"
+          },
+          {
+            "firstDate": "2026-07-19",
+            "lastDate": "2026-08-15"
+          },
+          {
+            "firstDate": "2026-07-26",
+            "lastDate": "2026-08-22"
+          },
+          {
+            "firstDate": "2026-08-02",
+            "lastDate": "2026-08-29"
+          },
+          {
+            "firstDate": "2026-08-09",
+            "lastDate": "2026-09-05"
+          },
+          {
+            "firstDate": "2026-08-16",
+            "lastDate": "2026-09-12"
+          },
+          {
+            "firstDate": "2026-08-23",
+            "lastDate": "2026-09-19"
+          },
+          {
+            "firstDate": "2026-08-30",
+            "lastDate": "2026-09-26"
+          },
+          {
+            "firstDate": "2026-09-06",
+            "lastDate": "2026-10-03"
+          },
+          {
+            "firstDate": "2026-09-13",
+            "lastDate": "2026-10-10"
+          },
+          {
+            "firstDate": "2026-09-20",
+            "lastDate": "2026-10-17"
+          },
+          {
+            "firstDate": "2026-09-27",
+            "lastDate": "2026-10-24"
+          },
+          {
+            "firstDate": "2026-10-04",
+            "lastDate": "2026-10-31"
+          },
+          {
+            "firstDate": "2026-10-11",
+            "lastDate": "2026-11-07"
+          }
+        ],
+        "metrics": {
+          "interaction_to_next_paint": {
+            "p75s": [
+              49,
+              49,
+              48,
+              48,
+              47,
+              47,
+              47,
+              47,
+              47,
+              47,
+              47,
+              46,
+              46,
+              46,
+              47,
+              47,
+              47,
+              48,
+              48,
+              48,
+              48,
+              48,
+              48,
+              48,
+              49
+            ],
+            "densities": [
+              {
+                "good": 0.9762,
+                "needsImprovement": 0.0168,
+                "poor": 0.0071
+              },
+              {
+                "good": 0.9781,
+                "needsImprovement": 0.0156,
+                "poor": 0.0063
+              },
+              {
+                "good": 0.9791,
+                "needsImprovement": 0.015,
+                "poor": 0.0059
+              },
+              {
+                "good": 0.9793,
+                "needsImprovement": 0.0152,
+                "poor": 0.0056
+              },
+              {
+                "good": 0.9797,
+                "needsImprovement": 0.0146,
+                "poor": 0.0057
+              },
+              {
+                "good": 0.9803,
+                "needsImprovement": 0.0143,
+                "poor": 0.0053
+              },
+              {
+                "good": 0.9809,
+                "needsImprovement": 0.0142,
+                "poor": 0.0049
+              },
+              {
+                "good": 0.9813,
+                "needsImprovement": 0.0136,
+                "poor": 0.0051
+              },
+              {
+                "good": 0.9809,
+                "needsImprovement": 0.0139,
+                "poor": 0.0052
+              },
+              {
+                "good": 0.9807,
+                "needsImprovement": 0.0141,
+                "poor": 0.0052
+              },
+              {
+                "good": 0.981,
+                "needsImprovement": 0.0137,
+                "poor": 0.0053
+              },
+              {
+                "good": 0.9814,
+                "needsImprovement": 0.0138,
+                "poor": 0.0048
+              },
+              {
+                "good": 0.9809,
+                "needsImprovement": 0.0138,
+                "poor": 0.0053
+              },
+              {
+                "good": 0.981,
+                "needsImprovement": 0.0137,
+                "poor": 0.0053
+              },
+              {
+                "good": 0.9808,
+                "needsImprovement": 0.0139,
+                "poor": 0.0052
+              },
+              {
+                "good": 0.9813,
+                "needsImprovement": 0.0136,
+                "poor": 0.0051
+              },
+              {
+                "good": 0.9811,
+                "needsImprovement": 0.0143,
+                "poor": 0.0045
+              },
+              {
+                "good": 0.9811,
+                "needsImprovement": 0.0145,
+                "poor": 0.0044
+              },
+              {
+                "good": 0.9795,
+                "needsImprovement": 0.0148,
+                "poor": 0.0057
+              },
+              {
+                "good": 0.9791,
+                "needsImprovement": 0.0152,
+                "poor": 0.0057
+              },
+              {
+                "good": 0.9793,
+                "needsImprovement": 0.015,
+                "poor": 0.0057
+              },
+              {
+                "good": 0.9792,
+                "needsImprovement": 0.0151,
+                "poor": 0.0057
+              },
+              {
+                "good": 0.9794,
+                "needsImprovement": 0.015,
+                "poor": 0.0056
+              },
+              {
+                "good": 0.9798,
+                "needsImprovement": 0.0146,
+                "poor": 0.0056
+              },
+              {
+                "good": 0.9796,
+                "needsImprovement": 0.015,
+                "poor": 0.0055
+              }
+            ]
+          }
+        },
+        "normalizedUrl": null
+      }
+    }
+  },
+  "collectionPeriods": [
+    {
+      "firstDate": "2026-10-12",
+      "lastDate": "2026-11-08"
+    }
+  ],
+  "sourceNotes": [
+    "CrUX API: p75 and good/NI/poor shares of real Chrome users over the 28-day collection period 2026-10-12..2026-11-08. https://developer.chrome.com/docs/crux/api",
+    "CrUX History API: 25 weekly 28-day periods, oldest first; ineligible periods are null. https://developer.chrome.com/docs/crux/history-api",
+    "PageSpeed Insights loadingExperience/originLoadingExperience (analysed 2026-11-11T07:10:02.225Z / 2026-11-11T07:10:02.154Z): separate source next to CrUX, reports no collection period. https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/runpagespeed",
+    "CrUX PHONE vs PSI mobile, url level: identical (p75 103 ms, same good/NI/poor shares).",
+    "CrUX PHONE vs PSI mobile, origin level: identical (p75 87 ms, same good/NI/poor shares).",
+    "CrUX DESKTOP vs PSI desktop, url level: identical (p75 110 ms, same good/NI/poor shares).",
+    "CrUX DESKTOP vs PSI desktop, origin level: identical (p75 49 ms, same good/NI/poor shares)."
+  ]
+}
