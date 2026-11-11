@@ -9,7 +9,7 @@
 [![Node >= 26](https://img.shields.io/badge/node-%3E%3D26-339933.svg)](package.json)
 [![Agent skill](https://img.shields.io/badge/agent%20skill-inp--analyser-8A2BE2.svg)](skills/inp-analyser/SKILL.md)
 
-[Website](https://franzenzenhofer.github.io/inp-analyser/) · [Quick start](#quick-start) · [Commands](#commands) · [How it works](#how-it-works) · [Agent skill](#agent-skill)
+[Website](https://inp-analyser.franzai.com/) · [Quick start](#quick-start) · [Commands](#commands) · [How it works](#how-it-works) · [Agent skill](#agent-skill)
 
 </div>
 
