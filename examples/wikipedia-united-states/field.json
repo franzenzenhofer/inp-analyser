@@ -1,7 +1,7 @@
 {
   "url": "https://en.wikipedia.org/wiki/United_States",
   "origin": "https://en.wikipedia.org",
-  "fetchedAt": "2026-11-11T07:10:28.109Z",
+  "fetchedAt": "2026-11-11T07:55:22.451Z",
   "phone": {
     "inp": {
       "kind": "data",
@@ -135,7 +135,7 @@
     "psi": {
       "strategy": "mobile",
       "requestedUrl": "https://en.wikipedia.org/wiki/United_States",
-      "analysedAt": "2026-11-11T07:10:02.225Z",
+      "analysedAt": "2026-11-11T07:55:03.705Z",
       "page": {
         "kind": "data",
         "id": "https://en.wikipedia.org/wiki/United_States",
@@ -325,7 +325,7 @@
     "psi": {
       "strategy": "desktop",
       "requestedUrl": "https://en.wikipedia.org/wiki/United_States",
-      "analysedAt": "2026-11-11T07:10:02.154Z",
+      "analysedAt": "2026-11-11T07:55:03.133Z",
       "page": {
         "kind": "data",
         "id": "https://en.wikipedia.org/wiki/United_States",
@@ -1473,7 +1473,7 @@
   "sourceNotes": [
     "CrUX API: p75 and good/NI/poor shares of real Chrome users over the 28-day collection period 2026-10-12..2026-11-08. https://developer.chrome.com/docs/crux/api",
     "CrUX History API: 25 weekly 28-day periods, oldest first; ineligible periods are null. https://developer.chrome.com/docs/crux/history-api",
-    "PageSpeed Insights loadingExperience/originLoadingExperience (analysed 2026-11-11T07:10:02.225Z / 2026-11-11T07:10:02.154Z): separate source next to CrUX, reports no collection period. https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/runpagespeed",
+    "PageSpeed Insights loadingExperience/originLoadingExperience (analysed 2026-11-11T07:55:03.705Z / 2026-11-11T07:55:03.133Z): separate source next to CrUX, reports no collection period. https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/runpagespeed",
     "CrUX PHONE vs PSI mobile, url level: identical (p75 103 ms, same good/NI/poor shares).",
     "CrUX PHONE vs PSI mobile, origin level: identical (p75 87 ms, same good/NI/poor shares).",
     "CrUX DESKTOP vs PSI desktop, url level: identical (p75 110 ms, same good/NI/poor shares).",

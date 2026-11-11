@@ -255,17 +255,17 @@ footer p { margin: 0 0 8px; }
 
 <section aria-labelledby="what-it-finds">
   <h2 id="what-it-finds">What it finds</h2>
-  <p>Every issue in the report carries the same set of facts:</p>
+  <p>Every issue in the report carries the same set of facts. The examples are real output (bundled test site, a third-party script adding 200 ms per click; and Wikipedia):</p>
   <div class="scroll" tabindex="0" role="region" aria-label="Facts per issue, scrolls sideways">
     <table>
       <thead><tr><th scope="col">Fact</th><th scope="col">Example</th><th scope="col">Where it comes from</th></tr></thead>
       <tbody>
-        <tr><td>Element</td><td><code>header button.menu-toggle</code></td><td>Discovered interaction target (CSS selector)</td></tr>
-        <tr><td>Phase</td><td><code>input-delay</code>, <code>processing</code>, <code>presentation</code>, <code>context</code></td><td>Event Timing phases, split per interaction</td></tr>
-        <tr><td>Script</td><td><code>handleClick (https://example.com/app.js:1:48213)</code></td><td>JS samples in a Chrome trace: URL, line, function</td></tr>
-        <tr><td>Owner</td><td><code>Google Tag Manager (3rd party)</code></td><td><a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> entity map, extendable</td></tr>
-        <tr><td>Milliseconds</td><td>median 184 ms, 95% CI [161, 210]</td><td>Exact order-statistic CI of the median</td></tr>
-        <tr><td>Certainty</td><td><code>confirmed</code>, 9 of 10 runs</td><td>Screening vs deep-dive runs, Wilson interval</td></tr>
+        <tr><td>Element</td><td><code>button#apply-sort</code>; on Wikipedia <code>div#mwBA &gt; a:nth-of-type(2)</code></td><td>Discovered interaction target (CSS selector)</td></tr>
+        <tr><td>Phase</td><td><code>processing</code> (of <code>input-delay</code>, <code>processing</code>, <code>presentation</code>, <code>context</code>)</td><td>Event Timing phases, split per interaction</td></tr>
+        <tr><td>Script</td><td><code>knownDeltaListener (http://cdn.thirdparty.test:63958/known-delta.js:4:65)</code>, 198 ms</td><td>JS samples in a Chrome trace: URL, line, function</td></tr>
+        <tr><td>Owner</td><td><code>Test Tracker Inc. (3rd party)</code>; blocking it: 134 ms faster (95% CI 97-179 ms)</td><td><a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> entity map, extendable</td></tr>
+        <tr><td>Milliseconds</td><td>median 222 ms (95% CI 221-223 ms)</td><td>Exact order-statistic CI of the median</td></tr>
+        <tr><td>Certainty</td><td><code>confirmed</code>, fired in 8 of 8 runs</td><td>Screening vs deep-dive runs, Wilson interval</td></tr>
       </tbody>
     </table>
   </div>
@@ -273,7 +273,7 @@ footer p { margin: 0 0 8px; }
 </section>
 
 <section aria-labelledby="example">
-  <h2 id="example">Example: a real run on Wikipedia</h2>
+  <h2 id="example">Examples: real runs</h2>
   <p>Field data for <a href="https://en.wikipedia.org/wiki/Main_Page">en.wikipedia.org/wiki/Main_Page</a>, fetched with <code>inp field</code> on 11 Nov 2026.</p>
 
   <article class="card" aria-labelledby="card-title">
@@ -399,47 +399,53 @@ footer p { margin: 0 0 8px; }
   -->
   <!-- FINDINGS:START -->
   <div class="findings" aria-labelledby="findings-title">
-    <p>Lab scenarios from the real run on <a href="https://en.wikipedia.org/wiki/United_States">en.wikipedia.org/wiki/United_States</a> (11 Nov 2026, <code>--quick</code>, mobile, CPU 4x, seed 42). Field INP p75 phone: <strong>103 ms, good</strong> - these three lab taps are the ones that reach it, all during page boot. Full output: <a href="https://github.com/franzenzenhofer/inp-analyser/tree/main/examples">examples/</a>.</p>
+    <p>Real issues from two full runs on 11 Nov 2026 (mobile, CPU 4x, seed 42). Full output: <a href="https://github.com/franzenzenhofer/inp-analyser/tree/main/examples">examples/</a>.</p>
     <article class="finding needs-improvement">
       <div class="finding-head">
-        <span class="rule-id">boot@5798</span>
-        <span class="tag">tap during boot, 5.8 s</span>
-        <span class="tag">screening</span>
+        <span class="rule-id">input-delay/boot-window</span>
+        <span class="tag">input-delay</span>
+        <span class="tag">confirmed</span>
       </div>
-      <p class="finding-lead">Header menu link: 309 ms in the lab while the page is still booting; the same link on the idle page: 153 ms.</p>
-      <dl class="facts">
-        <dt>Element</dt><dd><code>div#mw-mf-page-center &gt; header &gt; div &gt; div:nth-of-type(1) &gt; a</code></dd>
-        <dt>Time</dt><dd>lab @ CPU 4x, mobile: median 309 ms</dd>
-        <dt>Certainty</dt><dd>screening only (1 valid run; busy machine, gate excluded the rest)</dd>
-      </dl>
-    </article>
-    <article class="finding needs-improvement">
-      <div class="finding-head">
-        <span class="rule-id">boot@5798</span>
-        <span class="tag">tap during boot, 5.8 s</span>
-        <span class="tag">screening</span>
-      </div>
-      <p class="finding-lead">Hatnote link "America (disambiguation)": 277 ms in the lab during boot.</p>
+      <p class="finding-lead"><a href="https://en.wikipedia.org/wiki/United_States">en.wikipedia.org/wiki/United_States</a> (field INP 103 ms, good): the hatnote link is much slower when tapped while the page boots.</p>
       <dl class="facts">
         <dt>Element</dt><dd><code>div#mwBA &gt; a:nth-of-type(2)</code></dd>
-        <dt>Time</dt><dd>lab @ CPU 4x, mobile: median 277 ms</dd>
-        <dt>Certainty</dt><dd>screening only (1 valid run)</dd>
+        <dt>Time</dt><dd>+199 ms (Hodges-Lehmann shift, 95% CI 116-265 ms): boot median 277 ms vs idle 78 ms</dd>
+        <dt>Certainty</dt><dd>confirmed, Mann-Whitney with Holm correction</dd>
+        <dt>Runs</dt><dd>fired in 9 of 9 runs (95% CI 70-100%)</dd>
       </dl>
     </article>
     <article class="finding needs-improvement">
       <div class="finding-head">
-        <span class="rule-id">boot@1596</span>
-        <span class="tag">tap during boot, 1.6 s</span>
-        <span class="tag">screening</span>
+        <span class="rule-id">processing/slow-event-handlers</span>
+        <span class="tag">processing</span>
+        <span class="tag">confirmed</span>
       </div>
-      <p class="finding-lead">Search button: 256 ms in the lab when tapped 1.6 s into the load; 182 ms on the idle page.</p>
+      <p class="finding-lead">Bundled test site, page <code>ab-known-delta</code>: a third-party script adds 200 ms to every click. The tool names it.</p>
       <dl class="facts">
-        <dt>Element</dt><dd><code>button#searchIcon</code></dd>
-        <dt>Time</dt><dd>lab @ CPU 4x, mobile: median 256 ms</dd>
-        <dt>Certainty</dt><dd>screening only (1 valid run)</dd>
+        <dt>Element</dt><dd><code>button#apply-sort</code></dd>
+        <dt>Script</dt><dd><code>knownDeltaListener (http://cdn.thirdparty.test:63958/known-delta.js:4:65)</code> via <code>#document.onclick</code>, 198 ms</dd>
+        <dt>Owner</dt><dd>Test Tracker Inc. (3rd party)</dd>
+        <dt>Time</dt><dd>lab @ CPU 4x, mobile: median 222 ms, 95% CI [221, 223]</dd>
+        <dt>Certainty</dt><dd>confirmed</dd>
+        <dt>Runs</dt><dd>fired in 8 of 8 runs (95% CI 68-100%)</dd>
       </dl>
     </article>
-    <p>No issue (rule + phase + <code>URL:line:function</code>) is claimed: those come from deep-dive attribution runs, which <code>--quick</code> skips. The tool states what it does not know.</p>
+    <article class="finding needs-improvement">
+      <div class="finding-head">
+        <span class="rule-id">third-party/causal-delta</span>
+        <span class="tag">context</span>
+        <span class="tag">confirmed</span>
+      </div>
+      <p class="finding-lead">Same page, proven by blocking: the tap gets faster without Test Tracker Inc. - cause, not just correlation.</p>
+      <dl class="facts">
+        <dt>Element</dt><dd><code>button#apply-sort</code></dd>
+        <dt>Owner</dt><dd>Test Tracker Inc. (3rd party), blocked vs allowed</dd>
+        <dt>Time</dt><dd>134 ms faster when blocked (Hodges-Lehmann shift, 95% CI 97-179 ms); with third parties 231 ms</dd>
+        <dt>Certainty</dt><dd>confirmed, paired blocks, Holm-corrected</dd>
+        <dt>Runs</dt><dd>28 of 28 paired runs</dd>
+      </dl>
+    </article>
+    <p>The tool also says what it does not know: on Wikipedia the search button's slow tap is mostly compositor / GPU time, so no script is blamed, and one-run findings stay <code>screening only</code>.</p>
   </div>
   <!-- FINDINGS:END -->
 </section>

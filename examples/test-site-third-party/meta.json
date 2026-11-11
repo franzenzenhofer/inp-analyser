@@ -1,0 +1,127 @@
+{
+  "url": "http://site.inp.test:63958/ab-known-delta",
+  "seed": 42,
+  "startedAt": "2026-11-11T08:58:04.665Z",
+  "finishedAt": "2026-11-11T09:07:45.875Z",
+  "chromeVersion": "Chrome/155.0.8059.39",
+  "condition": {
+    "device": "mobile",
+    "cpuRate": 4,
+    "thirdParty": {
+      "kind": "allow"
+    },
+    "consent": "none",
+    "cache": "cold"
+  },
+  "hazard": {
+    "fcpMs": 412,
+    "longTasks": [],
+    "peakHazardMs": 412,
+    "peakBusyMs": 0
+  },
+  "targets": [
+    {
+      "id": "t-934c0c3b4b",
+      "selector": "button#apply-sort",
+      "label": "Sort by price",
+      "kind": "button",
+      "rect": {
+        "x": 8,
+        "y": 116.875,
+        "width": 90.828125,
+        "height": 21
+      },
+      "aboveFold": true,
+      "handlerSignature": "button[type=button]|http://site.inp.test:63958/ab-known-delta:14:92",
+      "safety": "safe",
+      "safetyReason": "no denylist term, no form submit, no navigation to another document"
+    }
+  ],
+  "excludedTargets": [],
+  "globalListeners": [
+    {
+      "type": "click",
+      "url": "http://cdn.thirdparty.test:63958/known-delta.js",
+      "line": 4,
+      "column": 65,
+      "on": "document"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "boot@512:t-934c0c3b4b",
+      "targetId": "t-934c0c3b4b",
+      "phase": "boot",
+      "offsetMs": 512,
+      "tapPoint": {
+        "x": 53.4140625,
+        "y": 127.375
+      },
+      "condition": {
+        "device": "mobile",
+        "cpuRate": 4,
+        "thirdParty": {
+          "kind": "allow"
+        },
+        "consent": "none",
+        "cache": "cold"
+      }
+    },
+    {
+      "id": "idle:t-934c0c3b4b",
+      "targetId": "t-934c0c3b4b",
+      "phase": "idle",
+      "condition": {
+        "device": "mobile",
+        "cpuRate": 4,
+        "thirdParty": {
+          "kind": "allow"
+        },
+        "consent": "none",
+        "cache": "cold"
+      }
+    },
+    {
+      "id": "idle:t-934c0c3b4b|3p:block-all",
+      "targetId": "t-934c0c3b4b",
+      "phase": "idle",
+      "condition": {
+        "device": "mobile",
+        "cpuRate": 4,
+        "thirdParty": {
+          "kind": "block-all"
+        },
+        "consent": "none",
+        "cache": "cold"
+      }
+    },
+    {
+      "id": "idle:t-934c0c3b4b|3p:-Test Tracker Inc.",
+      "targetId": "t-934c0c3b4b",
+      "phase": "idle",
+      "condition": {
+        "device": "mobile",
+        "cpuRate": 4,
+        "thirdParty": {
+          "kind": "block-entity",
+          "entity": "Test Tracker Inc."
+        },
+        "consent": "none",
+        "cache": "cold"
+      }
+    }
+  ],
+  "deepDived": [
+    "boot@512:t-934c0c3b4b",
+    "idle:t-934c0c3b4b"
+  ],
+  "sentinelReferenceMs": [
+    155.877,
+    144.799,
+    130.016,
+    127.064,
+    130.975,
+    127.604
+  ],
+  "loads": 84
+}

@@ -4,7 +4,7 @@
     "version": "0.1.0"
   },
   "url": "https://en.wikipedia.org/wiki/United_States",
-  "generatedAt": "2026-11-11T07:29:13.730Z",
+  "generatedAt": "2026-11-11T08:57:23.526Z",
   "seed": 42,
   "chromeVersion": "Chrome/155.0.8059.39",
   "condition": {
@@ -19,7 +19,7 @@
   "field": {
     "url": "https://en.wikipedia.org/wiki/United_States",
     "origin": "https://en.wikipedia.org",
-    "fetchedAt": "2026-11-11T07:10:28.109Z",
+    "fetchedAt": "2026-11-11T07:55:22.451Z",
     "phone": {
       "inp": {
         "kind": "data",
@@ -153,7 +153,7 @@
       "psi": {
         "strategy": "mobile",
         "requestedUrl": "https://en.wikipedia.org/wiki/United_States",
-        "analysedAt": "2026-11-11T07:10:02.225Z",
+        "analysedAt": "2026-11-11T07:55:03.705Z",
         "page": {
           "kind": "data",
           "id": "https://en.wikipedia.org/wiki/United_States",
@@ -343,7 +343,7 @@
       "psi": {
         "strategy": "desktop",
         "requestedUrl": "https://en.wikipedia.org/wiki/United_States",
-        "analysedAt": "2026-11-11T07:10:02.154Z",
+        "analysedAt": "2026-11-11T07:55:03.133Z",
         "page": {
           "kind": "data",
           "id": "https://en.wikipedia.org/wiki/United_States",
@@ -1491,7 +1491,7 @@
     "sourceNotes": [
       "CrUX API: p75 and good/NI/poor shares of real Chrome users over the 28-day collection period 2026-10-12..2026-11-08. https://developer.chrome.com/docs/crux/api",
       "CrUX History API: 25 weekly 28-day periods, oldest first; ineligible periods are null. https://developer.chrome.com/docs/crux/history-api",
-      "PageSpeed Insights loadingExperience/originLoadingExperience (analysed 2026-11-11T07:10:02.225Z / 2026-11-11T07:10:02.154Z): separate source next to CrUX, reports no collection period. https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/runpagespeed",
+      "PageSpeed Insights loadingExperience/originLoadingExperience (analysed 2026-11-11T07:55:03.705Z / 2026-11-11T07:55:03.133Z): separate source next to CrUX, reports no collection period. https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/runpagespeed",
       "CrUX PHONE vs PSI mobile, url level: identical (p75 103 ms, same good/NI/poor shares).",
       "CrUX PHONE vs PSI mobile, origin level: identical (p75 87 ms, same good/NI/poor shares).",
       "CrUX DESKTOP vs PSI desktop, url level: identical (p75 110 ms, same good/NI/poor shares).",
@@ -1517,124 +1517,499 @@
     },
     "scenarios": [
       {
-        "scenarioId": "boot@5798:t-6945793f13",
-        "medianMs": 308.517,
+        "scenarioId": "boot@5763:t-da82d59e07",
+        "medianMs": 373.5665,
         "bucket": "needs-improvement",
         "reachesFieldP75": true
       },
       {
-        "scenarioId": "boot@5798:t-5175d6cdb8",
-        "medianMs": 276.933,
+        "scenarioId": "boot@1492:t-5175d6cdb8",
+        "medianMs": 276.853,
+        "ciHighMs": 343.222,
         "bucket": "needs-improvement",
         "reachesFieldP75": true
       },
       {
-        "scenarioId": "boot@1596:t-da82d59e07",
-        "medianMs": 256.429,
+        "scenarioId": "boot@1492:t-da82d59e07",
+        "medianMs": 261.282,
+        "ciHighMs": 356.661,
         "bucket": "needs-improvement",
         "reachesFieldP75": true
       },
       {
-        "scenarioId": "idle:t-4e1116ca0c",
-        "medianMs": 192.891,
+        "scenarioId": "idle:t-cbb0a33bda",
+        "medianMs": 218.957,
+        "ciHighMs": 379.818,
+        "bucket": "needs-improvement",
+        "reachesFieldP75": true
+      },
+      {
+        "scenarioId": "boot@1492:t-6945793f13",
+        "medianMs": 198.31650000000002,
+        "ciHighMs": 394.454,
         "bucket": "good",
         "reachesFieldP75": true
       },
       {
         "scenarioId": "idle:t-da82d59e07",
-        "medianMs": 182.476,
+        "medianMs": 185.16,
+        "ciHighMs": 283.895,
         "bucket": "good",
         "reachesFieldP75": true
       },
       {
         "scenarioId": "idle:t-6945793f13",
-        "medianMs": 153.004,
+        "medianMs": 177.401,
+        "ciHighMs": 272.515,
         "bucket": "good",
         "reachesFieldP75": true
       },
       {
-        "scenarioId": "boot@5798:t-da82d59e07",
-        "medianMs": 116.274,
+        "scenarioId": "boot@5763:t-601cc8804a",
+        "medianMs": 172.618,
+        "bucket": "good",
+        "reachesFieldP75": true
+      },
+      {
+        "scenarioId": "boot@1492:t-f17704b6b9",
+        "medianMs": 166.5075,
+        "ciHighMs": 425.831,
+        "bucket": "good",
+        "reachesFieldP75": true
+      },
+      {
+        "scenarioId": "idle:t-601cc8804a",
+        "medianMs": 155.59,
+        "ciHighMs": 225.536,
         "bucket": "good",
         "reachesFieldP75": true
       },
       {
         "scenarioId": "idle:t-f17704b6b9",
-        "medianMs": 97.073,
+        "medianMs": 135.173,
+        "ciHighMs": 163.04,
         "bucket": "good",
-        "reachesFieldP75": false
+        "reachesFieldP75": true
       },
       {
-        "scenarioId": "boot@5798:t-f17704b6b9",
-        "medianMs": 82.073,
+        "scenarioId": "boot@1492:t-601cc8804a",
+        "medianMs": 115.42600000000002,
         "bucket": "good",
-        "reachesFieldP75": false
+        "reachesFieldP75": true
       },
       {
         "scenarioId": "idle:t-5175d6cdb8",
-        "medianMs": 74.347,
+        "medianMs": 78.399,
+        "ciHighMs": 186.185,
         "bucket": "good",
-        "reachesFieldP75": false
+        "reachesFieldP75": true
       }
     ],
-    "text": "Field INP p75 (CrUX PHONE, url level, 2026-10-12..2026-11-08) = 103 ms. 7 lab scenario(s) reach it: boot@5798:t-6945793f13 (lab @ CPU 4x, mobile median 309 ms), boot@5798:t-5175d6cdb8 (lab @ CPU 4x, mobile median 277 ms), boot@1596:t-da82d59e07 (lab @ CPU 4x, mobile median 256 ms), idle:t-4e1116ca0c (lab @ CPU 4x, mobile median 193 ms), idle:t-da82d59e07 (lab @ CPU 4x, mobile median 182 ms)."
+    "text": "Field INP p75 (CrUX PHONE, url level, 2026-10-12..2026-11-08) = 103 ms. 13 lab scenario(s) reach it: boot@5763:t-da82d59e07 (lab @ CPU 4x, mobile median 374 ms), boot@1492:t-5175d6cdb8 (lab @ CPU 4x, mobile median 277 ms), boot@1492:t-da82d59e07 (lab @ CPU 4x, mobile median 261 ms), idle:t-cbb0a33bda (lab @ CPU 4x, mobile median 219 ms), boot@1492:t-6945793f13 (lab @ CPU 4x, mobile median 198 ms)."
   },
-  "issues": [],
-  "comparisons": [],
+  "issues": [
+    {
+      "ruleId": "input-delay/boot-window",
+      "title": "Same element is slower when tapped while the page boots",
+      "phase": "input-delay",
+      "severity": "needs-improvement",
+      "certainty": "confirmed",
+      "scenarioIds": [
+        "idle:t-5175d6cdb8",
+        "boot@1492:t-5175d6cdb8"
+      ],
+      "targetSelector": "div#mwBA > a:nth-of-type(2)",
+      "quantity": "shift",
+      "medianMs": 199.074,
+      "medianCi": {
+        "low": 115.77600000000001,
+        "high": 264.823
+      },
+      "reproducibility": {
+        "fired": 9,
+        "runs": 9,
+        "interval": {
+          "low": 0.7008549515804562,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "boot median",
+          "value": "277 ms",
+          "ms": 276.853
+        },
+        {
+          "label": "idle median",
+          "value": "78 ms",
+          "ms": 78.399
+        },
+        {
+          "label": "shift (Hodges-Lehmann, 95% CI)",
+          "value": "+199 ms [116, 265]"
+        },
+        {
+          "label": "Mann-Whitney p (Holm)",
+          "value": "0.00047 (0.0019)"
+        },
+        {
+          "label": "Cliff's delta",
+          "value": "-0.94 (large)"
+        },
+        {
+          "label": "runs",
+          "value": "11 vs 9"
+        }
+      ],
+      "specUrl": "https://web.dev/articles/optimize-input-delay"
+    },
+    {
+      "ruleId": "context/off-main-thread-time",
+      "title": "Most of a slow interaction is not main-thread work (compositor / GPU / frame wait)",
+      "phase": "context",
+      "specUrl": "https://web.dev/articles/inp#whats_in_an_interaction",
+      "severity": "needs-improvement",
+      "certainty": "screening-only",
+      "scenarioIds": [
+        "boot@1492:t-da82d59e07"
+      ],
+      "targetSelector": "button#searchIcon",
+      "medianMs": 257.8383020059228,
+      "reproducibility": {
+        "fired": 1,
+        "runs": 1,
+        "interval": {
+          "low": 0.20654931437723745,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "not explained by main-thread work",
+          "value": "258 ms of 308 ms",
+          "ms": 257.8383020059228
+        }
+      ]
+    },
+    {
+      "ruleId": "presentation/rendering-dominant",
+      "title": "Rendering work dominates a slow interaction (presentation delay is the largest phase)",
+      "phase": "presentation",
+      "specUrl": "https://web.dev/articles/inp#good-score",
+      "severity": "needs-improvement",
+      "certainty": "screening-only",
+      "scenarioIds": [
+        "boot@1492:t-da82d59e07"
+      ],
+      "targetSelector": "button#searchIcon",
+      "medianMs": 201.407,
+      "reproducibility": {
+        "fired": 1,
+        "runs": 1,
+        "interval": {
+          "low": 0.20654931437723745,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "style",
+          "value": "2 ms",
+          "ms": 2.4690000000000003
+        },
+        {
+          "label": "layout",
+          "value": "1 ms",
+          "ms": 0.5010000000000001
+        },
+        {
+          "label": "paint",
+          "value": "3 ms",
+          "ms": 3.3879999999999972
+        },
+        {
+          "label": "commit",
+          "value": "1 ms",
+          "ms": 1.0419999999999998
+        }
+      ]
+    },
+    {
+      "ruleId": "context/dom-size",
+      "title": "Large DOM (more than ~800 / ~1,400 elements, Lighthouse dom-size)",
+      "phase": "context",
+      "specUrl": "https://developer.chrome.com/docs/lighthouse/performance/dom-size",
+      "severity": "needs-improvement",
+      "certainty": "screening-only",
+      "scenarioIds": [
+        "boot@1492:t-da82d59e07",
+        "idle:t-da82d59e07",
+        "boot@1492:t-6945793f13",
+        "idle:t-6945793f13",
+        "boot@1492:t-5175d6cdb8",
+        "idle:t-5175d6cdb8",
+        "boot@1492:t-f17704b6b9",
+        "idle:t-f17704b6b9",
+        "boot@1492:t-601cc8804a",
+        "boot@5763:t-601cc8804a",
+        "idle:t-601cc8804a",
+        "idle:t-cbb0a33bda"
+      ],
+      "reproducibility": {
+        "fired": 12,
+        "runs": 12,
+        "interval": {
+          "low": 0.7575059933447593,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "DOM elements",
+          "value": "7489"
+        },
+        {
+          "label": "max depth",
+          "value": "23"
+        },
+        {
+          "label": "max children of one element",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "ruleId": "context/off-main-thread-time",
+      "title": "Most of a slow interaction is not main-thread work (compositor / GPU / frame wait)",
+      "phase": "context",
+      "specUrl": "https://web.dev/articles/inp#whats_in_an_interaction",
+      "severity": "info",
+      "certainty": "screening-only",
+      "scenarioIds": [
+        "boot@1492:t-6945793f13"
+      ],
+      "targetSelector": "div#mw-mf-page-center > header > div > div:nth-of-type(1) > a",
+      "medianMs": 360.3569658587438,
+      "reproducibility": {
+        "fired": 1,
+        "runs": 1,
+        "interval": {
+          "low": 0.20654931437723745,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "not explained by main-thread work",
+          "value": "360 ms of 394 ms",
+          "ms": 360.3569658587438
+        }
+      ]
+    },
+    {
+      "ruleId": "context/off-main-thread-time",
+      "title": "Most of a slow interaction is not main-thread work (compositor / GPU / frame wait)",
+      "phase": "context",
+      "specUrl": "https://web.dev/articles/inp#whats_in_an_interaction",
+      "severity": "info",
+      "certainty": "screening-only",
+      "scenarioIds": [
+        "idle:t-da82d59e07"
+      ],
+      "targetSelector": "button#searchIcon",
+      "medianMs": 270.1742741935484,
+      "reproducibility": {
+        "fired": 1,
+        "runs": 1,
+        "interval": {
+          "low": 0.20654931437723745,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "not explained by main-thread work",
+          "value": "270 ms of 304 ms",
+          "ms": 270.1742741935484
+        }
+      ]
+    },
+    {
+      "ruleId": "presentation/rendering-dominant",
+      "title": "Rendering work dominates a slow interaction (presentation delay is the largest phase)",
+      "phase": "presentation",
+      "specUrl": "https://web.dev/articles/inp#good-score",
+      "severity": "info",
+      "certainty": "screening-only",
+      "scenarioIds": [
+        "idle:t-da82d59e07"
+      ],
+      "targetSelector": "button#searchIcon",
+      "medianMs": 213.974,
+      "reproducibility": {
+        "fired": 1,
+        "runs": 1,
+        "interval": {
+          "low": 0.20654931437723745,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "style",
+          "value": "1 ms",
+          "ms": 0.767
+        },
+        {
+          "label": "layout",
+          "value": "3 ms",
+          "ms": 3.19
+        },
+        {
+          "label": "paint",
+          "value": "9 ms",
+          "ms": 9.1
+        },
+        {
+          "label": "commit",
+          "value": "1 ms",
+          "ms": 0.5690000000000001
+        }
+      ]
+    },
+    {
+      "ruleId": "presentation/rendering-dominant",
+      "title": "Rendering work dominates a slow interaction (presentation delay is the largest phase)",
+      "phase": "presentation",
+      "specUrl": "https://web.dev/articles/inp#good-score",
+      "severity": "info",
+      "certainty": "screening-only",
+      "scenarioIds": [
+        "boot@5763:t-601cc8804a"
+      ],
+      "targetSelector": "li#language-selector > a",
+      "medianMs": 150.067,
+      "reproducibility": {
+        "fired": 1,
+        "runs": 1,
+        "interval": {
+          "low": 0.20654931437723745,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "style",
+          "value": "11 ms",
+          "ms": 11.198999999999998
+        },
+        {
+          "label": "layout",
+          "value": "14 ms",
+          "ms": 14.469
+        },
+        {
+          "label": "paint",
+          "value": "32 ms",
+          "ms": 32.39799999999986
+        },
+        {
+          "label": "commit",
+          "value": "6 ms",
+          "ms": 5.877000000000001
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "kind": "phase",
+      "label": "t-da82d59e07: boot @1492 ms vs idle",
+      "baselineScenarioId": "idle:t-da82d59e07",
+      "variantScenarioId": "boot@1492:t-da82d59e07",
+      "nBaseline": 11,
+      "nVariant": 10,
+      "medianBaselineMs": 185.16,
+      "medianVariantMs": 261.282,
+      "shift": {
+        "estimate": 93.1455,
+        "low": -0.43900000000000006,
+        "high": 178.959
+      },
+      "p": 0.05280751141611364,
+      "cliffsDelta": -0.509090909090909,
+      "magnitude": "large",
+      "pHolm": 0.1584225342483409,
+      "significant": false
+    },
+    {
+      "kind": "phase",
+      "label": "t-6945793f13: boot @1492 ms vs idle",
+      "baselineScenarioId": "idle:t-6945793f13",
+      "variantScenarioId": "boot@1492:t-6945793f13",
+      "nBaseline": 11,
+      "nVariant": 10,
+      "medianBaselineMs": 177.401,
+      "medianVariantMs": 198.31650000000002,
+      "shift": {
+        "estimate": 31.88499999999999,
+        "low": -73.835,
+        "high": 170.91
+      },
+      "p": 0.5974062696275563,
+      "cliffsDelta": -0.14545454545454545,
+      "magnitude": "negligible",
+      "pHolm": 0.5974062696275563,
+      "significant": false
+    },
+    {
+      "kind": "phase",
+      "label": "t-5175d6cdb8: boot @1492 ms vs idle",
+      "baselineScenarioId": "idle:t-5175d6cdb8",
+      "variantScenarioId": "boot@1492:t-5175d6cdb8",
+      "nBaseline": 11,
+      "nVariant": 9,
+      "medianBaselineMs": 78.399,
+      "medianVariantMs": 276.853,
+      "shift": {
+        "estimate": 199.074,
+        "low": 115.77600000000001,
+        "high": 264.823
+      },
+      "p": 0.00047443308718154385,
+      "cliffsDelta": -0.9393939393939394,
+      "magnitude": "large",
+      "pHolm": 0.0018977323487261754,
+      "significant": true
+    },
+    {
+      "kind": "phase",
+      "label": "t-f17704b6b9: boot @1492 ms vs idle",
+      "baselineScenarioId": "idle:t-f17704b6b9",
+      "variantScenarioId": "boot@1492:t-f17704b6b9",
+      "nBaseline": 11,
+      "nVariant": 6,
+      "medianBaselineMs": 135.173,
+      "medianVariantMs": 166.5075,
+      "shift": {
+        "estimate": 99.977,
+        "low": -14.61499999999998,
+        "high": 272.209
+      },
+      "p": 0.11927862351281804,
+      "cliffsDelta": -0.48484848484848486,
+      "magnitude": "large",
+      "pHolm": 0.23855724702563608,
+      "significant": false
+    }
+  ],
   "scenarios": [
     {
       "scenario": {
-        "id": "idle:t-4e1116ca0c",
-        "targetId": "t-4e1116ca0c",
-        "phase": "idle",
-        "condition": {
-          "device": "mobile",
-          "cpuRate": 4,
-          "thirdParty": {
-            "kind": "allow"
-          },
-          "consent": "none",
-          "cache": "cold"
-        }
-      },
-      "target": {
-        "id": "t-4e1116ca0c",
-        "selector": "div#cbnnr",
-        "label": "Download the Wikipedia app",
-        "kind": "role",
-        "rect": {
-          "x": 0,
-          "y": 0,
-          "width": 412,
-          "height": 293.53125
-        },
-        "aboveFold": true,
-        "handlerSignature": "div.cbnnr.cbnnr-outer[role=button]|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:493:660",
-        "safety": "safe",
-        "safetyReason": "no denylist term, no form submit, no navigation to another document"
-      },
-      "summary": {
-        "scenarioId": "idle:t-4e1116ca0c",
-        "runs": 1,
-        "measured": 1,
-        "values": [
-          192.891
-        ],
-        "outcomes": {
-          "measured": 1
-        },
-        "median": 192.891,
-        "min": 192.891,
-        "max": 192.891
-      },
-      "deepDived": false
-    },
-    {
-      "scenario": {
-        "id": "boot@1596:t-da82d59e07",
+        "id": "boot@1492:t-da82d59e07",
         "targetId": "t-da82d59e07",
         "phase": "boot",
-        "offsetMs": 1596,
+        "offsetMs": 1492,
         "tapPoint": {
           "x": 342,
           "y": 27
@@ -1666,30 +2041,48 @@
         "safetyReason": "submit button of a GET form"
       },
       "summary": {
-        "scenarioId": "boot@1596:t-da82d59e07",
-        "runs": 1,
-        "measured": 1,
+        "scenarioId": "boot@1492:t-da82d59e07",
+        "runs": 11,
+        "measured": 10,
         "values": [
-          256.429
+          308.347,
+          409.939,
+          281.185,
+          225.619,
+          171.291,
+          241.379,
+          356.661,
+          61.981,
+          235.371,
+          353.367
         ],
         "outcomes": {
-          "measured": 1
+          "measured": 10,
+          "missed": 1
         },
-        "median": 256.429,
-        "min": 256.429,
-        "max": 256.429
+        "median": 261.282,
+        "min": 61.981,
+        "max": 409.939,
+        "medianCi": {
+          "estimate": 261.282,
+          "low": 171.291,
+          "high": 356.661,
+          "lowRank": 2,
+          "highRank": 9,
+          "achievedConfidence": 0.9785156250000002
+        }
       },
-      "deepDived": false
+      "deepDived": true
     },
     {
       "scenario": {
-        "id": "boot@5798:t-da82d59e07",
+        "id": "boot@5763:t-da82d59e07",
         "targetId": "t-da82d59e07",
         "phase": "boot",
-        "offsetMs": 5798,
+        "offsetMs": 5763,
         "tapPoint": {
           "x": 342,
-          "y": 27
+          "y": 299.140625
         },
         "condition": {
           "device": "mobile",
@@ -1718,20 +2111,24 @@
         "safetyReason": "submit button of a GET form"
       },
       "summary": {
-        "scenarioId": "boot@5798:t-da82d59e07",
-        "runs": 1,
-        "measured": 1,
+        "scenarioId": "boot@5763:t-da82d59e07",
+        "runs": 11,
+        "measured": 4,
         "values": [
-          116.274
+          442.139,
+          257.759,
+          413.052,
+          334.081
         ],
         "outcomes": {
-          "measured": 1
+          "missed": 7,
+          "measured": 4
         },
-        "median": 116.274,
-        "min": 116.274,
-        "max": 116.274
+        "median": 373.5665,
+        "min": 257.759,
+        "max": 442.139
       },
-      "deepDived": false
+      "deepDived": true
     },
     {
       "scenario": {
@@ -1766,68 +2163,44 @@
       },
       "summary": {
         "scenarioId": "idle:t-da82d59e07",
-        "runs": 1,
-        "measured": 1,
+        "runs": 11,
+        "measured": 11,
         "values": [
-          182.476
+          304.042,
+          283.895,
+          62.42,
+          236.673,
+          123.016,
+          185.16,
+          59.695,
+          81.025,
+          173.809,
+          221.57,
+          219.456
         ],
         "outcomes": {
-          "measured": 1
+          "measured": 11
         },
-        "median": 182.476,
-        "min": 182.476,
-        "max": 182.476
+        "median": 185.16,
+        "min": 59.695,
+        "max": 304.042,
+        "medianCi": {
+          "estimate": 185.16,
+          "low": 62.42,
+          "high": 283.895,
+          "lowRank": 2,
+          "highRank": 10,
+          "achievedConfidence": 0.98828125
+        }
       },
-      "deepDived": false
+      "deepDived": true
     },
     {
       "scenario": {
-        "id": "idle:t-bfb9094a52",
-        "targetId": "t-bfb9094a52",
-        "phase": "idle",
-        "condition": {
-          "device": "mobile",
-          "cpuRate": 4,
-          "thirdParty": {
-            "kind": "allow"
-          },
-          "consent": "none",
-          "cache": "cold"
-        }
-      },
-      "target": {
-        "id": "t-bfb9094a52",
-        "selector": "div#cbnnr > div > div:nth-of-type(3)",
-        "label": "Hide",
-        "kind": "role",
-        "rect": {
-          "x": 373,
-          "y": 15,
-          "width": 24,
-          "height": 24
-        },
-        "aboveFold": true,
-        "handlerSignature": "div.cbnnr-toggle-close[role=button]|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:493:660",
-        "safety": "safe",
-        "safetyReason": "no denylist term, no form submit, no navigation to another document"
-      },
-      "summary": {
-        "scenarioId": "idle:t-bfb9094a52",
-        "runs": 1,
-        "measured": 0,
-        "values": [],
-        "outcomes": {
-          "target-missing": 1
-        }
-      },
-      "deepDived": false
-    },
-    {
-      "scenario": {
-        "id": "boot@1596:t-6945793f13",
+        "id": "boot@1492:t-6945793f13",
         "targetId": "t-6945793f13",
         "phase": "boot",
-        "offsetMs": 1596,
+        "offsetMs": 1492,
         "tapPoint": {
           "x": 123,
           "y": 27
@@ -1859,25 +2232,48 @@
         "safetyReason": "link to another document (/wiki/Main_Page)"
       },
       "summary": {
-        "scenarioId": "boot@1596:t-6945793f13",
-        "runs": 1,
-        "measured": 0,
-        "values": [],
+        "scenarioId": "boot@1492:t-6945793f13",
+        "runs": 11,
+        "measured": 10,
+        "values": [
+          394.454,
+          184.476,
+          36.786,
+          51.227,
+          118.502,
+          118.982,
+          212.157,
+          311.272,
+          249.856,
+          531.439
+        ],
         "outcomes": {
+          "measured": 10,
           "missed": 1
+        },
+        "median": 198.31650000000002,
+        "min": 36.786,
+        "max": 531.439,
+        "medianCi": {
+          "estimate": 198.31650000000002,
+          "low": 51.227,
+          "high": 394.454,
+          "lowRank": 2,
+          "highRank": 9,
+          "achievedConfidence": 0.9785156250000002
         }
       },
-      "deepDived": false
+      "deepDived": true
     },
     {
       "scenario": {
-        "id": "boot@5798:t-6945793f13",
+        "id": "boot@5763:t-6945793f13",
         "targetId": "t-6945793f13",
         "phase": "boot",
-        "offsetMs": 5798,
+        "offsetMs": 5763,
         "tapPoint": {
           "x": 123,
-          "y": 27
+          "y": 299.140625
         },
         "condition": {
           "device": "mobile",
@@ -1906,18 +2302,13 @@
         "safetyReason": "link to another document (/wiki/Main_Page)"
       },
       "summary": {
-        "scenarioId": "boot@5798:t-6945793f13",
-        "runs": 1,
-        "measured": 1,
-        "values": [
-          308.517
-        ],
+        "scenarioId": "boot@5763:t-6945793f13",
+        "runs": 3,
+        "measured": 0,
+        "values": [],
         "outcomes": {
-          "measured": 1
-        },
-        "median": 308.517,
-        "min": 308.517,
-        "max": 308.517
+          "missed": 3
+        }
       },
       "deepDived": false
     },
@@ -1954,26 +2345,44 @@
       },
       "summary": {
         "scenarioId": "idle:t-6945793f13",
-        "runs": 1,
-        "measured": 1,
+        "runs": 11,
+        "measured": 11,
         "values": [
-          153.004
+          77.372,
+          220.842,
+          317.469,
+          53.885,
+          244.167,
+          78.403,
+          177.401,
+          110.621,
+          223.544,
+          272.515,
+          114.751
         ],
         "outcomes": {
-          "measured": 1
+          "measured": 11
         },
-        "median": 153.004,
-        "min": 153.004,
-        "max": 153.004
+        "median": 177.401,
+        "min": 53.885,
+        "max": 317.469,
+        "medianCi": {
+          "estimate": 177.401,
+          "low": 77.372,
+          "high": 272.515,
+          "lowRank": 2,
+          "highRank": 10,
+          "achievedConfidence": 0.98828125
+        }
       },
-      "deepDived": false
+      "deepDived": true
     },
     {
       "scenario": {
-        "id": "boot@1596:t-5175d6cdb8",
+        "id": "boot@1492:t-5175d6cdb8",
         "targetId": "t-5175d6cdb8",
         "phase": "boot",
-        "offsetMs": 1596,
+        "offsetMs": 1492,
         "tapPoint": {
           "x": 252.2890625,
           "y": 240.21875
@@ -2005,65 +2414,82 @@
         "safetyReason": "link to another document (/wiki/America_(disambiguation))"
       },
       "summary": {
-        "scenarioId": "boot@1596:t-5175d6cdb8",
-        "runs": 1,
+        "scenarioId": "boot@1492:t-5175d6cdb8",
+        "runs": 11,
+        "measured": 9,
+        "values": [
+          136.627,
+          253.726,
+          321.396,
+          343.222,
+          249.095,
+          323.403,
+          408.76,
+          276.853,
+          240.444
+        ],
+        "outcomes": {
+          "measured": 9,
+          "missed": 2
+        },
+        "median": 276.853,
+        "min": 136.627,
+        "max": 408.76,
+        "medianCi": {
+          "estimate": 276.853,
+          "low": 240.444,
+          "high": 343.222,
+          "lowRank": 2,
+          "highRank": 8,
+          "achievedConfidence": 0.9609375
+        }
+      },
+      "deepDived": true
+    },
+    {
+      "scenario": {
+        "id": "boot@5763:t-5175d6cdb8",
+        "targetId": "t-5175d6cdb8",
+        "phase": "boot",
+        "offsetMs": 5763,
+        "tapPoint": {
+          "x": 252.2890625,
+          "y": 512.359375
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-5175d6cdb8",
+        "selector": "div#mwBA > a:nth-of-type(2)",
+        "label": "America (disambiguation)",
+        "kind": "link",
+        "rect": {
+          "x": 174.546875,
+          "y": 526.75,
+          "width": 155.484375,
+          "height": 16
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.mw-disambig|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/America_(disambiguation))"
+      },
+      "summary": {
+        "scenarioId": "boot@5763:t-5175d6cdb8",
+        "runs": 3,
         "measured": 0,
         "values": [],
         "outcomes": {
-          "missed": 1
+          "missed": 3
         }
-      },
-      "deepDived": false
-    },
-    {
-      "scenario": {
-        "id": "boot@5798:t-5175d6cdb8",
-        "targetId": "t-5175d6cdb8",
-        "phase": "boot",
-        "offsetMs": 5798,
-        "tapPoint": {
-          "x": 252.2890625,
-          "y": 240.21875
-        },
-        "condition": {
-          "device": "mobile",
-          "cpuRate": 4,
-          "thirdParty": {
-            "kind": "allow"
-          },
-          "consent": "none",
-          "cache": "cold"
-        }
-      },
-      "target": {
-        "id": "t-5175d6cdb8",
-        "selector": "div#mwBA > a:nth-of-type(2)",
-        "label": "America (disambiguation)",
-        "kind": "link",
-        "rect": {
-          "x": 174.546875,
-          "y": 526.75,
-          "width": 155.484375,
-          "height": 16
-        },
-        "aboveFold": true,
-        "handlerSignature": "a.mw-disambig|",
-        "safety": "cross-document-navigation",
-        "safetyReason": "link to another document (/wiki/America_(disambiguation))"
-      },
-      "summary": {
-        "scenarioId": "boot@5798:t-5175d6cdb8",
-        "runs": 1,
-        "measured": 1,
-        "values": [
-          276.933
-        ],
-        "outcomes": {
-          "measured": 1
-        },
-        "median": 276.933,
-        "min": 276.933,
-        "max": 276.933
       },
       "deepDived": false
     },
@@ -2100,26 +2526,44 @@
       },
       "summary": {
         "scenarioId": "idle:t-5175d6cdb8",
-        "runs": 1,
-        "measured": 1,
+        "runs": 11,
+        "measured": 11,
         "values": [
-          74.347
+          49.372,
+          86.064,
+          78.399,
+          13.62,
+          122.563,
+          207.627,
+          174.068,
+          186.185,
+          54.652,
+          38.215,
+          48.463
         ],
         "outcomes": {
-          "measured": 1
+          "measured": 11
         },
-        "median": 74.347,
-        "min": 74.347,
-        "max": 74.347
+        "median": 78.399,
+        "min": 13.62,
+        "max": 207.627,
+        "medianCi": {
+          "estimate": 78.399,
+          "low": 38.215,
+          "high": 186.185,
+          "lowRank": 2,
+          "highRank": 10,
+          "achievedConfidence": 0.98828125
+        }
       },
-      "deepDived": false
+      "deepDived": true
     },
     {
       "scenario": {
-        "id": "boot@1596:t-f17704b6b9",
+        "id": "boot@1492:t-f17704b6b9",
         "targetId": "t-f17704b6b9",
         "phase": "boot",
-        "offsetMs": 1596,
+        "offsetMs": 1492,
         "tapPoint": {
           "x": 80.546875,
           "y": 473.921875
@@ -2151,65 +2595,79 @@
         "safetyReason": "link to another document (/wiki/Contiguous_states)"
       },
       "summary": {
-        "scenarioId": "boot@1596:t-f17704b6b9",
-        "runs": 1,
+        "scenarioId": "boot@1492:t-f17704b6b9",
+        "runs": 11,
+        "measured": 6,
+        "values": [
+          22.732,
+          425.831,
+          342.574,
+          174.588,
+          148.425,
+          158.427
+        ],
+        "outcomes": {
+          "measured": 6,
+          "missed": 5
+        },
+        "median": 166.5075,
+        "min": 22.732,
+        "max": 425.831,
+        "medianCi": {
+          "estimate": 166.5075,
+          "low": 22.732,
+          "high": 425.831,
+          "lowRank": 1,
+          "highRank": 6,
+          "achievedConfidence": 0.9687500000000003
+        }
+      },
+      "deepDived": true
+    },
+    {
+      "scenario": {
+        "id": "boot@5763:t-f17704b6b9",
+        "targetId": "t-f17704b6b9",
+        "phase": "boot",
+        "offsetMs": 5763,
+        "tapPoint": {
+          "x": 80.546875,
+          "y": 746.0625
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-f17704b6b9",
+        "selector": "a#mwlg",
+        "label": "contiguous states",
+        "kind": "link",
+        "rect": {
+          "x": 16,
+          "y": 759.453125,
+          "width": 129.09375,
+          "height": 18
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.mw-redirect|",
+        "safety": "cross-document-navigation",
+        "safetyReason": "link to another document (/wiki/Contiguous_states)"
+      },
+      "summary": {
+        "scenarioId": "boot@5763:t-f17704b6b9",
+        "runs": 3,
         "measured": 0,
         "values": [],
         "outcomes": {
-          "missed": 1
+          "missed": 3
         }
-      },
-      "deepDived": false
-    },
-    {
-      "scenario": {
-        "id": "boot@5798:t-f17704b6b9",
-        "targetId": "t-f17704b6b9",
-        "phase": "boot",
-        "offsetMs": 5798,
-        "tapPoint": {
-          "x": 80.546875,
-          "y": 473.921875
-        },
-        "condition": {
-          "device": "mobile",
-          "cpuRate": 4,
-          "thirdParty": {
-            "kind": "allow"
-          },
-          "consent": "none",
-          "cache": "cold"
-        }
-      },
-      "target": {
-        "id": "t-f17704b6b9",
-        "selector": "a#mwlg",
-        "label": "contiguous states",
-        "kind": "link",
-        "rect": {
-          "x": 16,
-          "y": 759.453125,
-          "width": 129.09375,
-          "height": 18
-        },
-        "aboveFold": true,
-        "handlerSignature": "a.mw-redirect|",
-        "safety": "cross-document-navigation",
-        "safetyReason": "link to another document (/wiki/Contiguous_states)"
-      },
-      "summary": {
-        "scenarioId": "boot@5798:t-f17704b6b9",
-        "runs": 1,
-        "measured": 1,
-        "values": [
-          82.073
-        ],
-        "outcomes": {
-          "measured": 1
-        },
-        "median": 82.073,
-        "min": 82.073,
-        "max": 82.073
       },
       "deepDived": false
     },
@@ -2246,67 +2704,362 @@
       },
       "summary": {
         "scenarioId": "idle:t-f17704b6b9",
-        "runs": 1,
-        "measured": 1,
+        "runs": 11,
+        "measured": 11,
         "values": [
-          97.073
+          32.936,
+          41.914,
+          138.4,
+          245.468,
+          46.805,
+          28.46,
+          153.622,
+          142.959,
+          163.04,
+          76.254,
+          135.173
         ],
         "outcomes": {
-          "measured": 1
+          "measured": 11
         },
-        "median": 97.073,
-        "min": 97.073,
-        "max": 97.073
+        "median": 135.173,
+        "min": 28.46,
+        "max": 245.468,
+        "medianCi": {
+          "estimate": 135.173,
+          "low": 32.936,
+          "high": 163.04,
+          "lowRank": 2,
+          "highRank": 10,
+          "achievedConfidence": 0.98828125
+        }
+      },
+      "deepDived": true
+    },
+    {
+      "scenario": {
+        "id": "boot@1492:t-601cc8804a",
+        "targetId": "t-601cc8804a",
+        "phase": "boot",
+        "offsetMs": 1492,
+        "tapPoint": {
+          "x": 26,
+          "y": 178.78125
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-601cc8804a",
+        "selector": "li#language-selector > a",
+        "label": "Language",
+        "kind": "link",
+        "rect": {
+          "x": 4,
+          "y": 451.3125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet.language-selector.mw-interlanguage-selector[role=button]|",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "boot@1492:t-601cc8804a",
+        "runs": 3,
+        "measured": 2,
+        "values": [
+          169.419,
+          61.433
+        ],
+        "outcomes": {
+          "measured": 2,
+          "missed": 1
+        },
+        "median": 115.42600000000002,
+        "min": 61.433,
+        "max": 169.419
       },
       "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "boot@5763:t-601cc8804a",
+        "targetId": "t-601cc8804a",
+        "phase": "boot",
+        "offsetMs": 5763,
+        "tapPoint": {
+          "x": 26,
+          "y": 450.921875
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-601cc8804a",
+        "selector": "li#language-selector > a",
+        "label": "Language",
+        "kind": "link",
+        "rect": {
+          "x": 4,
+          "y": 451.3125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet.language-selector.mw-interlanguage-selector[role=button]|",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "boot@5763:t-601cc8804a",
+        "runs": 11,
+        "measured": 3,
+        "values": [
+          256.233,
+          172.618,
+          101.678
+        ],
+        "outcomes": {
+          "measured": 3,
+          "missed": 8
+        },
+        "median": 172.618,
+        "min": 101.678,
+        "max": 256.233
+      },
+      "deepDived": true
+    },
+    {
+      "scenario": {
+        "id": "idle:t-601cc8804a",
+        "targetId": "t-601cc8804a",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-601cc8804a",
+        "selector": "li#language-selector > a",
+        "label": "Language",
+        "kind": "link",
+        "rect": {
+          "x": 4,
+          "y": 451.3125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet.language-selector.mw-interlanguage-selector[role=button]|",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-601cc8804a",
+        "runs": 11,
+        "measured": 11,
+        "values": [
+          198.55,
+          54.809,
+          192.273,
+          126.572,
+          56.759,
+          185.294,
+          84.186,
+          110.168,
+          225.536,
+          274.051,
+          155.59
+        ],
+        "outcomes": {
+          "measured": 11
+        },
+        "median": 155.59,
+        "min": 54.809,
+        "max": 274.051,
+        "medianCi": {
+          "estimate": 155.59,
+          "low": 56.759,
+          "high": 225.536,
+          "lowRank": 2,
+          "highRank": 10,
+          "achievedConfidence": 0.98828125
+        }
+      },
+      "deepDived": true
+    },
+    {
+      "scenario": {
+        "id": "boot@5763:t-cbb0a33bda",
+        "targetId": "t-cbb0a33bda",
+        "phase": "boot",
+        "offsetMs": 5763,
+        "tapPoint": {
+          "x": 254,
+          "y": 450.921875
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-cbb0a33bda",
+        "selector": "li#minerva-download > a",
+        "label": "Download PDF",
+        "kind": "link",
+        "rect": {
+          "x": 232,
+          "y": 451.3125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet|",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "boot@5763:t-cbb0a33bda",
+        "runs": 3,
+        "measured": 0,
+        "values": [],
+        "outcomes": {
+          "missed": 3
+        }
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-cbb0a33bda",
+        "targetId": "t-cbb0a33bda",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-cbb0a33bda",
+        "selector": "li#minerva-download > a",
+        "label": "Download PDF",
+        "kind": "link",
+        "rect": {
+          "x": 232,
+          "y": 451.3125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet|",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-cbb0a33bda",
+        "runs": 11,
+        "measured": 11,
+        "values": [
+          56.125,
+          162.178,
+          205.774,
+          232.343,
+          179.732,
+          218.957,
+          125.054,
+          411.566,
+          379.818,
+          305.769,
+          257.636
+        ],
+        "outcomes": {
+          "measured": 11
+        },
+        "median": 218.957,
+        "min": 56.125,
+        "max": 411.566,
+        "medianCi": {
+          "estimate": 218.957,
+          "low": 125.054,
+          "high": 379.818,
+          "lowRank": 2,
+          "highRank": 10,
+          "achievedConfidence": 0.98828125
+        }
+      },
+      "deepDived": true
     }
   ],
   "hazard": {
-    "fcpMs": 1496,
+    "fcpMs": 1392,
     "longTasks": [
       {
-        "startTime": 1298.01,
-        "durationMs": 173.997,
+        "startTime": 1257.505,
+        "durationMs": 115.504,
         "topScriptUrl": "",
         "entity": "(no JS samples)",
         "isFirstParty": false
       },
       {
-        "startTime": 5748.468,
-        "durationMs": 92.728,
+        "startTime": 5382.933,
+        "durationMs": 54.083,
         "topScriptUrl": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatt",
         "entity": "wikipedia.org",
         "isFirstParty": true
       },
       {
-        "startTime": 6363.972,
-        "durationMs": 255.787,
+        "startTime": 5713.025,
+        "durationMs": 73.996,
+        "topScriptUrl": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatt",
+        "entity": "wikipedia.org",
+        "isFirstParty": true
+      },
+      {
+        "startTime": 6233.715,
+        "durationMs": 204.39,
         "topScriptUrl": "pptr:;CdpFrame.%3Canonymous%3E%20(file%3A%2F%2F%2Finp-analyser%2Fnode_modules%2Fpuppeteer-core%2Flib%2Fpuppeteer%2Futil%2Fdecorators.js%3A101%3A27)",
         "entity": "",
         "isFirstParty": false
       }
     ],
-    "peakHazardMs": 5748.468,
-    "peakBusyMs": 348.5150000000003
+    "peakHazardMs": 5713.025,
+    "peakBusyMs": 278.3860000000004
   },
   "targets": {
     "measured": [
-      {
-        "id": "t-4e1116ca0c",
-        "selector": "div#cbnnr",
-        "label": "Download the Wikipedia app",
-        "kind": "role",
-        "rect": {
-          "x": 0,
-          "y": 0,
-          "width": 412,
-          "height": 293.53125
-        },
-        "aboveFold": true,
-        "handlerSignature": "div.cbnnr.cbnnr-outer[role=button]|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:493:660",
-        "safety": "safe",
-        "safetyReason": "no denylist term, no form submit, no navigation to another document"
-      },
       {
         "id": "t-da82d59e07",
         "selector": "button#searchIcon",
@@ -2322,22 +3075,6 @@
         "handlerSignature": "button.cdx-button.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet.skin-minerva-search-trigger|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:889:545",
         "safety": "cross-document-navigation",
         "safetyReason": "submit button of a GET form"
-      },
-      {
-        "id": "t-bfb9094a52",
-        "selector": "div#cbnnr > div > div:nth-of-type(3)",
-        "label": "Hide",
-        "kind": "role",
-        "rect": {
-          "x": 373,
-          "y": 15,
-          "width": 24,
-          "height": 24
-        },
-        "aboveFold": true,
-        "handlerSignature": "div.cbnnr-toggle-close[role=button]|https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.entrypoints.languagesearcher.v2%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.echo.centralauth%7Cext.eventLogging%2Cimagemap%2CnavigationTiming%2Cpopups%2CreaderExperiments%2FpreferredSources%2CtestKitchen%2CwikimediaEvents%7Cext.eventLogging.metricsPlatform%7Cext.readingLists.bookmark.anonymous%7Cext.relatedArticles.readMore.bootstrap%7Cext.scribunto.logs%7Cext.tmh.player%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.uls.rewrite.entrypoints%7Cext.urlShortener.toolbar%7Cext.wikimediaCustomizations.donor%2CdonorAccountCreation%7Cext.wikimediaCustomizations.shareCard.init%7Cext.wikimediaEvents.testKitchen%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.DateFormatter%2CForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctemplate%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmediawiki.template.mustache%7Cmmv.bootstrap%7Cmobile.codex.styles%7Cmobile.init%2Cstartup%7Cmw.cx.SiteMapper%7Cmw.externalguidance.init%7Cskins.minerva.scripts%7Cwikibase.databox.fromWikidata&skin=minerva&version=1yc5z:493:660",
-        "safety": "safe",
-        "safetyReason": "no denylist term, no form submit, no navigation to another document"
       },
       {
         "id": "t-6945793f13",
@@ -2386,6 +3123,38 @@
         "handlerSignature": "a.mw-redirect|",
         "safety": "cross-document-navigation",
         "safetyReason": "link to another document (/wiki/Contiguous_states)"
+      },
+      {
+        "id": "t-601cc8804a",
+        "selector": "li#language-selector > a",
+        "label": "Language",
+        "kind": "link",
+        "rect": {
+          "x": 4,
+          "y": 451.3125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet.language-selector.mw-interlanguage-selector[role=button]|",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      {
+        "id": "t-cbb0a33bda",
+        "selector": "li#minerva-download > a",
+        "label": "Download PDF",
+        "kind": "link",
+        "rect": {
+          "x": 232,
+          "y": 451.3125,
+          "width": 44,
+          "height": 44
+        },
+        "aboveFold": true,
+        "handlerSignature": "a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--icon-only.cdx-button--size-large.cdx-button--weight-quiet|",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
       }
     ],
     "excluded": [
@@ -2473,17 +3242,18 @@
     ]
   },
   "run": {
-    "runs": 42,
-    "excludedRuns": 28,
-    "loads": 46,
+    "runs": 147,
+    "excludedRuns": 0,
+    "loads": 151,
     "sentinelReferenceMs": [
-      156.563,
-      132.873,
-      127.401,
-      131.762,
-      126.732,
-      140.305
-    ]
+      155.489,
+      126.702,
+      132.242,
+      128.497,
+      130.709,
+      132.03
+    ],
+    "incomplete": "time budget reached before deep-dive block 102"
   },
   "limitations": [
     "Lab values are \"lab @ CPU 4x, mobile emulation, headless Chrome Chrome/155.0.8059.39\" on one machine - not INP. INP is the CrUX field p75 above.",

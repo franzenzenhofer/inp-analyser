@@ -33,7 +33,7 @@ Built for and battle-tested in real-world INP audits of large, ad-heavy sites.
 - [Quick start](#quick-start)
 - [Field data setup](#field-data-setup)
 - [Commands](#commands)
-- [Example: a real run on Wikipedia](#example-a-real-run-on-wikipedia)
+- [Examples: real runs](#examples-real-runs)
 - [Outputs](#outputs)
 - [Reading report.json](#reading-reportjson)
 - [How it works](#how-it-works)
@@ -65,16 +65,16 @@ Lighthouse and PSI give you a number. This tool gives you the reasons.
 
 ## What it finds
 
-Every issue in the report carries the same set of facts:
+Every issue in the report carries the same set of facts. The examples are real output from [`examples/test-site-third-party`](examples/test-site-third-party/) (the bundled test site, a third-party script that adds 200 ms to every click) and [`examples/wikipedia-united-states`](examples/wikipedia-united-states/):
 
 | Fact | Example | Where it comes from |
 |---|---|---|
-| **Element** | `header button.menu-toggle` | Discovered interaction target (CSS selector) |
-| **Phase** | `input-delay`, `processing`, `presentation`, `context` | Event Timing phases, split per interaction |
-| **Script** | `handleClick (https://example.com/app.js:1:48213) via click` | JS samples in a Chrome trace: function, URL, line, column, invoker |
-| **Owner** | `Google Tag Manager (3rd party)` | [third-party-web](https://github.com/patrickhulce/third-party-web) entity map, extendable with `--entity-map` |
-| **Milliseconds** | `median 184 ms, 95% CI [161, 210]` | Exact order-statistic CI of the median over the runs where the rule fired |
-| **Certainty** | `confirmed`, 9/10 runs, Wilson CI [0.60, 0.98] | Screening vs deep-dive runs, reproducibility interval |
+| **Element** | `button#apply-sort`; on Wikipedia `div#mwBA > a:nth-of-type(2)` | Discovered interaction target (CSS selector) |
+| **Phase** | `processing` (one of `input-delay`, `processing`, `presentation`, `context`) | Event Timing phases, split per interaction |
+| **Script** | `knownDeltaListener (http://cdn.thirdparty.test:63958/known-delta.js:4:65) via #document.onclick (198 ms)` | JS samples in a Chrome trace: function, URL, line, column, invoker |
+| **Owner** | `Test Tracker Inc. (3rd party)` - blocking it made the tap 134 ms faster (95% CI 97-179 ms, 28 paired runs) | [third-party-web](https://github.com/patrickhulce/third-party-web) entity map, extendable with `--entity-map` |
+| **Milliseconds** | `median 222 ms (95% CI 221-223 ms)` | Exact order-statistic CI of the median over the runs where the rule fired |
+| **Certainty** | `confirmed`, fired in 8 of 8 runs (95% CI 68-100%) | Screening vs deep-dive runs, reproducibility interval |
 
 The rules it checks (each links its spec or engine source in the report):
 
@@ -212,34 +212,64 @@ desktop: INP p75 61 ms (url level, 2026-10-12..2026-11-08) good 96.8% / needs im
 
 Read it as: Wikipedia's Main Page has a **good** INP on both devices (phone 130 ms, desktop 61 ms at URL level; the whole origin is at 87 ms and 49 ms), and the CrUX API agrees with PSI to the last digit.
 
-## Example: a real run on Wikipedia
+## Examples: real runs
 
-Two unedited runs from 11 Nov 2026 live in [`examples/`](examples/) (terminal output, `report.html`, `report.json`, `runs.jsonl`).
+Three unedited runs from 11 Nov 2026 live in [`examples/`](examples/): terminal output, `report.html`, `report.json`, `runs.jsonl`. Mobile emulation, CPU 4x, Chrome for Testing 155, seed 42.
+
+### 1. A third-party listener, caught and proven ([`examples/test-site-third-party`](examples/test-site-third-party/))
+
+The bundled test site's `ab-known-delta` page: a third-party script (`cdn.thirdparty.test/known-delta.js`, owner "Test Tracker Inc." via `--entity-map`) adds exactly 200 ms to every click on the sort button. The tool finds it, names the function and line, and proves the cost by blocking:
 
 ```text
-$ inp analyse https://en.wikipedia.org/wiki/United_States --quick --budget 25 --max-targets 6 --seed 42
-inp-analyser 0.1.0 - https://en.wikipedia.org/wiki/United_States
+$ inp analyse http://site.inp.test:63958/ab-known-delta --no-field --entity-map test-site/entity-map.json --budget 25 --max-targets 6 --seed 42 \
+    --host-resolver-rules "MAP site.inp.test 127.0.0.1, MAP cdn.thirdparty.test 127.0.0.1"
+Issues (4, ranked):
+1. [needs improvement | confirmed | processing] Event handlers make the interaction slow (processing is the largest phase)
+   button#apply-sort - lab @ CPU 4x, mobile: median 222 ms (95% CI 221-223 ms); fired in 8 of 8 runs (95% CI 68-100%)
+   evidence: Test Tracker Inc. (3rd party): knownDeltaListener (http://cdn.thirdparty.test:63958/known-delta.js:4:65) via #document.onclick (198 ms)
+2. [needs improvement | confirmed | processing] Third-party code runs inside the event handling (>= 50 ms, a long task)
+   button#apply-sort - lab @ CPU 4x, mobile: median 197 ms (95% CI 194-199 ms); fired in 8 of 8 runs (95% CI 68-100%)
+3. [needs improvement | confirmed | context] Third parties cause this delay: all third parties blocked is faster
+   button#apply-sort - effect 135 ms (Hodges-Lehmann shift) (95% CI 91-197 ms); fired in 28 of 28 runs (95% CI 88-100%)
+4. [needs improvement | confirmed | context] Third parties cause this delay: without Test Tracker Inc. is faster
+   button#apply-sort - effect 134 ms (Hodges-Lehmann shift) (95% CI 97-179 ms); fired in 28 of 28 runs (95% CI 88-100%)
+Run: 80 runs (0 excluded), 84 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile
+```
+
+Element, phase, `function (URL:line:column)`, owner, milliseconds with a confidence interval, and how often it fired: every fact from a real trace. The site is local, so there is no field number.
+
+### 2. Wikipedia: field first, then where the lab risk is ([`examples/wikipedia-united-states`](examples/wikipedia-united-states/))
+
+```text
+$ inp analyse https://en.wikipedia.org/wiki/United_States --budget 50 --max-targets 6 --seed 42
 Field INP PHONE: 103 ms (good)
   CrUX p75, PHONE, page (URL) level, 2026-10-12 to 2026-11-08
   real users: good 91.3% | needs improvement 6.7% | poor 2.1%
   PSI shows the same: 103 ms
-Reconciliation: Field INP p75 (CrUX PHONE, url level, 2026-10-12..2026-11-08) = 103 ms.
-  7 lab scenario(s) reach it: boot@5798:t-6945793f13 (lab @ CPU 4x, mobile median 309 ms),
-  boot@5798:t-5175d6cdb8 (lab @ CPU 4x, mobile median 277 ms), boot@1596:t-da82d59e07 (lab @ CPU 4x, mobile median 256 ms), ...
-Issues: none found in the measured interactions
-Run: 42 runs (28 excluded), 46 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile
+Reconciliation: ... = 103 ms. 13 lab scenario(s) reach it: boot@5763:t-da82d59e07 (lab @ CPU 4x, mobile median 374 ms), ...
+Issues (8, ranked):
+1. [needs improvement | confirmed | input delay] Same element is slower when tapped while the page boots
+   div#mwBA > a:nth-of-type(2) - lab @ CPU 4x, mobile: effect 199 ms (Hodges-Lehmann shift) (95% CI 116-265 ms); fired in 9 of 9 runs (95% CI 70-100%)
+   evidence: boot median: 277 ms
+2. [needs improvement | screening only | context] Most of a slow interaction is not main-thread work (compositor / GPU / frame wait)
+   button#searchIcon - lab @ CPU 4x, mobile: median 258 ms; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: not explained by main-thread work: 258 ms of 308 ms
+4. [needs improvement | screening only | context] Large DOM (more than ~800 / ~1,400 elements, Lighthouse dom-size)
+   evidence: DOM elements: 7489
+...
+Run: 147 runs (0 excluded), 151 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile; INCOMPLETE: time budget reached before deep-dive block 102
 ```
 
 How to read it:
 
-- **The headline is the field number**: 103 ms, good for 91.3% of real phone users, and identical to what PageSpeed Insights shows.
-- **The lab shows where the risk is**: taps during page boot are the slow ones. The header menu link tapped 5.8 s into the load (`boot@5798`) took a 309 ms lab median; the same link tapped on the idle page took 153 ms.
-- **The tool is honest about its evidence**: this machine was busy, so the BenchmarkIndex gate excluded 28 of 42 runs, and `--quick` skips the deep-dive. That is why no issue (element + phase + `URL:line:function`) is claimed. Run without `--quick` on a quiet machine to get attributed issues.
+- **The headline is the field number**: 103 ms, good for 91.3% of real phone users, identical to PageSpeed Insights.
+- **The confirmed lab finding**: the hatnote link is 199 ms slower when tapped during page boot (277 ms) than on the idle page (78 ms), in 9 of 9 paired runs. Boot is where Wikipedia's mobile responsiveness risk sits.
+- **The tool says what it does not know**: the search button's slow tap is mostly not main-thread work, so no script is blamed; findings seen in one screening run stay `screening only`; the 50 min budget ended before the last deep-dive block, and the report says `INCOMPLETE`.
 
 | Page | Field INP p75 phone (URL) | Good / NI / poor | Desktop | Lab |
 |---|---|---|---|---|
-| [Main_Page](examples/wikipedia-main-page/) | **130 ms** | 86.5% / 9.7% / 3.9% | 61 ms | no scenario reached the field p75 |
-| [United_States](examples/wikipedia-united-states/) | **103 ms** | 91.3% / 6.7% / 2.1% | 110 ms | 7 boot / idle scenarios reach it, max 309 ms |
+| [Main_Page](examples/wikipedia-main-page/) | **130 ms** | 86.5% / 9.7% / 3.9% | 61 ms | no scenario reached the field p75, no issue |
+| [United_States](examples/wikipedia-united-states/) | **103 ms** | 91.3% / 6.7% / 2.1% | 110 ms | 8 issues, 1 confirmed (boot window, +199 ms) |
 
 ## Outputs
 
@@ -432,7 +462,7 @@ Honest list. Every report also prints its own.
 - **GPU work is not throttled.** Chrome's CPU throttling does not slow down raster/GPU work, so presentation delay on real mid-tier phones can be larger.
 - **Consent phase is planned**, not yet a phase of its own. Use `--consent-state` to measure the consent-accepted page.
 - **Machine gates are strongest on macOS**: there the start gate also checks Low Power Mode and thermal throttling (`pmset`) and keeps the machine awake (`caffeinate`). On Linux it checks AC vs battery only; on other platforms only the load and BenchmarkIndex gates apply. Tested on macOS (Apple Silicon) and Linux CI.
-- **Known issue: long deep-dives on a heavily loaded machine.** On a machine under memory and CPU pressure, the headless page can detach mid deep-dive ("Session already detached"), and the remaining runs of that analysis fail. Measure on a quiet machine, use `--quick` (screening only) or a smaller `--budget`, and set `INP_DEBUG_CHROME=1` to see Chrome's own log if it happens.
+- **Lost browsers are recovered, not hidden.** On a machine under memory and CPU pressure Chrome can lose its page or its DevTools connection mid analysis. The tool then relaunches Chrome (at most 5 times per analysis), retries the lost run once and prints `[browser] ... relaunching Chrome`; the block gates still judge every block. `INP_DEBUG_CHROME=1` shows Chrome's own log.
 - **Diagnosis, not prescription.** The tool never suggests fixes.
 
 ## Contributing

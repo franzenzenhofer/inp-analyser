@@ -1,0 +1,635 @@
+{
+  "tool": {
+    "name": "inp-analyser",
+    "version": "0.1.0"
+  },
+  "url": "http://site.inp.test:63958/ab-known-delta",
+  "generatedAt": "2026-11-11T09:07:45.885Z",
+  "seed": 42,
+  "chromeVersion": "Chrome/155.0.8059.39",
+  "condition": {
+    "device": "mobile",
+    "cpuRate": 4,
+    "thirdParty": {
+      "kind": "allow"
+    },
+    "consent": "none",
+    "cache": "cold"
+  },
+  "issues": [
+    {
+      "ruleId": "processing/slow-event-handlers",
+      "title": "Event handlers make the interaction slow (processing is the largest phase)",
+      "phase": "processing",
+      "specUrl": "https://web.dev/articles/inp#good-score",
+      "severity": "needs-improvement",
+      "certainty": "confirmed",
+      "scenarioIds": [
+        "idle:t-934c0c3b4b"
+      ],
+      "targetSelector": "button#apply-sort",
+      "medianMs": 222.013,
+      "medianCi": {
+        "low": 220.987,
+        "high": 222.783
+      },
+      "reproducibility": {
+        "fired": 8,
+        "runs": 8,
+        "interval": {
+          "low": 0.6755924351161198,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "processing",
+          "value": "222 ms",
+          "ms": 222.219
+        },
+        {
+          "label": "Test Tracker Inc. (3rd party)",
+          "value": "knownDeltaListener (http://cdn.thirdparty.test:63958/known-delta.js:4:65) via #document.onclick",
+          "ms": 197.949,
+          "url": "http://cdn.thirdparty.test:63958/known-delta.js"
+        },
+        {
+          "label": "inp.test (1st party)",
+          "value": "busy (http://site.inp.test:63958/busy.js:2:21)",
+          "ms": 21.844,
+          "url": "http://site.inp.test:63958/busy.js"
+        }
+      ]
+    },
+    {
+      "ruleId": "processing/third-party-script",
+      "title": "Third-party code runs inside the event handling (>= 50 ms, a long task)",
+      "phase": "processing",
+      "specUrl": "https://web.dev/articles/optimize-inp",
+      "severity": "needs-improvement",
+      "certainty": "confirmed",
+      "scenarioIds": [
+        "idle:t-934c0c3b4b"
+      ],
+      "targetSelector": "button#apply-sort",
+      "medianMs": 196.96699999999998,
+      "medianCi": {
+        "low": 193.625,
+        "high": 199.324
+      },
+      "reproducibility": {
+        "fired": 8,
+        "runs": 8,
+        "interval": {
+          "low": 0.6755924351161198,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "third-party script self time",
+          "value": "198 ms",
+          "ms": 197.949
+        },
+        {
+          "label": "Test Tracker Inc. (3rd party)",
+          "value": "knownDeltaListener (http://cdn.thirdparty.test:63958/known-delta.js:4:65) via #document.onclick",
+          "ms": 197.949,
+          "url": "http://cdn.thirdparty.test:63958/known-delta.js"
+        }
+      ]
+    },
+    {
+      "ruleId": "third-party/causal-delta",
+      "title": "Third parties cause this delay: idle:t-934c0c3b4b: all third parties blocked is faster",
+      "phase": "context",
+      "severity": "needs-improvement",
+      "certainty": "confirmed",
+      "scenarioIds": [
+        "idle:t-934c0c3b4b",
+        "idle:t-934c0c3b4b|3p:block-all"
+      ],
+      "targetSelector": "button#apply-sort",
+      "quantity": "shift",
+      "medianMs": 135.388,
+      "medianCi": {
+        "low": 90.86599999999999,
+        "high": 197.243
+      },
+      "reproducibility": {
+        "fired": 28,
+        "runs": 28,
+        "interval": {
+          "low": 0.8793566952341545,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "with third parties (median)",
+          "value": "231 ms",
+          "ms": 230.608
+        },
+        {
+          "label": "blocked (median)",
+          "value": "94 ms",
+          "ms": 94.2595
+        },
+        {
+          "label": "shift (Hodges-Lehmann, 95% CI)",
+          "value": "-135 ms [-197, -91]"
+        },
+        {
+          "label": "Mann-Whitney p (Holm)",
+          "value": "0.000011 (0.000032)"
+        },
+        {
+          "label": "Cliff's delta",
+          "value": "1.00 (large)"
+        },
+        {
+          "label": "runs",
+          "value": "10 vs 10"
+        }
+      ],
+      "specUrl": "https://developer.chrome.com/docs/performance/insights/third-parties"
+    },
+    {
+      "ruleId": "third-party/causal-delta",
+      "title": "Third parties cause this delay: idle:t-934c0c3b4b: without Test Tracker Inc. is faster",
+      "phase": "context",
+      "severity": "needs-improvement",
+      "certainty": "confirmed",
+      "scenarioIds": [
+        "idle:t-934c0c3b4b",
+        "idle:t-934c0c3b4b|3p:-Test Tracker Inc."
+      ],
+      "targetSelector": "button#apply-sort",
+      "quantity": "shift",
+      "medianMs": 134.19,
+      "medianCi": {
+        "low": 97.303,
+        "high": 178.824
+      },
+      "reproducibility": {
+        "fired": 28,
+        "runs": 28,
+        "interval": {
+          "low": 0.8793566952341545,
+          "high": 1
+        }
+      },
+      "evidence": [
+        {
+          "label": "with third parties (median)",
+          "value": "231 ms",
+          "ms": 230.608
+        },
+        {
+          "label": "blocked (median)",
+          "value": "95 ms",
+          "ms": 95.4575
+        },
+        {
+          "label": "shift (Hodges-Lehmann, 95% CI)",
+          "value": "-134 ms [-179, -97]"
+        },
+        {
+          "label": "Mann-Whitney p (Holm)",
+          "value": "0.000011 (0.000032)"
+        },
+        {
+          "label": "Cliff's delta",
+          "value": "1.00 (large)"
+        },
+        {
+          "label": "runs",
+          "value": "10 vs 10"
+        }
+      ],
+      "specUrl": "https://developer.chrome.com/docs/performance/insights/third-parties"
+    }
+  ],
+  "comparisons": [
+    {
+      "kind": "phase",
+      "label": "t-934c0c3b4b: boot @512 ms vs idle",
+      "baselineScenarioId": "idle:t-934c0c3b4b|3p:-Test Tracker Inc.",
+      "variantScenarioId": "boot@512:t-934c0c3b4b",
+      "nBaseline": 12,
+      "nVariant": 28,
+      "medianBaselineMs": 97.48349999999999,
+      "medianVariantMs": 104.0075,
+      "shift": {
+        "estimate": 10.926000000000009,
+        "low": -25.932999999999993,
+        "high": 46.06600000000002
+      },
+      "p": 0.4696217441071415,
+      "cliffsDelta": -0.1488095238095238,
+      "magnitude": "small",
+      "pHolm": 0.4696217441071415,
+      "significant": false
+    },
+    {
+      "kind": "third-party",
+      "label": "idle:t-934c0c3b4b: all third parties blocked",
+      "baselineScenarioId": "idle:t-934c0c3b4b",
+      "variantScenarioId": "idle:t-934c0c3b4b|3p:block-all",
+      "nBaseline": 10,
+      "nVariant": 10,
+      "medianBaselineMs": 230.608,
+      "medianVariantMs": 94.2595,
+      "shift": {
+        "estimate": -135.388,
+        "low": -197.243,
+        "high": -90.86599999999999
+      },
+      "p": 0.000010825088224475365,
+      "cliffsDelta": 1,
+      "magnitude": "large",
+      "pHolm": 0.000032475264673426096,
+      "significant": true
+    },
+    {
+      "kind": "third-party",
+      "label": "idle:t-934c0c3b4b: without Test Tracker Inc.",
+      "baselineScenarioId": "idle:t-934c0c3b4b",
+      "variantScenarioId": "idle:t-934c0c3b4b|3p:-Test Tracker Inc.",
+      "nBaseline": 10,
+      "nVariant": 10,
+      "medianBaselineMs": 230.608,
+      "medianVariantMs": 95.4575,
+      "shift": {
+        "estimate": -134.19,
+        "low": -178.824,
+        "high": -97.303
+      },
+      "p": 0.000010825088224475365,
+      "cliffsDelta": 1,
+      "magnitude": "large",
+      "pHolm": 0.000032475264673426096,
+      "significant": true
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": {
+        "id": "boot@512:t-934c0c3b4b",
+        "targetId": "t-934c0c3b4b",
+        "phase": "boot",
+        "offsetMs": 512,
+        "tapPoint": {
+          "x": 53.4140625,
+          "y": 127.375
+        },
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-934c0c3b4b",
+        "selector": "button#apply-sort",
+        "label": "Sort by price",
+        "kind": "button",
+        "rect": {
+          "x": 8,
+          "y": 116.875,
+          "width": 90.828125,
+          "height": 21
+        },
+        "aboveFold": true,
+        "handlerSignature": "button[type=button]|http://site.inp.test:63958/ab-known-delta:14:92",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "boot@512:t-934c0c3b4b",
+        "runs": 28,
+        "measured": 28,
+        "values": [
+          60.145,
+          227.165,
+          100.781,
+          116.094,
+          155.907,
+          93.865,
+          156.212,
+          245.382,
+          44.357,
+          51.87,
+          102.016,
+          103.605,
+          205.012,
+          39.13,
+          42.463,
+          48.701,
+          98.107,
+          150.248,
+          104.41,
+          69.416,
+          41.831,
+          142.047,
+          123.174,
+          104.502,
+          83.908,
+          119.682,
+          132.098,
+          128.202
+        ],
+        "outcomes": {
+          "measured": 28
+        },
+        "median": 104.0075,
+        "min": 39.13,
+        "max": 245.382,
+        "medianCi": {
+          "estimate": 104.0075,
+          "low": 83.908,
+          "high": 128.202,
+          "lowRank": 9,
+          "highRank": 20,
+          "achievedConfidence": 0.9643018618226067
+        }
+      },
+      "deepDived": true
+    },
+    {
+      "scenario": {
+        "id": "idle:t-934c0c3b4b",
+        "targetId": "t-934c0c3b4b",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "allow"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-934c0c3b4b",
+        "selector": "button#apply-sort",
+        "label": "Sort by price",
+        "kind": "button",
+        "rect": {
+          "x": 8,
+          "y": 116.875,
+          "width": 90.828125,
+          "height": 21
+        },
+        "aboveFold": true,
+        "handlerSignature": "button[type=button]|http://site.inp.test:63958/ab-known-delta:14:92",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-934c0c3b4b",
+        "runs": 28,
+        "measured": 28,
+        "values": [
+          230.611,
+          228.252,
+          225.885,
+          229.455,
+          228.078,
+          230.487,
+          229.985,
+          225.238,
+          228.658,
+          231.5,
+          229.453,
+          226.877,
+          229.017,
+          228.536,
+          228.71,
+          230.92,
+          232.06,
+          228.544,
+          226.621,
+          232.674,
+          231.98,
+          232.168,
+          232.258,
+          229.236,
+          228.628,
+          228.545,
+          231.387,
+          229.625
+        ],
+        "outcomes": {
+          "measured": 28
+        },
+        "median": 229.34449999999998,
+        "min": 225.238,
+        "max": 232.674,
+        "medianCi": {
+          "estimate": 229.34449999999998,
+          "low": 228.545,
+          "high": 230.611,
+          "lowRank": 9,
+          "highRank": 20,
+          "achievedConfidence": 0.9643018618226067
+        }
+      },
+      "deepDived": true
+    },
+    {
+      "scenario": {
+        "id": "idle:t-934c0c3b4b|3p:block-all",
+        "targetId": "t-934c0c3b4b",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "block-all"
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-934c0c3b4b",
+        "selector": "button#apply-sort",
+        "label": "Sort by price",
+        "kind": "button",
+        "rect": {
+          "x": 8,
+          "y": 116.875,
+          "width": 90.828125,
+          "height": 21
+        },
+        "aboveFold": true,
+        "handlerSignature": "button[type=button]|http://site.inp.test:63958/ab-known-delta:14:92",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-934c0c3b4b|3p:block-all",
+        "runs": 12,
+        "measured": 12,
+        "values": [
+          143.917,
+          72.109,
+          99.424,
+          30.29,
+          89.095,
+          151.953,
+          34.737,
+          99.505,
+          28.458,
+          137.762,
+          71.272,
+          81.878
+        ],
+        "outcomes": {
+          "measured": 12
+        },
+        "median": 85.4865,
+        "min": 28.458,
+        "max": 151.953,
+        "medianCi": {
+          "estimate": 85.4865,
+          "low": 34.737,
+          "high": 137.762,
+          "lowRank": 3,
+          "highRank": 10,
+          "achievedConfidence": 0.9614257812500003
+        }
+      },
+      "deepDived": false
+    },
+    {
+      "scenario": {
+        "id": "idle:t-934c0c3b4b|3p:-Test Tracker Inc.",
+        "targetId": "t-934c0c3b4b",
+        "phase": "idle",
+        "condition": {
+          "device": "mobile",
+          "cpuRate": 4,
+          "thirdParty": {
+            "kind": "block-entity",
+            "entity": "Test Tracker Inc."
+          },
+          "consent": "none",
+          "cache": "cold"
+        }
+      },
+      "target": {
+        "id": "t-934c0c3b4b",
+        "selector": "button#apply-sort",
+        "label": "Sort by price",
+        "kind": "button",
+        "rect": {
+          "x": 8,
+          "y": 116.875,
+          "width": 90.828125,
+          "height": 21
+        },
+        "aboveFold": true,
+        "handlerSignature": "button[type=button]|http://site.inp.test:63958/ab-known-delta:14:92",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      },
+      "summary": {
+        "scenarioId": "idle:t-934c0c3b4b|3p:-Test Tracker Inc.",
+        "runs": 12,
+        "measured": 12,
+        "values": [
+          98.44,
+          131.325,
+          24.062,
+          80.204,
+          109.841,
+          53.236,
+          137.413,
+          24.057,
+          92.475,
+          137.354,
+          141.916,
+          96.527
+        ],
+        "outcomes": {
+          "measured": 12
+        },
+        "median": 97.48349999999999,
+        "min": 24.057,
+        "max": 141.916,
+        "medianCi": {
+          "estimate": 97.48349999999999,
+          "low": 53.236,
+          "high": 137.354,
+          "lowRank": 3,
+          "highRank": 10,
+          "achievedConfidence": 0.9614257812500003
+        }
+      },
+      "deepDived": false
+    }
+  ],
+  "hazard": {
+    "fcpMs": 412,
+    "longTasks": [],
+    "peakHazardMs": 412,
+    "peakBusyMs": 0
+  },
+  "targets": {
+    "measured": [
+      {
+        "id": "t-934c0c3b4b",
+        "selector": "button#apply-sort",
+        "label": "Sort by price",
+        "kind": "button",
+        "rect": {
+          "x": 8,
+          "y": 116.875,
+          "width": 90.828125,
+          "height": 21
+        },
+        "aboveFold": true,
+        "handlerSignature": "button[type=button]|http://site.inp.test:63958/ab-known-delta:14:92",
+        "safety": "safe",
+        "safetyReason": "no denylist term, no form submit, no navigation to another document"
+      }
+    ],
+    "excluded": [],
+    "globalListeners": [
+      {
+        "type": "click",
+        "url": "http://cdn.thirdparty.test:63958/known-delta.js",
+        "line": 4,
+        "column": 65,
+        "on": "document"
+      }
+    ]
+  },
+  "run": {
+    "runs": 80,
+    "excludedRuns": 0,
+    "loads": 84,
+    "sentinelReferenceMs": [
+      155.877,
+      144.799,
+      130.016,
+      127.064,
+      130.975,
+      127.604
+    ]
+  },
+  "limitations": [
+    "Lab values are \"lab @ CPU 4x, mobile emulation, headless Chrome Chrome/155.0.8059.39\" on one machine - not INP. INP is the CrUX field p75 above.",
+    "CrUX INP is the 75th percentile over 28 days of real Chrome users' page loads, each load's INP being its worst interaction minus one per 50 (https://developers.google.com/speed/docs/insights/v5/about, https://web.dev/articles/inp#what-is-inp).",
+    "Only interactions the tool discovered and could trigger safely were measured; logged-in states, real form input, ads and cross-origin iframes were not.",
+    "First-party mutating requests were blocked and cross-document navigations answered with 204, so work that depends on those responses is not measured.",
+    "GPU/raster work is not CPU-throttled by Chrome's CPU throttling; presentation delay on real mid-tier phones can be larger."
+  ]
+}

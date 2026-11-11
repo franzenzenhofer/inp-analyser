@@ -17,6 +17,7 @@ First public release.
 - `inp trace`: issues in an existing DevTools trace.
 - `inp discover`, `inp report` (rebuild from `runs.jsonl`) and `inp calibrate` (BenchmarkIndex per CPU rate).
 - Measurement hygiene: power, thermal and busy-machine gates, BenchmarkIndex drift and sentinel checks, randomised seeded run order.
+- Robust long runs: a Chrome that loses its page or DevTools connection mid analysis is relaunched (max 5) and the lost run retried once.
 - Safety: guard against first-party mutations and navigations, popup and download blocking, a denylist for dangerous targets, bot-wall detection, and politeness (1 load per 10 s per origin).
 - Outputs: `report.json`, self-contained `report.html`, `runs.jsonl`, `meta.json`, `field.json` and gzipped DevTools traces.
 - Agent skill in `skills/inp-analyser/` for Claude Code and other agents.

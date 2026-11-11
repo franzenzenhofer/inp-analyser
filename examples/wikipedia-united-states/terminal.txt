@@ -3,8 +3,40 @@ Field INP PHONE: 103 ms (good)
   CrUX p75, PHONE, page (URL) level, 2026-10-12 to 2026-11-08
   real users: good 91.3% | needs improvement 6.7% | poor 2.1%
   PSI shows the same: 103 ms
-Reconciliation: Field INP p75 (CrUX PHONE, url level, 2026-10-12..2026-11-08) = 103 ms. 7 lab scenario(s) reach it: boot@5798:t-6945793f13 (lab @ CPU 4x, mobile median 309 ms), boot@5798:t-5175d6cdb8 (lab @ CPU 4x, mobile median 277 ms), boot@1596:t-da82d59e07 (lab @ CPU 4x, mobile median 256 ms), idle:t-4e1116ca0c (lab @ CPU 4x, mobile median 193 ms), idle:t-da82d59e07 (lab @ CPU 4x, mobile median 182 ms).
-Issues: none found in the measured interactions
-Run: 42 runs (28 excluded), 46 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile
+Reconciliation: Field INP p75 (CrUX PHONE, url level, 2026-10-12..2026-11-08) = 103 ms. 13 lab scenario(s) reach it: boot@5763:t-da82d59e07 (lab @ CPU 4x, mobile median 374 ms), boot@1492:t-5175d6cdb8 (lab @ CPU 4x, mobile median 277 ms), boot@1492:t-da82d59e07 (lab @ CPU 4x, mobile median 261 ms), idle:t-cbb0a33bda (lab @ CPU 4x, mobile median 219 ms), boot@1492:t-6945793f13 (lab @ CPU 4x, mobile median 198 ms).
+Issues (8, ranked):
+1. [needs improvement | confirmed | input delay] Same element is slower when tapped while the page boots
+   div#mwBA > a:nth-of-type(2) - lab @ CPU 4x, mobile: effect 199 ms (Hodges-Lehmann shift) (95% CI 116-265 ms); fired in 9 of 9 runs (95% CI 70-100%)
+   evidence: boot median: 277 ms
+   why this counts: https://web.dev/articles/optimize-input-delay
+2. [needs improvement | screening only | context] Most of a slow interaction is not main-thread work (compositor / GPU / frame wait)
+   button#searchIcon - lab @ CPU 4x, mobile: median 258 ms; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: not explained by main-thread work: 258 ms of 308 ms
+   why this counts: https://web.dev/articles/inp#whats_in_an_interaction
+3. [needs improvement | screening only | presentation delay] Rendering work dominates a slow interaction (presentation delay is the largest phase)
+   button#searchIcon - lab @ CPU 4x, mobile: median 201 ms; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: style: 2 ms
+   why this counts: https://web.dev/articles/inp#good-score
+4. [needs improvement | screening only | context] Large DOM (more than ~800 / ~1,400 elements, Lighthouse dom-size)
+   lab @ CPU 4x, mobile: no duration attached; fired in 12 of 12 runs (95% CI 76-100%)
+   evidence: DOM elements: 7489
+   why this counts: https://developer.chrome.com/docs/lighthouse/performance/dom-size
+5. [info | screening only | context] Most of a slow interaction is not main-thread work (compositor / GPU / frame wait)
+   div#mw-mf-page-center > header > div > div:nth-of-type(1) > a - lab @ CPU 4x, mobile: median 360 ms; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: not explained by main-thread work: 360 ms of 394 ms
+   why this counts: https://web.dev/articles/inp#whats_in_an_interaction
+6. [info | screening only | context] Most of a slow interaction is not main-thread work (compositor / GPU / frame wait)
+   button#searchIcon - lab @ CPU 4x, mobile: median 270 ms; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: not explained by main-thread work: 270 ms of 304 ms
+   why this counts: https://web.dev/articles/inp#whats_in_an_interaction
+7. [info | screening only | presentation delay] Rendering work dominates a slow interaction (presentation delay is the largest phase)
+   button#searchIcon - lab @ CPU 4x, mobile: median 214 ms; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: style: 1 ms
+   why this counts: https://web.dev/articles/inp#good-score
+8. [info | screening only | presentation delay] Rendering work dominates a slow interaction (presentation delay is the largest phase)
+   li#language-selector > a - lab @ CPU 4x, mobile: median 150 ms; fired in 1 of 1 runs (95% CI 21-100%)
+   evidence: style: 11 ms
+   why this counts: https://web.dev/articles/inp#good-score
+Run: 147 runs (0 excluded), 151 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile; INCOMPLETE: time budget reached before deep-dive block 102
 HTML report: examples/wikipedia-united-states/report.html
 [inp] report: examples/wikipedia-united-states/report.json

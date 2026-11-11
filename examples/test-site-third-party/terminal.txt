@@ -1,0 +1,23 @@
+inp-analyser 0.1.0 - http://site.inp.test:63958/ab-known-delta
+Field INP PHONE: none
+  No field data: CrUX and PSI were not fetched for this run, so this report has no INP number. Lab values below are not INP.
+Issues (4, ranked):
+1. [needs improvement | confirmed | processing] Event handlers make the interaction slow (processing is the largest phase)
+   button#apply-sort - lab @ CPU 4x, mobile: median 222 ms (95% CI 221-223 ms); fired in 8 of 8 runs (95% CI 68-100%)
+   evidence: Test Tracker Inc. (3rd party): knownDeltaListener (http://cdn.thirdparty.test:63958/known-delta.js:4:65) via #document.onclick (198 ms)
+   why this counts: https://web.dev/articles/inp#good-score
+2. [needs improvement | confirmed | processing] Third-party code runs inside the event handling (>= 50 ms, a long task)
+   button#apply-sort - lab @ CPU 4x, mobile: median 197 ms (95% CI 194-199 ms); fired in 8 of 8 runs (95% CI 68-100%)
+   evidence: Test Tracker Inc. (3rd party): knownDeltaListener (http://cdn.thirdparty.test:63958/known-delta.js:4:65) via #document.onclick (198 ms)
+   why this counts: https://web.dev/articles/optimize-inp
+3. [needs improvement | confirmed | context] Third parties cause this delay: idle:t-934c0c3b4b: all third parties blocked is faster
+   button#apply-sort - lab @ CPU 4x, mobile: effect 135 ms (Hodges-Lehmann shift) (95% CI 91-197 ms); fired in 28 of 28 runs (95% CI 88-100%)
+   evidence: with third parties (median): 231 ms
+   why this counts: https://developer.chrome.com/docs/performance/insights/third-parties
+4. [needs improvement | confirmed | context] Third parties cause this delay: idle:t-934c0c3b4b: without Test Tracker Inc. is faster
+   button#apply-sort - lab @ CPU 4x, mobile: effect 134 ms (Hodges-Lehmann shift) (95% CI 97-179 ms); fired in 28 of 28 runs (95% CI 88-100%)
+   evidence: with third parties (median): 231 ms
+   why this counts: https://developer.chrome.com/docs/performance/insights/third-parties
+Run: 80 runs (0 excluded), 84 page loads, seed 42, Chrome/155.0.8059.39, lab @ CPU 4x, mobile
+HTML report: examples/test-site-third-party/report.html
+[inp] report: examples/test-site-third-party/report.json
