@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>inp-analyser - find out why your page has poor INP</title>
+<meta name="description" content="Open-source CLI that finds out why a page has poor Interaction to Next Paint: element, phase, script, owner, milliseconds, certainty. Field INP checked against PageSpeed Insights.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://franzenzenhofer.github.io/inp-analyser/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="inp-analyser - find out why your page has poor INP">
+<meta property="og:description" content="Element, phase, script, owner, milliseconds, certainty. An open-source CLI that diagnoses Interaction to Next Paint, reconciled against real-user field data.">
+<meta property="og:url" content="https://franzenzenhofer.github.io/inp-analyser/">
+<meta property="og:site_name" content="inp-analyser">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23111418'/%3E%3Crect x='10' y='38' width='14' height='14' fill='%230ca30c'/%3E%3Crect x='25' y='26' width='14' height='26' fill='%23fab219'/%3E%3Crect x='40' y='12' width='14' height='40' fill='%23d03b3b'/%3E%3C/svg%3E">
+<style>
+:root {
+  color-scheme: light;
+  --ink: #111418; --ink-2: #474c55; --rule: #c9cdd3; --grid: #e4e6ea; --panel: #f6f7f9; --link: #1c5cab;
+  --first: #2a78d6; --third: #eb6834; --good: #0ca30c; --ni: #fab219; --poor: #d03b3b;
+  --serif: "Iowan Old Style", "Palatino Linotype", Charter, Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: #ffffff; color: var(--ink); font: 18px/1.6 var(--sans); }
+.skip { position: absolute; left: -9999px; top: 0; background: var(--ink); color: #fff; padding: 8px 14px; font-size: 16px; z-index: 10; }
+.skip:focus { left: 12px; top: 12px; }
+.wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+a { color: var(--link); text-underline-offset: 3px; overflow-wrap: anywhere; }
+a:hover { color: #0f3f7a; }
+:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; color: var(--ink); }
+h2 { font-size: 32px; line-height: 1.2; margin: 72px 0 18px; padding-top: 16px; border-top: 4px solid var(--ink); }
+h3 { font-size: 22px; line-height: 1.3; margin: 32px 0 10px; }
+p { margin: 0 0 16px; }
+code, pre, .mono { font-family: var(--mono); font-size: 16px; }
+p code, li code, td code, dd code { background: var(--panel); border: 1px solid var(--grid); border-radius: 3px; padding: 0 5px; overflow-wrap: anywhere; }
+.note { color: var(--ink-2); font-size: 16px; }
+
+/* top bar */
+.topbar { border-bottom: 1px solid var(--rule); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; flex-wrap: wrap; }
+.brand { font-family: var(--mono); font-weight: 700; font-size: 18px; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+.topbar nav ul { display: flex; flex-wrap: wrap; gap: 4px 20px; list-style: none; margin: 0; padding: 0; font-size: 16px; }
+.topbar nav a { color: var(--ink-2); text-decoration: none; }
+.topbar nav a:hover { color: var(--link); text-decoration: underline; }
+
+/* hero */
+.hero { padding: 64px 0 40px; }
+.eyebrow { font-size: 16px; color: var(--ink-2); letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 12px; font-weight: 600; }
+.hero h1 { font-size: 64px; line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 20px; }
+.hero h1 .mono { font-size: inherit; font-family: var(--mono); letter-spacing: -0.04em; }
+.pitch { font-family: var(--serif); font-size: 26px; line-height: 1.4; margin: 0 0 28px; max-width: 34em; }
+.pitch strong { background: linear-gradient(transparent 62%, #ffe9a8 62%); font-weight: 700; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 32px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 10px 22px; border: 2px solid var(--ink); border-radius: 4px; font-size: 18px; font-weight: 650; text-decoration: none; color: var(--ink); background: #fff; }
+.btn.primary { background: var(--ink); color: #fff; }
+.btn:hover { background: var(--panel); color: var(--ink); }
+.btn.primary:hover { background: #2b3038; color: #fff; }
+.btn svg { flex: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; font-size: 16px; }
+.chips li { border: 1px solid var(--rule); border-radius: 999px; padding: 2px 14px; color: var(--ink-2); background: #fff; }
+
+/* threshold + phase bars */
+.scale { margin: 24px 0 8px; }
+.scale-bar { display: flex; height: 28px; border-radius: 3px; overflow: hidden; }
+.scale-bar span { display: block; height: 100%; }
+.scale-ticks { position: relative; height: 28px; margin-top: 4px; font-size: 16px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.scale-ticks span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.scale-ticks span:first-child { transform: none; }
+.scale-labels { display: flex; font-size: 16px; font-weight: 650; margin-top: 6px; }
+.scale-labels span { padding-right: 8px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 22px; list-style: none; margin: 0 0 10px; padding: 0; font-size: 16px; }
+.legend li { display: inline-flex; align-items: center; gap: 8px; }
+.sw { display: inline-block; width: 14px; height: 14px; border-radius: 2px; flex: none; }
+.sw.good { background: var(--good); } .sw.ni { background: var(--ni); } .sw.poor { background: var(--poor); }
+.phases { list-style: none; margin: 20px 0; padding: 0; display: grid; gap: 10px; }
+.phases li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; padding: 14px 16px; border: 1px solid var(--rule); border-left-width: 6px; border-radius: 3px; }
+.phases li:nth-child(1) { border-left-color: #6b7380; }
+.phases li:nth-child(2) { border-left-color: var(--first); }
+.phases li:nth-child(3) { border-left-color: var(--third); }
+.phases .n { font-family: var(--serif); font-size: 28px; line-height: 1; font-weight: 700; color: var(--ink-2); }
+.phases b { display: block; }
+
+/* facts table */
+.scroll { overflow-x: auto; margin: 16px 0 24px; }
+.scroll:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
+table { border-collapse: collapse; width: 100%; font-size: 16px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; vertical-align: top; padding: 10px 16px 10px 0; border-bottom: 1px solid var(--grid); }
+th { font-weight: 700; border-bottom: 2px solid var(--ink); white-space: nowrap; }
+td:first-child { font-weight: 650; white-space: nowrap; }
+
+/* field card */
+.card { border: 1px solid var(--rule); border-top: 6px solid var(--good); border-radius: 4px; padding: 28px; margin: 24px 0; background: #fff; }
+.card-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; align-items: baseline; margin-bottom: 8px; }
+.card-head h3 { margin: 0; font-size: 22px; }
+.card-head a { font-size: 16px; }
+.big { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px 28px; margin: 12px 0 8px; }
+.big-num { font-family: var(--serif); font-size: 112px; line-height: 0.9; font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.big-num small { font-size: 36px; letter-spacing: 0; margin-left: 4px; font-weight: 600; }
+.verdict { display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; padding: 4px 14px; border: 2px solid var(--good); border-radius: 999px; color: #0a5c0a; margin-bottom: 10px; }
+.meta { color: var(--ink-2); font-size: 16px; margin: 0 0 18px; }
+.dist { display: flex; gap: 2px; height: 26px; margin: 8px 0 10px; }
+.dist span { display: block; height: 100%; min-width: 3px; }
+.dist span:first-child { border-radius: 3px 0 0 3px; } .dist span:last-child { border-radius: 0 3px 3px 0; }
+.dist .good { background: var(--good); } .dist .ni { background: var(--ni); } .dist .poor { background: var(--poor); }
+.parity { display: flex; gap: 12px; align-items: flex-start; background: #eef7ee; border: 1px solid #b9dcb9; border-radius: 4px; padding: 12px 16px; margin: 18px 0; }
+.parity svg { flex: none; margin-top: 2px; }
+.subgrid { display: grid; gap: 14px; margin-top: 18px; }
+.sub { border-top: 1px solid var(--grid); padding-top: 14px; }
+.sub-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; align-items: baseline; }
+.sub-row .label { font-weight: 650; }
+.sub-row .val { font-family: var(--serif); font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.sub-row .val small { font-size: 18px; font-weight: 600; }
+
+/* chart */
+figure { margin: 28px 0; }
+figcaption { font-size: 16px; color: var(--ink-2); margin-top: 8px; }
+.chart-title { font-family: var(--serif); font-size: 22px; font-weight: 700; margin: 0 0 8px; }
+.chart svg { display: block; }
+svg text { font-family: var(--sans); font-size: 16px; fill: var(--ink-2); }
+svg .strong { fill: var(--ink); font-weight: 700; }
+
+/* findings */
+.findings { display: grid; gap: 16px; margin: 20px 0; }
+.finding { border: 1px solid var(--rule); border-left: 6px solid var(--rule); border-radius: 4px; padding: 20px 22px; background: #fff; }
+.finding.poor { border-left-color: var(--poor); }
+.finding.needs-improvement { border-left-color: var(--ni); }
+.finding.info { border-left-color: #8a919c; }
+.finding-head { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 0 0 12px; }
+.rule-id { font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--ink); }
+.tag { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--rule); border-radius: 3px; padding: 1px 10px; font-size: 16px; font-weight: 600; background: var(--panel); white-space: nowrap; }
+.finding-lead { margin: 0 0 12px; color: var(--ink-2); font-style: italic; }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 20px; margin: 0; font-size: 16px; }
+.facts dt { color: var(--ink-2); font-weight: 600; }
+.facts dd { margin: 0; overflow-wrap: anywhere; }
+
+/* pipeline */
+.pipeline { display: flex; justify-content: center; margin: 24px 0; }
+.stages { counter-reset: stage; list-style: none; margin: 16px 0; padding: 0; }
+.stages li { position: relative; padding: 0 0 14px 44px; }
+.stages li::before { counter-increment: stage; content: counter(stage); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+/* code */
+.code { position: relative; margin: 16px 0 24px; }
+.code pre { margin: 0; padding: 20px 22px; padding-right: 96px; background: var(--panel); border: 1px solid var(--rule); border-left: 4px solid var(--ink); border-radius: 4px; overflow-x: auto; line-height: 1.7; color: var(--ink); }
+.code .c { color: #5a616b; }
+.copy { position: absolute; top: 10px; right: 10px; font: 600 16px var(--sans); padding: 6px 12px; min-height: 36px; border: 1px solid var(--ink); background: #fff; color: var(--ink); border-radius: 3px; cursor: pointer; }
+.copy:hover { background: var(--ink); color: #fff; }
+.asks { list-style: none; margin: 16px 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.asks li { font-family: var(--serif); font-size: 20px; padding: 12px 18px; background: var(--panel); border-radius: 18px 18px 18px 4px; max-width: 36em; min-width: 0; overflow-wrap: anywhere; }
+
+footer { margin-top: 88px; border-top: 4px solid var(--ink); padding: 24px 0 48px; font-size: 16px; color: var(--ink-2); }
+footer p { margin: 0 0 8px; }
+
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  .wrap { padding: 0 16px; }
+  .hero { padding: 40px 0 24px; }
+  .hero h1 { font-size: 42px; }
+  .pitch { font-size: 21px; }
+  h2 { font-size: 26px; margin-top: 56px; }
+  .card { padding: 20px 16px; }
+  .big-num { font-size: 84px; }
+  .facts { grid-template-columns: 1fr; gap: 2px; }
+  .facts dd { margin-bottom: 10px; }
+  .topbar nav ul { gap: 4px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="inp-analyser home">
+      <svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="10" fill="#111418"/><rect x="10" y="38" width="14" height="14" fill="#0ca30c"/><rect x="25" y="26" width="14" height="26" fill="#fab219"/><rect x="40" y="12" width="14" height="40" fill="#d03b3b"/></svg>
+      inp-analyser
+    </a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#what-is-inp">INP</a></li>
+        <li><a href="#example">Example</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#get-started">Get started</a></li>
+        <li><a href="https://github.com/franzenzenhofer/inp-analyser">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+
+<section class="hero" id="top" aria-labelledby="title">
+  <p class="eyebrow">Open-source CLI - MIT licence</p>
+  <h1 id="title"><span class="mono">inp</span>-analyser</h1>
+  <p class="pitch">Find out <strong>why</strong> your page has poor INP - element, phase, script, owner, milliseconds, certainty.</p>
+  <div class="buttons">
+    <a class="btn primary" href="https://github.com/franzenzenhofer/inp-analyser">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      GitHub
+    </a>
+    <a class="btn" href="#get-started">Get started
+      <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <ul class="chips" aria-label="Key facts">
+    <li>Field INP checked against PSI</li>
+    <li>95% confidence intervals</li>
+    <li>Causal third-party tests</li>
+    <li>Diagnoses, never prescribes</li>
+  </ul>
+</section>
+
+<section aria-labelledby="what-is-inp">
+  <h2 id="what-is-inp">What INP is</h2>
+  <p><a href="https://web.dev/articles/inp">Interaction to Next Paint</a> is the Core Web Vital for responsiveness. For every page visit, the browser measures how long each click, tap and key press takes until the next frame is painted; the page's INP is (close to) the slowest of them. Google reports the 75th percentile over 28 days of real Chrome users.</p>
+
+  <div class="scale" role="img" aria-label="INP thresholds: up to 200 milliseconds is good, 200 to 500 milliseconds needs improvement, above 500 milliseconds is poor.">
+    <div class="scale-bar" aria-hidden="true">
+      <span style="width:28.57%;background:var(--good)"></span>
+      <span style="width:42.86%;background:var(--ni)"></span>
+      <span style="width:28.57%;background:var(--poor)"></span>
+    </div>
+    <div class="scale-ticks" aria-hidden="true">
+      <span style="left:0">0</span>
+      <span style="left:28.57%">200 ms</span>
+      <span style="left:71.43%">500 ms</span>
+    </div>
+    <div class="scale-labels" aria-hidden="true">
+      <span style="width:28.57%">good</span>
+      <span style="width:42.86%">needs improvement</span>
+      <span style="width:28.57%">poor</span>
+    </div>
+  </div>
+  <p class="note">INP p75 thresholds from web.dev: good up to 200 ms, needs improvement up to 500 ms, poor above.</p>
+
+  <p>Every interaction has three phases, and each has different causes (<a href="https://web.dev/articles/optimize-inp">Optimize INP</a>):</p>
+  <ol class="phases">
+    <li><span class="n" aria-hidden="true">1</span><span><b>Input delay</b>The main thread is busy (often a long task) when the user taps.</span></li>
+    <li><span class="n" aria-hidden="true">2</span><span><b>Processing duration</b>The event handlers themselves run.</span></li>
+    <li><span class="n" aria-hidden="true">3</span><span><b>Presentation delay</b>Style, layout, paint and any script that squeezes in before the next frame.</span></li>
+  </ol>
+  <p>Lighthouse and PSI give you a number. This tool gives you the reasons.</p>
+</section>
+
+<section aria-labelledby="what-it-finds">
+  <h2 id="what-it-finds">What it finds</h2>
+  <p>Every issue in the report carries the same set of facts:</p>
+  <div class="scroll" tabindex="0" role="region" aria-label="Facts per issue, scrolls sideways">
+    <table>
+      <thead><tr><th scope="col">Fact</th><th scope="col">Example</th><th scope="col">Where it comes from</th></tr></thead>
+      <tbody>
+        <tr><td>Element</td><td><code>header button.menu-toggle</code></td><td>Discovered interaction target (CSS selector)</td></tr>
+        <tr><td>Phase</td><td><code>input-delay</code>, <code>processing</code>, <code>presentation</code>, <code>context</code></td><td>Event Timing phases, split per interaction</td></tr>
+        <tr><td>Script</td><td><code>handleClick (https://example.com/app.js:1:48213)</code></td><td>JS samples in a Chrome trace: URL, line, function</td></tr>
+        <tr><td>Owner</td><td><code>Google Tag Manager (3rd party)</code></td><td><a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> entity map, extendable</td></tr>
+        <tr><td>Milliseconds</td><td>median 184 ms, 95% CI [161, 210]</td><td>Exact order-statistic CI of the median</td></tr>
+        <tr><td>Certainty</td><td><code>confirmed</code>, 9 of 10 runs</td><td>Screening vs deep-dive runs, Wilson interval</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The headline is always the field number: the CrUX p75 that PageSpeed Insights and Search Console show. Lab values are evidence, labelled <code>lab @ CPU Nx</code>. It diagnoses; it never prints fixes.</p>
+</section>
+
+<section aria-labelledby="example">
+  <h2 id="example">Example: a real run on Wikipedia</h2>
+  <p>Field data for <a href="https://en.wikipedia.org/wiki/Main_Page">en.wikipedia.org/wiki/Main_Page</a>, fetched with <code>inp field</code> on 11 Nov 2026.</p>
+
+  <article class="card" aria-labelledby="card-title">
+    <div class="card-head">
+      <h3 id="card-title">Phone INP p75 - field</h3>
+      <a href="https://en.wikipedia.org/wiki/Main_Page">/wiki/Main_Page</a>
+    </div>
+    <div class="big">
+      <div class="big-num" aria-label="130 milliseconds">130<small>ms</small></div>
+      <div class="verdict"><span class="sw good" aria-hidden="true"></span>good (200 ms or less)</div>
+    </div>
+    <p class="meta">URL level - CrUX, 28 days 2026-10-12 to 2026-11-08 - real Chrome users on phones</p>
+
+    <ul class="legend" aria-label="Legend for the distribution bar">
+      <li><span class="sw good" aria-hidden="true"></span>good 86.5%</li>
+      <li><span class="sw ni" aria-hidden="true"></span>needs improvement 9.7%</li>
+      <li><span class="sw poor" aria-hidden="true"></span>poor 3.9%</li>
+    </ul>
+    <div class="dist" role="img" aria-label="Phone distribution: good 86.5 percent, needs improvement 9.7 percent, poor 3.9 percent">
+      <span class="good" style="flex:86.5"></span><span class="ni" style="flex:9.7"></span><span class="poor" style="flex:3.9"></span>
+    </div>
+
+    <div class="parity">
+      <svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Check mark"><circle cx="12" cy="12" r="11" fill="#0ca30c"/><path d="M6.5 12.5l3.5 3.5 7.5-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span><b>PSI parity:</b> PageSpeed Insights shows the identical value - p75 130 ms and the same good / needs improvement / poor shares, at URL and origin level.</span>
+    </div>
+
+    <div class="subgrid">
+      <div class="sub">
+        <div class="sub-row"><span class="label">Desktop, URL level</span><span class="val">61 <small>ms</small></span></div>
+        <ul class="legend" aria-label="Legend for the desktop bar">
+          <li><span class="sw good" aria-hidden="true"></span>good 96.8%</li>
+          <li><span class="sw ni" aria-hidden="true"></span>needs improvement 2.3%</li>
+          <li><span class="sw poor" aria-hidden="true"></span>poor 0.9%</li>
+        </ul>
+        <div class="dist" role="img" aria-label="Desktop distribution: good 96.8 percent, needs improvement 2.3 percent, poor 0.9 percent">
+          <span class="good" style="flex:96.8"></span><span class="ni" style="flex:2.3"></span><span class="poor" style="flex:0.9"></span>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-row"><span class="label">Whole origin en.wikipedia.org</span><span class="val">87 <small>ms phone</small> / 49 <small>ms desktop</small></span></div>
+      </div>
+    </div>
+  </article>
+
+  <figure class="chart">
+    <p class="chart-title" id="chart-title">Phone INP p75, 25 weekly CrUX periods</p>
+    <ul class="legend" aria-label="Chart legend">
+      <li><svg width="34" height="14" aria-hidden="true" focusable="false"><line x1="1" y1="7" x2="33" y2="7" stroke="#2a78d6" stroke-width="3"/><circle cx="17" cy="7" r="4" fill="#2a78d6"/></svg>Blue line with dots = INP p75 on phones, /wiki/Main_Page, URL level, one point per 28-day period (n = 25, weekly steps)</li>
+      <li><svg width="34" height="14" aria-hidden="true" focusable="false"><line x1="1" y1="7" x2="33" y2="7" stroke="#c9cdd3" stroke-width="1.5"/></svg>Grey lines = 5 ms gridlines. The y axis starts at 120 ms, not 0, so the small change stays visible.</li>
+    </ul>
+    <div class="scroll" tabindex="0" role="region" aria-label="Chart, scrolls sideways on small screens">
+      <svg width="760" height="350" viewBox="0 0 760 350" role="img" aria-labelledby="chart-title chart-desc">
+        <desc id="chart-desc">Line chart of the CrUX History API phone INP p75 for en.wikipedia.org/wiki/Main_Page over 25 weekly 28-day periods, from the period ending 23 May 2026 to the period ending 7 Nov 2026. It starts at 137 ms, peaks at 139 ms in June, then falls steadily to 130 ms. All values are well inside the good range of 200 ms or less.</desc>
+        <g stroke="#e4e6ea" stroke-width="1.5">
+          <line x1="70" y1="40" x2="710" y2="40"/>
+          <line x1="70" y1="88" x2="710" y2="88"/>
+          <line x1="70" y1="136" x2="710" y2="136"/>
+          <line x1="70" y1="184" x2="710" y2="184"/>
+          <line x1="70" y1="232" x2="710" y2="232"/>
+        </g>
+        <line x1="70" y1="280" x2="710" y2="280" stroke="#111418" stroke-width="1.5"/>
+        <g text-anchor="end">
+          <text x="60" y="45">145</text>
+          <text x="60" y="93">140</text>
+          <text x="60" y="141">135</text>
+          <text x="60" y="189">130</text>
+          <text x="60" y="237">125</text>
+          <text x="60" y="285">120</text>
+        </g>
+        <text x="8" y="22" class="strong">ms</text>
+        <g stroke="#111418" stroke-width="1.5">
+          <line x1="70" y1="280" x2="70" y2="287"/>
+          <line x1="175" y1="280" x2="175" y2="287"/>
+          <line x1="280" y1="280" x2="280" y2="287"/>
+          <line x1="385" y1="280" x2="385" y2="287"/>
+          <line x1="490" y1="280" x2="490" y2="287"/>
+          <line x1="595" y1="280" x2="595" y2="287"/>
+          <line x1="700" y1="280" x2="700" y2="287"/>
+        </g>
+        <g text-anchor="middle">
+          <text x="70" y="308">23 May</text>
+          <text x="175" y="308">20 Jun</text>
+          <text x="280" y="308">18 Jul</text>
+          <text x="385" y="308">15 Aug</text>
+          <text x="490" y="308">12 Sep</text>
+          <text x="595" y="308">10 Oct</text>
+          <text x="700" y="308">7 Nov</text>
+        </g>
+        <text x="390" y="340" text-anchor="middle">28-day period ending (2026)</text>
+        <polyline fill="none" stroke="#2a78d6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"
+          points="70,116.8 96.25,107.2 122.5,97.6 148.75,97.6 175,97.6 201.25,97.6 227.5,107.2 253.75,107.2 280,116.8 306.25,126.4 332.5,126.4 358.75,136 385,136 411.25,136 437.5,136 463.75,136 490,136 516.25,145.6 542.5,145.6 568.75,145.6 595,155.2 621.25,164.8 647.5,174.4 673.75,174.4 700,184"/>
+        <g fill="#2a78d6">
+          <circle cx="70" cy="116.8" r="4"/><circle cx="96.25" cy="107.2" r="4"/><circle cx="122.5" cy="97.6" r="4"/><circle cx="148.75" cy="97.6" r="4"/><circle cx="175" cy="97.6" r="4"/><circle cx="201.25" cy="97.6" r="4"/><circle cx="227.5" cy="107.2" r="4"/><circle cx="253.75" cy="107.2" r="4"/><circle cx="280" cy="116.8" r="4"/><circle cx="306.25" cy="126.4" r="4"/><circle cx="332.5" cy="126.4" r="4"/><circle cx="358.75" cy="136" r="4"/><circle cx="385" cy="136" r="4"/><circle cx="411.25" cy="136" r="4"/><circle cx="437.5" cy="136" r="4"/><circle cx="463.75" cy="136" r="4"/><circle cx="490" cy="136" r="4"/><circle cx="516.25" cy="145.6" r="4"/><circle cx="542.5" cy="145.6" r="4"/><circle cx="568.75" cy="145.6" r="4"/><circle cx="595" cy="155.2" r="4"/><circle cx="621.25" cy="164.8" r="4"/><circle cx="647.5" cy="174.4" r="4"/><circle cx="673.75" cy="174.4" r="4"/><circle cx="700" cy="184" r="5.5"/>
+        </g>
+        <text x="78" y="142" class="strong">137 ms</text>
+        <text x="175" y="80" class="strong" text-anchor="middle">139 ms peak</text>
+        <text x="706" y="212" class="strong" text-anchor="end">130 ms</text>
+      </svg>
+    </div>
+    <figcaption>Source: CrUX History API, phone, URL level, metric interaction_to_next_paint p75, fetched 11 Nov 2026 with <code>inp field</code>. Each point covers 28 days; consecutive points overlap by 21 days.</figcaption>
+  </figure>
+
+  <h3 id="findings-title">Findings</h3>
+  <!--
+    FINDING CARD MARKUP (copy one <article> per issue; keep the order of the dt/dd pairs):
+    <article class="finding SEVERITY">            SEVERITY = poor | needs-improvement | info
+      <div class="finding-head">
+        <span class="rule-id">RULE_ID</span>         e.g. processing/forced-reflow
+        <span class="tag">PHASE</span>              input-delay | processing | presentation | context
+        <span class="tag">CERTAINTY</span>          confirmed | intermittent | screening-only
+      </div>
+      <dl class="facts">
+        <dt>Element</dt><dd><code>CSS selector</code></dd>
+        <dt>Script</dt><dd><code>function (URL:line:column)</code></dd>
+        <dt>Owner</dt><dd>entity name (1st or 3rd party)</dd>
+        <dt>Time</dt><dd>median N ms, 95% CI [lo, hi]</dd>
+        <dt>Certainty</dt><dd>certainty word, Wilson CI</dd>
+        <dt>Runs</dt><dd>fired in n of m runs</dd>
+      </dl>
+    </article>
+    An optional <p class="finding-lead">...</p> may follow the head for one plain sentence.
+  -->
+  <!-- FINDINGS:START -->
+  <div class="findings" aria-labelledby="findings-title">
+    <article class="finding info">
+      <div class="finding-head">
+        <span class="rule-id">rule-id</span>
+        <span class="tag">phase</span>
+        <span class="tag">certainty</span>
+      </div>
+      <p class="finding-lead">Example findings from the Wikipedia run are added here.</p>
+      <dl class="facts">
+        <dt>Element</dt><dd><code>element selector</code></dd>
+        <dt>Script</dt><dd><code>function (URL:line:column)</code></dd>
+        <dt>Owner</dt><dd>entity</dd>
+        <dt>Time</dt><dd>median ms, 95% CI</dd>
+        <dt>Certainty</dt><dd>certainty</dd>
+        <dt>Runs</dt><dd>fired in n of m runs</dd>
+      </dl>
+    </article>
+    <article class="finding info">
+      <div class="finding-head">
+        <span class="rule-id">rule-id</span>
+        <span class="tag">phase</span>
+        <span class="tag">certainty</span>
+      </div>
+      <p class="finding-lead">Example findings from the Wikipedia run are added here.</p>
+      <dl class="facts">
+        <dt>Element</dt><dd><code>element selector</code></dd>
+        <dt>Script</dt><dd><code>function (URL:line:column)</code></dd>
+        <dt>Owner</dt><dd>entity</dd>
+        <dt>Time</dt><dd>median ms, 95% CI</dd>
+        <dt>Certainty</dt><dd>certainty</dd>
+        <dt>Runs</dt><dd>fired in n of m runs</dd>
+      </dl>
+    </article>
+    <article class="finding info">
+      <div class="finding-head">
+        <span class="rule-id">rule-id</span>
+        <span class="tag">phase</span>
+        <span class="tag">certainty</span>
+      </div>
+      <p class="finding-lead">Example findings from the Wikipedia run are added here.</p>
+      <dl class="facts">
+        <dt>Element</dt><dd><code>element selector</code></dd>
+        <dt>Script</dt><dd><code>function (URL:line:column)</code></dd>
+        <dt>Owner</dt><dd>entity</dd>
+        <dt>Time</dt><dd>median ms, 95% CI</dd>
+        <dt>Certainty</dt><dd>certainty</dd>
+        <dt>Runs</dt><dd>fired in n of m runs</dd>
+      </dl>
+    </article>
+  </div>
+  <!-- FINDINGS:END -->
+</section>
+
+<section aria-labelledby="how-it-works">
+  <h2 id="how-it-works">How it works</h2>
+  <p>One pinned, headless Chrome. One page load at a time, in seeded random order. Every stage feeds the next, and the end result is checked against the real-user number.</p>
+  <div class="pipeline">
+    <svg width="320" height="676" viewBox="0 0 320 676" role="img" aria-labelledby="pipe-title pipe-desc">
+      <title id="pipe-title">Analysis pipeline</title>
+      <desc id="pipe-desc">Seven stages from top to bottom: field data, discovery plus safety guard, screening, deep-dive attribution, third-party causal blocks, rules plus statistics, and the report reconciled against the field data.</desc>
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#111418"/></marker>
+      </defs>
+      <g fill="#ffffff" stroke="#111418" stroke-width="2">
+        <rect x="10" y="10" width="300" height="68" rx="4" fill="#eef7ee" stroke="#0ca30c"/>
+        <rect x="10" y="108" width="300" height="68" rx="4"/>
+        <rect x="10" y="206" width="300" height="68" rx="4"/>
+        <rect x="10" y="304" width="300" height="68" rx="4"/>
+        <rect x="10" y="402" width="300" height="68" rx="4" stroke="#eb6834"/>
+        <rect x="10" y="500" width="300" height="68" rx="4"/>
+        <rect x="10" y="598" width="300" height="68" rx="4" fill="#111418"/>
+      </g>
+      <g stroke="#111418" stroke-width="2" marker-end="url(#arr)">
+        <line x1="160" y1="78" x2="160" y2="102"/>
+        <line x1="160" y1="176" x2="160" y2="200"/>
+        <line x1="160" y1="274" x2="160" y2="298"/>
+        <line x1="160" y1="372" x2="160" y2="396"/>
+        <line x1="160" y1="470" x2="160" y2="494"/>
+        <line x1="160" y1="568" x2="160" y2="592"/>
+      </g>
+      <g text-anchor="middle">
+        <text x="160" y="38" class="strong">Field data</text>
+        <text x="160" y="62">CrUX + PSI, URL and origin</text>
+        <text x="160" y="136" class="strong">Discovery + safety guard</text>
+        <text x="160" y="160">two passes, denylist, guards</text>
+        <text x="160" y="234" class="strong">Screening</text>
+        <text x="160" y="258">3 random blocks, idle + boot</text>
+        <text x="160" y="332" class="strong">Deep-dive attribution</text>
+        <text x="160" y="356">traced runs, narrow CIs</text>
+        <text x="160" y="430" class="strong">Third-party causal blocks</text>
+        <text x="160" y="454">allowed vs blocked, paired</text>
+        <text x="160" y="528" class="strong">Rules + statistics</text>
+        <text x="160" y="552">17 detectors, median CIs</text>
+        <text x="160" y="626" style="fill:#ffffff;font-weight:700">Report</text>
+        <text x="160" y="650" style="fill:#ffffff">reconciled against field p75</text>
+      </g>
+    </svg>
+  </div>
+  <ol class="stages">
+    <li><b>Field data.</b> CrUX and PSI per device, URL and origin level, plus 25 weeks of history, fetched before any page load.</li>
+    <li><b>Discovery + safety guard.</b> Two passes keep only stable targets. Money, deletion, logout and form-submit actions are never clicked; mutating requests and navigations are blocked.</li>
+    <li><b>Screening.</b> Every target is tapped once the page is idle, and while it is still booting, in 3 interleaved blocks.</li>
+    <li><b>Deep-dive attribution.</b> Every scenario slower than 200 ms gets timing blocks until the median CI is narrow, then 5 traced attribution runs.</li>
+    <li><b>Third-party causal blocks.</b> Paired runs with third parties allowed and blocked prove which owner costs how many milliseconds, or flag the result as confounded.</li>
+    <li><b>Rules + statistics.</b> 17 trace-based detectors, exact median CIs, Wilson intervals, Hodges-Lehmann shifts, Mann-Whitney with Holm correction.</li>
+    <li><b>Report.</b> Issues, comparisons and limitations, with a verdict on whether the lab reaches the field p75.</li>
+  </ol>
+  <p class="note">Every block is health-gated: if the machine drifts, the block is kept in the raw data but excluded from all statistics. The tool refuses to run on battery, in Low Power Mode or under thermal throttling.</p>
+</section>
+
+<section aria-labelledby="get-started">
+  <h2 id="get-started">Quick start</h2>
+  <p>Requirements: Node.js 26 or newer, git, and about 500 MB of disk for the pinned Chrome for Testing build. Runs on macOS and Linux.</p>
+  <div class="code">
+    <button class="copy" type="button" data-copy="qs" aria-label="Copy quick start commands">Copy</button>
+<pre id="qs"><code>git clone https://github.com/franzenzenhofer/inp-analyser
+cd inp-analyser
+npm ci
+npm run chrome:install
+export INP_GOOGLE_API_KEY=...   <span class="c"># optional: field data from CrUX + PSI</span>
+npx tsx src/cli.ts analyse https://en.wikipedia.org/wiki/Main_Page --quick</code></pre>
+  </div>
+  <p>The key needs the Chrome UX Report API and the PageSpeed Insights API enabled. No key yet? Add <code>--no-field</code> for a lab-only run. <code>--quick</code> stops after screening (typically 20 to 40 minutes); drop it for the full analysis. Then open <code>report.html</code> in the run directory.</p>
+  <p>All commands, options and the full methodology: <a href="https://github.com/franzenzenhofer/inp-analyser#readme">README on GitHub</a>.</p>
+</section>
+
+<section aria-labelledby="skill">
+  <h2 id="skill">Agent skill</h2>
+  <p>The repository ships an agent skill for Claude Code and other agents that read the skill format. It teaches the agent when to use the tool, how to read <code>report.json</code>, and to never present a lab number as the INP.</p>
+  <div class="code">
+    <button class="copy" type="button" data-copy="sk" aria-label="Copy skill install command">Copy</button>
+<pre id="sk"><code>cp -R skills/inp-analyser ~/.claude/skills/</code></pre>
+  </div>
+  <p>Then just ask:</p>
+  <ul class="asks">
+    <li>"Why is INP poor on https://example.com/?"</li>
+    <li>"What INP does PSI show for https://en.wikipedia.org/wiki/Main_Page, phone and desktop?"</li>
+    <li>"Analyse this DevTools trace for slow interactions."</li>
+  </ul>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>inp-analyser</b> - MIT licence - <a href="https://github.com/franzenzenhofer/inp-analyser">github.com/franzenzenhofer/inp-analyser</a></p>
+    <p>Built by Franz Enzenhofer.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var el = document.getElementById(b.getAttribute('data-copy'));
+    var text = el.innerText.replace(/\s+# optional.*$/m, '');
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(text).then(function () {
+      b.textContent = 'Copied';
+      setTimeout(function () { b.textContent = 'Copy'; }, 1600);
+    });
+  });
+});
+</script>
+</body>
+</html>

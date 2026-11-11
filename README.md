@@ -407,6 +407,7 @@ Honest list. Every report also prints its own.
 - **GPU work is not throttled.** Chrome's CPU throttling does not slow down raster/GPU work, so presentation delay on real mid-tier phones can be larger.
 - **Consent phase is planned**, not yet a phase of its own. Use `--consent-state` to measure the consent-accepted page.
 - **Machine gates are strongest on macOS**: there the start gate also checks Low Power Mode and thermal throttling (`pmset`) and keeps the machine awake (`caffeinate`). On Linux it checks AC vs battery only; on other platforms only the load and BenchmarkIndex gates apply. Tested on macOS (Apple Silicon) and Linux CI.
+- **Known issue: long deep-dives on a heavily loaded machine.** On a machine under memory and CPU pressure, the headless page can detach mid deep-dive ("Session already detached"), and the remaining runs of that analysis fail. Measure on a quiet machine, use `--quick` (screening only) or a smaller `--budget`, and set `INP_DEBUG_CHROME=1` to see Chrome's own log if it happens.
 - **Diagnosis, not prescription.** The tool never suggests fixes.
 
 ## Contributing

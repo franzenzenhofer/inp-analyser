@@ -1,6 +1,6 @@
 {
   "tool": {
-    "name": "inp-ultimate-analyser",
+    "name": "inp-analyser",
     "version": "0.1.0"
   },
   "url": "http://site.inp.test:56655/boot-long-tasks",

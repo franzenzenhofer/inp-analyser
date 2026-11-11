@@ -44,7 +44,9 @@ export async function launchChrome(options: LaunchOptions = {}): Promise<Browser
   if (options.proxyServer !== undefined) {
     args.push(`--proxy-server=${options.proxyServer}`);
   }
-  const browser = await launch({ executablePath: chromeExecutable(), headless: true, args, defaultViewport: null });
+  // INP_DEBUG_CHROME=1 forwards Chrome's stderr for crash diagnosis.
+  const dumpio = process.env['INP_DEBUG_CHROME'] === '1';
+  const browser = await launch({ executablePath: chromeExecutable(), headless: true, dumpio, args, defaultViewport: null });
   await assertPinnedVersion(browser);
   return browser;
 }
